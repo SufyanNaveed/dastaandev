@@ -347,8 +347,24 @@ class Employee extends CI_Controller
         if ($this->employee->money_details($eid)) {
             $details = $this->employee->money_details($eid);
 
+            $this->db->select('c_rate');
+            $this->db->from('geopos_employees');
+            $this->db->where('id', $eid);
+            $query = $this->db->get();
+            $commission_rate=$query->result_array();
+
+             $this->db->select('salary');
+            $this->db->from('geopos_employees');
+            $this->db->where('id', $eid);
+            $query = $this->db->get();
+            $salary=$query->result_array();
+            
+            $ver=( $details['credit'] *$commission_rate[0]['c_rate'])/100;
+            $total_income_Data=$salary[0]['salary']+$ver;
+            // $total_income= ( $details['credit'] *$commission_rate[0]['c_rate'])/100;
+
             echo json_encode(array('status' => 'Success', 'message' =>
-                '<br> Total Income: ' . $details['credit'] . '<br> Total Expenses: ' . $details['debit']));
+                '<br> Total Income: ' . $total_income_Data . '<br> Total Expenses: ' . $details['debit']));
 
         }
 

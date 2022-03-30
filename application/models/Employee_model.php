@@ -388,6 +388,9 @@ class Employee_model extends CI_Model
 
     public function money_details($eid)
     {
+
+
+        $this->db->where('eid', $eid);
         $this->db->select('SUM(debit) AS debit,SUM(credit) AS credit');
         $this->db->from('geopos_transactions');
         $this->db->where('eid', $eid);
