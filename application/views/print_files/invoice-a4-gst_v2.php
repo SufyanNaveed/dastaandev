@@ -208,7 +208,7 @@
                     <td><?= amountExchange($invoice['total'], $invoice['multi'], $invoice['loc']) ?></td>
                 </tr>
                 <tr>
-                    <td class="meta-head">Trial Date: </td>
+                    <td class="meta-head">Trial Datehhhhh: </td>
                     <td><?= dateformat($nap['trial_date']) ?></td>
                 </tr>
                 <tr>
