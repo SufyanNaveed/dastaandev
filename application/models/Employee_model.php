@@ -31,6 +31,17 @@ class Employee_model extends CI_Model
         return $query->result_array();
     }
 
+    public function list_employee_without_admin()
+    {
+        $this->db->select('geopos_employees.*,geopos_users.banned,geopos_users.roleid,geopos_users.loc');
+        $this->db->from('geopos_employees');
+        $this->db->join('geopos_users', 'geopos_employees.id = geopos_users.id', 'left');
+        $this->db->where('geopos_users.roleid !=', 5);
+        $this->db->order_by('geopos_users.roleid', 'DESC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function list_project_employee($id)
     {
         $this->db->select('geopos_employees.*');
@@ -341,7 +352,7 @@ class Employee_model extends CI_Model
     }
 
 
-    public function add_employee($id, $username, $name, $roleid, $phone, $address, $city, $region, $country, $postbox, $location,$salary = 0,$commission = 0)
+    public function add_employee($id, $username, $name, $roleid, $phone, $address, $city, $region, $country, $postbox, $location,$salary = 0,$commission = 0,$multi_cats, $multi_commissions)
     {
         $data = array(
             'id' => $id,
@@ -353,7 +364,7 @@ class Employee_model extends CI_Model
             'country' => $country,
             'postbox' => $postbox,
             'phone' => $phone,
-              'salary' => $salary,
+            'salary' => $salary,
             'c_rate' => $commission
         );
 
@@ -368,12 +379,29 @@ class Employee_model extends CI_Model
             $this->db->where('id', $id);
 
             $this->db->update('geopos_users');
+            $this->employee->add_employee_commission($id, $multi_cats, $multi_commissions);
+
             echo json_encode(array('status' => 'Success', 'message' =>
                 $this->lang->line('ADDED')));
         } else {
             echo json_encode(array('status' => 'Error', 'message' =>
                 $this->lang->line('ERROR')));
         }
+
+    }
+
+    public function add_employee_commission($id, $multi_cats, $multi_commissions)
+    {
+        foreach($multi_cats as $key => $row){
+            $data[] = array(
+                'emp_id' => $id,
+                'cat_id' => $multi_cats[$key],
+                'commission' => $multi_commissions[$key],
+                'created_by' => $this->aauth->get_user()->id
+            );
+        }
+        
+        $this->db->insert_batch('geopos_user_commission', $data);
 
     }
 

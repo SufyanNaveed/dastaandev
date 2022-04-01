@@ -182,16 +182,28 @@
                                for="city"><?php echo $this->lang->line('Sales') ?> <?php echo $this->lang->line('Commission') ?>
                             %</label>
 
-                        <div class="col-sm-2">
-                            <input type="number" placeholder="Commission %" value="0"
-                                   class="form-control margin-bottom" name="commission">
-                        </div>
-                        <small class="col">It will based on each invoice amount - inclusive all
+                            <div class="col-sm-3">
+                                <select name="cat_id[]" class="form-control margin-bottom">
+                                    <option value="">-- Please Select --</option>
+                                    <?php if($cat){ foreach($cat as $row) {?>
+                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['title']; ?></option>
+                                    <?php } } ?>
+                                </select>
+                            </div>
+                            
+                            <div class="col-sm-2">
+                                <input type="number" placeholder="Commission %" value="0"
+                                    class="form-control margin-bottom" name="commission[]">
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-success appned_more_cat"><i class="fa fa-plus"></i></button>
+                            </div>
+                        <!-- <small class="col">It will based on each invoice amount - inclusive all
                             taxes,shipping,discounts
-                        </small>
+                        </small> -->
 
                     </div>
-
+                    <div class="appned_new_fields"></div>
                     <div class="form-group row">
 
                         <label class="col-sm-2 col-form-label"></label>
@@ -223,9 +235,7 @@
 <script>
 
     function actionProduct1(actionurl) {
-
         $.ajax({
-
             url: actionurl,
             type: 'POST',
             data: $("#product_action").serialize(),
@@ -246,7 +256,43 @@
             }
 
         });
-
-
     }
+
+
+    $(document).ready(function() {
+
+        var x = 1;
+        $('.appned_more_cat').click(function(e){ //on add input button click
+            e.preventDefault();
+            $.ajax({
+                url: '<?php echo base_url('employee/get_cat') ?>',
+                type: 'GET',
+                success: function (data) {
+                    var html = '<div class="form-group row remove_cats">'+
+                                '<label class="col-sm-2 col-form-label" >&nbsp;</label>'+
+                                    '<div class="col-sm-3">'+
+                                        '<select name="cat_id[]" class="form-control margin-bottom">'+
+                                            '<option value="">-- Please Select --</option>'+data+
+                                        '</select>'+
+                                    '</div>'+
+                                    '<div class="col-sm-2">'+
+                                        '<input type="number" placeholder="Commission %" value="0" class="form-control margin-bottom" name="commission[]">'+
+                                    '</div>'+
+                                    '<div class="col-sm-2">'+
+                                    '<button type="button" class="btn btn-success remove_field"><i class="fa fa-minus"></i></button>'+
+                                    '</div>'+ 
+                            '</div>';
+                    $('.appned_new_fields').append(html); 
+                },
+                error: function (data) {
+                    
+                }
+            }); 
+        });
+
+        $("body").on("click",".remove_field", function(e){
+            e.preventDefault(); 
+            $(this).closest('.remove_cats').remove(); x--;
+        }); 
+    }) 
 </script>

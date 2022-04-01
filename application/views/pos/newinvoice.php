@@ -1,3 +1,11 @@
+<style>
+    .sidebar-fixed {
+        position: absolute;
+        height: 100%;
+        overflow: scroll;
+    }
+</style>
+
 <form method="post" id="data_form" class="content-body">
     <div class="sidebar-left sidebar-fixed bg-white">
         <div class="sidebar">
@@ -124,7 +132,20 @@
 
 
                         <hr>
+                        <div class="col">
+                                <div class="form-group form-group-sm text-g">
+                                    <label for="employee"><?php echo $this->lang->line('Employee') ?></label>
 
+                                    <select id="employee" name="employee" class="form-control form-control-sm">
+                                        <?php
+                                        foreach ($employee as $row) {
+                                            $cid = $row['id'];
+                                            $title = $row['name'];
+                                            echo "<option value='$cid'>$title</option>";
+                                        }
+                                        ?>
+                                    </select></div>
+                            </div>
                         <div class="m-1">
 
                             <ul class="nav nav-tabs" role="tablist">

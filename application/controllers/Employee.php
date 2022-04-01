@@ -24,6 +24,7 @@ class Employee extends CI_Controller
     {
         parent::__construct();
         $this->load->model('employee_model', 'employee');
+        $this->load->model('categories_model', 'products_cat');
         $this->load->library("Aauth");
         if (!$this->aauth->is_loggedin()) {
             redirect('/user/', 'refresh');
@@ -90,11 +91,24 @@ class Employee extends CI_Controller
 
         $head['usernm'] = $this->aauth->get_user()->username;
         $head['title'] = 'Add Employee';
-
+        $data['cat'] = $this->products_cat->category_stock();
+        // echo '<pre>'; print_r($data);exit;
         $this->load->view('fixed/header', $head);
-        $this->load->view('employee/add');
+        $this->load->view('employee/add',$data);
         $this->load->view('fixed/footer');
 
+
+    }
+    public function get_cat()
+    {
+
+        $cat = $this->products_cat->category_stock();
+        
+        $cats = '';
+        foreach($cat as $row){
+            $cats .= '<option value="'. $row['id'] . '">'. $row['title']. '</option>';
+        }
+        echo $cats; exit;
 
     }
 
@@ -129,7 +143,10 @@ class Employee extends CI_Controller
         $country = $this->input->post('country', true);
         $postbox = $this->input->post('postbox', true);
         $salary = $this->input->post('salary', true);
-        $commission = $this->input->post('commission', true);
+        $commission = 0;
+
+        $multi_cats = $this->input->post('cat_id', true);
+        $multi_commissions = $this->input->post('commission', true);
 
 
         $a = $this->aauth->create_user($email, $password, $username);
@@ -140,7 +157,8 @@ class Employee extends CI_Controller
             if ($nuid > 0) {
 
 
-                $this->employee->add_employee($nuid, (string)$this->aauth->get_user($a)->username, $name, $roleid, $phone, $address, $city, $region, $country, $postbox, $location, $salary, $commission);
+                $this->employee->add_employee($nuid, (string)$this->aauth->get_user($a)->username, $name, $roleid, $phone, $address, $city, $region, $country, $postbox, $location, $salary, $commission, $multi_cats, $multi_commissions);
+                
 
             }
 
