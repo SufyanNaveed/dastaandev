@@ -186,11 +186,15 @@ class Employee extends CI_Controller
         $eid = $this->input->post('eid');
         $list = $this->employee->invoice_datatables($eid);
         $data = array();
-
         $no = $this->input->post('start');
-
-
         foreach ($list as $invoices) {
+            $commission_amount = 0;
+            $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id);
+            
+            foreach ($invoices_commission as $row) {
+                $commission_amount += ($row->subtotal * $row->commission) / 100;
+            }
+            
             $no++;
             $row = array();
             $row[] = $no;
@@ -216,6 +220,7 @@ class Employee extends CI_Controller
                     break;
             }
             $row[] = $out;
+            $row[] = $commission_amount;
             $row[] = '<a href="' . base_url("invoices/view?id=$invoices->id") . '" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> View</a> &nbsp; <a href="' . base_url("invoices/printinvoice?id=$invoices->id") . '&d=1" class="btn btn-info btn-xs"  title="Download"><span class="fa fa-download"></span></a>';
 
             $data[] = $row;

@@ -261,6 +261,20 @@ class Employee_model extends CI_Model
         return $query->result();
     }
 
+    function invoices_commission($id, $tid)
+    {
+        $this->db->select('geopos_invoices.id,geopos_user_commission.commission, geopos_invoice_items.subtotal');
+        $this->db->from('geopos_invoices');
+        $this->db->join('geopos_invoice_items', 'geopos_invoices.id=geopos_invoice_items.tid', 'left');
+        $this->db->join('geopos_products', 'geopos_invoice_items.pid= geopos_products.pid', 'left');
+        $this->db->join('geopos_user_commission', 'geopos_user_commission.cat_id= geopos_products.pcat', 'left');
+        $this->db->where('geopos_invoices.eid', $id);
+        $this->db->where('geopos_invoice_items.tid', $tid);
+        $this->db->where('geopos_user_commission.emp_id', $id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function invoicecount_filtered($id)
     {
         $this->_invoice_datatables_query($id);

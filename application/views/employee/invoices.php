@@ -5,11 +5,11 @@
 
             <div class="message"></div>
         </div>
-        <div class="grid_3 grid_4">
+        <div class="grid_3 grid_4" style="padding: 24px;">
             <h5><?php echo $this->lang->line('Invoices') ?> by <?php echo $employee['name'] ?></h5>
 
             <hr>
-            <table id="invoices" class="display" cellspacing="0" width="100%">
+            <table id="invoices" class="table table-striped table-bordered display" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th>No</th>
@@ -18,6 +18,7 @@
                     <th><?php echo $this->lang->line('Date') ?></th>
                     <th><?php echo $this->lang->line('Total') ?></th>
                     <th class="no-sort"><?php echo $this->lang->line('Status') ?></th>
+                    <th>Commission</th>
                     <th class="no-sort"><?php echo $this->lang->line('Settings') ?></th>
 
 
@@ -34,6 +35,7 @@
                     <th><?php echo $this->lang->line('Date') ?></th>
                     <th><?php echo $this->lang->line('Total') ?></th>
                     <th class="no-sort"><?php echo $this->lang->line('Status') ?></th>
+                    <th>Commission</th>
                     <th class="no-sort"><?php echo $this->lang->line('Settings') ?></th>
 
                 </tr>

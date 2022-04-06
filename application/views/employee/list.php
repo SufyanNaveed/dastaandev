@@ -47,7 +47,7 @@
                         $name = $row['name'];
                         $role = user_role($row['roleid']);
                         $status = $row['banned'];
-
+                        $invoivesbtn = '';
                         if ($status == 1) {
                             $status = 'Deactive';
                             $btn = "<a href='#' data-object-id='" . $aid . "'  data-object1-id='" . $aid . "'  class='btn btn-blue btn-xs delete-object' title='Enable'><i class='icon-eye-slash'></i> Enable</a>";
@@ -56,13 +56,23 @@
                             $btn = "<a href='#' data-object-id='" . $aid . "' class='btn btn-amber btn-xs delete-object' title='Disable'><i class='fa fa-chain-broken'></i> " . $this->lang->line('Disable') . "</a>";
                         }
 
+                        if($row['roleid'] != 5){
+                            $invoivesbtn = "<a href='" . base_url("employee/invoices?id=$aid") . "' class='btn btn-primary btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . " Invoices</a>";
+                        }
+
                         echo "<tr>
                     <td>$i</td>
                     <td>$name</td>
                     <td>$role</td>                 
                     <td>$status</td>
-                    <td><a href='" . base_url("employee/view?id=$aid") . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . "</a>&nbsp;&nbsp;$btn&nbsp;&nbsp;<a href='#pop_model' data-toggle='modal' data-remote='false' data-object-id='" . $aid . "' class='btn btn-danger btn-xs delemp' title='Delete'><i class='fa fa-trash'></i></a></td></tr>";
-                        $i++;
+                    <td>
+                        <a href='" . base_url("employee/view?id=$aid") . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . "</a>
+                        &nbsp;&nbsp;$invoivesbtn
+                        &nbsp;&nbsp;$btn&nbsp;&nbsp;
+                        <a href='#pop_model' data-toggle='modal' data-remote='false' data-object-id='" . $aid . "' class='btn btn-danger btn-xs delemp' title='Delete'><i class='fa fa-trash'></i></a>
+                        </td></tr>";
+                    
+                    $i++;
                     }
                     ?>
                     </tbody>

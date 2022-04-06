@@ -6,7 +6,7 @@ $query_builder = TRUE;
 $hostname ='localhost';
 $username ='root';
 $password ='';
-$database ='dastaan';	
+$database ='dastaandev';	
 
 $db['default'] = array(
 	'dsn'	=> '',
