@@ -57,7 +57,8 @@
                         }
 
                         if($row['roleid'] != 5){
-                            $invoivesbtn = "<a href='" . base_url("employee/invoices?id=$aid") . "' class='btn btn-primary btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . " Invoices</a>";
+                            $invoivesbtn = "<a href='" . base_url("employee/invoices?id=$aid") . "' class='btn btn-primary btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . " Invoices</a>
+                            <a href='" . base_url("employee/salary_commission?id=$aid") . "' class='btn btn-info btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . " Salary & Commission</a>";
                         }
 
                         echo "<tr>

@@ -31,6 +31,20 @@ class Employee_model extends CI_Model
         return $query->result_array();
     }
 
+    public function search_commision($id){
+        $this->db->select('geopos_invoices.eid, geopos_invoices.invoicedate, geopos_employees.salary, MONTHNAME(`geopos_invoices`.invoicedate) as month_name, MONTH(`geopos_invoices`.invoicedate) as month,YEAR(`geopos_invoices`.invoicedate) as year, SUM((geopos_invoice_items.subtotal) * `geopos_user_commission`.`commission` / 100) as commission');
+        $this->db->from('geopos_invoices');
+        $this->db->join('geopos_invoice_items', 'geopos_invoices.id=geopos_invoice_items.tid', 'left');
+        $this->db->join('geopos_products', 'geopos_invoice_items.pid= geopos_products.pid', 'left');
+        $this->db->join('geopos_user_commission', 'geopos_user_commission.cat_id= geopos_products.pcat', 'left');
+        $this->db->join('geopos_employees', 'geopos_invoices.eid= geopos_employees.id', 'left');
+        $this->db->where('geopos_invoices.eid', $id);
+        $this->db->where('geopos_user_commission.emp_id', $id);
+        $this->db->group_by('MONTH(geopos_invoices.invoicedate)');
+        $query = $this->db->get()->result_array(); 
+        return $query;
+    }
+    
     public function list_employee_without_admin()
     {
         $this->db->select('geopos_employees.*,geopos_users.banned,geopos_users.roleid,geopos_users.loc');

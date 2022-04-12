@@ -57,6 +57,16 @@ class Employee extends CI_Controller
         $this->load->view('fixed/footer');
     }
 
+    public function salary_commission()
+    {
+        $id = $this->input->get('id');
+        $head['usernm'] = $this->aauth->get_user()->username;
+        $head['title'] = 'Salary & Commission List';
+        $data['employee_commission'] = $this->employee->search_commision($id);
+        $this->load->view('fixed/header', $head);
+        $this->load->view('employee/salary_commssion', $data);
+        $this->load->view('fixed/footer');
+    }
 
     public function view()
     {
