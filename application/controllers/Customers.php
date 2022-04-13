@@ -46,6 +46,7 @@ class Customers extends CI_Controller
         if(isset($due) && $due == true){
             $data['sum_due'] = $this->customers->get_sum_due(); 
         }
+        // echo '<pre>'; print_r($data);exit;
         $this->load->view('fixed/header', $head);
         $this->load->view('customers/clist', $data);
         $this->load->view('fixed/footer');

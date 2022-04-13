@@ -20,7 +20,7 @@ if ($this->input->get('due')) {
             
             <div style="text-align:center;"> 
                 <?php if(is_array($sum_due) && count($sum_due) > 0){ ?>
-                    DUE SUM: <b><?php echo 'Rs: '. number_format($sum_due['total']); ?></b>
+                    DUE SUM: <b><?php echo 'Rs: '. number_format($sum_due['total'] - $sum_due['pamnt']); ?></b>
                 <?php } ?>
             </div>
             <div class="heading-elements">
