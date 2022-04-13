@@ -30,12 +30,7 @@
                         <th><?php echo $this->lang->line('Month').'-'.$this->lang->line('Year') ?></th>
                         <th><?php echo $this->lang->line('Salary') ?></th>
                         <th><?php echo 'Commission'; ?></th>
-
                         <th><?php echo $this->lang->line('Status') ?></th>
-
-                        <th><?php echo $this->lang->line('Actions') ?></th>
-
-
                     </tr>
                     </thead>
                     <tbody>
@@ -43,28 +38,25 @@
 
                     foreach ($employee_commission as $row) {
                         
-                        
-                        $month_year = $row['month_name'].' - '.$row['year'];
-                        
+                        $month_year = date("F", mktime(0, 0, 0, $row['month'], 10)).' - '.$row['year'];                        
                         $salary = amountExchange($row['salary']);
                         $commission = amountExchange($row['commission']);
+                        $status = $row['comission_status'];
 
-                        // if ($status == 1) {
-                        //     $status = 'Deactive';
+                        if ($status == 'unpaid') {
+                            $url = base_url().'employee/commission_status_update/'.$row['id'].'/'.$row['emp_id'];
+                            $status = "<a href='$url' class='btn btn-primary btn-xs'>Unpaid</a>";
+                        } else {
+                            $status = "<label class='label label-success'> Paid </label>";
+                        }
 
-                        // } else {
-                            $status = 'Active';
-
-                        // }
-
-                        echo "<tr>
-                    <td>$i</td>
-                    <td>$month_year</td>
-                    <td>$salary</td>
-                    <td>$commission</td>
-                    <td>$status</td>
-                 
-                    <td><a href='#' class='btn btn-success btn-xs'><i class='fa fa-list-ul'></i> " . $this->lang->line('History') . "</a></td></tr>";
+                    echo "<tr>
+                        <td>$i</td>
+                        <td>$month_year</td>
+                        <td>$salary</td>
+                        <td>$commission</td>
+                        <td>$status</td> 
+                    </tr>";
                         $i++;
                     }
                     ?>
@@ -75,8 +67,7 @@
                         <th><?php echo $this->lang->line('Month').'-'.$this->lang->line('Year') ?></th>
                         <th><?php echo $this->lang->line('Salary') ?></th>
                         <th><?php echo 'Commission'; ?></th> 
-                        <th><?php echo $this->lang->line('Status') ?></th>
-                        <th><?php echo $this->lang->line('Actions') ?></th>
+                        <th><?php echo $this->lang->line('Status') ?></th> 
                     </tr>
                     </tfoot>
                 </table>

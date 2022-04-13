@@ -41,8 +41,41 @@ class Employee_model extends CI_Model
         $this->db->where('geopos_invoices.eid', $id);
         $this->db->where('geopos_user_commission.emp_id', $id);
         $this->db->group_by('MONTH(geopos_invoices.invoicedate)');
-        $query = $this->db->get()->result_array(); 
-        return $query;
+        $result = $this->db->get(); 
+        $query = $result->result(); 
+        if (!empty($query)){
+            foreach ($query as $key => $value){
+                $this->db->select('*');
+                $this->db->from('monthly_comission');
+                $this->db->where('emp_id',$id);
+                $this->db->where('comission_month',$value->month);
+                $this->db->where('comission_year',$value->year);
+                $querys = $this->db->get();
+                // echo '<pre>'; print_r($querys); exit;
+                $month = date('m');
+                $year = date('y');
+                if ($querys->num_rows() > 0 && $value->month >= $month && $value->year >= $year){
+                    $row_data = $querys->row();
+                    $this->db->where('id', $row_data->id);
+                    $update = $this->db->update('monthly_comission', array('emp_id' => $id,'monthly_salary' => $value->salary,'comission_month' => $row_data->comission_month, 'comission_year' => $row_data->comission_year, 'comission_amount' => $value->commission));
+                }else if ($querys->num_rows() <= 0){
+                    $this->db->insert('monthly_comission', array('emp_id' => $id,'monthly_salary' => $value->salary, 'comission_month' => $value->month, 'comission_year' => $value->year, 'comission_amount' => $value->commission , 'comission_status' => 'unpaid')); 
+                }
+            }
+        }
+        $this->db->select('monthly_comission.*, comission_month as month, comission_year as year, monthly_salary as salary,comission_amount as commission');
+        $this->db->from('monthly_comission');
+        $this->db->where('emp_id',$id);
+        $results = $this->db->get()->result_array(); 
+        return $results;
+    }
+    
+    public function commission_status_update($id, $eid)
+    {
+        $this->db->where('id', $id);
+        $this->db->where('emp_id', $eid);
+        $update = $this->db->update('monthly_comission', array('comission_status' => 'paid'));
+        return $update;
     }
     
     public function list_employee_without_admin()

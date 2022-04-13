@@ -68,6 +68,14 @@ class Employee extends CI_Controller
         $this->load->view('fixed/footer');
     }
 
+    public function commission_status_update($id,$eid)
+    {
+        
+        $res = $this->employee->commission_status_update($id, $eid);
+        redirect('employee/salary_commission?id='.$eid, 'refresh');
+
+    }
+
     public function view()
     {
         $id = $this->input->get('id');
