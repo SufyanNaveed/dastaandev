@@ -17,6 +17,12 @@ if ($this->input->get('due')) {
                         class="btn btn-danger btn-sm rounded">
                     <?php echo $this->lang->line('Due') ?><?php echo $this->lang->line('Clients') ?></a></h4>
             <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+            
+            <div style="text-align:center;"> 
+                <?php if(is_array($sum_due) && count($sum_due) > 0){ ?>
+                    DUE SUM: <b><?php echo $sum_due['total']; ?></b>
+                <?php } ?>
+            </div>
             <div class="heading-elements">
                 <ul class="list-inline mb-0">
                     <li><a data-action="collapse"><i class="ft-minus"></i></a></li>

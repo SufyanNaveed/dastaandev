@@ -110,6 +110,16 @@ class Customers_model extends CI_Model
         }
     }
 
+    function get_sum_due()
+    {
+        $this->db->select('SUM(geopos_invoices.total) AS total,SUM(geopos_invoices.pamnt) AS pamnt');
+        $this->db->from('geopos_invoices');
+        $this->db->where('geopos_invoices.status =', 'due');
+        $this->db->join('geopos_customers', 'geopos_customers.id = geopos_invoices.csd', 'left'); ;
+        $query = $this->db->get()->row_array(); 
+        return $query;
+    }
+
     function get_datatables($id = '')
     {
         $this->_get_datatables_query($id);

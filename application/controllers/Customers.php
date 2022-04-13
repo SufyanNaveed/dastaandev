@@ -39,10 +39,15 @@ class Customers extends CI_Controller
 
     public function index()
     {
+        $due = $this->input->get('due');
         $head['usernm'] = $this->aauth->get_user()->username;
         $head['title'] = 'Customers';
+        $data['sum_due'] = '';
+        if(isset($due) && $due == true){
+            $data['sum_due'] = $this->customers->get_sum_due(); 
+        }
         $this->load->view('fixed/header', $head);
-        $this->load->view('customers/clist');
+        $this->load->view('customers/clist', $data);
         $this->load->view('fixed/footer');
     }
 
