@@ -117,10 +117,8 @@ class Products extends CI_Controller
             $row[] = $this->get_qty($pid);
             $row[] = $prd->title;
             $row[] = amountFormat($prd->product_price);
-            $row[] = '<a href="#" data-object-id="' . $pid . '" class="btn btn-success  btn-sm  view-object"><span class="fa fa-eye"></span> ' . $this->lang->line('View') . '</a> 
-
-
-<div class="btn-group">
+            $btns = '<a href="#" data-object-id="' . $pid . '" class="btn btn-success  btn-sm  view-object"><span class="fa fa-eye"></span> ' . $this->lang->line('View') . '</a> 
+                            <div class="btn-group">
                                     <button type="button" class="btn btn-indigo dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-print"></i>  ' . $this->lang->line('Print') . '                                    </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="' . base_url() . 'products/barcode?id=' . $pid . '" target="_blank"> ' . $this->lang->line('BarCode') . '</a>
@@ -134,21 +132,28 @@ class Products extends CI_Controller
                                          <a class="dropdown-item" href="' . base_url() . 'products/poslabel?id=' . $pid . '" target="_blank"> Label - Compact</a>
 
                                     </div>
-                                </div>   <a class="btn btn-pink  btn-sm" href="' . base_url() . 'products/report_product?id=' . $pid . '" target="_blank"> <span class="fa fa-pie-chart"></span> ' . $this->lang->line('Sales') . '</a>
+                                </div>   <a class="btn btn-pink  btn-sm" href="' . base_url() . 'products/report_product?id=' . $pid . '" target="_blank"> <span class="fa fa-pie-chart"></span> ' . $this->lang->line('Sales') . '</a>';
                         
-                  <div class="btn-group">
+                                if($this->aauth->premission(10) || $this->aauth->premission(11) ){
+                                    $btns .='&nbsp;&nbsp;<div class="btn-group">
                                     <button type="button" class="btn btn btn-primary dropdown-toggle   btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-cog"></i>  </button>
-                                    <div class="dropdown-menu">
-&nbsp;<a href="' . base_url() . 'products/edit?id=' . $pid . '"  class="btn btn-purple btn-sm"><span class="fa fa-edit"></span>' . $this->lang->line('Edit') . '</a>
-                                        <div class="dropdown-divider"></div>&nbsp;<a href="#" data-object-id="' . $pid . '" class="btn btn-danger btn-sm  delete-object"><span class="fa fa-trash"></span>' . $this->lang->line('Delete') . '</a>
-
-                                    </div>
-                                </div> 
+                                    <div class="dropdown-menu">';
+                                    if($this->aauth->premission(10)){
+                                        $btns .= '&nbsp;<a href="' . base_url() . 'products/edit?id=' . $pid . '"  class="btn btn-purple btn-sm"><span class="fa fa-edit"></span>' . $this->lang->line('Edit') . '</a>';
+                                    }
+                                    if($this->aauth->premission(11)){                                    
+                                        $btns .= '<div class="dropdown-divider"></div>
+                                        &nbsp;<a href="#" data-object-id="' . $pid . '" class="btn btn-danger btn-sm  delete-object"><span class="fa fa-trash"></span>' . $this->lang->line('Delete') . '</a>';
+                                    }
+                                
+                                $btns .=' </div>
+                                </div> ';
+                                }
                                                 
                                  
+            $row[] =  $btns;               
                                  
-                                 
-                                  ';
+                                  
            
             // $data['tSuit'] = $totalSuits;
             // $data['thans'] = $tThans;

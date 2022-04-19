@@ -560,6 +560,8 @@ class Employee extends CI_Controller
     public function permissions()
     {
 
+        // $per = $this->aauth->premission(11);
+        // echo '<pre>'; print_r($per); exit;
         $head['usernm'] = $this->aauth->get_user()->username;
         $head['title'] = 'Employee Permissions';
         $data['permission'] = $this->employee->employee_permissions();

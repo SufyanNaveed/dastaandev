@@ -316,7 +316,12 @@ class Invoices extends CI_Controller
             $row[] = dateformat($invoices->invoicedate);
             $row[] = amountExchange($invoices->total, 0, $this->aauth->get_user()->loc);
             $row[] = '<span class="st-' . $invoices->status . '">' . $this->lang->line(ucwords($invoices->status)) . '</span>';
-            $row[] = '<a href="' . base_url("invoices/view?id=$invoices->id") . '" class="btn btn-success  "><i class="fa fa-file-text"></i> ' . $this->lang->line('View') . '</a>&nbsp; <a href="' . base_url("invoices/printinvoice?id=$invoices->id") . '&d=1" class="btn btn-info btn-xs"  title="Download"><span class="fa fa-download"></span></a>&nbsp;<a href="#" data-object-id="' . $invoices->id . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
+            // $row[] = '<a href="' . base_url("invoices/view?id=$invoices->id") . '" class="btn btn-success  "><i class="fa fa-file-text"></i> ' . $this->lang->line('View') . '</a>&nbsp; <a href="' . base_url("invoices/printinvoice?id=$invoices->id") . '&d=1" class="btn btn-info btn-xs"  title="Download"><span class="fa fa-download"></span></a>&nbsp;<a href="#" data-object-id="' . $invoices->id . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
+            $btns = '<a href="' . base_url("invoices/view?id=$invoices->id") . '" class="btn btn-success  "><i class="fa fa-file-text"></i> ' . $this->lang->line('View') . '</a>&nbsp; <a href="' . base_url("invoices/printinvoice?id=$invoices->id") . '&d=1" class="btn btn-info btn-xs"  title="Download"><span class="fa fa-download"></span></a>';
+            if($this->aauth->premission(11)){
+                $btns .= '&nbsp;<a href="#" data-object-id="' . $invoices->id . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
+            }            
+            $row[] = $btns;
             $data[] = $row;
         }
         $output = array(
