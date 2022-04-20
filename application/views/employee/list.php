@@ -48,19 +48,25 @@
                         $role = user_role($row['roleid']);
                         $status = $row['banned'];
                         $invoivesbtn = '';
-                        if ($status == 1) {
-                            $status = 'Deactive';
-                            $btn = "<a href='#' data-object-id='" . $aid . "'  data-object1-id='" . $aid . "'  class='btn btn-blue btn-xs delete-object' title='Enable'><i class='icon-eye-slash'></i> Enable</a>";
-                        } else {
-                            $status = 'Active';
-                            $btn = "<a href='#' data-object-id='" . $aid . "' class='btn btn-amber btn-xs delete-object' title='Disable'><i class='fa fa-chain-broken'></i> " . $this->lang->line('Disable') . "</a>";
+                        $btn = '';
+                        if($this->aauth->premission(10)){
+                            if ($status == 1) {
+                                $status = 'Deactive';
+                                $btn = "&nbsp;&nbsp;<a href='#' data-object-id='" . $aid . "'  data-object1-id='" . $aid . "'  class='btn btn-blue btn-xs delete-object' title='Enable'><i class='icon-eye-slash'></i> Enable</a>";
+                            } else {
+                                $status = 'Active';
+                                $btn = "&nbsp;&nbsp;<a href='#' data-object-id='" . $aid . "' class='btn btn-amber btn-xs delete-object' title='Disable'><i class='fa fa-chain-broken'></i> " . $this->lang->line('Disable') . "</a>";
+                            }
                         }
+                        $delbtn= '';
+                        if($this->aauth->premission(11)){
+                            $delbtn = "<a href='#pop_model' data-toggle='modal' data-remote='false' data-object-id='" . $aid . "' class='btn btn-danger btn-xs delemp' title='Delete'><i class='fa fa-trash'></i></a>";
 
+                        }
                         if($row['roleid'] != 5){
                             $invoivesbtn = "<a href='" . base_url("employee/invoices?id=$aid") . "' class='btn btn-primary btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . " Invoices</a>
                             <a href='" . base_url("employee/salary_commission?id=$aid") . "' class='btn btn-info btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . " Salary & Commission</a>";
                         }
-
                         echo "<tr>
                     <td>$i</td>
                     <td>$name</td>
@@ -68,10 +74,8 @@
                     <td>$status</td>
                     <td>
                         <a href='" . base_url("employee/view?id=$aid") . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . "</a>
-                        &nbsp;&nbsp;$invoivesbtn
-                        &nbsp;&nbsp;$btn&nbsp;&nbsp;
-                        <a href='#pop_model' data-toggle='modal' data-remote='false' data-object-id='" . $aid . "' class='btn btn-danger btn-xs delemp' title='Delete'><i class='fa fa-trash'></i></a>
-                        </td></tr>";
+                        &nbsp;&nbsp;$invoivesbtn $btn  $delbtn
+                    </td></tr>";
                     
                     $i++;
                     }

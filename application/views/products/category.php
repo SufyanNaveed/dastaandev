@@ -47,13 +47,27 @@
                         $qty = +$row['qty'];
                         $salessum = amountFormat($row['salessum']);
                         $worthsum = amountFormat($row['worthsum']);
+                        $edit = '';
+                        $delete = '';
+                        if($this->aauth->premission(10)){
+                            $edit = "&nbsp;&nbsp;  <a href='" . base_url("productcategory/edit?id=$cid") . "' class='btn btn-warning btn-xs'><i class='fa fa-pencil'></i> " . $this->lang->line('Edit') . "</a>";
+                        }
+                        if($this->aauth->premission(11)){
+                            $delete = "&nbsp;&nbsp; <a href='#' data-object-id='" . $cid . "' class='btn btn-danger btn-xs delete-object' title='Delete'><i class='fa fa-trash'></i></a>";
+                        }
+
                         echo "<tr>
                     <td>$i</td>
                     <td>$title</td>
                     <td>$total</td>
                     <td>$qty</td>
                     <td>$salessum/$worthsum</td>
-                    <td><a href='" . base_url("productcategory/view?id=$cid") . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . "</a>&nbsp; <a class='btn btn-pink  btn-md' href='" . base_url() . "productcategory/report_product?id=" . $cid . "' target='_blank'> <span class='fa fa-pie-chart'></span>" . $this->lang->line('Sales') . "</a>&nbsp;  <a href='" . base_url("productcategory/edit?id=$cid") . "' class='btn btn-warning btn-xs'><i class='fa fa-pencil'></i> " . $this->lang->line('Edit') . "</a>&nbsp;<a href='#' data-object-id='" . $cid . "' class='btn btn-danger btn-xs delete-object' title='Delete'><i class='fa fa-trash'></i></a></td></tr>";
+                    <td>
+                        <a href='" . base_url("productcategory/view?id=$cid") . "' class='btn btn-success btn-xs'><i class='fa fa-eye'></i> " . $this->lang->line('View') . "</a>
+                        &nbsp; <a class='btn btn-pink  btn-md' href='" . base_url() . "productcategory/report_product?id=" . $cid . "' target='_blank'> <span class='fa fa-pie-chart'></span>" . $this->lang->line('Sales') . "</a>".
+                        $edit."".$delete."
+                    </td>
+                    </tr>";
 
 
                         $i++;
