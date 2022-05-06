@@ -208,9 +208,16 @@ class Employee extends CI_Controller
         foreach ($list as $invoices) {
             $commission_amount = 0;
             $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id);
+            // echo '<pre>'; print_r($invoices->id);exit;
             
-            foreach ($invoices_commission as $row) {
-                $commission_amount += ($row->subtotal * $row->commission) / 100;
+            foreach ($invoices_commission as $key=>$row) {
+                // echo '<pre>'; print_r($row);exit;
+                if($row->title != 'Shoes' || $row->pcat != 4){
+                    $calculate_discount_subtotal = $row->discount > 0 ? ($row->subtotal * $row->discount) / 100 : $row->subtotal;
+                    $commission_amount += ($calculate_discount_subtotal * $row->commission) / 100;
+                }else{
+                    $commission_amount += 500;
+                }
             }
             
             $no++;

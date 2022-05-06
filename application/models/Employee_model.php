@@ -40,9 +40,24 @@ class Employee_model extends CI_Model
         $this->db->join('geopos_employees', 'geopos_invoices.eid= geopos_employees.id', 'left');
         $this->db->where('geopos_invoices.eid', $id);
         $this->db->where('geopos_user_commission.emp_id', $id);
+        $this->db->where('geopos_products.pcat !=',4);
         $this->db->group_by('MONTH(geopos_invoices.invoicedate)');
         $result = $this->db->get(); 
-        $query = $result->result(); 
+        $query = $result->result();
+        
+        $this->db->select('geopos_invoices.eid, geopos_invoices.invoicedate, geopos_employees.salary, MONTHNAME(`geopos_invoices`.invoicedate) as month_name, MONTH(`geopos_invoices`.invoicedate) as month,YEAR(`geopos_invoices`.invoicedate) as year, SUM(500) as commission');
+        $this->db->from('geopos_invoices');
+        $this->db->join('geopos_invoice_items', 'geopos_invoices.id=geopos_invoice_items.tid', 'left');
+        $this->db->join('geopos_products', 'geopos_invoice_items.pid= geopos_products.pid', 'left');
+        $this->db->join('geopos_user_commission', 'geopos_user_commission.cat_id= geopos_products.pcat', 'left');
+        $this->db->join('geopos_employees', 'geopos_invoices.eid= geopos_employees.id', 'left');
+        $this->db->where('geopos_invoices.eid', $id);
+        $this->db->where('geopos_user_commission.emp_id', $id);
+        $this->db->where('geopos_products.pcat',4);
+        $this->db->group_by('MONTH(geopos_invoices.invoicedate)');
+        $results = $this->db->get();
+        $nquery = $results->result_array();
+ 
         if (!empty($query)){
             foreach ($query as $key => $value){
                 $this->db->select('*');
@@ -54,12 +69,13 @@ class Employee_model extends CI_Model
                 // echo '<pre>'; print_r($querys); exit;
                 $month = date('m');
                 $year = date('y');
+                $final_commission = $value->commission + $nquery[$key]['commission'];
                 if ($querys->num_rows() > 0 && $value->month >= $month && $value->year >= $year){
                     $row_data = $querys->row();
                     $this->db->where('id', $row_data->id);
-                    $update = $this->db->update('monthly_comission', array('emp_id' => $id,'monthly_salary' => $value->salary,'comission_month' => $row_data->comission_month, 'comission_year' => $row_data->comission_year, 'comission_amount' => $value->commission));
+                    $update = $this->db->update('monthly_comission', array('emp_id' => $id,'monthly_salary' => $value->salary,'comission_month' => $row_data->comission_month, 'comission_year' => $row_data->comission_year, 'comission_amount' => $final_commission));
                 }else if ($querys->num_rows() <= 0){
-                    $this->db->insert('monthly_comission', array('emp_id' => $id,'monthly_salary' => $value->salary, 'comission_month' => $value->month, 'comission_year' => $value->year, 'comission_amount' => $value->commission , 'comission_status' => 'unpaid')); 
+                    $this->db->insert('monthly_comission', array('emp_id' => $id,'monthly_salary' => $value->salary, 'comission_month' => $value->month, 'comission_year' => $value->year, 'comission_amount' => $final_commission , 'comission_status' => 'unpaid')); 
                 }
             }
         }
@@ -310,15 +326,17 @@ class Employee_model extends CI_Model
 
     function invoices_commission($id, $tid)
     {
-        $this->db->select('geopos_invoices.id,geopos_user_commission.commission, geopos_invoice_items.subtotal');
+        $this->db->select('geopos_invoices.id,geopos_invoices.discount,geopos_user_commission.commission, geopos_invoice_items.subtotal,geopos_products.pcat,geopos_product_cat.title');
         $this->db->from('geopos_invoices');
         $this->db->join('geopos_invoice_items', 'geopos_invoices.id=geopos_invoice_items.tid', 'left');
         $this->db->join('geopos_products', 'geopos_invoice_items.pid= geopos_products.pid', 'left');
         $this->db->join('geopos_user_commission', 'geopos_user_commission.cat_id= geopos_products.pcat', 'left');
+        $this->db->join('geopos_product_cat', 'geopos_product_cat.id= geopos_products.pcat', 'left');
         $this->db->where('geopos_invoices.eid', $id);
         $this->db->where('geopos_invoice_items.tid', $tid);
         $this->db->where('geopos_user_commission.emp_id', $id);
         $query = $this->db->get();
+        //echo '<pre>'; print_r($query->result());exit;
         return $query->result();
     }
 
