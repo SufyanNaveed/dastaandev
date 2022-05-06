@@ -69,7 +69,7 @@ class Employee_model extends CI_Model
                 // echo '<pre>'; print_r($querys); exit;
                 $month = date('m');
                 $year = date('y');
-                $final_commission = $value->commission + $nquery ? $nquery[$key]['commission'] : 0;
+                $final_commission = $nquery ? $value->commission + $nquery[$key]['commission'] : $value->commission;
                 if ($querys->num_rows() > 0 && $value->month >= $month && $value->year >= $year){
                     $row_data = $querys->row();
                     $this->db->where('id', $row_data->id);
