@@ -31,7 +31,21 @@ class Billing extends CI_Controller
         $this->load->model('billing_model', 'billing');
         $this->load->library("Aauth");
         $this->load->library("Custom");
+    }
 
+    public function index(){
+        
+        $ultramsg_token="90d9g6nso8u675mt"; // Ultramsg.com token
+        $instance_id="instance6245"; // Ultramsg.com instance id
+        $client = new UltraMsg\WhatsAppApi($ultramsg_token,$instance_id);
+        
+        $to="923335702766"; 
+        // $body="Sufyan Here. Mr. Mobeen this is testing Message and send from API."; 
+        // $api=$client->sendChatMessage($to,$body);
+        $filename="Sufyan Here. Mr. Mobeen this is testing document and send from API."; 
+        $document="https://file-example.s3-accelerate.amazonaws.com/documents/cv.pdf"; 
+        $api=$client->sendDocumentMessage($to,$filename,$document);
+        echo '<pre>'; print_r($api); exit;
     }
 
     public function view()
