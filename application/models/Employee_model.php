@@ -38,9 +38,10 @@ class Employee_model extends CI_Model
         $this->db->join('geopos_products', 'geopos_invoice_items.pid= geopos_products.pid', 'left');
         $this->db->join('geopos_user_commission', 'geopos_user_commission.cat_id= geopos_products.pcat', 'left');
         $this->db->join('geopos_employees', 'geopos_invoices.eid= geopos_employees.id', 'left');
+        $this->db->join('geopos_product_cat', 'geopos_product_cat.id= geopos_products.pcat', 'left');
         $this->db->where('geopos_invoices.eid', $id);
         $this->db->where('geopos_user_commission.emp_id', $id);
-        $this->db->where('geopos_products.pcat !=',4);
+        $this->db->where('geopos_product_cat.title !=','Shoes');
         $this->db->group_by('MONTH(geopos_invoices.invoicedate)');
         $result = $this->db->get(); 
         $query = $result->result();
@@ -51,9 +52,10 @@ class Employee_model extends CI_Model
         $this->db->join('geopos_products', 'geopos_invoice_items.pid= geopos_products.pid', 'left');
         $this->db->join('geopos_user_commission', 'geopos_user_commission.cat_id= geopos_products.pcat', 'left');
         $this->db->join('geopos_employees', 'geopos_invoices.eid= geopos_employees.id', 'left');
+        $this->db->join('geopos_product_cat', 'geopos_product_cat.id= geopos_products.pcat', 'left');
         $this->db->where('geopos_invoices.eid', $id);
         $this->db->where('geopos_user_commission.emp_id', $id);
-        $this->db->where('geopos_products.pcat',4);
+        $this->db->where('geopos_product_cat.title !=','Shoes');
         $this->db->group_by('MONTH(geopos_invoices.invoicedate)');
         $results = $this->db->get();
         $nquery = $results->result_array();

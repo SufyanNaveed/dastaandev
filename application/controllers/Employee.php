@@ -212,7 +212,7 @@ class Employee extends CI_Controller
             
             foreach ($invoices_commission as $key=>$row) {
                 // echo '<pre>'; print_r($row);exit;
-                if($row->title != 'Shoes' || $row->pcat != 4){
+                if($row->title != 'Shoes'){
                     $calculate_discount_subtotal = $row->discount > 0 ? ($row->subtotal * $row->discount) / 100 : $row->subtotal;
                     $commission_amount += ($calculate_discount_subtotal * $row->commission) / 100;
                 }else{
