@@ -62,7 +62,7 @@ class Employee extends CI_Controller
         $id = $this->input->get('id');
         $head['usernm'] = $this->aauth->get_user()->username;
         $head['title'] = 'Salary & Commission List';
-        $data['employee_commission'] = $this->employee->search_commision($id);
+        $data['employee_commission'] = $this->employee->get_commision_detail($id);
         $this->load->view('fixed/header', $head);
         $this->load->view('employee/salary_commssion', $data);
         $this->load->view('fixed/footer');
@@ -205,20 +205,28 @@ class Employee extends CI_Controller
         $list = $this->employee->invoice_datatables($eid);
         $data = array();
         $no = $this->input->post('start');
-        foreach ($list as $invoices) {
+        foreach ($list as $invoices) {    
+
             $commission_amount = 0;
-            $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id);
-            // echo '<pre>'; print_r($invoices->id);exit;
+            $sum_of_products = 0;
+            $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
+            $emp_salary = $invoices_commission[0]->salary;
+            //echo '<pre>'; print_r($emp_salary);exit; 
             
+            $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
+            $discount_amount_commission_calculate =  ($invoices->discount / $sum_of_products) * 100; 
+
             foreach ($invoices_commission as $key=>$row) {
-                // echo '<pre>'; print_r($row);exit;
                 if($row->title != 'Shoes'){
-                    $calculate_discount_subtotal = $row->discount > 0 ? ($row->subtotal * $row->discount) / 100 : $row->subtotal;
-                    $commission_amount += ($calculate_discount_subtotal * $row->commission) / 100;
+                    
+                    $discount_subtotal = $discount_amount_commission_calculate > 0 ? ($row->subtotal * $discount_amount_commission_calculate) / 100 : $row->subtotal;
+                    $calculate_discounted_amount = $row->subtotal - $discount_subtotal;
+                    $commission_amount += ($calculate_discounted_amount * $row->commission) / 100; 
                 }else{
                     $commission_amount += 500;
                 }
             }
+            //echo '<pre>'; print_r($commission_amount);exit; 
             
             $no++;
             $row = array();
@@ -245,10 +253,31 @@ class Employee extends CI_Controller
                     break;
             }
             $row[] = $out;
-            $row[] = $commission_amount;
+            $row[] = number_format($commission_amount,2);
             $row[] = '<a href="' . base_url("invoices/view?id=$invoices->id") . '" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> View</a> &nbsp; <a href="' . base_url("invoices/printinvoice?id=$invoices->id") . '&d=1" class="btn btn-info btn-xs"  title="Download"><span class="fa fa-download"></span></a>';
 
             $data[] = $row;
+        }
+        
+        $sum_of_commission_amount = array_sum(array_column($data,'6'));
+        $this->db->from('monthly_comission');
+        $this->db->where('emp_id',$eid);
+        $querys = $this->db->get();
+        $row_data = $querys->row();
+
+        if($sum_of_commission_amount){
+            $month = date('m');
+            $year = date('y');
+            if ($querys->num_rows() > 0 && $row_data->comission_amount != $sum_of_commission_amount){                
+                
+                $calculate_commision_Amount = $sum_of_commission_amount - $row_data->comission_amount;
+                $final_commission =  $calculate_commision_Amount + $row_data->comission_amount;
+                
+                $this->db->where('id', $row_data->id);
+                $update = $this->db->update('monthly_comission', array('comission_amount' => $final_commission));
+            }else if ($querys->num_rows() <= 0){
+                $this->db->insert('monthly_comission', array('emp_id' => $eid,'monthly_salary' => $emp_salary, 'comission_month' => $month, 'comission_year' => $year, 'comission_amount' => $commission_amount , 'comission_status' => 'unpaid')); 
+            }
         }
 
         $output = array(

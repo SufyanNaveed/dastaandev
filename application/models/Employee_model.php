@@ -59,7 +59,9 @@ class Employee_model extends CI_Model
         $this->db->group_by('MONTH(geopos_invoices.invoicedate)');
         $results = $this->db->get();
         $nquery = $results->result_array();
- 
+        // echo '<pre>'; print_r($query);exit; 
+        // echo '<pre>'; print_r($nquery);exit; 
+        
         if (!empty($query)){
             foreach ($query as $key => $value){
                 $this->db->select('*');
@@ -81,6 +83,15 @@ class Employee_model extends CI_Model
                 }
             }
         }
+        $this->db->select('monthly_comission.*, comission_month as month, comission_year as year, monthly_salary as salary,comission_amount as commission');
+        $this->db->from('monthly_comission');
+        $this->db->where('emp_id',$id);
+        $results = $this->db->get()->result_array(); 
+        return $results;
+    }
+     
+    public function get_commision_detail($id)
+    { 
         $this->db->select('monthly_comission.*, comission_month as month, comission_year as year, monthly_salary as salary,comission_amount as commission');
         $this->db->from('monthly_comission');
         $this->db->where('emp_id',$id);
@@ -328,12 +339,13 @@ class Employee_model extends CI_Model
 
     function invoices_commission($id, $tid)
     {
-        $this->db->select('geopos_invoices.id,geopos_invoices.discount,geopos_user_commission.commission, geopos_invoice_items.subtotal,geopos_products.pcat,geopos_product_cat.title');
+        $this->db->select('geopos_invoices.id,geopos_invoices.discount,geopos_user_commission.commission, geopos_invoice_items.subtotal,geopos_products.pcat,geopos_product_cat.title,geopos_employees.salary');
         $this->db->from('geopos_invoices');
         $this->db->join('geopos_invoice_items', 'geopos_invoices.id=geopos_invoice_items.tid', 'left');
         $this->db->join('geopos_products', 'geopos_invoice_items.pid= geopos_products.pid', 'left');
         $this->db->join('geopos_user_commission', 'geopos_user_commission.cat_id= geopos_products.pcat', 'left');
         $this->db->join('geopos_product_cat', 'geopos_product_cat.id= geopos_products.pcat', 'left');
+        $this->db->join('geopos_employees', 'geopos_invoices.eid= geopos_employees.id', 'left');
         $this->db->where('geopos_invoices.eid', $id);
         $this->db->where('geopos_invoice_items.tid', $tid);
         $this->db->where('geopos_user_commission.emp_id', $id);
