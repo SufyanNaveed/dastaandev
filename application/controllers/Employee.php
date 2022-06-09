@@ -69,10 +69,18 @@ class Employee extends CI_Controller
     }
 
     public function commission_status_update($id,$eid)
-    {
-        
+    {        
         $res = $this->employee->commission_status_update($id, $eid);
         redirect('employee/salary_commission?id='.$eid, 'refresh');
+    }
+
+    public function commission_amount_update(){
+        $id = $this->input->post('id');
+        $amount = $this->input->post('amount');
+        $res = $this->employee->commission_amount_update($id,$amount);
+        
+        echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('ADDED')));
+        redirect('employee/salary_commission?id='.$res, 'refresh');
 
     }
 

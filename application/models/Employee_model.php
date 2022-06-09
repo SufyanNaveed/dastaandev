@@ -95,7 +95,7 @@ class Employee_model extends CI_Model
         $this->db->select('monthly_comission.*, comission_month as month, comission_year as year, monthly_salary as salary,comission_amount as commission');
         $this->db->from('monthly_comission');
         $this->db->where('emp_id',$id);
-        $results = $this->db->get()->result_array(); 
+        $results = $this->db->get()->result_array();
         return $results;
     }
     
@@ -105,6 +105,30 @@ class Employee_model extends CI_Model
         $this->db->where('emp_id', $eid);
         $update = $this->db->update('monthly_comission', array('comission_status' => 'paid'));
         return $update;
+    }
+    
+    public function commission_amount_update($id, $amount)
+    {
+        $this->db->where('id', $id); 
+        $this->db->from('monthly_comission');
+        $get_record = $this->db->get();
+        $get_record_data = $get_record->row_array();
+        
+        if($get_record->num_rows() > 0){
+            $total = $get_record_data['paid_amount'] + $amount;
+            $this->db->where('id', $id);
+            $update = $this->db->update('monthly_comission', array('paid_amount' => $total,'comission_status' => 'paid'));
+
+            $array = array(
+                'mc_id' => $id,
+                'amount' => $amount,
+                'created_by' => $_SESSION['id']
+            );
+            $this->db->insert('monthly_payment_transaction', $array);
+            
+        }
+        
+        return $get_record_data['emp_id'];
     }
     
     public function list_employee_without_admin()
