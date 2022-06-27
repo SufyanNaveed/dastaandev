@@ -79,6 +79,46 @@ class Employee extends CI_Controller
         $amount = $this->input->post('amount');
         $res = $this->employee->commission_amount_update($id,$amount);
         
+        $this->db->where('id',$id);
+        $results = $this->db->get('monthly_comission')->row_array();
+
+        if ($amount > 0) {
+            $data = array(
+                'payerid' => 0,
+                'payer' => NULL,
+                'acid' => 1,
+                'account' => 'Sales Account',
+                'date' => date('Y-m-d'),
+                'debit' => $amount,
+                'credit' => 0,
+                'type' => 'Expense',
+                'cat' => 'Expenses',
+                'method' => 'Cash',
+                'eid' => $results['emp_id'],
+                'note' => 'Paid to Employee',
+                'ext' => 2,
+                'loc' => $this->aauth->get_user()->loc
+            );            
+            $this->load->model('transactions_model', 'transactions');
+
+            $this->db->select('holder');
+            $this->db->from('geopos_accounts');
+            $this->db->where('id', 1);
+            $query = $this->db->get();
+            $account = $query->row_array();
+             
+            $this->db->set('lastbal', "lastbal-$amount", FALSE);
+            $this->db->where('id', 1);
+            $this->db->update('geopos_accounts');
+
+
+            $this->db->insert('geopos_transactions', $data);
+
+            //echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('Transaction has been')));
+        } else {
+            echo json_encode(array('status' => 'Error', 'message' =>
+                'Error!'));
+        }
         echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('ADDED')));
         redirect('employee/salary_commission?id='.$res, 'refresh');
 

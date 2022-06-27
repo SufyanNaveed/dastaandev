@@ -633,6 +633,113 @@
 
                     </ul>
                 </li>
+                <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#"
+                                                                      data-toggle="dropdown"><i
+                                class="icon-pie-chart"></i><span><?php echo 'Data & Reports' ?></span></a>
+                    <ul class="dropdown-menu">
+                        <!-- <li data-menu="">
+                            <a class="dropdown-item" href="<?php echo base_url(); ?>register"><i
+                                        class="icon-eyeglasses"></i><?php echo 'Business Registers' ?>
+                            </a>
+                        </li> -->
+
+                        <!-- <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a
+                                    class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown"><i
+                                        class="icon-doc"></i><?php echo 'Statements' ?></a>
+                            <ul class="dropdown-menu">
+
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/accountstatement"
+                                                    data-toggle="dropdown"><?= 'Account Statements' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/customerstatement"
+                                                    data-toggle="dropdown"><?php echo 'Customer_Account_Statements'  ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/supplierstatement"
+                                                    data-toggle="dropdown"><?php echo 'Supplier_Account_Statements' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/taxstatement"
+                                                    data-toggle="dropdown"><?php echo 'TAX_Statements' ?></a>
+                                </li>
+                            </ul>
+                        </li> -->
+
+                        <!-- <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a
+                                    class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown"><i
+                                        class="icon-bar-chart"></i><?php echo 'Graphical Reports' ?>
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>chart/product_cat"
+                                                    data-toggle="dropdown"><?= 'Product Categories' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>chart/trending_products"
+                                                    data-toggle="dropdown"><?= 'Trending Products' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item" href="<?php echo base_url(); ?>chart/profit"
+                                                    data-toggle="dropdown"><?= 'Profit' ?></a>
+                                </li>
+
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>chart/topcustomers"
+                                                    data-toggle="dropdown"><?php echo 'Top_Customers' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item" href="<?php echo base_url(); ?>chart/incvsexp"
+                                                    data-toggle="dropdown"><?php echo 'income_vs_expenses' ?></a>
+                                </li>
+
+                                <li data-menu=""><a class="dropdown-item" href="<?php echo base_url(); ?>chart/income"
+                                                    data-toggle="dropdown"><?= 'Income' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item" href="<?php echo base_url(); ?>chart/expenses"
+                                                    data-toggle="dropdown"><?= 'Expenses' ?></a>
+
+
+                            </ul>
+                        </li> -->
+                        <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a
+                                    class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown"><i
+                                        class="icon-bulb"></i><?php echo 'Summary & Report' ?>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/statistics"
+                                                    data-toggle="dropdown"><?php echo 'Statistics' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/profitstatement"
+                                                    data-toggle="dropdown"><?= 'Profit' ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/incomestatement"
+                                                    data-toggle="dropdown"><?php echo 'Calculate Income'; ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/expensestatement"
+                                                    data-toggle="dropdown"><?php echo 'Calculate Expenses' ?></a>
+                                </li> -->
+                                <!-- <li data-menu=""><a class="dropdown-item" href="<?php echo base_url(); ?>reports/sales"
+                                                    data-toggle="dropdown"><?php echo 'Sales' ?></a>
+                                </li> -->
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/products"
+                                                    data-toggle="dropdown"><?php echo 'Products' ?></a>
+                                </li>
+                                <!-- <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>reports/commission"
+                                                    data-toggle="dropdown"><?= 'Employee_Commission' ?></a>
+                                </li> -->
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
             <?php }
             ?>
 
