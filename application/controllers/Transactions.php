@@ -329,15 +329,9 @@ class Transactions extends CI_Controller
     public function cancelinvoice()
     {
         if (!$this->aauth->premission(1)) {
-
             exit('<h3>Sorry! You have insufficient permissions to access this section</h3>');
-
         }
-
-
         $tid = intval($this->input->post('tid'));
-
-
         $this->db->set('pamnt', "0.00", FALSE);
         $this->db->set('total', "0.00", FALSE);
         $this->db->set('items', 0);
@@ -356,9 +350,9 @@ class Transactions extends CI_Controller
             $this->db->where('id', $trans['acid']);
             $this->db->update('geopos_accounts');
         }
-        $this->db->select('pid,qty');
-        $this->db->from('geopos_invoice_items');
-        $this->db->where('tid', $tid);
+        $this->db->select('gii.pid,gii.qty');
+        $this->db->from('geopos_invoice_items gii');
+        $this->db->where('gii.tid', $tid);
         $query = $this->db->get();
         $prevresult = $query->result_array();
         foreach ($prevresult as $prd) {
@@ -367,9 +361,51 @@ class Transactions extends CI_Controller
             $this->db->where('pid', $prd['pid']);
             $this->db->update('geopos_products');
         }
+
+        $this->db->select('gi.eid,gi.discount,gi.invoicedate,gi.status');
+        $this->db->from('geopos_invoices gi'); 
+        $this->db->where('gi.id', $tid);
+        $query = $this->db->get();
+        $invoice_result = $query->row_array();
+        
+        $this->load->model('employee_model', 'employee');
+        if($invoice_result['status'] == 'canceled'){ 
+            $commission_amount = 0;
+            $sum_of_products = 0;
+            $invoices_commission = $this->employee->invoices_commission($invoice_result['eid'],$tid); 
+            $emp_salary = $invoices_commission[0]->salary;
+            
+            $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
+            $discount_amount_commission_calculate =  ($invoice_result['discount'] / $sum_of_products) * 100; 
+
+            foreach ($invoices_commission as $key=>$row) {
+                if($row->title != 'Shoes'){                    
+                    $discount_subtotal = $discount_amount_commission_calculate > 0 ? ($row->subtotal * $discount_amount_commission_calculate) / 100 : $row->subtotal;
+                    $calculate_discounted_amount = $row->subtotal - $discount_subtotal;
+                    $commission_amount += ($calculate_discounted_amount * $row->commission) / 100; 
+                }else{
+                    $commission_amount += 500;
+                }
+            }
+            $invoice_date = explode('-',$invoice_result['invoicedate']);
+            $invoice_year = $invoice_date[0];
+            $invoice_month = $invoice_date[1];
+            
+            $this->db->select('id,comission_amount as camt');
+            $this->db->where('comission_month', $invoice_month);
+            $this->db->where('comission_year', $invoice_year);
+            $this->db->where('emp_id',$invoice_result['eid']);
+            $query = $this->db->get('monthly_comission');
+            $commision_res = $query->row_array();
+            
+            $sub_res = $commision_res['camt'] - $commission_amount;                
+            $this->db->where('id', $commision_res['id']);
+            $update = $this->db->update('monthly_comission', array('comission_amount' => $sub_res));
+        }
+
         $this->db->delete('geopos_transactions', array('tid' => $tid));
         echo json_encode(array('status' => 'Success', 'message' =>
-            $this->lang->line('Invoice canceled')));
+        $this->lang->line('Invoice canceled')));
     }
 
 
@@ -422,7 +458,12 @@ class Transactions extends CI_Controller
         $data = array();
         // $no = $_POST['start'];
         $no = $this->input->post('start');
+
         foreach ($list as $prd) {
+            //echo '<pre>'; print_r($prd); exit;
+            $this->db->select('name');
+            $this->db->where('id', $prd->eid);
+            $empl = $this->db->get('geopos_employees')->row_array();
             $no++;
             $row = array();
             $pid = $prd->id;
@@ -430,7 +471,7 @@ class Transactions extends CI_Controller
             $row[] = $prd->account;
             $row[] = amountFormat($prd->debit);
             $row[] = amountFormat($prd->credit);
-            $row[] = $prd->payer;
+            $row[] = $prd->note != 'Paid to Employee' ? $prd->payer : 'Paid to Employee ('.$empl['name'].')';
             $row[] = $this->lang->line($prd->method);
             $row[] = '<a href="' . base_url() . 'transactions/view?id=' . $pid . '" class="btn btn-primary btn-xs"><span class="fa fa-eye"></span>  ' . $this->lang->line('View') . '</a> <a href="' . base_url() . 'transactions/print_t?id=' . $pid . '" class="btn btn-info btn-xs"  title="Print"><span class="fa fa-print"></span></a>&nbsp; &nbsp;<a  href="#" data-object-id="' . $pid . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
             $data[] = $row;

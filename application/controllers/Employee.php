@@ -256,22 +256,25 @@ class Employee extends CI_Controller
         foreach ($list as $invoices) {    
 
             $commission_amount = 0;
-            $sum_of_products = 0;
-            $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
-            $emp_salary = $invoices_commission[0]->salary;
-            //echo '<pre>'; print_r($emp_salary);exit; 
             
-            $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
-            $discount_amount_commission_calculate =  ($invoices->discount / $sum_of_products) * 100; 
+            if($invoices->status != 'canceled'){
+                $sum_of_products = 0;
+                $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
+                $emp_salary = $invoices_commission[0]->salary;
+                //echo '<pre>'; print_r($emp_salary);exit; 
+                
+                $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
+                $discount_amount_commission_calculate =  ($invoices->discount / $sum_of_products) * 100; 
 
-            foreach ($invoices_commission as $key=>$row) {
-                if($row->title != 'Shoes'){
-                    
-                    $discount_subtotal = $discount_amount_commission_calculate > 0 ? ($row->subtotal * $discount_amount_commission_calculate) / 100 : $row->subtotal;
-                    $calculate_discounted_amount = $row->subtotal - $discount_subtotal;
-                    $commission_amount += ($calculate_discounted_amount * $row->commission) / 100; 
-                }else{
-                    $commission_amount += 500;
+                foreach ($invoices_commission as $key=>$row) {
+                    if($row->title != 'Shoes'){
+                        
+                        $discount_subtotal = $discount_amount_commission_calculate > 0 ? ($row->subtotal * $discount_amount_commission_calculate) / 100 : $row->subtotal;
+                        $calculate_discounted_amount = $row->subtotal - $discount_subtotal;
+                        $commission_amount += ($calculate_discounted_amount * $row->commission) / 100; 
+                    }else{
+                        $commission_amount += 500;
+                    }
                 }
             }
             //echo '<pre>'; print_r($commission_amount);exit; 
