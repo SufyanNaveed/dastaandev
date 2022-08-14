@@ -187,7 +187,7 @@
                                            value="<?php echo $user['salary'] ?>">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
 
                                 <label class="col-sm-2 col-form-label"
                                        for="city"><?php echo $this->lang->line('Commission') ?>%</label>
@@ -201,12 +201,39 @@
                                     taxes,shipping,discounts
                                 </small>
 
-                            </div>
-                            <input type="hidden"
-                                   name="eid"
-                                   value="<?php echo $user['id'] ?>">
+                            </div> -->
+                            <?php if($employee_commission){ foreach($employee_commission as $r_id => $commission_row) {?>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" or="city"><?php if($r_id == 0){ ?> <?php echo $this->lang->line('Sales') ?> <?php echo 'Commission' ?> % <?php } else { echo '&nbsp;'; } ?> </label>
+                                    <div class="col-sm-3">
+                                        <select name="cat_id[]" class="form-control margin-bottom">
+                                            <option value="">-- Please Select --</option>
+                                            <?php if($cat){ foreach($cat as $row) {?>
+                                                <option value="<?php echo $row['id']; ?>" <?= $commission_row['title'] == $row['title'] ? 'selected': '' ?> > <?php echo $row['title']; ?></option>
+                                            <?php } } ?>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-sm-2">
+                                        <input type="number" placeholder="Commission %" value="<?= $commission_row['commission']?>"
+                                            class="form-control margin-bottom" name="commission[]">
+                                    </div>
+                                    <?php if($r_id == 0){ ?>
+                                        <div class="col-sm-2">
+                                            <button type="button" class="btn btn-success appned_more_cat"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    <?php } else{ ?>
+                                        <div class="col-sm-2">
+                                            <button type="button" class="btn btn-success remove_field"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                    <?php } ?>
+                                    <input type="hidden" name="commission_pid[]" value="<?php echo $commission_row['id'] ?>">
+                                </div>
+                            <?php } } ?>
+                            <div class="appned_new_fields"></div>
 
-
+                            
+                            <input type="hidden" name="eid" value="<?php echo $user['id'] ?>">
                             <div class="form-group row">
 
                                 <label class="col-sm-2 col-form-label"></label>
@@ -293,4 +320,40 @@
         }).prop('disabled', !$.support.fileInput)
             .parent().addClass($.support.fileInput ? undefined : 'disabled');
     });
+
+    $(document).ready(function() {
+        var x = 1;
+        $('.appned_more_cat').click(function(e){ //on add input button click
+            e.preventDefault();
+            $.ajax({
+                url: '<?php echo base_url('employee/get_cat') ?>',
+                type: 'GET',
+                success: function (data) {
+                    var html = '<div class="form-group row remove_cats">'+
+                                '<label class="col-sm-2 col-form-label" >&nbsp;</label>'+
+                                    '<div class="col-sm-3">'+
+                                        '<select name="cat_id[]" class="form-control margin-bottom">'+
+                                            '<option value="">-- Please Select --</option>'+data+
+                                        '</select>'+
+                                    '</div>'+
+                                    '<div class="col-sm-2">'+
+                                        '<input type="number" placeholder="Commission %" value="0" class="form-control margin-bottom" name="commission[]">'+
+                                    '</div>'+
+                                    '<div class="col-sm-2">'+
+                                    '<button type="button" class="btn btn-success remove_field"><i class="fa fa-minus"></i></button>'+
+                                    '</div>'+ 
+                            '</div>';
+                    $('.appned_new_fields').append(html); 
+                },
+                error: function (data) {
+                    
+                }
+            }); 
+        });
+
+        $("body").on("click",".remove_field", function(e){
+            e.preventDefault(); 
+            $(this).closest('.remove_cats').remove(); x--;
+        }); 
+    }) 
 </script>

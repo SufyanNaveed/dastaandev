@@ -261,23 +261,28 @@ class Employee extends CI_Controller
                 $sum_of_products = 0;
                 $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
                 $emp_salary = $invoices_commission[0]->salary;
-                //echo '<pre>'; print_r($emp_salary);exit; 
+                // echo '<pre>'; print_r($emp_salary);exit; 
                 
                 $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
+                // echo '<pre>'; print_r($invoices->discount);
+                // echo '<pre>'; print_r($sum_of_products);exit;
                 $discount_amount_commission_calculate =  ($invoices->discount / $sum_of_products) * 100; 
+            // echo '<pre>'; print_r($discount_amount_commission_calculate);
+            // echo '<pre>'; print_r($invoices_commission);exit; 
 
                 foreach ($invoices_commission as $key=>$row) {
                     if($row->title != 'Shoes'){
                         
                         $discount_subtotal = $discount_amount_commission_calculate > 0 ? ($row->subtotal * $discount_amount_commission_calculate) / 100 : $row->subtotal;
                         $calculate_discounted_amount = $row->subtotal - $discount_subtotal;
-                        $commission_amount += ($calculate_discounted_amount * $row->commission) / 100; 
+                        $commission_amount += ($calculate_discounted_amount * $row->commission) / 100;
+                        // echo '<pre>'; print_r($commission_amount); 
                     }else{
                         $commission_amount += 500;
                     }
                 }
             }
-            //echo '<pre>'; print_r($commission_amount);exit; 
+            // echo '<pre>'; print_r($commission_amount);exit; 
             
             $no++;
             $row = array();
@@ -536,8 +541,13 @@ class Employee extends CI_Controller
             $location = $this->input->post('location', true);
             $salary = $this->input->post('salary', true);
             $department = $this->input->post('department', true);
-            $commission = $this->input->post('commission', true);
-            $this->employee->update_employee($eid, $name, $phone, $phonealt, $address, $city, $region, $country, $postbox, $location, $salary, $department, $commission);
+            $commission = 0;
+
+            $multi_cats = $this->input->post('cat_id', true);
+            $multi_commissions = $this->input->post('commission', true);
+            $multi_commission_pid = $this->input->post('commission_pid', true);
+
+            $this->employee->update_employee($eid, $name, $phone, $phonealt, $address, $city, $region, $country, $postbox, $location, $salary, $department, $commission, $multi_cats, $multi_commissions, $multi_commission_pid);
 
         } else {
             $head['usernm'] = $this->aauth->get_user($id)->username;
@@ -546,6 +556,8 @@ class Employee extends CI_Controller
 
             $data['user'] = $this->employee->employee_details($id);
             $data['dept'] = $this->employee->department_list($id, $this->aauth->get_user()->loc);
+            $data['cat'] = $this->products_cat->category_stock();
+            $data['employee_commission'] = $this->employee->get_employee_commission($id);
             $data['eid'] = intval($id);
             $this->load->view('fixed/header', $head);
             $this->load->view('employee/edit', $data);

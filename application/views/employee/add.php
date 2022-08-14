@@ -177,11 +177,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-
-                        <label class="col-sm-2 col-form-label"
-                               for="city"><?php echo $this->lang->line('Sales') ?> <?php echo $this->lang->line('Commission') ?>
-                            %</label>
-
+                        <label class="col-sm-2 col-form-label" for="city"><?php echo $this->lang->line('Sales') ?> <?php echo 'Commission' ?> %</label>
                             <div class="col-sm-3">
                                 <select name="cat_id[]" class="form-control margin-bottom">
                                     <option value="">-- Please Select --</option>

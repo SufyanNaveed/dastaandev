@@ -175,7 +175,7 @@ class Employee_model extends CI_Model
         return $query->result_array();
     }
 
-    public function update_employee($id, $name, $phone, $phonealt, $address, $city, $region, $country, $postbox, $location, $salary = 0, $department = -1,$commission=0)
+    public function update_employee($id, $name, $phone, $phonealt, $address, $city, $region, $country, $postbox, $location, $salary = 0, $department = -1,$commission=0, $multi_cats, $multi_commissions, $multi_commission_pid)
     {
         $this->db->select('salary');
         $this->db->from('geopos_employees');
@@ -235,6 +235,8 @@ class Employee_model extends CI_Model
 
                 $this->db->insert('geopos_hrm', $data1);
             }
+
+            $this->employee->update_employee_commission($multi_cats, $multi_commissions, $multi_commission_pid);
 
             echo json_encode(array('status' => 'Success', 'message' =>
                 $this->lang->line('UPDATED')));
@@ -519,6 +521,39 @@ class Employee_model extends CI_Model
         }
         
         $this->db->insert_batch('geopos_user_commission', $data);
+
+    }
+
+    public function update_employee_commission($multi_cats, $multi_commissions, $multi_commission_pid)
+    {
+        // echo '<pre>'; print_r($multi_cats);
+        // echo '<pre>'; print_r($multi_commissions);
+        // echo '<pre>'; print_r($multi_commission_pid);exit;
+        
+        
+        foreach($multi_commission_pid as $key => $row){
+            $data = array();
+            $data = array(
+                'cat_id' => $multi_cats[$key],
+                'commission' => $multi_commissions[$key],
+                'updated_by' => $this->aauth->get_user()->id
+            );
+            // echo '<pre>'; print_r($data);
+            $this->db->where('id', $multi_commission_pid[$key]);
+            $this->db->update('geopos_user_commission', $data);
+        }
+        
+
+    }
+
+    public function get_employee_commission($eid)
+    {
+        $this->db->select('geopos_user_commission.*, geopos_product_cat.title');
+        $this->db->from('geopos_user_commission');
+        $this->db->join('geopos_product_cat','geopos_product_cat.id = geopos_user_commission.cat_id');
+        $this->db->where('emp_id', $eid);
+        $query = $this->db->get();
+        return $query->result_array();
 
     }
 
