@@ -652,7 +652,8 @@ function formatRest(taxFormat, disFormat, trate = '') {
             if (disFormat == '%' || disFormat == 'flat') {
 
 
-                var Inpercentage = (+result * +vatVal) / (100 + +vatVal);
+                // var Inpercentage = (+result * +vatVal) / (100 + +vatVal);
+                var Inpercentage = (+result * +vatVal) / (100);
                 var result = parseFloat(result);
                 taxr = parseFloat(taxr) + parseFloat(Inpercentage);
                 $("#texttaxa-" + x).html(deciFormat(Inpercentage));

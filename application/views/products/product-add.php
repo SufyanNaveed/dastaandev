@@ -303,20 +303,19 @@
     /*to update than or quantity*/
     function updateCatogery(){
         $select_type = $('#select_type').find(":selected").text();
-        if($select_type == 'Suits' || $select_type == 'Suit'){
-            $('#than_quantity').html('<?php echo $this->lang->line('Suits Quantity')?>');
-            $('#than').attr("placeholder", "Suits Quantity");
-            $('#product_length').hide();
-            $('#mea_unit').hide();
-            $('#length').val(1);
-        }
-        else{
+        if($select_type == 'Than' || $select_type == 'than'){
             $('#than_quantity').html('<?php echo $this->lang->line('Thans')?>');
             $('#than').attr("placeholder", "Thans");
             $('#product_length').show();
             $('#mea_unit').show();
             $('#length').val('');
-        }
+        }else{
+            $('#than_quantity').html('<?php echo $this->lang->line('Quantity')?>');
+            $('#than').attr("placeholder", "Enter Quantity");
+            $('#product_length').hide();
+            $('#mea_unit').hide();
+            $('#length').val(1);
+        } 
     }
 </script>
 

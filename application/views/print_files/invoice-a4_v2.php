@@ -220,7 +220,7 @@
                 </tr> -->
                 <?php if($general['title'] == 'Invoice'){?>
                 <tr>
-                    <td class="meta-head">Trial Dategggg: </td>
+                    <td class="meta-head">Trial Date: </td>
                     <td><?= dateformat($nap['trial_date']) ?></td>
                 </tr>
                 <tr>

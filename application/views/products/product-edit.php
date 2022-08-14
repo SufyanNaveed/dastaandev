@@ -299,18 +299,17 @@
     /*to update than or quantity*/
     function updateCatogery(){
         $select_type = $('#select_type').find(":selected").text();
-        if($select_type == 'Suits' || $select_type == 'Suit'){
-            $('#than_quantity').html('<?php echo $this->lang->line('Suits Quantity')?>');
-            $('#than').attr("placeholder", "Suits Quantity");
-	    $('#than').val($('#than').attr('suit-qty'));
-            $('#product_length').hide();
-            $('#mea_unit').hide();
-        }
-        else{
+        if($select_type == 'Than' || $select_type == 'than'){
             $('#than_quantity').html('<?php echo $this->lang->line('Thans')?>');
             $('#than').attr("placeholder", "Thans");
             $('#product_length').show();
             $('#mea_unit').show();
+        }else{
+            $('#than_quantity').html('<?php echo $this->lang->line('Quantity')?>');
+            $('#than').attr("placeholder", "Enter Quantity");
+            $('#than').val($('#than').attr('suit-qty'));
+            $('#product_length').hide();
+            $('#mea_unit').hide();
         }
     }
         </script>

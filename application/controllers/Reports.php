@@ -167,9 +167,17 @@ class Reports extends CI_Controller
         $list = $this->reports->get_statements($pay_acc, $trans_type, $sdate, $edate);
         $balance = 0;
 
+        //echo '<pre>'; print_r($list); exit;
         foreach ($list as $row) {
-            $balance += $row['credit'] - $row['debit'];
-            echo '<tr><td>' . $row['date'] . '</td><td>' . $row['note'] . '</td><td>' . amountFormat($row['debit']) . '</td><td>' . amountFormat($row['credit']) . '</td><td>' . amountFormat($balance) . '</td></tr>';
+            $credit = 0;
+            if($row['pmethod'] == 'Card Swipe'){
+                $credit = $row['credit'] - $row['tax'];
+            }else{
+                $credit = $row['credit'];
+            }
+
+            $balance += $credit - $row['debit'];
+            echo '<tr><td>' . $row['date'] . '</td><td>' . $row['note'] . '</td><td>' . amountFormat($row['debit']) . '</td><td>' . amountFormat($credit) . '</td><td>' . amountFormat($balance) . '</td></tr>';
         }
 
     }

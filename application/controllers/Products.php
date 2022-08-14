@@ -96,8 +96,7 @@ class Products extends CI_Controller
             if($prd->title == 'Suits'||$prd->title == 'Suit'){
                 $qty = $prd->qty;
                 $totalSuits += $prd->qty;
-            }
-            else{
+            }else{
                 $length = $prd->pro_than_len > 0 ? $prd->qty / $prd->pro_than_len : 0;
                 $length = (int)$length;
                 $meters = $prd->pro_than_len > 0 ? $prd->qty % $prd->pro_than_len : 0;
@@ -160,7 +159,6 @@ class Products extends CI_Controller
             // $data['tThanM'] = $tThansMerter;
              $data[] = $row;
         }
-
         $output = array(
             "draw" => $this->input->post('draw'),
             "recordsTotal" => $this->products->count_all($catid),
@@ -176,10 +174,10 @@ class Products extends CI_Controller
         $tThansMerter = 0;
         $tThans = 0;
         $data = $this->products->quantity($pid);
+
         if($data->title == 'Suits'||$data->title == 'Suit'){
             $qty = $data->total_qty;
-        }
-        else{
+        }else if($data->title == 'Than'||$data->title == 'than'){
             $length = $data->pro_than_len > 0 ? $data->total_qty / $data->pro_than_len : 0;
             $length = (int)$length;
             $meters = fmod($data->total_qty, $data->pro_than_len);
@@ -193,7 +191,9 @@ class Products extends CI_Controller
                 }
                 $tThansMerter += $meters;
             }
-        }
+        } else {
+            $qty = $data->total_qty;
+        } 
         return $qty;
     }
     public function addproduct()

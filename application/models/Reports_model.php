@@ -58,8 +58,9 @@ class Reports_model extends CI_Model
         } else {
             $where = "acid='$pay_acc' AND (DATE(date) BETWEEN '$sdate' AND '$edate') AND type='$trans_type'";
         }
-        $this->db->select('*');
+        $this->db->select('geopos_transactions.*,gi.tax, gi.pmethod');
         $this->db->from('geopos_transactions');
+        $this->db->join('geopos_invoices as gi','gi.id = geopos_transactions.tid','left');
         $this->db->where($where);
         if ($this->aauth->get_user()->loc) {
             $this->db->where('loc', $this->aauth->get_user()->loc);
