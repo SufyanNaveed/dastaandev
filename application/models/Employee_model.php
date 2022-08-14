@@ -326,8 +326,8 @@ class Employee_model extends CI_Model
 
         foreach ($this->column_search as $item) // loop column
         {
-            $search = $this->input->post('search');
-            $value = $search['value'];
+            $search = !empty($this->input->post('search')) > 0 ? $this->input->post('search') : array();
+            $value = !empty($search) ? $search['value'] : '';
             if ($value) // if datatable send POST for search
             {
 
@@ -354,11 +354,13 @@ class Employee_model extends CI_Model
         }
     }
 
-    function invoice_datatables($id)
+    function invoice_datatables($id,$length=0)
     {
         $this->_invoice_datatables_query($id);
-        if ($this->input->post('length') != -1)
-            $this->db->limit($this->input->post('length'), $this->input->post('start'));
+        // if($length == 1 ){} else{
+        //     if ($this->input->post('length') != -1)
+        //         $this->db->limit($this->input->post('length'), $this->input->post('start'));
+        // }
         $query = $this->db->get();
         return $query->result();
     }
