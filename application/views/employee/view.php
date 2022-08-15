@@ -24,7 +24,7 @@
                     <div class="col-md-4 border-right">
 
                         <img alt="image" class="img-responsive"
-                             src="<?php echo base_url('userfiles/employee/' . $employee['picture']); ?>">
+                             src="<?php echo base_url('userfiles/employee/' . $employee['picture']); ?>" style="width: 100px;height: 100px;">
 
                         <hr>
 
