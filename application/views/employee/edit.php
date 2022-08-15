@@ -11,8 +11,7 @@
                     <h5><?php echo $this->lang->line('Update Profile Picture') ?></h5>
                     <hr>
                     <div class="ibox-content no-padding border-left-right">
-                        <img alt="profile picture" id="dpic" class="img-responsive"
-                             src="<?php echo base_url('userfiles/employee/') . $user['picture'] ?>">
+                        <img alt="profile picture" id="dpic" class="img-responsive" src="<?php echo base_url('userfiles/employee/') . $user['picture'] ?>" style="width: 100px;height: 100px;">
                     </div>
                     <hr>
                     <p><label for="fileupload"><?php echo $this->lang->line('Change Your Picture') ?></label><input
@@ -25,8 +24,7 @@
                 <div class="card card-block card-body"><h5><?php echo $this->lang->line('Update Your Signature') ?></h5>
                     <hr>
                     <div class="ibox-content no-padding border-left-right">
-                        <img alt="sign_pic" id="sign_pic" class="img-responsive"
-                             src="<?php echo base_url('userfiles/employee_sign/') . $user['sign'] ?>">
+                        <img alt="sign_pic" id="sign_pic" class="img-responsive" src="<?php echo base_url('userfiles/employee_sign/') . $user['sign'] ?>" style="width: 100px;height: 100px;">
                     </div>
                     <hr>
                     <p>
