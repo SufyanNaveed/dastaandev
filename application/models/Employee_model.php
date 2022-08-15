@@ -354,13 +354,11 @@ class Employee_model extends CI_Model
         }
     }
 
-    function invoice_datatables($id,$length=0)
+    function invoice_datatables($id)
     {
         $this->_invoice_datatables_query($id);
-        // if($length == 1 ){} else{
-        //     if ($this->input->post('length') != -1)
-        //         $this->db->limit($this->input->post('length'), $this->input->post('start'));
-        // }
+        if ($this->input->post('length') != -1)
+            $this->db->limit($this->input->post('length'), $this->input->post('start'));
         $query = $this->db->get();
         return $query->result();
     }
@@ -556,6 +554,16 @@ class Employee_model extends CI_Model
         $this->db->where('emp_id', $eid);
         $query = $this->db->get();
         return $query->result_array();
+
+    }
+
+    public function get_employee_id($eid)
+    {
+        $this->db->select('salary');
+        $this->db->from('geopos_employees');
+        $this->db->where('id', $eid);
+        $query = $this->db->get();
+        return $query->row_array();
 
     }
 

@@ -347,16 +347,18 @@ class Employee extends CI_Controller
     }
 
     public function calculate_commission_of_employee($eid){
-        $list = $this->employee->invoice_datatables($eid,1);
+        $list = $this->employee->invoice_datatables($eid);
+        $emp_salary = $this->employee->get_employee_id($eid);
+        $emp_salary = $emp_salary['salary']; 
+
         $data = array();
         foreach ($list as $invoices) {   
             $commission_amount = 0;
             if($invoices->status != 'canceled'){
                 $sum_of_products = 0;
                 $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
-                $emp_salary = $invoices_commission[0]->salary;
                 $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
-                $discount_amount_commission_calculate =  ($invoices->discount / $sum_of_products) * 100; 
+                $discount_amount_commission_calculate =  $invoices->discount > 0 ? ($invoices->discount / $sum_of_products) * 100 : 0; 
             
                 foreach ($invoices_commission as $key=>$row) {
                     if($row->title != 'Shoes'){
