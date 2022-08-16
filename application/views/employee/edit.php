@@ -290,7 +290,7 @@
             }
         }).prop('disabled', !$.support.fileInput)
             .parent().addClass($.support.fileInput ? undefined : 'disabled');
-
+        location.href = '<?php echo base_url() ?>employee/employee/update?id=<?php echo $user['id'] ?>';
 
         // Sign
         var sign_url = '<?php echo base_url() ?>employee/user_sign?id=<?php echo $user['id'] ?>';
@@ -317,6 +317,8 @@
             }
         }).prop('disabled', !$.support.fileInput)
             .parent().addClass($.support.fileInput ? undefined : 'disabled');
+        location.href = '<?php echo base_url() ?>employee/employee/update?id=<?php echo $user['id'] ?>';
+        
     });
 
     $(document).ready(function() {
