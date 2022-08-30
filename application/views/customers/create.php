@@ -157,7 +157,7 @@
                        </div>
                     </div> 
                   </div>
-                    <div class="col-md-3 pl-0 coat_waistCoat" style="display:none;">
+                    <div class="col-md-4 pl-0 coat_waistCoat" style="display:none;">
 
                         <h5 class="title text-center">COAT / WAIST COAT</h5>
                         <div class="cus-bor cus-height" style="height: 1300px;">
@@ -289,9 +289,9 @@
                            
                         </div>   
                     </div>
-                    <div class="col-md-3 pl-0 pant"  style="display:none;">
+                    <div class="col-md-4 pl-0 pant"  style="display:none;">
                         <h5 class="title text-center">PANT</h5>
-                        <div class="cus-bor cus-height">
+                        <div class="cus-bor cus-height" style="height: 455px;">
                            
                            <div class="form-group row mt-1">
                               <label class="col-sm-5 col-form-label"
@@ -370,213 +370,152 @@
                                </div>
                            </div>                           
                         </div>
-                    </div>
-                    <div class="col-md-2 pl-0 pant"  style="display:none;">
-                        <h5 class="title text-center">Checks</h5>
-                        <div class="cus-bor cus-height" style="height: 870px;">
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_breasted" id="breasted">
-                                            <label class="custom-control-label" for="breasted">Single breasted</label>
+
+                        
+                        <div class="pant"  style="display:none;">
+                            <h5 class="title text-center">Checks</h5>
+                            <div class="cus-bor cus-height" style="height: 870px;">
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_breasted" id="breasted">
+                                                <label class="custom-control-label" for="breasted">Single breasted</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_breasted" id="double_breasted">
+                                                <label class="custom-control-label" for="double_breasted">Double breasted</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_double_breasted" id="double_breasted">
-                                            <label class="custom-control-label" for="double_breasted">Double breasted</label>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_button_suit" id="button_suit">
+                                                <label class="custom-control-label" for="button_suit">One button</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_button_suit" id="two_button_suit">
+                                                <label class="custom-control-label" for="two_button_suit">Two button</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_button_suit" id="button_suit">
-                                            <label class="custom-control-label" for="button_suit">One button suit</label>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_lapel" id="lapel">
+                                                <label class="custom-control-label" for="lapel">Notch lapel</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_lapel" id="peak_lapel">
+                                                <label class="custom-control-label" for="peak_lapel">Peak lapel</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_lapel" id="shawl_lapel">
+                                                <label class="custom-control-label" for="shawl_lapel">Shawl lapel</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_vent" id="vent">
+                                                <label class="custom-control-label" for="vent">Single vent</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_vent" id="double_vent">
+                                                <label class="custom-control-label" for="double_vent">Double vents</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_vent" id="no_vent">
+                                                <label class="custom-control-label" for="no_vent">No vent</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_two_button_suit" id="two_button_suit">
-                                            <label class="custom-control-label" for="two_button_suit">2 button suit</label>
+                                
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                        <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_wear" id="wear">
+                                                <label class="custom-control-label" for="wear">Formal suit</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_wear" id="casual_wear">
+                                                <label class="custom-control-label" for="casual_wear"> Casual suit </label>
+                                            </div> &nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_wear" id="groom_wear">
+                                                <label class="custom-control-label" for="groom_wear">Grooms wear </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_lapel" id="lapel">
-                                            <label class="custom-control-label" for="lapel">Notch lapel</label>
+                                
+                                
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_lined" id="lined">
+                                                <label class="custom-control-label" for="lined">Fully lined </label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_lined" id="half_lined">
+                                                <label class="custom-control-label" for="half_lined">Half lined</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_peak_lapel" id="peak_lapel">
-                                            <label class="custom-control-label" for="peak_lapel">Peak lapel</label>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_ticket" id="ticket">
+                                                <label class="custom-control-label" for="ticket">Ticket pocket </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_shawl_lapel" id="shawl_lapel">
-                                            <label class="custom-control-label" for="shawl_lapel">Shawl lapel</label>
+                                </div> 
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_suit_pocket" id="regular">
+                                                <label class="custom-control-label" for="regular">Regular pockets</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_suit_pocket" id="slant">
+                                                <label class="custom-control-label" for="slant">Slant pocket </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_wear" id="wear">
-                                            <label class="custom-control-label" for="wear">Formal suit</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_casual_wear" id="casual_wear">
-                                            <label class="custom-control-label" for="casual_wear"> Casual wear </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_groom_wear" id="groom_wear">
-                                            <label class="custom-control-label" for="groom_wear">Grooms wear  </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_vent" id="vent">
-                                            <label class="custom-control-label" for="vent">Single vent</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_double_vent" id="double_vent">
-                                            <label class="custom-control-label" for="double_vent">Double vents</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_no_vent" id="no_vent">
-                                            <label class="custom-control-label" for="no_vent">No vent</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_lined" id="lined">
-                                            <label class="custom-control-label" for="lined">Fully lined </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_half_lined" id="half_lined">
-                                            <label class="custom-control-label" for="half_lined">Half lined</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_ticket" id="ticket">
-                                            <label class="custom-control-label" for="ticket">Ticket pocket </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_slant" id="slant">
-                                            <label class="custom-control-label" for="slant">Slant pocket </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_regular" id="regular">
-                                            <label class="custom-control-label" for="regular">Regular pockets</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_button" id="button">
-                                            <label class="custom-control-label" for="button">Plain buttons</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_metalic_button" id="metalic_button">
-                                            <label class="custom-control-label" for="metalic_button">Metallic buttons </label>
+                                </div> 
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_suit_button" id="metalic_button">
+                                                <label class="custom-control-label" for="metalic_button">Metallic buttons </label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_suit_button" id="button">
+                                                <label class="custom-control-label" for="button">Plain buttons</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 pl-0 shirt_qameez"  style="display:none;">
+                    <div class="col-md-4 pl-0 shirt_qameez"  style="display:none;">
                         <h5 class="title text-center shalwar">KAMIZ / KURTA</h5>
                         <h5 class="title text-center only_shirt">SHIRT</h5>
                         <div class="cus-bor">
@@ -809,92 +748,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 pl-0 only_shirt"  style="display:none;">
-                        <h5 class="title text-center">Checks</h5>
-                        <div class="cus-bor">
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_darts" id="darts">
-                                            <label class="custom-control-label" for="darts">Darts</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_sleeve_placket" id="sleeve_placket">
-                                            <label class="custom-control-label" for="sleeve_placket">Sleeve placket button</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_front_placket" id="front_placket">
-                                            <label class="custom-control-label" for="front_placket">Front placket</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_plane_placket" id="plane_placket">
-                                            <label class="custom-control-label" for="plane_placket"> Plane Front</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_button_cuff" id="button_cuff">
-                                            <label class="custom-control-label" for="button_cuff">Button Cuff </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_plain_cuff" id="plain_cuff">
-                                            <label class="custom-control-label" for="plain_cuff"> Plain Cuff</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_french_cuff" id="french_cuff">
-                                            <label class="custom-control-label" for="french_cuff">French Cuff</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_double_cuff" id="double_cuff">
-                                            <label class="custom-control-label" for="double_cuff">Double Cuff</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pl-0 shalwar"  style="display:none;">                    
+                    <div class="col-md-4 pl-0 shalwar"  style="display:none;">                    
                         <h5 class="title text-center">SHALWAR / PAJAMA</h5>
                         <div class="cus-bor">
                             <div class="form-group row mt-1">
@@ -961,16 +815,300 @@
                                </div>
                             </div>
                         </div>
+
+                        <div class="shalwar"  style="display:none;">                    
+                            <h5 class="title text-center">Checks</h5>
+                            <div class="cus-bor">
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio form-check-inline">
+                                                <input type="radio" class="custom-control-input" name="is_collar" id="is_kamiz_collar">
+                                                <label class="custom-control-label" for="is_kamiz_collar">Collar</label>
+                                            </div> &nbsp;&nbsp;
+                                            <div class="custom-control custom-radio form-check-inline">
+                                                <input type="radio" class="custom-control-input" name="is_collar" id="is_half_band">
+                                                <label class="custom-control-label" for="is_half_band">Half Band</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio form-check-inline">
+                                                <input type="radio" class="custom-control-input" name="is_collar" id="is_full_band">
+                                                <label class="custom-control-label" for="is_full_band">Full Band</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio form-check-inline">
+                                                <input type="radio" class="custom-control-input" name="is_collar" id="moon_neck">
+                                                <label class="custom-control-label" for="moon_neck">Moon Neck</label>
+                                            </div>
+                                            <div class="input-group collar_text" style="display:none;">
+                                                <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins" id="collar_ins"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_front" id="is_round_front">
+                                                <label class="custom-control-label" for="is_round_front">Round Front</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_front" id="straight_front">
+                                                <label class="custom-control-label" for="straight_front">Straight Front</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_front_pocket" id="is_front_pocket">
+                                                <label class="custom-control-label" for="is_front_pocket">Front Pocket</label>
+                                            </div>
+                                            <div class="input-group front_pocket_text" style="display:none;">
+                                                <input type="text" class="form-control" style="margin-right:20px; margin-top:5px;" name="front_pocket_ins" id="front_pocket_ins"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_shalwar_pocket" id="is_shalwar_pocket">
+                                                <label class="custom-control-label" for="is_shalwar_pocket">Shalwar Pocket</label>
+                                            </div>
+                                            <div class="input-group shalwar_pocket_text" style="display:none;">
+                                                <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shalwar_pocket_ins" id="shalwar_pocket_ins"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_pocket" id="1side_pocket">
+                                                <label class="custom-control-label" for="1side_pocket">1 side pocket</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_pocket" id="2side_pocket">
+                                                <label class="custom-control-label" for="2side_pocket">2 side pocket</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_sleeve_placket" id="is_sleeve_placket">
+                                                <label class="custom-control-label" for="is_sleeve_placket">Sleeve Placket Button</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_button" id="is_plain_button">
+                                                <label class="custom-control-label" for="is_plain_button">Plain Button</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_button" id="fancy_button">
+                                                <label class="custom-control-label" for="fancy_button">Fancy Button</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_button" id="fancy_button">
+                                                <label class="custom-control-label" for="fancy_button">Loop Button</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_cuff" id="is_button_cuff">
+                                                <label class="custom-control-label" for="is_button_cuff">Button Cuff</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_cuff" id="is_french_cuff">
+                                                <label class="custom-control-label" for="is_french_cuff">French Cuff</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_cuff" id="is_open_sleeves">
+                                                <label class="custom-control-label" for="is_open_sleeves">Open Sleeves</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_button_cuff">
+                                                <label class="custom-control-label" for="is_button_cuff">Half design</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_french_cuff">
+                                                <label class="custom-control-label" for="is_french_cuff">Full design</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_button_cuff">
+                                                <label class="custom-control-label" for="is_button_cuff">Kanta</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_french_cuff">
+                                                <label class="custom-control-label" for="is_french_cuff">Jali Kanta</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_button_cuff">
+                                                <label class="custom-control-label" for="is_button_cuff">Single stitch</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_french_cuff">
+                                                <label class="custom-control-label" for="is_french_cuff">Full double stitch</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_button_cuff">
+                                                <label class="custom-control-label" for="is_button_cuff">Shining thread</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_button_cuff">
+                                                <label class="custom-control-label" for="is_button_cuff">Hard bookrum</label>
+                                            </div>&nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_design" id="is_french_cuff">
+                                                <label class="custom-control-label" for="is_french_cuff">Soft bookrum</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- <div class="form-group row  mt-1">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_covered_fly" id="is_covered_fly">
+                                                <label class="custom-control-label" for="is_covered_fly">Covered Fly</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                             -->
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-1 pl-0 shalwar"  style="display:none;">                    
+
+                    <div class="col-md-4 pl-0 only_shirt"  style="display:none;">
                         <h5 class="title text-center">Checks</h5>
                         <div class="cus-bor">
                             <div class="form-group row  mt-1">
                                 <div class="col-md-12">
                                     <div class="input-group">
+                                        <div class="custom-control custom-radio form-check-inline">
+                                            <input type="checkbox" class="custom-control-input" name="is_placket" id="front_placket">
+                                            <label class="custom-control-label" for="front_placket">Front placket</label>
+                                        </div> &nbsp;&nbsp;
+                                        <div class="custom-control custom-radio form-check-inline">
+                                            <input type="checkbox" class="custom-control-input" name="is_placket" id="plane_placket">
+                                            <label class="custom-control-label" for="plane_placket"> Plain Front</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row  mt-1">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                    <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_cuff" id="button_cuff">
+                                            <label class="custom-control-label" for="button_cuff">Button Cuff </label>
+                                        </div> &nbsp;&nbsp;
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_cuff" id="double_cuff">
+                                            <label class="custom-control-label" for="double_cuff">Double Cuff</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row  mt-1">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="custom-control custom-radio form-check-inline">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar" id="is_shirt_collar">
+                                            <label class="custom-control-label" for="is_shirt_collar">Collar</label>
+                                        </div> &nbsp;&nbsp;
+                                        <div class="custom-control custom-radio form-check-inline">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar" id="is_shirt_half_band">
+                                            <label class="custom-control-label" for="is_shirt_half_band">Half Band</label>
+                                        </div>&nbsp;&nbsp;
+                                        <div class="custom-control custom-radio form-check-inline">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar" id="is_shirt_full_band">
+                                            <label class="custom-control-label" for="is_shirt_full_band">Full Band</label>
+                                        </div><br><br>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 shirt_collar_text" style="display:none;">
+                                    <div class="custom-control custom-radio form-check-inline">
+                                        <input type="radio" class="custom-control-input" name="is_shirt_collar_type" id="tie_collar">
+                                        <label class="custom-control-label" for="tie_collar">Tie Collar</label>
+                                    </div><br>
+                                    <div class="custom-control custom-radio form-check-inline">
+                                        <input type="radio" class="custom-control-input" name="is_shirt_collar_type" id="button_down">
+                                        <label class="custom-control-label" for="button_down">Button Down</label>
+                                    </div><br>
+                                    <div class="custom-control custom-radio form-check-inline">
+                                        <input type="radio" class="custom-control-input" name="is_shirt_collar_type" id="vintage_clud">
+                                        <label class="custom-control-label" for="vintage_clud">Vintage club</label>
+                                    </div><br>
+                                    <div class="custom-control custom-radio form-check-inline">
+                                        <input type="radio" class="custom-control-input" name="is_shirt_collar_type" id="half_french">
+                                        <label class="custom-control-label" for="half_french">Half French</label>
+                                    </div><br>
+                                    <div class="custom-control custom-radio form-check-inline">
+                                        <input type="radio" class="custom-control-input" name="is_shirt_collar_type" id="full_french">
+                                        <label class="custom-control-label" for="full_french">Full French</label>
+                                    </div><br>
+                                    <div class="custom-control custom-radio form-check-inline">
+                                        <input type="radio" class="custom-control-input" name="is_shirt_collar_type" id="tuxedo">
+                                        <label class="custom-control-label" for="tuxedo">Tuxedo</label>
+                                    </div>                                        
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shirt_collar_ins" id="shirt_collar_ins"> 
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group row  mt-1">
+                                <div class="col-md-12">
+                                    <div class="input-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_collar" id="collar">
-                                            <label class="custom-control-label" for="collar">Collar</label>
+                                            <input type="checkbox" class="custom-control-input" name="is_darts" id="darts">
+                                            <label class="custom-control-label" for="darts">Darts</label>
                                         </div>
                                     </div>
                                 </div>
@@ -979,159 +1117,35 @@
                                 <div class="col-md-12">
                                     <div class="input-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_moon_neck" id="moon_neck">
-                                            <label class="custom-control-label" for="moon_neck">Moon Neck</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_straight_front" id="straight_front">
-                                            <label class="custom-control-label" for="straight_front">Straight Front</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_1side_pocket" id="1side_pocket">
-                                            <label class="custom-control-label" for="1side_pocket">1 side pocket</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_2side_pocket" id="2side_pocket">
-                                            <label class="custom-control-label" for="2side_pocket">2 side pocket</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_fancy_button" id="fancy_button">
-                                            <label class="custom-control-label" for="fancy_button">Fancy Button</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_french_cuff" id="is_french_cuff">
-                                            <label class="custom-control-label" for="is_french_cuff">French Cuff</label>
+                                            <input type="checkbox" class="custom-control-input" name="is_sleeve_placket" id="sleeve_placket">
+                                            <label class="custom-control-label" for="sleeve_placket">Sleeve placket button</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>                            
+                            <div class="form-group row  mt-1">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="is_plain_cuff" id="plain_cuff">
+                                            <label class="custom-control-label" for="plain_cuff"> Plain Cuff</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row  mt-1">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="is_french_cuff" id="french_cuff">
+                                            <label class="custom-control-label" for="french_cuff">French Cuff</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->                            
                         </div>
                     </div>
-                    <div class="col-md-1 pl-0 shalwar"  style="display:none;">                    
-                        <h5 class="title text-center">Checks</h5>
-                        <div class="cus-bor">
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_band" id="is_band">
-                                            <label class="custom-control-label" for="is_band">Band</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_round_front" id="is_round_front">
-                                            <label class="custom-control-label" for="is_round_front">Round Front</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_front_pocket" id="is_front_pocket">
-                                            <label class="custom-control-label" for="is_front_pocket">Front Pocket</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_shalwar_pocket" id="is_shalwar_pocket">
-                                            <label class="custom-control-label" for="is_shalwar_pocket">Shalwar Pocket</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_sleeve_placket" id="is_sleeve_placket">
-                                            <label class="custom-control-label" for="is_sleeve_placket">Sleeve Placket Button</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_covered_fly" id="is_covered_fly">
-                                            <label class="custom-control-label" for="is_covered_fly">Covered Fly</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_plain_button" id="is_plain_button">
-                                            <label class="custom-control-label" for="is_plain_button">Plain Button</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_button_cuff" id="is_button_cuff">
-                                            <label class="custom-control-label" for="is_button_cuff">Button Cuff</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row  mt-1">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="is_open_sleeves" id="is_open_sleeves">
-                                            <label class="custom-control-label" for="is_open_sleeves">Open Sleeves</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
+
                 </div>
                </div>
                </div>
@@ -1226,6 +1240,22 @@
                 $('#english').prop('checked', false);
             }
         }); 
+
+        $( "input[name='is_collar']" ).change(function() {
+            $(".collar_text").show();
+        });
+
+        $( "input[name='is_front_pocket']" ).change(function() {
+            $(".front_pocket_text").show();
+        });
+
+        $( "input[name='is_shalwar_pocket']" ).change(function() {
+            $(".shalwar_pocket_text").show();
+        });
+
+        $( "input[name='is_shirt_collar']" ).change(function() {
+            $(".shirt_collar_text").show();
+        });
     });
 
     
