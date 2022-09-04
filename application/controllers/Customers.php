@@ -52,6 +52,12 @@ class Customers extends CI_Controller
         $this->load->view('fixed/footer');
     }
 
+    public function new_articles_append()
+    {
+        $data['count'] = $this->input->post('count');
+        $this->load->view('customers/new_articles_append', $data); 
+    }
+
     public function create()
     {
         $this->load->library("Common");
@@ -754,321 +760,418 @@ class Customers extends CI_Controller
 
     public function colthingCustomer(){
 
-       $ref_no = $this->input->post('or_ref_no',true);
+        $ref_no = $this->input->post('or_ref_no',true);
 
-       $book_date = $this->input->post('booking_date'); 
-       // $book_date = strtr($this->input->post('booking_date'), '/', '-');
-       $book_date = date('Y-m-d', strtotime($book_date));
+        $book_date = $this->input->post('booking_date'); 
+        $book_date = date('Y-m-d', strtotime($book_date));
 
-       $d_date = $this->input->post('d_date'); 
-       // $d_date = strtr($this->input->post('d_date'), '/', '-');
-       $d_date = date('Y-m-d', strtotime($d_date)); 
+        $d_date = $this->input->post('d_date'); 
+        $d_date = date('Y-m-d', strtotime($d_date)); 
       
-       $t_date = $this->input->post('t_date'); 
-       // $t_date = strtr($this->input->post('t_date'), '/', '-');
-       $t_date = date('Y-m-d', strtotime($t_date));
+        $t_date = $this->input->post('t_date'); 
+        $t_date = date('Y-m-d', strtotime($t_date));
 
-       $name = $this->input->post('customer_name',true);
-       $mobile = $this->input->post('mobile',true);
-       
-       //echo '<pre>'; print_r($book_date);exit;
-       $is_suiting = false;
-       $is_shirts = false;
-       $is_shalwarqameez = false;
-       if(!empty($_POST["is_suiting"])){
-            $is_suiting = true;
-       }
-       if(!empty($_POST["is_shirts"])){
-            $is_shirts = true;
-       }
-       if(!empty($_POST["is_shalwarqameez"])){
-            $is_shalwarqameez = true;
-       }
-
-       $is_english = false;
-       $is_urdu = false; 
-       if(!empty($_POST["is_english"])){
+        $name = $this->input->post('customer_name',true);
+        $mobile = $this->input->post('mobile',true);
+        
+        $is_english = false;
+        $is_urdu = false; 
+        if(!empty($_POST["is_english"])){
             $is_english = true;
-       }
-       if(!empty($_POST["is_urdu"])){
+        }
+        if(!empty($_POST["is_urdu"])){
             $is_urdu = true;
-       }
-
-       /*Get  coat/waist coat size*/
-       $cSleeves = $this->input->post("cSleeves");
-       $cShoulder = $this->input->post("cShoulder");
-       $cHalfBack = $this->input->post("cHalfBack");
-       $cCrossBack = $this->input->post("cCrossBack");
-       $cChest = $this->input->post("cChest");
-       $cWaist = $this->input->post("cWaist");
-       $cHips = $this->input->post("cHips");
-       $cBicep = $this->input->post("cBicep");
-       $cForearm = $this->input->post("cForearm");
-       $cNeck = $this->input->post("cNeck");
-       $cLength = $this->input->post("cLength");
-       $p3_waistcoat_length = $this->input->post("3p_waistcoat_length");
-       $waistcoat_length = $this->input->post("waistcoat_length");
-       $princecoat_length = $this->input->post("princecoat_length");
-       $sherwani_length = $this->input->post("sherwani_length");
-       $longcoat_length = $this->input->post("longcoat_length");
-       $chester_length = $this->input->post("chester_length");
-       $armhole = $this->input->post("armhole");
-
-       /*Get pant length*/
-       $pLength = $this->input->post("pLength");
-       $pInLength = $this->input->post("pInLength");
-       $pWaist = $this->input->post("pWaist");
-       $pHip = $this->input->post("pHip");
-       $pThigh = $this->input->post("pThigh");
-       $pBottom = $this->input->post("pBottom");
-       $pKnee = $this->input->post("pKnee");
-
-       /*Get Suiting Checks*/
-       $is_breasted = false;
-       $is_double_breasted = false;
-       $is_button_suit = false;
-       $is_two_button_suit = false;
-       $is_lapel = false;
-       $is_peak_lapel = false;
-       $is_shawl_lapel = false;
-       $is_wear = false;
-       $is_casual_wear = false;
-       $is_groom_wear = false;
-       $is_vent = false;
-       $is_double_vent = false;
-       $is_no_vent = false;
-       $is_lined = false;
-       $is_half_lined = false;
-       $is_ticket = false;
-       $is_slant = false;
-       $is_regular = false;
-       $is_button = false;
-       $is_metalic_button = false;
-       
-        if(!empty($_POST["is_breasted"])){
-            $is_breasted = true;
-       }if(!empty($_POST["is_double_breasted"])){
-            $is_double_breasted = true;
-       }
-       if(!empty($_POST['is_button_suit'])){
-            $is_button_suit = true;
-       }
-       if(!empty($_POST['is_two_button_suit'])){
-            $is_two_button_suit = true;
-       }
-       if(!empty($_POST["is_lapel"])){
-            $is_lapel = true;
-       }
-
-       if(!empty($_POST["is_peak_lapel"])){
-            $is_peak_lapel = true;
-       }
-
-       if(!empty($_POST["is_shawl_lapel"])){
-            $is_shawl_lapel = true;
-       }
-
-       if(!empty($_POST['is_wear'])){
-            $is_wear = true;
-       }
-       if(!empty($_POST['is_casual_wear'])){
-            $is_casual_wear = true;
-       }
-       if(!empty($_POST['is_groom_wear'])){
-            $is_groom_wear = true;
-       }
-       if(!empty($_POST["is_vent"])){
-            $is_vent = true;
-       }
-
-       if(!empty($_POST["is_double_vent"])){
-            $is_double_vent = true;
-       }
-
-       if(!empty($_POST["is_no_vent"])){
-            $is_no_vent = true;
-       }
-
-       if(!empty($_POST['is_lined'])){
-            $is_lined = true;
-       }
-       if(!empty($_POST['is_half_lined'])){
-            $is_half_lined = true;
-       }
-       if(!empty($_POST['is_ticket'])){
-            $is_ticket = true;
-       }
-       if(!empty($_POST['is_slant'])){
-            $is_slant = true;
-       }
-       if(!empty($_POST['is_regular'])){
-            $is_regular = true;
-       }
-       if(!empty($_POST['is_button'])){
-            $is_button = true;
-       }
-       if(!empty($_POST['is_metalic_button'])){
-            $is_metalic_button = true;
-       }
-
-       /*Get kamiz and shalwar size*/
-       $shirtLength = $this->input->post("shirtLength");
-       $shirtShoulder = $this->input->post("shirtShoulder");
-       $shirtSleeves = $this->input->post("shirtSleeves");
-       $shirtNeck = $this->input->post("shirtNeck");
-       $shirtChest = $this->input->post("shirtChest");
-       $shirtWaist = $this->input->post("shirtWaist");
-       $shirtHips = $this->input->post("shirtHips"); 
-       $shirtBicep = $this->input->post("shirtBicep"); 
-       $shirtForearm = $this->input->post("shirtForearm"); 
-       $shirtarmhole = $this->input->post("shirtarmhole"); 
-       $shirtcuff = $this->input->post("shirtcuff"); 
-       $kmzLength = $this->input->post("kmzLength");
-       $kurtaLength = $this->input->post("kurtaLength");
-       $kmzSleeves = $this->input->post("kmzSleeves");
-       $kmzShoulder = $this->input->post("kmzShoulder");
-       $kmzNeck = $this->input->post("kmzNeck");
-       $kmzChest = $this->input->post("kmzChest");
-       $kmzWaist = $this->input->post("kmzWaist");
-       $kmzGuaira = $this->input->post("kmzGuaira");
-       $kmzHips = $this->input->post("kmzHips");
-       $kmzBicep = $this->input->post("kmzBicep");
-       $kmzForearm = $this->input->post("kmzForearm");
-       $kmzarmhole = $this->input->post("kmzarmhole");
-       $kmzcuff = $this->input->post("kmzcuff");
-
-       $is_darts = false;
-       $is_sleeve_placket = false;
-       $is_front_placket = false;
-       $is_plane_placket = false;
-       $is_button_cuff = false;
-       $is_plain_cuff = false;
-       $is_french_cuff = false;
-       $is_double_cuff = false;
-       
-        if(!empty($_POST["is_darts"])){
-            $is_darts = true;
-       }
-
-       if(!empty($_POST['is_sleeve_placket'])){
-            $is_sleeve_placket = true;
-       }
-        if(!empty($_POST['is_front_placket'])){
-            $is_front_placket = true;
-       }
-        if(!empty($_POST['is_plane_placket'])){
-            $is_plane_placket = true;
-       }
-       if(!empty($_POST['is_button_cuff'])){
-            $is_button_cuff = true;
-       }
-       if(!empty($_POST['is_plain_cuff'])){
-            $is_plain_cuff = true;
-       }
-        if(!empty($_POST['is_french_cuff'])){
-            $is_french_cuff = true;
-       }
-        if(!empty($_POST['is_double_cuff'])){
-            $is_double_cuff = true;
-       }
-
-       /*Shwalr size*/
-       $shlLength = $this->input->post("shlLength");
-       $shlBottom = $this->input->post("shlBottom");
-       $shlAsanTyar = $this->input->post("shlAsanTyar");
-       $shlGairaTyar = $this->input->post("shlGairaTyar");
-       $pjamaLength = $this->input->post("pjamaLength");
-       $pjamaBottom = $this->input->post("pjamaBottom");
-
-        $is_collar = false;
-        $is_moon_neck = false;
-        $is_straight_front = false;
-        $is_1side_pocket = false;
-        $is_2side_pocket = false;
-        $is_fancy_button = false;
-        $is_french_cuff = false;
-        $is_band = false;
-        $is_round_front = false;
-        $is_front_pocket = false;
-        $is_shalwar_pocket = false;
-        $is_sleeve_placket = false;
-        $is_covered_fly = false;
-        $is_plain_button = false;
-        $is_button_cuff = false;
-        $is_open_sleeves = false;
-       
-        if(!empty($_POST["is_collar"])){
-            $is_collar = true;
-        }
-        if(!empty($_POST["is_moon_neck"])){
-            $is_moon_neck = true;
-        }
-        if(!empty($_POST["is_straight_front"])){
-            $is_straight_front = true;
-        }
-        if(!empty($_POST["is_1side_pocket"])){
-            $is_1side_pocket = true;
-        }
-        if(!empty($_POST["is_2side_pocket"])){
-            $is_2side_pocket = true;
-        }
-        if(!empty($_POST["is_fancy_button"])){
-            $is_fancy_button = true;
-        }
-        if(!empty($_POST["is_french_cuff"])){
-            $is_french_cuff = true;
-        }
-        if(!empty($_POST["is_band"])){
-            $is_band = true;
-        }
-        if(!empty($_POST["is_round_front"])){
-            $is_round_front = true;
-        }
-        if(!empty($_POST["is_front_pocket"])){
-            $is_front_pocket = true;
-        }
-        if(!empty($_POST["is_shalwar_pocket"])){
-            $is_shalwar_pocket = true;
-        }
-        if(!empty($_POST["is_sleeve_placket"])){
-            $is_sleeve_placket = true;
-        }
-        if(!empty($_POST["is_covered_fly"])){
-            $is_covered_fly = true;
-        }
-        if(!empty($_POST["is_plain_button"])){
-            $is_plain_button = true;
-        }
-        if(!empty($_POST["is_button_cuff"])){
-            $is_button_cuff = true;
-        }
-        if(!empty($_POST["is_open_sleeves"])){
-            $is_open_sleeves = true;
         }
         
+        $counter = count($this->input->post("cSleeve"));
+        for($i=0; $i < 3; $i++){
+            
+            $is_suiting = false;
+            $is_shirts = false;
+            $is_shalwarqameez = false;
+            if($i == 0){ //!empty($_POST["is_suiting"])){
+                $is_suiting = true;
+            }
+            if($i == 1){ //if(!empty($_POST["is_shirts"])){
+                $is_shirts = true;
+            }
+            if($i == 2){ //if(!empty($_POST["is_shalwarqameez"])){
+                $is_shalwarqameez = true;
+            }
+            echo $i. '<br>'; 
+            $cSleeves = '';
+            $cShoulder = '';
+            $cHalfBack = '';
+            $cCrossBack = '';
+            $cChest = '';
+            $cWaist = '';
+            $cHips = '';
+            $cBicep = '';
+            $cForearm = '';
+            $cNeck = '';
+            $cLength = '';
+            $p3_waistcoat_length = '';
+            $waistcoat_length = '';
+            $princecoat_length = '';
+            $sherwani_length = '';
+            $longcoat_length = '';
+            $chester_length = '';
+            $armhole = '';
 
-       /*instrucations*/
-       $instrucation = $this->input->post("inst");
-       $shirt_inst = $this->input->post("shirt_inst");
-       $shalwar_inst = $this->input->post("shalwar_inst");
+            /*Get pant length*/
+            $pLength = '';
+            $pInLength = '';
+            $pWaist = '';
+            $pHip = '';
+            $pThigh = '';
+            $pBottom = '';
+            $pKnee = '';
 
-       //add into invoice table
-        $ptype = "Cash";
-        $coupon = "";
-        $notes = "ss";
-        $coupon_amount = 0;
-        $coupon_n = '';
-        $invocieno =  $this->invocies->lastinvoice() + 1;
-        $invoicedate = $book_date;
-        $invocieduedate = $d_date;
-        $tax = "";
-        $total_tax = 0;
-        $subtotal = rev_amountExchange_s($this->input->post('total'));
+            /*Get Suiting Checks*/
+            $is_breasted = 0;
+            $is_double_breasted = 0;
+            $is_button_suit = 0;
+            $is_two_button_suit = 0;
+            $is_lapel = 0;
+            $is_peak_lapel = 0;
+            $is_shawl_lapel = 0;
+            $is_wear = 0;
+            $is_casual_wear = 0;
+            $is_groom_wear = 0;
+            $is_vent = 0;
+            $is_double_vent = 0;
+            $is_no_vent = 0;
+            $is_lined = 0;
+            $is_half_lined = 0;
+            $is_ticket = 0;
+            $is_slant = 0;
+            $is_regular = 0;
+            $is_button = 0;
+            $is_metalic_button = 0;
+            
+            $shirtLength = '';
+            $shirtShoulder = '';
+            $shirtSleeves = '';
+            $shirtNeck = '';
+            $shirtChest = '';
+            $shirtWaist = '';
+            $shirtHips = '';
+            $shirtBicep = '';
+            $shirtForearm = '';
+            $shirtarmhole = '';
+            $shirtcuff = '';
 
-        $total = rev_amountExchange_s($this->input->post('total'));
-        $p_amount =  rev_amountExchange_s($this->input->post('advance'));
+            $is_darts = 0; 
+            $is_sleeve_placket = 0; 
+            $is_front_placket = 0; 
+            $is_plane_placket = 0; 
+            $is_shirt_cuff = 0;
+            $is_plain_cuff = 0;
+            $is_french_cuff = 0;
+            $is_double_cuff = 0;
+            $is_shirt_collar = 0;
+            $is_shirt_collar_type = 0;
 
-         $c_amt = $p_amount - $total;
+            $kmzLength = '';
+            $kurtaLength = '';
+            $kmzSleeves = '';
+            $kmzShoulder = '';
+            $kmzNeck = '';
+            $kmzChest = '';
+            $kmzWaist = '';
+            $kmzGuaira = '';
+            $kmzHips = '';
+            $kmzBicep = '';
+            $kmzForearm = '';
+            $kmzarmhole = '';
+            $kmzcuff = '';
+            
+            /*Shwalr size*/
+            $shlLength = '';
+            $shlBottom = '';
+            $shlAsanTyar = '';
+            $shlGairaTyar = '';
+            $pjamaLength = '';
+            $pjamaBottom = '';
+
+            $is_collar = 0;
+            $is_straight_front = 0;
+            $is_1side_pocket = 0;
+            $is_front_pocket = 0;
+            $is_shalwar_pocket = 0;
+            $is_sleeve_placket = 0;
+            $is_plain_button = 0;
+            $is_button_cuff = 0;
+            $is_design = 0;
+            $is_kanta = 0;
+            $is_stitch = 0;
+            $is_thread = 0;
+            $is_bookrum = 0;
+            $is_moon_neck = 0;
+            $is_2side_pocket = 0;
+            $is_fancy_button = 0;
+            $is_band = 0;
+            $is_round_front = 0;
+            $is_covered_fly = 0;
+            $is_open_sleeves = 0;
+            $shirt_collar_ins = '';
+            $collar_ins = '';
+            $front_pocket_ins = '';
+            $shalwar_pocket_ins = '';
+
+            if($i == 0){
+                /*Get  coat/waist coat size*/
+                $cSleeves = $this->input->post("cSleeve[".$i."]");
+                $cShoulder = $this->input->post("cShoulder[".$i."]");
+                $cHalfBack = $this->input->post("cHalfBack[".$i."]");
+                $cCrossBack = $this->input->post("cCrossBack[".$i."]");
+                $cChest = $this->input->post("cChest[".$i."]");
+                $cWaist = $this->input->post("cWaist[".$i."]");
+                $cHips = $this->input->post("cHips[".$i."]");
+                $cBicep = $this->input->post("cBicep[".$i."]");
+                $cForearm = $this->input->post("cForearm[".$i."]");
+                $cNeck = $this->input->post("cNeck[".$i."]");
+                $cLength = $this->input->post("cLength[".$i."]");
+                $p3_waistcoat_length = $this->input->post("3p_waistcoat_length[".$i."]");
+                $waistcoat_length = $this->input->post("waistcoat_length[".$i."]");
+                $princecoat_length = $this->input->post("princecoat_length[".$i."]");
+                $sherwani_length = $this->input->post("sherwani_length[".$i."]");
+                $longcoat_length = $this->input->post("longcoat_length[".$i."]");
+                $chester_length = $this->input->post("chester_length[".$i."]");
+                $armhole = $this->input->post("armhole[".$i."]");
+
+                /*Get pant length*/
+                $pLength = $this->input->post("pLength[".$i."]");
+                $pInLength = $this->input->post("pInLength[".$i."]");
+                $pWaist = $this->input->post("pWaist[".$i."]");
+                $pHip = $this->input->post("pHip[".$i."]");
+                $pThigh = $this->input->post("pThigh[".$i."]");
+                $pBottom = $this->input->post("pBottom[".$i."]");
+                $pKnee = $this->input->post("pKnee[".$i."]");
+
+                if(isset($_POST["is_breasted"][$i]) && !empty($_POST["is_breasted"][$i])){
+                    $is_breasted = $_POST["is_breasted"][$i];
+                }else{
+                    $is_breasted = $_POST["is_breasted"][0];
+                }
+                
+                if(isset($_POST["is_button_suit"][$i]) && !empty($_POST['is_button_suit'][$i])){
+                    $is_button_suit = $_POST["is_button_suit"][$i];
+                }else{
+                    $is_button_suit = $_POST["is_button_suit"][0];
+                }
+
+                if(isset($_POST["is_lapel"][$i]) && !empty($_POST['is_lapel'][$i])){
+                    $is_lapel = $_POST["is_lapel"][$i];
+                }else{
+                    $is_lapel = $_POST["is_lapel"][0];
+                }           
+
+                if(isset($_POST["is_vent"][$i]) && !empty($_POST['is_vent'][$i])){ 
+                    $is_vent = $_POST['is_vent'][$i];
+                }else{
+                    $is_vent = $_POST["is_vent"][0];
+                }
+
+                if(isset($_POST["is_wear"][$i]) && !empty($_POST['is_wear'][$i])){
+                    $is_wear = $_POST['is_wear'][$i];
+                }else{
+                    $is_wear = $_POST["is_wear"][0];
+                }
+                
+                if(isset($_POST["is_lined"][$i]) && !empty($_POST['is_lined'][$i])){
+                    $is_lined = $_POST['is_lined'][$i];
+                }else{
+                    $is_lined = $_POST["is_lined"][0];
+                }
+            
+                if(isset($_POST["is_ticket"][$i]) && !empty($_POST['is_ticket'][$i])){
+                    $is_ticket = $_POST['is_ticket'][$i];
+                }else{
+                    $is_ticket = $_POST["is_ticket"][0];
+                }
+                
+                if(isset($_POST["is_suit_pocket"][$i]) && !empty($_POST['is_suit_pocket'][$i])){ 
+                    $is_regular = $_POST['is_suit_pocket'][$i];
+                }else{
+                    $is_regular = $_POST["is_suit_pocket"][0];
+                }
+
+                if(isset($_POST["is_suit_button"][$i]) && !empty($_POST['is_suit_button'][$i])){ 
+                    $is_button = $_POST['is_suit_button'][$i];
+                }else{
+                    $is_button = $_POST["is_suit_button"][0];
+                }
+                
+            }
+
+            if($i == 1){
+                /*Get Shirt size*/
+                $shirtLength = $this->input->post("shirtLength[".$i."]");
+                $shirtShoulder = $this->input->post("shirtShoulder[".$i."]");
+                $shirtSleeves = $this->input->post("shirtSleeves[".$i."]");
+                $shirtNeck = $this->input->post("shirtNeck[".$i."]");
+                $shirtChest = $this->input->post("shirtChest[".$i."]");
+                $shirtWaist = $this->input->post("shirtWaist[".$i."]");
+                $shirtHips = $this->input->post("shirtHips[".$i."]"); 
+                $shirtBicep = $this->input->post("shirtBicep[".$i."]"); 
+                $shirtForearm = $this->input->post("shirtForearm[".$i."]"); 
+                $shirtarmhole = $this->input->post("shirtarmhole[".$i."]"); 
+                $shirtcuff = $this->input->post("shirtcuff[".$i."]");
+
+                if(isset($_POST["is_placket"][$i]) && !empty($_POST['is_placket'][$i])){ 
+                    $is_front_placket = $_POST['is_placket'][$i];
+                }else{
+                    $is_front_placket = $_POST['is_placket'][0];
+                }
+
+                if(isset($_POST["is_shirt_cuff"][$i]) && !empty($_POST['is_shirt_cuff'][$i])){ 
+                    $is_shirt_cuff = $_POST['is_shirt_cuff'][$i];
+                }else{
+                    $is_shirt_cuff = $_POST['is_shirt_cuff'][0];
+                }
+
+                if(isset($_POST["is_shirt_collar"][$i]) && !empty($_POST['is_shirt_collar'][$i])){ 
+                    $is_shirt_collar = $_POST['is_shirt_collar'][$i];
+                }else{
+                    $is_shirt_collar = $_POST['is_shirt_collar'][0];
+                }
+
+                if(isset($_POST["is_shirt_collar_type"][$i]) && !empty($_POST['is_shirt_collar_type'][$i])){ 
+                    $is_shirt_collar_type = $_POST['is_shirt_collar_type'][$i];
+                }else{
+                    $is_shirt_collar_type = $_POST['is_shirt_collar_type'][0];
+                }
+                $shirt_collar_ins = $this->input->post("shirt_collar_ins[".$i."]");            
+            }
+            if($i == 2){
+                /*Get kamiz size*/
+                $kmzLength = $this->input->post("kmzLength[".$i."]");
+                $kurtaLength = $this->input->post("kurtaLength[".$i."]");
+                $kmzSleeves = $this->input->post("kmzSleeves[".$i."]");
+                $kmzShoulder = $this->input->post("kmzShoulder[".$i."]");
+                $kmzNeck = $this->input->post("kmzNeck[".$i."]");
+                $kmzChest = $this->input->post("kmzChest[".$i."]");
+                $kmzWaist = $this->input->post("kmzWaist[".$i."]");
+                $kmzGuaira = $this->input->post("kmzGuaira[".$i."]");
+                $kmzHips = $this->input->post("kmzHips[".$i."]");
+                $kmzBicep = $this->input->post("kmzBicep[".$i."]");
+                $kmzForearm = $this->input->post("kmzForearm[".$i."]");
+                $kmzarmhole = $this->input->post("kmzarmhole[".$i."]");
+                $kmzcuff = $this->input->post("kmzcuff[".$i."]");
+                
+                /*Shwalr size*/
+                $shlLength = $this->input->post("shlLength[".$i."]");
+                $shlBottom = $this->input->post("shlBottom[".$i."]");
+                $shlAsanTyar = $this->input->post("shlAsanTyar[".$i."]");
+                $shlGairaTyar = $this->input->post("shlGairaTyar[".$i."]");
+                $pjamaLength = $this->input->post("pjamaLength[".$i."]");
+                $pjamaBottom = $this->input->post("pjamaBottom[".$i."]");
+                
+                if(isset($_POST["is_collar"][$i]) && !empty($_POST['is_collar'][$i])){ 
+                    $is_collar = $_POST['is_collar'][$i];
+                }else{
+                    $is_collar = $_POST['is_collar'][0];
+                } 
+                $collar_ins = $this->input->post("collar_ins[".$i."]");            
+                
+                if(isset($_POST["is_front"][$i]) && !empty($_POST['is_front'][$i])){
+                    $is_straight_front = $_POST['is_front'][$i];
+                }else{
+                    $is_straight_front = $_POST['is_front'][0];
+                }            
+                
+                if(isset($_POST["is_front_pocket"][$i]) && !empty($_POST['is_front_pocket'][$i])){
+                    $is_front_pocket = $_POST['is_front_pocket'][$i];
+                }else{
+                    $is_front_pocket = $_POST['is_front_pocket'][0];
+                }
+                $front_pocket_ins = $this->input->post("front_pocket_ins[".$i."]");            
+
+                if(isset($_POST["is_shalwar_pocket"][$i]) && !empty($_POST['is_shalwar_pocket'][$i])){
+                    $is_shalwar_pocket = $_POST['is_shalwar_pocket'][$i];
+                }else{
+                    $is_shalwar_pocket = $_POST['is_shalwar_pocket'][0];
+                }
+                $shalwar_pocket_ins = $this->input->post("shalwar_pocket_ins[".$i."]");            
+                
+                if(isset($_POST["is_pocket"][$i]) && !empty($_POST['is_pocket'][$i])){
+                    $is_1side_pocket = $_POST['is_pocket'][$i];
+                }else{
+                    $is_1side_pocket = $_POST['is_pocket'][0];
+                }
+
+                if(isset($_POST["is_sleeve_placket"][$i]) && !empty($_POST['is_sleeve_placket'][$i])){
+                    $is_sleeve_placket = $_POST['is_sleeve_placket'][$i];
+                }else{
+                    $is_sleeve_placket = $_POST['is_sleeve_placket'][0];
+                }
+
+                if(isset($_POST["is_button"][$i]) && !empty($_POST['is_button'][$i])){
+                    $is_plain_button = $_POST['is_button'][$i];
+                }else{
+                    $is_plain_button = $_POST['is_button'][0];
+                }
+
+                if(isset($_POST["is_cuff"][$i]) && !empty($_POST['is_cuff'][$i])){
+                    $is_button_cuff = $_POST['is_cuff'][$i];
+                }else{
+                    $is_button_cuff = $_POST['is_cuff'][0];
+                }
+
+                if(isset($_POST["is_design"][$i]) && !empty($_POST['is_design'][$i])){
+                    $is_design = $_POST['is_design'][$i];
+                }else{
+                    $is_design = $_POST['is_design'][0];
+                }
+
+                if(isset($_POST["is_kanta"][$i]) && !empty($_POST['is_kanta'][$i])){
+                    $is_kanta = $_POST['is_kanta'][$i];
+                }else{
+                    $is_kanta = $_POST['is_kanta'][0];
+                }
+
+                if(isset($_POST["is_stitch"][$i]) && !empty($_POST['is_stitch'][$i])){
+                    $is_stitch = $_POST['is_stitch'][$i];
+                }else{
+                    $is_stitch = $_POST['is_stitch'][0];
+                }
+
+                if(isset($_POST["is_thread"][$i]) && !empty($_POST['is_thread'][$i])){
+                    $is_thread = $_POST['is_thread'][$i];
+                }else{
+                    $is_thread = $_POST['is_thread'][0];
+                }
+
+                if(isset($_POST["is_bookrum"][$i]) && !empty($_POST['is_bookrum'][$i])){
+                    $is_bookrum = $_POST['is_bookrum'][$i];
+                }else{
+                    $is_bookrum = $_POST['is_bookrum'][0];
+                }
+            }  
+
+            /*instrucations*/
+            $instrucation = $this->input->post("inst[".$i."]");
+            $shirt_inst = $this->input->post("shirt_inst[".$i."]");
+            $shalwar_inst = $this->input->post("shalwar_inst[".$i."]");
+
+            //add into invoice table
+            $ptype = "Cash";
+            $coupon = "";
+            $notes = "ss";
+            $coupon_amount = 0;
+            $coupon_n = '';
+            $invocieno =  $this->invocies->lastinvoice() + 1;
+            $invoicedate = $book_date;
+            $invocieduedate = $d_date;
+            $tax = "";
+            $total_tax = 0;
+            $subtotal = rev_amountExchange_s(0);
+
+            $total = rev_amountExchange_s(0);
+            $p_amount =  rev_amountExchange_s(0);
+
+            $c_amt = $p_amount - $total;
             if ($c_amt == 0.00) {
                 $status = 'Paid';
                 $pamnt = $total;
@@ -1081,24 +1184,31 @@ class Customers extends CI_Controller
                 $status = 'Paid';
                 $pamnt = $total;
             }
+            
+            $this->customers->tailoringCustomerAdd($ref_no,$book_date,$t_date,$d_date,$name,$mobile,$is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
+                $cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,$p3_waistcoat_length,$waistcoat_length,
+                $princecoat_length,$sherwani_length,$longcoat_length,$chester_length, $armhole,            
+                $pLength,$pInLength,$pWaist,$pHip,$pThigh,$pBottom,$pKnee,                
+                $is_breasted,$is_double_breasted,$is_button_suit,$is_two_button_suit,$is_lapel,$is_peak_lapel,$is_shawl_lapel,$is_wear,$is_casual_wear,$is_groom_wear,$is_vent,$is_double_vent,$is_no_vent,$is_lined,$is_half_lined,$is_ticket,$is_slant,$is_regular,$is_button,$is_metalic_button,
 
-        $this->customers->tailoringCustomerAdd($ref_no,$book_date,$t_date,$d_date,$name,$mobile,$is_suiting,$is_shirts,$is_shalwarqameez, 
-            $is_english,$is_urdu,$cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,
-            $p3_waistcoat_length,$waistcoat_length,$princecoat_length,$sherwani_length,$longcoat_length,$chester_length,
-            $armhole,            
-            $pLength,$pInLength,$pWaist,$pHip,$pThigh,$pBottom,$pKnee,
-            $is_breasted,$is_double_breasted,$is_button_suit,$is_two_button_suit,$is_lapel,$is_peak_lapel,$is_shawl_lapel,$is_wear,$is_casual_wear,$is_groom_wear,$is_vent,$is_double_vent,$is_no_vent,$is_lined,$is_half_lined,$is_ticket,$is_slant,$is_regular,$is_button,$is_metalic_button,
+                $shirtLength,$shirtShoulder,$shirtSleeves,$shirtNeck,$shirtChest,$shirtWaist,$shirtHips,
+                $shirtBicep,$shirtForearm,$shirtarmhole,$shirtcuff,
 
-            $shirtLength,$shirtShoulder,$shirtSleeves,$shirtNeck,$shirtChest,$shirtWaist,$shirtHips,
-            $shirtBicep,$shirtForearm,$shirtarmhole,$shirtcuff,
+                $kmzLength,$kurtaLength,$kmzSleeves,$kmzShoulder,$kmzNeck,$kmzChest,$kmzWaist,$kmzGuaira,$kmzHips,$kmzBicep,$kmzForearm,$kmzarmhole,$kmzcuff,
+                
+                $is_darts,$is_sleeve_placket,$is_front_placket,$is_plane_placket,$is_shirt_cuff,$is_plain_cuff,$is_french_cuff,
+                $is_double_cuff,$is_shirt_collar,$is_shirt_collar_type,$shirt_collar_ins,
+                
+                $shlLength,$shlBottom,$shlAsanTyar,$shlGairaTyar,$pjamaLength,$pjamaBottom,
+                $is_collar,$is_moon_neck,$is_straight_front,$is_1side_pocket,$is_2side_pocket,$is_fancy_button,
+                $is_band,$is_round_front,$is_front_pocket,$is_shalwar_pocket,$is_covered_fly,
+                $is_plain_button,$is_open_sleeves,$is_button_cuff,$is_design,$is_kanta,$is_stitch,$is_thread,$is_bookrum,
+                $collar_ins, $front_pocket_ins,$shalwar_pocket_ins,$instrucation,$shirt_inst,$shalwar_inst,$ptype,$coupon,$notes,
 
-            $kmzLength,$kurtaLength,$kmzSleeves,$kmzShoulder,$kmzNeck,$kmzChest,$kmzWaist,$kmzGuaira,$kmzHips,$kmzBicep,$kmzForearm,$kmzarmhole,$kmzcuff,
-            $is_darts,$is_sleeve_placket,$is_front_placket,$is_plane_placket,$is_button_cuff,$is_plain_cuff,$is_french_cuff,$is_double_cuff,
-            $shlLength,$shlBottom,$shlAsanTyar,$shlGairaTyar,$pjamaLength,$pjamaBottom,
-            $is_collar,$is_moon_neck,$is_straight_front,$is_1side_pocket,$is_2side_pocket,$is_fancy_button,
-            $is_band,$is_round_front,$is_front_pocket,$is_shalwar_pocket,$is_covered_fly,
-            $is_plain_button,$is_open_sleeves,$instrucation,$shirt_inst,$shalwar_inst,$ptype,$coupon,$notes,
-        $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax,$status,$pamnt,$total,$p_amount );
+            $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax,$status,$pamnt,$total,$p_amount );
+            //echo 'adssad'; exit;
+
+        }
 
     }
 

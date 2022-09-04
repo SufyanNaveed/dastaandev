@@ -422,20 +422,27 @@ class Customers_model extends CI_Model
                 $this->db->insert('customer_kmz_shl',$data);
         }
     }
-    public function tailoringCustomerAdd($ref_no,$book_date,$t_date,$d_date,$name,$mobile,$is_suiting,$is_shirts,$is_shalwarqameez, 
-            $is_english,$is_urdu,$cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,
-            $p3_waistcoat_length,$waistcoat_length,$princecoat_length,$sherwani_length,$longcoat_length,$chester_length,
-            $armhole,            
-            $pLength,$pInLength,$pWaist,$pHip,$pThigh,$pBottom,$pKnee,
-            $is_breasted,$is_double_breasted,$is_button_suit,$is_two_button_suit,$is_lapel,$is_peak_lapel,$is_shawl_lapel,$is_wear,$is_casual_wear,$is_groom_wear,$is_vent,$is_double_vent,$is_no_vent,$is_lined,$is_half_lined,$is_ticket,$is_slant,$is_regular,$is_button,$is_metalic_button,
-            $shirtLength,$shirtShoulder,$shirtSleeves,$shirtNeck,$shirtChest,$shirtWaist,$shirtHips,
-            $shirtBicep,$shirtForearm,$shirtarmhole,$shirtcuff,$kmzLength,$kurtaLength,$kmzSleeves,$kmzShoulder,$kmzNeck,$kmzChest,$kmzWaist,$kmzGuaira,$kmzHips,$kmzBicep,$kmzForearm,$kmzarmhole,$kmzcuff,
-            $is_darts,$is_sleeve_placket,$is_front_placket,$is_plane_placket,$is_button_cuff,$is_plain_cuff,$is_french_cuff,$is_double_cuff,
-            $shlLength,$shlBottom,$shlAsanTyar,$shlGairaTyar,$pjamaLength,$pjamaBottom,
-            $is_collar,$is_moon_neck,$is_straight_front,$is_1side_pocket,$is_2side_pocket,$is_fancy_button,
-            $is_band,$is_round_front,$is_front_pocket,$is_shalwar_pocket,$is_covered_fly,
-            $is_plain_button,$is_open_sleeves,$instrucation,$shirt_inst,$shalwar_inst,$ptype,$coupon,$notes,
-        $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax,$status,$pamnt,$total,$p_amount ){
+    public function tailoringCustomerAdd($ref_no,$book_date,$t_date,$d_date,$name,$mobile,$is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
+    $cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,$p3_waistcoat_length,$waistcoat_length,
+    $princecoat_length,$sherwani_length,$longcoat_length,$chester_length, $armhole,            
+    $pLength,$pInLength,$pWaist,$pHip,$pThigh,$pBottom,$pKnee,                
+    $is_breasted,$is_double_breasted,$is_button_suit,$is_two_button_suit,$is_lapel,$is_peak_lapel,$is_shawl_lapel,$is_wear,$is_casual_wear,$is_groom_wear,$is_vent,$is_double_vent,$is_no_vent,$is_lined,$is_half_lined,$is_ticket,$is_slant,$is_regular,$is_button,$is_metalic_button,
+
+    $shirtLength,$shirtShoulder,$shirtSleeves,$shirtNeck,$shirtChest,$shirtWaist,$shirtHips,
+    $shirtBicep,$shirtForearm,$shirtarmhole,$shirtcuff,
+
+    $kmzLength,$kurtaLength,$kmzSleeves,$kmzShoulder,$kmzNeck,$kmzChest,$kmzWaist,$kmzGuaira,$kmzHips,$kmzBicep,$kmzForearm,$kmzarmhole,$kmzcuff,
+    
+    $is_darts,$is_sleeve_placket,$is_front_placket,$is_plane_placket,$is_shirt_cuff,$is_plain_cuff,$is_french_cuff,
+    $is_double_cuff,$is_shirt_collar,$is_shirt_collar_type,$shirt_collar_ins,
+    
+    $shlLength,$shlBottom,$shlAsanTyar,$shlGairaTyar,$pjamaLength,$pjamaBottom,
+    $is_collar,$is_moon_neck,$is_straight_front,$is_1side_pocket,$is_2side_pocket,$is_fancy_button,
+    $is_band,$is_round_front,$is_front_pocket,$is_shalwar_pocket,$is_covered_fly,
+    $is_plain_button,$is_open_sleeves,$is_button_cuff,$is_design,$is_kanta,$is_stitch,$is_thread,$is_bookrum,
+    $collar_ins, $front_pocket_ins,$shalwar_pocket_ins,$instrucation,$shirt_inst,$shalwar_inst,$ptype,$coupon,$notes,
+
+$coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax,$status,$pamnt,$total,$p_amount ){
 
         $data = array(
             'name' => $name,
@@ -578,8 +585,19 @@ class Customers_model extends CI_Model
                     'is_shalwar_pocket' => $is_shalwar_pocket,
                     'is_covered_fly' => $is_covered_fly,
                     'is_plain_button' => $is_plain_button,
-                    'is_open_sleeves' => $is_open_sleeves
-
+                    'is_open_sleeves' => $is_open_sleeves,
+                    'is_shirt_cuff' => $is_shirt_cuff,
+                    'is_shirt_collar' => $is_shirt_collar,
+                    'is_shirt_collar_type' => $is_shirt_collar_type,
+                    'shirt_collar_ins' => $shirt_collar_ins,
+                    'is_design' => $is_design,
+                    'is_kanta' => $is_kanta,
+                    'is_stitch' => $is_stitch,
+                    'is_thread' => $is_thread,
+                    'is_bookrum' => $is_bookrum,
+                    'collar_ins' => $collar_ins,
+                    'front_pocket_ins' => $front_pocket_ins,
+                    'shalwar_pocket_ins' => $shalwar_pocket_ins
                 );
                 $this->db->insert('customer_kmz_shl',$data);
 
