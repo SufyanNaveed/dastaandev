@@ -67,7 +67,7 @@ class Customers_model extends CI_Model
         } else {
             $this->db->from($this->table);
             $this->db->join('customer_basic_info','geopos_customers.id = customer_basic_info.cus_id');
-		$this->db->order_by('customer_basic_info.reference_id', 'desc');
+		$this->db->group_by('customer_basic_info.reference_id', 'desc');
             if ($this->aauth->get_user()->loc) {
                 $this->db->where('loc', $this->aauth->get_user()->loc);
             } elseif (!BDATA) {
@@ -422,7 +422,25 @@ class Customers_model extends CI_Model
                 $this->db->insert('customer_kmz_shl',$data);
         }
     }
-    public function tailoringCustomerAdd($ref_no,$book_date,$t_date,$d_date,$name,$mobile,$is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
+    /**
+     * To Add Customer Data
+     * @param String $vName
+     * @param String $vMobile
+     * @return int
+     */
+    public function fAddCustomer($vName="Default Customer",$vMobile=NULL){
+        $vCustData = array(
+            'name' => $vName,
+            'gid' => 3,
+            'phone'=>$vMobile
+        );
+        $this->db->insert('geopos_customers', $vCustData);
+        if ($this->db->insert_id()) 
+               return $this->db->insert_id();
+         else
+               return 0;
+    }
+    public function tailoringCustomerAdd($vCustomerID,$ref_no,$book_date,$t_date,$d_date,$is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
     $cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,$p3_waistcoat_length,$waistcoat_length,
     $princecoat_length,$sherwani_length,$longcoat_length,$chester_length, $armhole,            
     $pLength,$pInLength,$pWaist,$pHip,$pThigh,$pBottom,$pKnee,                
@@ -444,19 +462,9 @@ class Customers_model extends CI_Model
 
 $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax,$status,$pamnt,$total,$p_amount ){
 
-        $data = array(
-            'name' => $name,
-            'gid' => 3,
-            'phone'=>$mobile
-        );
-
-         if ($this->db->insert('geopos_customers', $data)) {
-
-                $cid = $this->db->insert_id();
-
                 /*add customer basic info*/
                 $data = array(
-                    'cus_id'=>$cid,
+                    'cus_id'=>$vCustomerID,
                     'reference_id'=>$ref_no,
                     'booking_date' => $book_date,
                     'trial_date'=>$t_date,
@@ -470,12 +478,11 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                     'is_english' => $is_english,
                     'is_urdu' => $is_urdu
                 );
-
                 $this->db->insert('customer_basic_info',$data);
 
                 /*Add pant size*/
                 $data = array(
-                    'cus_id' => $cid,
+                    'cus_id' => $vCustomerID,
                     'coat_sleeves' => $cSleeves,
                     'coat_shoulder' => $cShoulder,
                     'coat_half_back' => $cHalfBack,
@@ -519,7 +526,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
 
                 /*add pant size*/
                 $data = array(
-                    'cus_id' => $cid,
+                    'cus_id' => $vCustomerID,
                     'pant_length' => $pLength,
                     'pant_inside_length' => $pInLength,
                     'pant_waist' => $pWaist,
@@ -535,7 +542,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                 /*Add kamiz shalwar size*/
                  /*add pant size*/
                 $data = array(
-                    'cus_id' => $cid,
+                    'cus_id' => $vCustomerID,
                     'shirtLength' => $shirtLength,
                     'shirtShoulder' => $shirtShoulder,
                     'shirtSleeves' => $shirtSleeves,
@@ -601,7 +608,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                 );
                 $this->db->insert('customer_kmz_shl',$data);
 
-                $data = array('tid' => $invocieno, 'invoicedate' => $invoicedate, 'invoiceduedate' => $invocieduedate, 'subtotal' => $total, 'shipping' => "", 'ship_tax' => "", 'ship_tax_type' => "", 'discount_rate' => "",'total' => $total, 'pmethod' => "Cash", 'notes' => $notes, 'status' => $status, 'csd' => $cid, 'eid' => $this->aauth->get_user()->id, 'pamnt' => $pamnt, 'taxstatus' =>"", 'discstatus' => "", 'format_discount' => "", 'refer' => "", 'term' => "", 'multi' => "", 'i_class' => 1, 'loc' => $this->aauth->get_user()->loc);
+                $data = array('tid' => $invocieno, 'invoicedate' => $invoicedate, 'invoiceduedate' => $invocieduedate, 'subtotal' => $total, 'shipping' => "", 'ship_tax' => "", 'ship_tax_type' => "", 'discount_rate' => "",'total' => $total, 'pmethod' => "Cash", 'notes' => $notes, 'status' => $status, 'csd' => $vCustomerID, 'eid' => $this->aauth->get_user()->id, 'pamnt' => $pamnt, 'taxstatus' =>"", 'discstatus' => "", 'format_discount' => "", 'refer' => "", 'term' => "", 'multi' => "", 'i_class' => 1, 'loc' => $this->aauth->get_user()->loc);
 
                 $this->db->insert('geopos_invoices', $data);
 
@@ -610,7 +617,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                 if($is_suiting){
                     $data = array(
                         'invoice_id' => $invoiceno,
-                        'cus_id' => $cid,
+                        'cus_id' => $vCustomerID,
                         'product' => "Suiting",
                         'quantity' => 1,
                         'stiching_price' => $total,
@@ -624,7 +631,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                 if($is_shalwarqameez){
                     $data = array(
                         'invoice_id' => $invoiceno,
-                        'cus_id' => $cid,
+                        'cus_id' => $vCustomerID,
                         'product' => "kameez shalwar",
                         'quantity' => 1,
                         'stiching_price' => $total,
@@ -638,7 +645,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                 if($is_shirts){
                      $data = array(
                         'invoice_id' => $invoiceno,
-                        'cus_id' => $cid,
+                        'cus_id' => $vCustomerID,
                         'product' => "Shirt",
                         'quantity' => 1,
                         'stiching_price' => $total,
@@ -649,15 +656,9 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
 
                     $this->db->insert('geopos_stiching_items',$data);
                 }
-                
-                echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('ADDED'). '&nbsp;<a href="' . base_url('/customers') . '" class="btn btn-info btn-sm"><span class="icon-eye"></span>' . $this->lang->line('View') . '</a>', 'cid' => $cid));
-         }
-         else{
-             echo json_encode(array('status' => 'Error', 'message' =>
-                    $this->lang->line('ERROR')));
-         }
-
-    }
+                return true;
+   }
+   
     public function addNew($id,$ref_no,$book_date,$t_date,$d_date,$name,$mobile,$is_suiting,$is_shirts,$is_shalwarqameez, 
             $is_english,$is_urdu,$cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,
             $p3_waistcoat_length,$waistcoat_length,$princecoat_length,$sherwani_length,$longcoat_length,$chester_length,
