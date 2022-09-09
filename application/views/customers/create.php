@@ -1,3 +1,4 @@
+
 <div class="content-body">
     <div class="card">
         <div class="card-header">
@@ -11,6 +12,7 @@
                     <li><a data-action="close"><i class="ft-x"></i></a></li>
                 </ul>
             </div>
+            <button class="btn btn-primary" id="open_preview" data-toggle="modal" data-target="#pre_preview_model" style="float:right;display:none;" >Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
             <button class="btn btn-primary add_new_rows" style="float:right; display:none;" data-count="1">Add Multiple Products &nbsp;&nbsp;<i class="fa fa-plus"></i></button>
         </div>
         <div class="card-body">
@@ -23,7 +25,7 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">ORDER/REF NO</label>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control margin-bottom b_input" name="or_ref_no" id="ref_no" readonly="" value="<?php echo $ref_no?>">
+                                        <input type="text" class="form-control margin-bottom b_input" name="or_ref_no" id="ref_no" readonly="" value="<?php echo $ref_no ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
@@ -52,7 +54,7 @@
                                 </div>
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label"
-                                        for="name">Mobile</label>
+                                           for="name">Mobile</label>
 
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control required margin-bottom b_input" name="mobile" id="mobile">
@@ -124,10 +126,10 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Neck</label>
                                     <div class="col-sm-4">
-                                    <input type="text" class="form-control margin-bottom b_input" name="cNeck[]" id="cNeck">
+                                        <input type="text" class="form-control margin-bottom b_input" name="cNeck[]" id="cNeck">
                                     </div>
                                 </div>
-                            
+
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Chest</label>
                                     <div class="col-sm-4">
@@ -197,7 +199,7 @@
                                         <input type="text" class="form-control margin-bottom b_input" name="cLength[]" id="cLength">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">3p waistcoat Length</label>
                                     <div class="col-sm-4">
@@ -208,7 +210,7 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Waistcoat Length</label>
                                     <div class="col-sm-4">
-                                    <input type="text" class="form-control margin-bottom b_input" name="waistcoat_length[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="waistcoat_length[]" id="Sec_cLength">
                                     </div>
                                 </div>
 
@@ -218,65 +220,65 @@
                                         <input type="text" class="form-control margin-bottom b_input" name="princecoat_length[]" id="Sec_cLength">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Sherwani Length</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input" name="sherwani_length[]" id="Sec_cLength">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Long coat length</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input" name="longcoat_length[]" id="Sec_cLength">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Chester length</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input" name="chester_length[]" id="Sec_cLength">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Armhole</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input" name="armhole[]" id="Sec_cLength">
                                     </div>
                                 </div>                            
-                            
+
                             </div>   
                         </div>
                         <div class="col-md-4 pl-0 pant"  style="display:none;">
                             <h5 class="title text-center">PANT</h5>
                             <div class="cus-bor cus-height" style="height: 455px;">
-                            
-                            <div class="form-group row mt-1">
+
+                                <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Waist</label>
                                     <div class="col-sm-4">
-                                    <input type="text" class="form-control margin-bottom b_input " name="pWaist[]" id="pWaist">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pWaist[]" id="pWaist">
                                     </div>
-                            </div>
-                            <div class="form-group row mt-1">
+                                </div>
+                                <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Hip</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input " name="pHip[]" id="pHip">
                                     </div>
-                            </div>
-                            <div class="form-group row mt-1">
+                                </div>
+                                <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Thigh</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input " name="pThigh[]" id="pThigh">
                                     </div>
-                            </div>
-                            <div class="form-group row mt-1">
+                                </div>
+                                <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Knee</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input " name="pKnee[]" id="pKnee">
                                     </div>
-                            </div>
+                                </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Inseam / Inside Length</label>
@@ -292,15 +294,15 @@
                                         <input type="text" class="form-control margin-bottom b_input " name="pLength[]" id="pLength">
                                     </div>
                                 </div>                                                     
-                            
-                            <div class="form-group row mt-1">
+
+                                <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Bottom</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control margin-bottom b_input " name="pBottom[]" id="pBottom">
                                     </div>
-                            </div>                           
+                                </div>                           
                             </div>
-                            
+
                             <div class="pant"  style="display:none;">
                                 <h5 class="title text-center">Checks</h5>
                                 <div class="cus-bor cus-height" style="height: 400px;">
@@ -371,7 +373,7 @@
                                     <div class="form-group row  mt-1">
                                         <div class="col-md-12">
                                             <div class="input-group">
-                                            <div class="custom-control custom-radio">
+                                                <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_wear[]" id="wear" value="1">
                                                     <label class="custom-control-label" for="wear">Formal suit</label>
                                                 </div>&nbsp;&nbsp;
@@ -449,31 +451,31 @@
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Shirt Length</label>
                                         <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="shirtLength[]" id="kmzLength">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtLength[]" id="kmzLength">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Shoulder</label>
                                         <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="shirtShoulder[]" id="kmzShoulder">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtShoulder[]" id="kmzShoulder">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Sleeves Length</label>
                                         <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="shirtSleeves[]" id="kmzSleeves">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtSleeves[]" id="kmzSleeves">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Neck</label>
                                         <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="shirtNeck[]" id="kmzNeck">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtNeck[]" id="kmzNeck">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Chest</label>
                                         <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="shirtChest[]" id="kmzChest">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtChest[]" id="kmzChest">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
@@ -492,12 +494,12 @@
                                         <label class="col-sm-5 col-form-label" for="name">Bicep</label>
                                         <div class="col-sm-6">
                                             <input type="text" class="form-control margin-bottom b_input" name="shirtBicep[]" id="kmzBicep">
-                                    </div>
+                                        </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Forearm</label>
                                         <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input" name="shirtForearm[]" id="kmzForearm">
+                                            <input type="text" class="form-control margin-bottom b_input" name="shirtForearm[]" id="kmzForearm">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
@@ -541,14 +543,14 @@
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Neck</label>
                                         <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="kmzNeck[]" id="kmzNeck">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzNeck[]" id="kmzNeck">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Chest</label>
                                         <div class="col-sm-6">
                                             <input type="text" class="form-control margin-bottom b_input " name="kmzChest[]" id="kmzChest">
-                                    </div>
+                                        </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Waist</label>
@@ -572,13 +574,13 @@
                                         <label class="col-sm-5 col-form-label"  for="name">Forearm</label>
                                         <div class="col-sm-6">
                                             <input type="text" class="form-control margin-bottom b_input" name="kmzForearm[]" id="kmzForearm">
-                                    </div>
+                                        </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Armhole</label>
                                         <div class="col-sm-6">
                                             <input type="text" class="form-control margin-bottom b_input" name="kmzarmhole[]" id="kmzForearm">
-                                    </div>
+                                        </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Cuff</label>
@@ -593,46 +595,46 @@
                             <h5 class="title text-center">SHALWAR / PAJAMA</h5>
                             <div class="cus-bor">
                                 <div class="form-group row mt-1">
-                                <label class="col-sm-5 col-form-label"
-                                    for="name">Shalwar Length</label>
+                                    <label class="col-sm-5 col-form-label"
+                                           for="name">Shalwar Length</label>
 
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                            class="form-control margin-bottom b_input " name="shlLength[]"
-                                            id="shlLength">
-                                </div>
+                                    <div class="col-sm-6">
+                                        <input type="text"
+                                               class="form-control margin-bottom b_input " name="shlLength[]"
+                                               id="shlLength">
+                                    </div>
                                 </div>
                                 <div class="form-group row mt-1">
-                                <label class="col-sm-5 col-form-label"
-                                    for="name">Shalwar Bottom</label>
+                                    <label class="col-sm-5 col-form-label"
+                                           for="name">Shalwar Bottom</label>
 
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                            class="form-control margin-bottom b_input " name="shlBottom[]"
-                                            id="shlBottom">
+                                    <div class="col-sm-6">
+                                        <input type="text"
+                                               class="form-control margin-bottom b_input " name="shlBottom[]"
+                                               id="shlBottom">
+                                    </div>
                                 </div>
-                                </div>
-                            
+
                                 <div class="form-group row mt-1">
-                                <label class="col-sm-5 col-form-label"
-                                    for="name">Asan Tyar</label>
+                                    <label class="col-sm-5 col-form-label"
+                                           for="name">Asan Tyar</label>
 
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                            class="form-control margin-bottom b_input " name="shlAsanTyar[]"
-                                            id="shlAsanTyar">
+                                    <div class="col-sm-6">
+                                        <input type="text"
+                                               class="form-control margin-bottom b_input " name="shlAsanTyar[]"
+                                               id="shlAsanTyar">
+                                    </div>
                                 </div>
-                                </div>
-                            
+
                                 <div class="form-group row mt-1">
-                                <label class="col-sm-5 col-form-label"
-                                    for="name">Shalwar Gaira Tyar</label>
+                                    <label class="col-sm-5 col-form-label"
+                                           for="name">Shalwar Gaira Tyar</label>
 
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                            class="form-control margin-bottom b_input " name="shlGairaTyar[]"
-                                            id="shlGairaTyar">
-                                </div>
+                                    <div class="col-sm-6">
+                                        <input type="text"
+                                               class="form-control margin-bottom b_input " name="shlGairaTyar[]"
+                                               id="shlGairaTyar">
+                                    </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
@@ -868,7 +870,7 @@
                                 <div class="form-group row  mt-1">
                                     <div class="col-md-12">
                                         <div class="input-group">
-                                        <div class="custom-control custom-radio">
+                                            <div class="custom-control custom-radio">
                                                 <input type="radio" class="custom-control-input" name="is_shirt_cuff[]" id="is_shirt_button_cuff" value="1">
                                                 <label class="custom-control-label" for="is_shirt_button_cuff">Button Cuff </label>
                                             </div> &nbsp;&nbsp;
@@ -930,32 +932,34 @@
                         </div>
                     </div> 
                     <div class="row mt-1 coat_waistCoat" style="display: none;">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                        <label for="email" class="col-form-label">Suiting Instructions:</label>
-                        <textarea class="form-control" name="inst[]" rows="7" id="comment"></textarea>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email" class="col-form-label">Suiting Instructions:</label>
+                                <textarea class="form-control" name="inst[]" rows="7" id="comment"></textarea>
+                            </div>
                         </div>
-                    </div>
                     </div> 
-                    
+
                     <div class="row mt-1 only_shirt" style="display: none;">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                        <label for="email" class="col-form-label">Shirts Instructions:</label>
-                        <textarea class="form-control" name="shirt_inst[]" rows="7" id="comment"></textarea>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email" class="col-form-label">Shirts Instructions:</label>
+                                <textarea class="form-control" name="shirt_inst[]" rows="7" id="comment"></textarea>
+                            </div>
                         </div>
-                    </div>
                     </div> 
-                    
+
                     <div class="row mt-1 shalwar" style="display: none;">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                        <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
-                        <textarea class="form-control" name="shalwar_inst[]" rows="7" id="comment"></textarea>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
+                                <textarea class="form-control" name="shalwar_inst[]" rows="7" id="comment"></textarea>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
+                <input type="hidden" value="" id="product_stack" name="product_stack">
+                <input type="hidden" value="" id="product_stack_list" name="product_stack_list">
                 <div class="append_new_size_article"></div>
                 <div id="mybutton" class="mt-1">
                     <input type="submit" id="submit-data"
@@ -963,8 +967,39 @@
                            value="<?php echo $this->lang->line('Add customer') ?>"
                            data-loading-text="Adding...">
                 </div>
-               <input type="hidden" value="customers/colthingCustomer" id="action-url">
+                <input type="hidden" value="customers/colthingCustomer" id="action-url">
             </form>
+        </div>
+    </div>
+</div>
+
+<div id="pre_preview_model" class="modal fade ">
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">Preview</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <center><form>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" value="0" onclick="changeLamguage()" name="is_english" id="customRadio1" checked>
+                            <label class="form-check-label" for="customRadio1">Urdu</label>
+                        </div>
+                        <div class="form-check form-check-inline ms-4">
+                            <input type="radio" class="form-check-input" value="1" onclick="changeLamguage()" name="is_english" id="customRadio2">
+                            <label class="form-check-label" for="customRadio2">English</label>
+                        </div>
+                    </form></center>
+                <hr>
+                <div id="preview_body"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
         </div>
     </div>
 </div>
@@ -977,98 +1012,112 @@
     //   $("#blance").val(total - adv);
     // }
 
-    
-    $("#bDate").datepicker();
-    $( "#tDate" ).datepicker();
-    $( "#dDate" ).datepicker();
 
-    $(document).ready(function(){
-        $('input[type="checkbox"]').click(function(){
-            if($(this).is(":checked") && $(this).val() == 'suiting'){
+    $("#bDate").datepicker();
+    $("#tDate").datepicker();
+    $("#dDate").datepicker();
+
+    $(document).ready(function () {
+        $('input[type="checkbox"]').click(function () {
+            if ($(this).is(":checked") && $(this).val() == 'suiting') {
                 $('.default_row #shirts').prop('checked', false);
                 $('.default_row #shalwarqameez').prop('checked', false);
 
                 $(".default_row .coat_waistCoat").show();
                 $(".default_row .pant").show();
-                $(".default_row .shirt_qameez").hide();  
+                $(".default_row .shirt_qameez").hide();
                 $(".default_row .shalwar").hide();
-                $(".default_row .only_shirt").hide();                
-            }else if($(this).is(":checked") && $(this).val() == 'shirts'){
+                $(".default_row .only_shirt").hide();
+                $("#product_stack").val(1);
+                $("#product_stack_list").val(function () {
+                    return this.value + '1';
+                });
+            } else if ($(this).is(":checked") && $(this).val() == 'shirts') {
 
                 $('.default_row #suiting').prop('checked', false);
                 $('.default_row #shalwarqameez').prop('checked', false);
 
                 $(".default_row .coat_waistCoat").hide();
                 $(".default_row .pant").hide();
-                $(".default_row .shirt_qameez").show();  
-                $(".default_row .only_shirt").show();  
-                $(".default_row .shalwar").hide(); 
-            }else if($(this).is(":checked") && $(this).val() == 'shalwarqameez'){
-                
+                $(".default_row .shirt_qameez").show();
+                $(".default_row .only_shirt").show();
+                $(".default_row .shalwar").hide();
+                $("#product_stack").val(2);
+                $("#product_stack_list").val(function () {
+                    return this.value + '2';
+                });
+            } else if ($(this).is(":checked") && $(this).val() == 'shalwarqameez') {
+
                 $('.default_row #shirts').prop('checked', false);
                 $('.default_row #suiting').prop('checked', false);
 
                 $(".default_row .coat_waistCoat").hide();
                 $(".default_row .pant").hide();
                 $(".default_row .only_shirt").hide();
-                $(".default_row .shirt_qameez").show();  
+                $(".default_row .shirt_qameez").show();
                 $(".default_row .shalwar").show();
+                $("#product_stack").val(3);
+                $("#product_stack_list").val(function () {
+                    return this.value + '3';
+                });
             }
-            if($(this).is(":checked") && $(this).val() == 'english'){
+            if ($(this).is(":checked") && $(this).val() == 'english') {
                 $('#urdu').prop('checked', false);
-            }else if($(this).is(":checked") && $(this).val() == 'urdu'){
+            } else if ($(this).is(":checked") && $(this).val() == 'urdu') {
                 $('#english').prop('checked', false);
             }
 
             $('.add_new_rows').show();
-        }); 
+             $('#open_preview').show();
+            
+        });
 
-        $( "input[name='is_collar[]']" ).change(function() {
+        $("input[name='is_collar[]']").change(function () {
             $(".default_row .collar_text").show();
         });
 
-        $( "input[name='is_front_pocket[]']" ).change(function() {
+        $("input[name='is_front_pocket[]']").change(function () {
             $(".default_row .front_pocket_text").show();
         });
 
-        $( "input[name='is_shalwar_pocket[]']" ).change(function() {
+        $("input[name='is_shalwar_pocket[]']").change(function () {
             $(".default_row .shalwar_pocket_text").show();
         });
 
-        $( "input[name='is_shirt_collar[]']" ).change(function() {
+        $("input[name='is_shirt_collar[]']").change(function () {
             $(".default_row .shirt_collar_text").show();
         });
 
         $(document).on('click', 'input[name="is_shirt_collar[]"]', function () {
             var count = $(this).attr('data-count');
-            $(".append_row_for_article_"+count+" .shirt_collar_text_"+count).show();
+            $(".append_row_for_article_" + count + " .shirt_collar_text_" + count).show();
         });
 
         $(document).on('click', 'input[name="is_shalwar_pocket[]"]', function () {
             var count = $(this).attr('data-count');
-            $(".append_row_for_article_"+count+" .shalwar_pocket_text_"+count).show();
+            $(".append_row_for_article_" + count + " .shalwar_pocket_text_" + count).show();
         });
 
         $(document).on('click', 'input[name="is_front_pocket[]"]', function () {
             var count = $(this).attr('data-count');
-            $(".append_row_for_article_"+count+" .front_pocket_text_"+count).show();
+            $(".append_row_for_article_" + count + " .front_pocket_text_" + count).show();
         });
 
         $(document).on('click', 'input[name="is_collar[]"]', function () {
             var count = $(this).attr('data-count');
-            $(".append_row_for_article_"+count+" .collar_text_"+count).show();
+            $(".append_row_for_article_" + count + " .collar_text_" + count).show();
         });
 
-        $('.add_new_rows').click(function(){
+        $('.add_new_rows').click(function () {
             var count = $(this).attr('data-count');
             count = count == 0 ? 1 : count;
-            $(this).attr('data-count',parseInt(count)+1);
+            $(this).attr('data-count', parseInt(count) + 1);
             $.ajax({
-                url: "<?php echo base_url('customers/new_articles_append')?>",
+                url: "<?php echo base_url('customers/new_articles_append') ?>",
                 type: "POST",
-                data: "count=" + count+ '&' + crsf_token + '=' + crsf_hash,
+                data: "count=" + count + '&' + crsf_token + '=' + crsf_hash,
                 dataType: "html",
-                success: function(data) { 
+                success: function (data) {
                     $(".append_new_size_article").append(data);
                 }
             });
@@ -1077,48 +1126,91 @@
         $(document).on('click', '.remove_new_rows', function () {
             var count = $(this).attr('data-count');
             count = count == 0 ? 1 : count;
-            $('.append_row_for_article_'+count).remove();
-            $('.add_new_rows').attr('data-count',parseInt(count)-1);
+            $('.append_row_for_article_' + count).remove();
+            $('.add_new_rows').attr('data-count', parseInt(count) - 1);
         });
 
         $(document).on('click', '.Spro', function () {
             var val = $(this).val();
             var counter = $(this).attr('data-counter');
-            if($(this).is(":checked") && $(this).val() == 'suiting'){
+            if ($(this).is(":checked") && $(this).val() == 'suiting') {
 
-                $('.append_row_for_article_'+counter+' #shirts_'+counter).prop('checked', false);
-                $('.append_row_for_article_'+counter+' #shalwarqameez_'+counter).prop('checked', false);
+                $('.append_row_for_article_' + counter + ' #shirts_' + counter).prop('checked', false);
+                $('.append_row_for_article_' + counter + ' #shalwarqameez_' + counter).prop('checked', false);
 
-                $(".append_row_for_article_"+counter+" .coat_waistCoat").show();
-                $(".append_row_for_article_"+counter+" .pant").show();
-                $(".append_row_for_article_"+counter+" .shirt_qameez").hide();  
-                $(".append_row_for_article_"+counter+" .shalwar").hide();
-                $(".append_row_for_article_"+counter+" .only_shirt").hide();                
-            }else if($(this).is(":checked") && $(this).val() == 'shirts'){
+                $(".append_row_for_article_" + counter + " .coat_waistCoat").show();
+                $(".append_row_for_article_" + counter + " .pant").show();
+                $(".append_row_for_article_" + counter + " .shirt_qameez").hide();
+                $(".append_row_for_article_" + counter + " .shalwar").hide();
+                $(".append_row_for_article_" + counter + " .only_shirt").hide();
+                $("#product_stack").val(1);
+                $("#product_stack_list").val(function () {
+                    return this.value + '1';
+                });
+            } else if ($(this).is(":checked") && $(this).val() == 'shirts') {
 
-                $('.append_row_for_article_'+counter+' #suiting_'+counter).prop('checked', false);
-                $('.append_row_for_article_'+counter+' #shalwarqameez_'+counter).prop('checked', false);
+                $('.append_row_for_article_' + counter + ' #suiting_' + counter).prop('checked', false);
+                $('.append_row_for_article_' + counter + ' #shalwarqameez_' + counter).prop('checked', false);
 
-                $(".append_row_for_article_"+counter+" .coat_waistCoat").hide();
-                $(".append_row_for_article_"+counter+" .pant").hide();
-                $(".append_row_for_article_"+counter+" .shirt_qameez").show();  
-                $(".append_row_for_article_"+counter+" .only_shirt").show();  
-                $(".append_row_for_article_"+counter+" .shalwar").hide(); 
-            }else if($(this).is(":checked") && $(this).val() == 'shalwarqameez'){
-                
-                $('.append_row_for_article_'+counter+' #shirts_'+counter).prop('checked', false);
-                $('.append_row_for_article_'+counter+' #suiting_'+counter).prop('checked', false);
+                $(".append_row_for_article_" + counter + " .coat_waistCoat").hide();
+                $(".append_row_for_article_" + counter + " .pant").hide();
+                $(".append_row_for_article_" + counter + " .shirt_qameez").show();
+                $(".append_row_for_article_" + counter + " .only_shirt").show();
+                $(".append_row_for_article_" + counter + " .shalwar").hide();
+                $("#product_stack").val(2);
+                $("#product_stack_list").val(function () {
+                    return this.value + '2';
+                });
+            } else if ($(this).is(":checked") && $(this).val() == 'shalwarqameez') {
 
-                $(".append_row_for_article_"+counter+" .coat_waistCoat").hide();
-                $(".append_row_for_article_"+counter+" .pant").hide();
-                $(".append_row_for_article_"+counter+" .only_shirt").hide();
-                $(".append_row_for_article_"+counter+" .shirt_qameez").show();  
-                $(".append_row_for_article_"+counter+" .shalwar").show();
+                $('.append_row_for_article_' + counter + ' #shirts_' + counter).prop('checked', false);
+                $('.append_row_for_article_' + counter + ' #suiting_' + counter).prop('checked', false);
+
+                $(".append_row_for_article_" + counter + " .coat_waistCoat").hide();
+                $(".append_row_for_article_" + counter + " .pant").hide();
+                $(".append_row_for_article_" + counter + " .only_shirt").hide();
+                $(".append_row_for_article_" + counter + " .shirt_qameez").show();
+                $(".append_row_for_article_" + counter + " .shalwar").show();
+                $("#product_stack").val(3);
+                $("#product_stack_list").val(function () {
+                    return this.value + '3';
+                });
             }
         });
 
+        //preview
+        $('#pre_preview_model').on('show.bs.modal', function (event) {
+            var form = $("#data_form");
+            $.ajax({
+                url: "<?php echo base_url('customers/preview') ?>",
+                type: "POST",
+                data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1',
+                dataType: "html",
+                success: function (data) {
+                    $('#preview_body').html(data)
+                }
+            });
+        });
+
+
+
+
     });
 
-    
+    function  changeLamguage(){
+        var is_english = $('input[name="is_english"]:checked').val();
+        var form = $("#data_form");
+        $.ajax({
+            url: "<?php echo base_url('customers/preview') ?>",
+            type: "POST",
+            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&is_english=' + is_english,
+            dataType: "html",
+            success: function (data) {
+                $('#preview_body').html(data)
+            }
+        });
+    }
+
+
 </script>
 
