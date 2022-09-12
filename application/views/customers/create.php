@@ -65,19 +65,19 @@
                                     <div class="col-md-7 select_product">
                                         <div class="input-group">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="is_suiting[]" id="suiting" value="suiting">
+                                                <input type="checkbox" class="custom-control-input" name="is_suiting[0]" id="suiting" value="suiting">
                                                 <label class="custom-control-label" for="suiting">Suiting</label>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="is_shirts[]" id="shirts" value="shirts">
+                                                <input type="checkbox" class="custom-control-input" name="is_shirts[0]" id="shirts" value="shirts">
                                                 <label class="custom-control-label" for="shirts">Shirt</label>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="is_shalwarqameez[]" id="shalwarqameez" value="shalwarqameez">
+                                                <input type="checkbox" class="custom-control-input" name="is_shalwarqameez[0]" id="shalwarqameez" value="shalwarqameez">
                                                 <label class="custom-control-label" for="shalwarqameez"> Shalwar Kamiz</label>
                                             </div>
                                         </div> 
@@ -126,126 +126,126 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Neck</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="cNeck[]" id="cNeck">
+                                        <input type="text" class="form-control margin-bottom b_input" name="cNeck[0]" id="cNeck">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Chest</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="cChest[]" id="cChest">
+                                        <input type="text" class="form-control margin-bottom b_input " name="cChest[0]" id="cChest">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Belly Waist</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="cWaist[]" id="cWaist">
+                                        <input type="text" class="form-control margin-bottom b_input " name="cWaist[0]" id="cWaist">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Hip</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="cHips[]" id="cHips">
+                                        <input type="text" class="form-control margin-bottom b_input " name="cHips[0]" id="cHips">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Shoulder</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="cShoulder[]" id="cShoulder">
+                                        <input type="text" class="form-control margin-bottom b_input " name="cShoulder[0]" id="cShoulder">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Sleeves Length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="cSleeve[]" id="cSleev">
+                                        <input type="text" class="form-control margin-bottom b_input" name="cSleeve[0]" id="cSleev">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Bicep</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="cBicep[]" id="cBicep">
+                                        <input type="text" class="form-control margin-bottom b_input" name="cBicep[0]" id="cBicep">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Forearm</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="cForearm[]" id="cForearm">
+                                        <input type="text" class="form-control margin-bottom b_input" name="cForearm[0]" id="cForearm">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Half Back</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="cHalfBack[]" id="cHalfBack">
+                                        <input type="text" class="form-control margin-bottom b_input " name="cHalfBack[0]" id="cHalfBack">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Cross Back</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="cCrossBack[]" id="cCrossBack">
+                                        <input type="text" class="form-control margin-bottom b_input " name="cCrossBack[0]" id="cCrossBack">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Coat length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="cLength[]" id="cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="cLength[0]" id="cLength">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">3p waistcoat Length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="3p_waistcoat_length[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="3p_waistcoat_length[0]" id="Sec_cLength">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Waistcoat Length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="waistcoat_length[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="waistcoat_length[0]" id="Sec_cLength">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Princecoat Length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="princecoat_length[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="princecoat_length[0]" id="Sec_cLength">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Sherwani Length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="sherwani_length[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="sherwani_length[0]" id="Sec_cLength">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Long coat length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="longcoat_length[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="longcoat_length[0]" id="Sec_cLength">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Chester length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="chester_length[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="chester_length[0]" id="Sec_cLength">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Armhole</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input" name="armhole[]" id="Sec_cLength">
+                                        <input type="text" class="form-control margin-bottom b_input" name="armhole[0]" id="Sec_cLength">
                                     </div>
                                 </div>                            
 
@@ -258,32 +258,32 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Waist</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pWaist[]" id="pWaist">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pWaist[0]" id="pWaist">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Hip</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pHip[]" id="pHip">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pHip[0]" id="pHip">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Thigh</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pThigh[]" id="pThigh">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pThigh[0]" id="pThigh">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Knee</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pKnee[]" id="pKnee">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pKnee[0]" id="pKnee">
                                     </div>
                                 </div>
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Inseam / Inside Length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pInLength[]" id="pInLength">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pInLength[0]" id="pInLength">
                                     </div>
                                 </div> 
 
@@ -291,14 +291,14 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Length</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pLength[]" id="pLength">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pLength[0]" id="pLength">
                                     </div>
                                 </div>                                                     
 
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Bottom</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pBottom[]" id="pBottom">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pBottom[0]" id="pBottom">
                                     </div>
                                 </div>                           
                             </div>
@@ -310,11 +310,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_breasted[]" id="breasted" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_breasted[0]" id="breasted" value="1">
                                                     <label class="custom-control-label" for="breasted">Single breasted</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_breasted[]" id="double_breasted" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_breasted[0]" id="double_breasted" value="2">
                                                     <label class="custom-control-label" for="double_breasted">Double breasted</label>
                                                 </div>
                                             </div>
@@ -324,11 +324,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_button_suit[]" id="button_suit" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_button_suit[0]" id="button_suit" value="1">
                                                     <label class="custom-control-label" for="button_suit">One button</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_button_suit[]" id="two_button_suit" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_button_suit[0]" id="two_button_suit" value="2">
                                                     <label class="custom-control-label" for="two_button_suit">Two button</label>
                                                 </div>
                                             </div>
@@ -338,15 +338,15 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_lapel[]" id="lapel" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_lapel[0]" id="lapel" value="1">
                                                     <label class="custom-control-label" for="lapel">Notch lapel</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_lapel[]" id="peak_lapel" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_lapel[0]" id="peak_lapel" value="2">
                                                     <label class="custom-control-label" for="peak_lapel">Peak lapel</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_lapel[]" id="shawl_lapel" value="3">
+                                                    <input type="radio" class="custom-control-input" name="is_lapel[0]" id="shawl_lapel" value="3">
                                                     <label class="custom-control-label" for="shawl_lapel">Shawl lapel</label>
                                                 </div>
                                             </div>
@@ -356,15 +356,15 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_vent[]" id="vent" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_vent[0]" id="vent" value="1">
                                                     <label class="custom-control-label" for="vent">Single vent</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_vent[]" id="double_vent" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_vent[0]" id="double_vent" value="2">
                                                     <label class="custom-control-label" for="double_vent">Double vents</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_vent[]" id="no_vent" value="3">
+                                                    <input type="radio" class="custom-control-input" name="is_vent[0]" id="no_vent" value="3">
                                                     <label class="custom-control-label" for="no_vent">No vent</label>
                                                 </div>
                                             </div>
@@ -374,15 +374,15 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_wear[]" id="wear" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_wear[0]" id="wear" value="1">
                                                     <label class="custom-control-label" for="wear">Formal suit</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_wear[]" id="casual_wear" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_wear[0]" id="casual_wear" value="2">
                                                     <label class="custom-control-label" for="casual_wear"> Casual suit </label>
                                                 </div> &nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_wear[]" id="groom_wear" value="3">
+                                                    <input type="radio" class="custom-control-input" name="is_wear[0]" id="groom_wear" value="3">
                                                     <label class="custom-control-label" for="groom_wear">Grooms wear </label>
                                                 </div>
                                             </div>
@@ -392,11 +392,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_lined[]" id="lined" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_lined[0]" id="lined" value="1">
                                                     <label class="custom-control-label" for="lined">Fully lined </label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_lined[]" id="half_lined" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_lined[0]" id="half_lined" value="2">
                                                     <label class="custom-control-label" for="half_lined">Half lined</label>
                                                 </div>
                                             </div>
@@ -406,7 +406,7 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_ticket[]" id="ticket" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_ticket[0]" id="ticket" value="1">
                                                     <label class="custom-control-label" for="ticket">Ticket pocket </label>
                                                 </div>
                                             </div>
@@ -416,11 +416,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[]" id="regular" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[0]" id="regular" value="1">
                                                     <label class="custom-control-label" for="regular">Regular pockets</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[]" id="slant" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[0]" id="slant" value="2">
                                                     <label class="custom-control-label" for="slant">Slant pocket </label>
                                                 </div>
                                             </div>
@@ -430,11 +430,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_suit_button[]" id="metalic_button" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_suit_button[0]" id="metalic_button" value="1">
                                                     <label class="custom-control-label" for="metalic_button">Metallic buttons </label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_suit_button[]" id="button" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_suit_button[0]" id="button" value="2">
                                                     <label class="custom-control-label" for="button">Plain buttons</label>
                                                 </div>
                                             </div>
@@ -451,67 +451,67 @@
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Shirt Length</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="shirtLength[]" id="kmzLength">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtLength[0]" id="kmzLength">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Shoulder</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="shirtShoulder[]" id="kmzShoulder">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtShoulder[0]" id="kmzShoulder">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Sleeves Length</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="shirtSleeves[]" id="kmzSleeves">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtSleeves[0]" id="kmzSleeves">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Neck</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="shirtNeck[]" id="kmzNeck">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtNeck[0]" id="kmzNeck">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Chest</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="shirtChest[]" id="kmzChest">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtChest[0]" id="kmzChest">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Waist</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="shirtWaist[]" id="kmzWaist">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtWaist[0]" id="kmzWaist">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Hip</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="shirtHips[]" id="kmzHips">
+                                            <input type="text" class="form-control margin-bottom b_input " name="shirtHips[0]" id="kmzHips">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Bicep</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="shirtBicep[]" id="kmzBicep">
+                                            <input type="text" class="form-control margin-bottom b_input" name="shirtBicep[0]" id="kmzBicep">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Forearm</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="shirtForearm[]" id="kmzForearm">
+                                            <input type="text" class="form-control margin-bottom b_input" name="shirtForearm[0]" id="kmzForearm">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Armhole</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="shirtarmhole[]" id="kmzForearm">
+                                            <input type="text" class="form-control margin-bottom b_input" name="shirtarmhole[0]" id="kmzForearm">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Cuff</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="shirtcuff[]" id="kmzForearm">
+                                            <input type="text" class="form-control margin-bottom b_input" name="shirtcuff[0]" id="kmzForearm">
                                         </div>
                                     </div>
                                 </div>
@@ -519,73 +519,73 @@
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Kameez Length</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kmzLength[]" id="kmzLength">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzLength[0]" id="kmzLength">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Kurta Length</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kurtaLength[]" id="kmzLength">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kurtaLength[0]" id="kmzLength">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Shoulder</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kmzShoulder[]" id="kmzShoulder">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzShoulder[0]" id="kmzShoulder">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Sleeves Length</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kmzSleeves[]" id="kmzSleeves">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzSleeves[0]" id="kmzSleeves">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Neck</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kmzNeck[]" id="kmzNeck">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzNeck[0]" id="kmzNeck">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Chest</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kmzChest[]" id="kmzChest">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzChest[0]" id="kmzChest">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Waist</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kmzWaist[]" id="kmzWaist">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzWaist[0]" id="kmzWaist">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Hip</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input " name="kmzHips[]" id="kmzHips">
+                                            <input type="text" class="form-control margin-bottom b_input " name="kmzHips[0]" id="kmzHips">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Bicep</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="kmzBicep[]" id="kmzBicep">
+                                            <input type="text" class="form-control margin-bottom b_input" name="kmzBicep[0]" id="kmzBicep">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label"  for="name">Forearm</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="kmzForearm[]" id="kmzForearm">
+                                            <input type="text" class="form-control margin-bottom b_input" name="kmzForearm[0]" id="kmzForearm">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Armhole</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="kmzarmhole[]" id="kmzForearm">
+                                            <input type="text" class="form-control margin-bottom b_input" name="kmzarmhole[0]" id="kmzForearm">
                                         </div>
                                     </div>
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Cuff</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control margin-bottom b_input" name="kmzcuff[]" id="kmzForearm">
+                                            <input type="text" class="form-control margin-bottom b_input" name="kmzcuff[0]" id="kmzForearm">
                                         </div>
                                     </div>
                                 </div>
@@ -600,7 +600,7 @@
 
                                     <div class="col-sm-6">
                                         <input type="text"
-                                               class="form-control margin-bottom b_input " name="shlLength[]"
+                                               class="form-control margin-bottom b_input " name="shlLength[0]"
                                                id="shlLength">
                                     </div>
                                 </div>
@@ -610,7 +610,7 @@
 
                                     <div class="col-sm-6">
                                         <input type="text"
-                                               class="form-control margin-bottom b_input " name="shlBottom[]"
+                                               class="form-control margin-bottom b_input " name="shlBottom[0]"
                                                id="shlBottom">
                                     </div>
                                 </div>
@@ -621,7 +621,7 @@
 
                                     <div class="col-sm-6">
                                         <input type="text"
-                                               class="form-control margin-bottom b_input " name="shlAsanTyar[]"
+                                               class="form-control margin-bottom b_input " name="shlAsanTyar[0]"
                                                id="shlAsanTyar">
                                     </div>
                                 </div>
@@ -632,7 +632,7 @@
 
                                     <div class="col-sm-6">
                                         <input type="text"
-                                               class="form-control margin-bottom b_input " name="shlGairaTyar[]"
+                                               class="form-control margin-bottom b_input " name="shlGairaTyar[0]"
                                                id="shlGairaTyar">
                                     </div>
                                 </div>
@@ -640,13 +640,13 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Pajama Length</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaLength[]" id="shlLength">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaLength[0]" id="shlLength">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-5 col-form-label" for="name">Pajama Bottom</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaBottom[]" id="shlBottom">
+                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaBottom[0]" id="shlBottom">
                                     </div>
                                 </div>
                             </div>
@@ -658,23 +658,23 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio form-check-inline">
-                                                    <input type="radio" class="custom-control-input" name="is_collar[]" id="is_kamiz_collar" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_collar[0]" id="is_kamiz_collar" value="1">
                                                     <label class="custom-control-label" for="is_kamiz_collar">Collar</label>
                                                 </div> &nbsp;&nbsp;
                                                 <div class="custom-control custom-radio form-check-inline">
-                                                    <input type="radio" class="custom-control-input" name="is_collar[]" id="is_half_band" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_collar[0]" id="is_half_band" value="2">
                                                     <label class="custom-control-label" for="is_half_band">Half Band</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio form-check-inline">
-                                                    <input type="radio" class="custom-control-input" name="is_collar[]" id="is_full_band" value="3">
+                                                    <input type="radio" class="custom-control-input" name="is_collar[0]" id="is_full_band" value="3">
                                                     <label class="custom-control-label" for="is_full_band">Full Band</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio form-check-inline">
-                                                    <input type="radio" class="custom-control-input" name="is_collar[]" id="moon_neck" value="4">
+                                                    <input type="radio" class="custom-control-input" name="is_collar[0]" id="moon_neck" value="4">
                                                     <label class="custom-control-label" for="moon_neck">Moon Neck</label>
                                                 </div>
                                                 <div class="input-group collar_text" style="display:none;">
-                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins[]" id="collar_ins" placeholder="Write instructions..."> 
+                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins[0]" id="collar_ins" placeholder="Write instructions..."> 
                                                 </div>
                                             </div>
                                         </div>
@@ -683,11 +683,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_front[]" id="is_round_front" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_front[0]" id="is_round_front" value="1">
                                                     <label class="custom-control-label" for="is_round_front">Round Front</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_front[]" id="straight_front" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_front[0]" id="straight_front" value="2">
                                                     <label class="custom-control-label" for="straight_front">Straight Front</label>
                                                 </div>
                                             </div>
@@ -697,11 +697,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_front_pocket[]" id="is_front_pocket" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_front_pocket[0]" id="is_front_pocket" value="1">
                                                     <label class="custom-control-label" for="is_front_pocket">Front Pocket</label>
                                                 </div>
                                                 <div class="input-group front_pocket_text" style="display:none;">
-                                                    <input type="text" class="form-control" style="margin-right:20px; margin-top:5px;" name="front_pocket_ins[]" id="front_pocket_ins" placeholder="Write instructions..."> 
+                                                    <input type="text" class="form-control" style="margin-right:20px; margin-top:5px;" name="front_pocket_ins[0]" id="front_pocket_ins" placeholder="Write instructions..."> 
                                                 </div>
                                             </div>
                                         </div>
@@ -710,11 +710,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_shalwar_pocket[]" id="is_shalwar_pocket" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_shalwar_pocket[0]" id="is_shalwar_pocket" value="1">
                                                     <label class="custom-control-label" for="is_shalwar_pocket">Shalwar Pocket</label>
                                                 </div>
                                                 <div class="input-group shalwar_pocket_text" style="display:none;">
-                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shalwar_pocket_ins[]" id="shalwar_pocket_ins" placeholder="Write instructions..."> 
+                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shalwar_pocket_ins[0]" id="shalwar_pocket_ins" placeholder="Write instructions..."> 
                                                 </div>
                                             </div>
                                         </div>
@@ -723,11 +723,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_pocket[]" id="1side_pocket" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_pocket[0]" id="1side_pocket" value="1">
                                                     <label class="custom-control-label" for="1side_pocket">1 side pocket</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_pocket[]" id="2side_pocket" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_pocket[0]" id="2side_pocket" value="2">
                                                     <label class="custom-control-label" for="2side_pocket">2 side pocket</label>
                                                 </div>
                                             </div>
@@ -737,7 +737,7 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_sleeve_placket[]" id="is_sleeve_placket" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_sleeve_placket[0]" id="is_sleeve_placket" value="1">
                                                     <label class="custom-control-label" for="is_sleeve_placket">Sleeve Placket Button</label>
                                                 </div>
                                             </div>
@@ -747,15 +747,15 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_button[]" id="is_plain_button" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_button[0]" id="is_plain_button" value="1">
                                                     <label class="custom-control-label" for="is_plain_button">Plain Button</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_button[]" id="fancy_button" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_button[0]" id="fancy_button" value="2">
                                                     <label class="custom-control-label" for="fancy_button">Fancy Button</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_button[]" id="loop_button" value="3">
+                                                    <input type="radio" class="custom-control-input" name="is_button[0]" id="loop_button" value="3">
                                                     <label class="custom-control-label" for="loop_button">Loop Button</label>
                                                 </div>
                                             </div>
@@ -765,15 +765,15 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_cuff[]" id="is_button_cuff" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_cuff[0]" id="is_button_cuff" value="1">
                                                     <label class="custom-control-label" for="is_button_cuff">Button Cuff</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_cuff[]" id="is_french_cuff" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_cuff[0]" id="is_french_cuff" value="2">
                                                     <label class="custom-control-label" for="is_french_cuff">French Cuff</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_cuff[]" id="is_open_sleeves" value="3">
+                                                    <input type="radio" class="custom-control-input" name="is_cuff[0]" id="is_open_sleeves" value="3">
                                                     <label class="custom-control-label" for="is_open_sleeves">Open Sleeves</label>
                                                 </div>
                                             </div>
@@ -783,11 +783,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_design[]" id="is_half_design" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_design[0]" id="is_half_design" value="1">
                                                     <label class="custom-control-label" for="is_half_design">Half design</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_design[]" id="is_full_design" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_design[0]" id="is_full_design" value="2">
                                                     <label class="custom-control-label" for="is_full_design">Full design</label>
                                                 </div>
                                             </div>
@@ -797,11 +797,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_kanta[]" id="is__kanta" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_kanta[0]" id="is__kanta" value="1">
                                                     <label class="custom-control-label" for="is__kanta">Kanta</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_kanta[]" id="is_jali_kanta" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_kanta[0]" id="is_jali_kanta" value="2">
                                                     <label class="custom-control-label" for="is_jali_kanta">Jali Kanta</label>
                                                 </div>
                                             </div>
@@ -811,11 +811,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_stitch[]" id="is_single_stitch" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_stitch[0]" id="is_single_stitch" value="1">
                                                     <label class="custom-control-label" for="is_single_stitch">Single stitch</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_stitch[]" id="is_double_stitch" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_stitch[0]" id="is_double_stitch" value="2">
                                                     <label class="custom-control-label" for="is_double_stitch">Full double stitch</label>
                                                 </div>
                                             </div>
@@ -825,7 +825,7 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_thread[]" id="is_shin_thread" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_thread[0]" id="is_shin_thread" value="1">
                                                     <label class="custom-control-label" for="is_shin_thread">Shining thread</label>
                                                 </div>
                                             </div>
@@ -835,11 +835,11 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_bookrum[]" id="is_hard_bookrum" value="1">
+                                                    <input type="radio" class="custom-control-input" name="is_bookrum[0]" id="is_hard_bookrum" value="1">
                                                     <label class="custom-control-label" for="is_hard_bookrum">Hard bookrum</label>
                                                 </div>&nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_bookrum[]" id="is_soft_bookrum" value="2">
+                                                    <input type="radio" class="custom-control-input" name="is_bookrum[0]" id="is_soft_bookrum" value="2">
                                                     <label class="custom-control-label" for="is_soft_bookrum">Soft bookrum</label>
                                                 </div>
                                             </div>
@@ -857,11 +857,11 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <div class="custom-control custom-radio form-check-inline">
-                                                <input type="checkbox" class="custom-control-input" name="is_placket[]" id="front_placket" value="1">
+                                                <input type="checkbox" class="custom-control-input" name="is_placket[0]" id="front_placket" value="1">
                                                 <label class="custom-control-label" for="front_placket">Front placket</label>
                                             </div> &nbsp;&nbsp;
                                             <div class="custom-control custom-radio form-check-inline">
-                                                <input type="checkbox" class="custom-control-input" name="is_placket[]" id="plane_placket" value="2">
+                                                <input type="checkbox" class="custom-control-input" name="is_placket[0]" id="plane_placket" value="2">
                                                 <label class="custom-control-label" for="plane_placket"> Plain Front</label>
                                             </div>
                                         </div>
@@ -871,11 +871,11 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input" name="is_shirt_cuff[]" id="is_shirt_button_cuff" value="1">
+                                                <input type="radio" class="custom-control-input" name="is_shirt_cuff[0]" id="is_shirt_button_cuff" value="1">
                                                 <label class="custom-control-label" for="is_shirt_button_cuff">Button Cuff </label>
                                             </div> &nbsp;&nbsp;
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input" name="is_shirt_cuff[]" id="is_shirt_double_cuff" value="2">
+                                                <input type="radio" class="custom-control-input" name="is_shirt_cuff[0]" id="is_shirt_double_cuff" value="2">
                                                 <label class="custom-control-label" for="is_shirt_double_cuff">Double Cuff</label>
                                             </div>
                                         </div>
@@ -885,46 +885,46 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <div class="custom-control custom-radio form-check-inline">
-                                                <input type="radio" class="custom-control-input" name="is_shirt_collar[]" id="is__shirt_collar" value="1">
+                                                <input type="radio" class="custom-control-input" name="is_shirt_collar[0]" id="is__shirt_collar" value="1">
                                                 <label class="custom-control-label" for="is__shirt_collar">Collar</label>
                                             </div> &nbsp;&nbsp;
                                             <div class="custom-control custom-radio form-check-inline">
-                                                <input type="radio" class="custom-control-input" name="is_shirt_collar[]" id="is_shirt_half_band" value="2">
+                                                <input type="radio" class="custom-control-input" name="is_shirt_collar[0]" id="is_shirt_half_band" value="2">
                                                 <label class="custom-control-label" for="is_shirt_half_band">Half Band</label>
                                             </div>&nbsp;&nbsp;
                                             <div class="custom-control custom-radio form-check-inline">
-                                                <input type="radio" class="custom-control-input" name="is_shirt_collar[]" id="is_shirt_full_band" value="3">
+                                                <input type="radio" class="custom-control-input" name="is_shirt_collar[0]" id="is_shirt_full_band" value="3">
                                                 <label class="custom-control-label" for="is_shirt_full_band">Full Band</label>
                                             </div><br><br>
                                         </div>
                                     </div>
                                     <div class="col-md-12 shirt_collar_text" style="display:none;">
                                         <div class="custom-control custom-radio form-check-inline">
-                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[]" id="tie_collar" value="1">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="tie_collar" value="1">
                                             <label class="custom-control-label" for="tie_collar">Tie Collar</label>
                                         </div><br>
                                         <div class="custom-control custom-radio form-check-inline">
-                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[]" id="button_down" value="2">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="button_down" value="2">
                                             <label class="custom-control-label" for="button_down">Button Down</label>
                                         </div><br>
                                         <div class="custom-control custom-radio form-check-inline">
-                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[]" id="vintage_clud" value="3">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="vintage_clud" value="3">
                                             <label class="custom-control-label" for="vintage_clud">Vintage club</label>
                                         </div><br>
                                         <div class="custom-control custom-radio form-check-inline">
-                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[]" id="half_french" value="4">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="half_french" value="4">
                                             <label class="custom-control-label" for="half_french">Half French</label>
                                         </div><br>
                                         <div class="custom-control custom-radio form-check-inline">
-                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[]" id="full_french" value="5">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="full_french" value="5">
                                             <label class="custom-control-label" for="full_french">Full French</label>
                                         </div><br>
                                         <div class="custom-control custom-radio form-check-inline">
-                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[]" id="tuxedo" value="6">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="tuxedo" value="6">
                                             <label class="custom-control-label" for="tuxedo">Tuxedo</label>
                                         </div>                                        
                                         <div class="input-group">
-                                            <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shirt_collar_ins[]" id="shirt_collar_ins" placeholder="Write instructions..."> 
+                                            <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shirt_collar_ins[0]" id="shirt_collar_ins" placeholder="Write instructions..."> 
                                         </div>
                                     </div>
                                 </div>                         
@@ -935,7 +935,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email" class="col-form-label">Suiting Instructions:</label>
-                                <textarea class="form-control" name="inst[]" rows="7" id="comment"></textarea>
+                                <textarea class="form-control" name="inst[0]" rows="7" id="comment"></textarea>
                             </div>
                         </div>
                     </div> 
@@ -944,7 +944,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email" class="col-form-label">Shirts Instructions:</label>
-                                <textarea class="form-control" name="shirt_inst[]" rows="7" id="comment"></textarea>
+                                <textarea class="form-control" name="shirt_inst[0]" rows="7" id="comment"></textarea>
                             </div>
                         </div>
                     </div> 
@@ -953,7 +953,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
-                                <textarea class="form-control" name="shalwar_inst[]" rows="7" id="comment"></textarea>
+                                <textarea class="form-control" name="shalwar_inst[0]" rows="7" id="comment"></textarea>
                             </div>
                         </div>
                     </div>
@@ -1072,38 +1072,38 @@
             
         });
 
-        $("input[name='is_collar[]']").change(function () {
+        $("input[name='is_collar[0]']").change(function () {
             $(".default_row .collar_text").show();
         });
 
-        $("input[name='is_front_pocket[]']").change(function () {
+        $("input[name='is_front_pocket[0]']").change(function () {
             $(".default_row .front_pocket_text").show();
         });
 
-        $("input[name='is_shalwar_pocket[]']").change(function () {
+        $("input[name='is_shalwar_pocket[0]']").change(function () {
             $(".default_row .shalwar_pocket_text").show();
         });
 
-        $("input[name='is_shirt_collar[]']").change(function () {
+        $("input[name='is_shirt_collar[0]']").change(function () {
             $(".default_row .shirt_collar_text").show();
         });
 
-        $(document).on('click', 'input[name="is_shirt_collar[]"]', function () {
+        $(document).on('click', 'input[name="is_shirt_collar[0]"]', function () {
             var count = $(this).attr('data-count');
             $(".append_row_for_article_" + count + " .shirt_collar_text_" + count).show();
         });
 
-        $(document).on('click', 'input[name="is_shalwar_pocket[]"]', function () {
+        $(document).on('click', 'input[name="is_shalwar_pocket[0]"]', function () {
             var count = $(this).attr('data-count');
             $(".append_row_for_article_" + count + " .shalwar_pocket_text_" + count).show();
         });
 
-        $(document).on('click', 'input[name="is_front_pocket[]"]', function () {
+        $(document).on('click', 'input[name="is_front_pocket[0]"]', function () {
             var count = $(this).attr('data-count');
             $(".append_row_for_article_" + count + " .front_pocket_text_" + count).show();
         });
 
-        $(document).on('click', 'input[name="is_collar[]"]', function () {
+        $(document).on('click', 'input[name="is_collar[0]"]', function () {
             var count = $(this).attr('data-count');
             $(".append_row_for_article_" + count + " .collar_text_" + count).show();
         });
@@ -1111,6 +1111,7 @@
         $('.add_new_rows').click(function () {
             var count = $(this).attr('data-count');
             count = count == 0 ? 1 : count;
+            
             $(this).attr('data-count', parseInt(count) + 1);
             $.ajax({
                 url: "<?php echo base_url('customers/new_articles_append') ?>",
@@ -1134,7 +1135,7 @@
             var val = $(this).val();
             var counter = $(this).attr('data-counter');
             if ($(this).is(":checked") && $(this).val() == 'suiting') {
-
+                  alert(counter);
                 $('.append_row_for_article_' + counter + ' #shirts_' + counter).prop('checked', false);
                 $('.append_row_for_article_' + counter + ' #shalwarqameez_' + counter).prop('checked', false);
 
