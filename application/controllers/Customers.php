@@ -410,7 +410,11 @@ class Customers extends CI_Controller
                     $shirtcuff = $this->input->post("shirtcuff[".$vShirtCountIndex."]");
 
                     if(isset($_POST["is_placket"][$vShirtCountIndex]) && !empty($_POST['is_placket'][$vShirtCountIndex])){ 
-                        $is_front_placket = $_POST['is_placket'][$vShirtCountIndex];
+                        $is_placket = $_POST['is_placket'][$vShirtCountIndex];
+                        if($is_placket==1)
+                            $is_front_placket=1;
+                        else  if($is_placket==2)
+                            $is_plane_placket=1;
                     }else{
                         $is_front_placket = isset($_POST["is_placket"][0])?$_POST["is_placket"][0]:0;
                     }
@@ -2297,7 +2301,7 @@ class Customers extends CI_Controller
     
     public function updatecolthingCustomer() {
         
-//        print_r($this->input->post());exit;
+       //print_r(json_encode($this->input->post()));exit;
         //delete old data
         $this->customers->delete($this->input->post('customer_id'));
         
@@ -2311,7 +2315,7 @@ class Customers extends CI_Controller
         $cSleeve=[];
         $aShirtLength=[];
         $akmzLength=[];
-//        print_r(json_encode($this->input->post()));exit;
+
         $ref_no = $this->input->post('or_ref_no',true);
 
         $book_date = $this->input->post('booking_date'); 
@@ -2598,7 +2602,11 @@ class Customers extends CI_Controller
                     $shirtcuff = $this->input->post("shirtcuff[".$vShirtCountIndex."]");
 
                     if(isset($_POST["is_placket"][$vShirtCountIndex]) && !empty($_POST['is_placket'][$vShirtCountIndex])){ 
-                        $is_front_placket = $_POST['is_placket'][$vShirtCountIndex];
+                        $is_placket = $_POST['is_placket'][$vShirtCountIndex];
+                        if($is_placket==1)
+                            $is_front_placket=1;
+                        else  if($is_placket==2)
+                            $is_plane_placket=1;
                     }else{
                         $is_front_placket = isset($_POST["is_placket"][0])?$_POST["is_placket"][0]:0;
                     }
