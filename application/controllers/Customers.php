@@ -100,7 +100,7 @@ class Customers extends CI_Controller
         
         //$data['invoice'] = $this->invocies->invoice_details($tid, $this->limited);
         
-        $data['nap'] = $this->customers->details($cid);
+        $data['nap'] = $this->customers->details_old($cid);
         
         $pref = prefix(7);
 
@@ -719,9 +719,9 @@ class Customers extends CI_Controller
         $tid = $this->input->get('id');
         $data['id'] = $tid;
         
-        $data['invoice'] = $this->invocies->invoice_details($tid, $this->limited);
+//        $data['invoice'] = $this->invocies->invoice_details($tid, $this->limited);
         
-        $data['nap'] = $this->customers->details($cid);
+        $data['nap'] = $this->customers->details_old($cid);
         
         $pref = prefix(7);
 

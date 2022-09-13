@@ -693,7 +693,7 @@
                                                                     <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_collar[<?php echo $thisIndex; ?>]" id="moon_neck<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>" value="4" <?php echo ($thiscustomer['is_collar'] == 4) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="moon_neck<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Moon Neck</label>
                                                                 </div>
-                                                                <div class="input-group collar_text"  <?php echo (!empty($thiscustomer['collar_ins'])) ? '' : 'style="display:none;"' ?>>
+                                                                <div class="input-group collar_text">
                                                                     <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins[<?php echo $thisIndex; ?>]" id="collar_ins<?php echo $thisIndex; ?>"
                                                                            alue="4" value=" <?php echo $thiscustomer['collar_ins']; ?>"
                                                                            placeholder="Write instructions..."> 
