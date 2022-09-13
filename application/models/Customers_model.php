@@ -158,6 +158,31 @@ class Customers_model extends CI_Model
         return $query->num_rows($id = '');
     }
 
+    public function details_old($custid)
+    {
+        $this->db->from($this->table);
+        //$this->db->join('users', 'users.cid=geopos_customers.id', 'left');
+        $this->db->join('customer_basic_info','geopos_customers.id = customer_basic_info.cus_id','left');
+        $this->db->join('customer_coat_size','customer_basic_info.basic_info_id = customer_coat_size.cus_id','left');
+        $this->db->join('customer_pant_size','customer_basic_info.basic_info_id = customer_pant_size.cus_id','left');
+        $this->db->join('customer_kmz_shl','customer_basic_info.basic_info_id = customer_kmz_shl.cus_id','left');
+       $this->db->join('geopos_invoices', 'geopos_customers.id = geopos_invoices.csd', 'left');
+        $this->db->group_by('geopos_invoices.csd');
+        $this->db->order_by('geopos_invoices.id', 'desc');
+        $this->db->where('geopos_customers.id', $custid);
+
+        if ($this->aauth->get_user()->loc) {
+            $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
+        } elseif (!BDATA) {
+            $this->db->where('geopos_customers.loc', 0);
+        }
+        
+        
+        $query = $this->db->get();
+//        print_r($this->db->last_query());
+        return $query->row_array();
+    }
+    
     public function details($custid)
     {
         $this->db->from($this->table);
