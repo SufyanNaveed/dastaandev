@@ -146,126 +146,126 @@
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Neck</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="cNeck[<?php echo $thisIndex; ?>]" id="cNeck" value="<?php echo $thiscustomer['coat_neck'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="cNeck[<?php echo $thisIndex; ?>]" id="cNeck<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_neck'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Chest</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="cChest[<?php echo $thisIndex; ?>]" id="cChest" value="<?php echo $thiscustomer['coat_chest'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="cChest[<?php echo $thisIndex; ?>]" id="cChest<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_chest'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Belly Waist</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="cWaist[<?php echo $thisIndex; ?>]" id="cWaist" value="<?php echo $thiscustomer['coat_waist'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="cWaist[<?php echo $thisIndex; ?>]" id="cWaist<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_waist'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Hip</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="cHips[<?php echo $thisIndex; ?>]" id="cHips" value="<?php echo $thiscustomer['coat_hip'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="cHips[<?php echo $thisIndex; ?>]" id="cHips<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_hip'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Shoulder</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="cShoulder[<?php echo $thisIndex; ?>]" id="cShoulder" value="<?php echo $thiscustomer['coat_shoulder'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="cShoulder[<?php echo $thisIndex; ?>]" id="cShoulder<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_shoulder'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Sleeves Length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="cSleeve[<?php echo $thisIndex; ?>]" id="cSleev" value="<?php echo $thiscustomer['coat_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="cSleeve[<?php echo $thisIndex; ?>]" id="cSleev<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Bicep</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="cBicep[<?php echo $thisIndex; ?>]" id="cBicep" value="<?php echo $thiscustomer['coat_bicep'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="cBicep[<?php echo $thisIndex; ?>]" id="cBicep<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_bicep'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Forearm</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="cForearm[<?php echo $thisIndex; ?>]" id="cForearm" value="<?php echo $thiscustomer['coat_forearm'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="cForearm[<?php echo $thisIndex; ?>]" id="cForearm<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_forearm'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Half Back</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="cHalfBack[<?php echo $thisIndex; ?>]" id="cHalfBack" value="<?php echo $thiscustomer['coat_half_back'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="cHalfBack[<?php echo $thisIndex; ?>]" id="cHalfBack<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_half_back'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Cross Back</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="cCrossBack[<?php echo $thisIndex; ?>]" id="cCrossBack" value="<?php echo $thiscustomer['coat_cross_back'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="cCrossBack[<?php echo $thisIndex; ?>]" id="cCrossBack<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_cross_back'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Coat length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="cLength[<?php echo $thisIndex; ?>]" id="cLength" value="<?php echo $thiscustomer['coat_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="cLength[<?php echo $thisIndex; ?>]" id="cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">3p waistcoat Length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="3p_waistcoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength" value="<?php echo $thiscustomer['p3_waistcoat_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="3p_waistcoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['p3_waistcoat_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Waistcoat Length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="waistcoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength" value="<?php echo $thiscustomer['waistcoat_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="waistcoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['waistcoat_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Princecoat Length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="princecoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength" value="<?php echo $thiscustomer['princecoat_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="princecoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['princecoat_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Sherwani Length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="sherwani_length[<?php echo $thisIndex; ?>]" id="Sec_cLength" value="<?php echo $thiscustomer['sherwani_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="sherwani_length[<?php echo $thisIndex; ?>]" id="Sec_cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['sherwani_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Long coat length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="longcoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength" value="<?php echo $thiscustomer['longcoat_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="longcoat_length[<?php echo $thisIndex; ?>]" id="Sec_cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['longcoat_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Chester length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="chester_length[<?php echo $thisIndex; ?>]" id="Sec_cLength" value="<?php echo $thiscustomer['chester_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="chester_length[<?php echo $thisIndex; ?>]" id="Sec_cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['chester_length'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Armhole</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input" name="armhole[<?php echo $thisIndex; ?>]" id="Sec_cLength" value="<?php echo $thiscustomer['armhole'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input" name="armhole[<?php echo $thisIndex; ?>]" id="Sec_cLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['armhole'] ?>">
                                                     </div>
                                                 </div>                            
 
@@ -278,32 +278,32 @@
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Waist</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pWaist[<?php echo $thisIndex; ?>]" id="pWaist" value="<?php echo $thiscustomer['pant_waist'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pWaist[<?php echo $thisIndex; ?>]" id="pWaist<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pant_waist'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Hip</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pHip[<?php echo $thisIndex; ?>]" id="pHip" value="<?php echo $thiscustomer['pant_hip'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pHip[<?php echo $thisIndex; ?>]" id="pHip<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pant_hip'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Thigh</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pThigh[<?php echo $thisIndex; ?>]" id="pThigh" value="<?php echo $thiscustomer['pant_thigh'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pThigh[<?php echo $thisIndex; ?>]" id="pThigh<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pant_thigh'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Knee</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pKnee[<?php echo $thisIndex; ?>]" id="pKnee" value="<?php echo $thiscustomer['pant_knee'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pKnee[<?php echo $thisIndex; ?>]" id="pKnee<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pant_knee'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Inseam / Inside Length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pInLength[<?php echo $thisIndex; ?>]" id="pInLength" value="<?php echo $thiscustomer['pant_inside_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pInLength[<?php echo $thisIndex; ?>]" id="pInLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pant_inside_length'] ?>">
                                                     </div>
                                                 </div> 
 
@@ -311,14 +311,14 @@
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Length</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pLength[<?php echo $thisIndex; ?>]" id="pLength" value="<?php echo $thiscustomer['pant_length'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pLength[<?php echo $thisIndex; ?>]" id="pLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pant_length'] ?>">
                                                     </div>
                                                 </div>                                                     
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Bottom</label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pBottom[<?php echo $thisIndex; ?>]" id="pBottom" value="<?php echo $thiscustomer['pant_bottom'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pBottom[<?php echo $thisIndex; ?>]" id="pBottom<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pant_bottom'] ?>">
                                                     </div>
                                                 </div>                           
                                             </div>
@@ -440,7 +440,7 @@
                                                                     <label class="custom-control-label" for="regular<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Regular pockets</label>
                                                                 </div>&nbsp;&nbsp;
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="slant"<?php echo $thisIndex==0?'':'_'.$thisIndex; ?> value="2" <?php echo ($thiscustomer['is_slant']) ? "checked" : ''; ?>>
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="slant<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_slant']) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="slant<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Slant pocket </label>
                                                                 </div>
                                                             </div>
@@ -471,67 +471,67 @@
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Shirt Length</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtLength[<?php echo $thisIndex; ?>]" id="kmzLength" value="<?php echo $thiscustomer['shirtLength'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtLength[<?php echo $thisIndex; ?>]" id="kmzLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtLength'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Shoulder</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtShoulder[<?php echo $thisIndex; ?>]" id="kmzShoulder" value="<?php echo $thiscustomer['shirtShoulder'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtShoulder[<?php echo $thisIndex; ?>]" id="kmzShoulder<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtShoulder'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Sleeves Length</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtSleeves[<?php echo $thisIndex; ?>]" id="kmzSleeves" value="<?php echo $thiscustomer['shirtSleeves'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtSleeves[<?php echo $thisIndex; ?>]" id="kmzSleeves<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtSleeves'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Neck</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtNeck[<?php echo $thisIndex; ?>]" id="kmzNeck" value="<?php echo $thiscustomer['shirtNeck'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtNeck[<?php echo $thisIndex; ?>]" id="kmzNeck<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtNeck'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Chest</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtChest[<?php echo $thisIndex; ?>]" id="kmzChest" value="<?php echo $thiscustomer['shirtChest'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtChest[<?php echo $thisIndex; ?>]" id="kmzChest<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtChest'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Waist</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtWaist[<?php echo $thisIndex; ?>]" id="kmzWaist" value="<?php echo $thiscustomer['shirtChest'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtWaist[<?php echo $thisIndex; ?>]" id="kmzWaist<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtChest'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Hip</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtHips[<?php echo $thisIndex; ?>]" id="kmzHips" value="<?php echo $thiscustomer['shirtHips'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="shirtHips[<?php echo $thisIndex; ?>]" id="kmzHips<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtHips'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Bicep</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtBicep[<?php echo $thisIndex; ?>]" id="kmzBicep" value="<?php echo $thiscustomer['shirtBicep'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtBicep[<?php echo $thisIndex; ?>]" id="kmzBicep<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtBicep'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Forearm</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtForearm[<?php echo $thisIndex; ?>]" id="kmzForearm" value="<?php echo $thiscustomer['shirtForearm'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtForearm[<?php echo $thisIndex; ?>]" id="kmzForearm<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtForearm'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Armhole</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtarmhole[<?php echo $thisIndex; ?>]" id="kmzForearm" value="<?php echo $thiscustomer['shirtarmhole'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtarmhole[<?php echo $thisIndex; ?>]" id="kmzForearm<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtarmhole'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Cuff</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtcuff[<?php echo $thisIndex; ?>]" id="kmzForearm" value="<?php echo $thiscustomer['shirtcuff'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="shirtcuff[<?php echo $thisIndex; ?>]" id="kmzForearm<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['shirtcuff'] ?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -539,73 +539,73 @@
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Kameez Length</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzLength[<?php echo $thisIndex; ?>]" id="kmzLength" value="<?php echo $thiscustomer['kmz_length'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzLength[<?php echo $thisIndex; ?>]" id="kmzLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_length'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Kurta Length</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kurtaLength[<?php echo $thisIndex; ?>]" id="kmzLength" value="<?php echo $thiscustomer['kmz_length'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kurtaLength[<?php echo $thisIndex; ?>]" id="kmzLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_length'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Shoulder</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzShoulder[<?php echo $thisIndex; ?>]" id="kmzShoulder" value="<?php echo $thiscustomer['kmz_shoulder'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzShoulder[<?php echo $thisIndex; ?>]" id="kmzShoulder<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_shoulder'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Sleeves Length</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzSleeves[<?php echo $thisIndex; ?>]" id="kmzSleeves" value="<?php echo $thiscustomer['kmz_sleeves'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzSleeves[<?php echo $thisIndex; ?>]" id="kmzSleeves<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_sleeves'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Neck</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzNeck[<?php echo $thisIndex; ?>]" id="kmzNeck" value="<?php echo $thiscustomer['kmz_neck'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzNeck[<?php echo $thisIndex; ?>]" id="kmzNeck<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_neck'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Chest</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzChest[<?php echo $thisIndex; ?>]" id="kmzChest" value="<?php echo $thiscustomer['kmz_chest'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzChest[<?php echo $thisIndex; ?>]" id="kmzChest<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_chest'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Waist</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzWaist[<?php echo $thisIndex; ?>]" id="kmzWaist" value="<?php echo $thiscustomer['kmz_waist'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzWaist[<?php echo $thisIndex; ?>]" id="kmzWaist<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_waist'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Hip</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzHips[<?php echo $thisIndex; ?>]" id="kmzHips"  value="<?php echo $thiscustomer['kmz_hip'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kmzHips[<?php echo $thisIndex; ?>]" id="kmzHips<?php echo $thisIndex; ?>"  value="<?php echo $thiscustomer['kmz_hip'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Bicep</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzBicep[<?php echo $thisIndex; ?>]" id="kmzBicep" value="<?php echo $thiscustomer['kmz_bicep'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzBicep[<?php echo $thisIndex; ?>]" id="kmzBicep<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_bicep'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label"  for="name">Forearm</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzForearm[<?php echo $thisIndex; ?>]" id="kmzForearm" value="<?php echo $thiscustomer['kmz_forearm'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzForearm[<?php echo $thisIndex; ?>]" id="kmzForearm<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_forearm'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Armhole</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzarmhole[<?php echo $thisIndex; ?>]" id="kmzForearm" value="<?php echo $thiscustomer['kmzarmhole'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzarmhole[<?php echo $thisIndex; ?>]" id="kmzForearm<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmzarmhole'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Cuff</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzcuff[<?php echo $thisIndex; ?>]" id="kmzForearm" value="<?php echo $thiscustomer['kmzcuff'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input" name="kmzcuff[<?php echo $thisIndex; ?>]" id="kmzForearm<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmzcuff'] ?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -621,7 +621,7 @@
                                                     <div class="col-sm-6">
                                                         <input type="text"
                                                                class="form-control margin-bottom b_input " name="shlLength[<?php echo $thisIndex; ?>]" value="<?php echo $thiscustomer['shl_length'] ?>"
-                                                               id="shlLength">
+                                                               id="shlLength<?php echo $thisIndex; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-1">
@@ -631,7 +631,7 @@
                                                     <div class="col-sm-6">
                                                         <input type="text"
                                                                class="form-control margin-bottom b_input " name="shlBottom[<?php echo $thisIndex; ?>]" value="<?php echo $thiscustomer['shl_bottom'] ?>"
-                                                               id="shlBottom">
+                                                               id="shlBottom<?php echo $thisIndex; ?>">
                                                     </div>
                                                 </div>
 
@@ -642,7 +642,7 @@
                                                     <div class="col-sm-6">
                                                         <input type="text"
                                                                class="form-control margin-bottom b_input " name="shlAsanTyar[<?php echo $thisIndex; ?>]" value="<?php echo $thiscustomer['shl_AsanTyar'] ?>"
-                                                               id="shlAsanTyar">
+                                                               id="shlAsanTyar<?php echo $thisIndex; ?>">
                                                     </div>
                                                 </div>
 
@@ -653,20 +653,20 @@
                                                     <div class="col-sm-6">
                                                         <input type="text"
                                                                class="form-control margin-bottom b_input " name="shlGairaTyar[<?php echo $thisIndex; ?>]" value="<?php echo $thiscustomer['shl_GairaTyar'] ?>"
-                                                               id="shlGairaTyar">
+                                                               id="shlGairaTyar<?php echo $thisIndex; ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Pajama Length</label>
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaLength[<?php echo $thisIndex; ?>]" id="shlLength" value="<?php echo $thiscustomer['pjamaLength'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaLength[<?php echo $thisIndex; ?>]" id="shlLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pjamaLength'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-5 col-form-label" for="name">Pajama Bottom</label>
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaBottom[<?php echo $thisIndex; ?>]" id="shlBottom" value="<?php echo $thiscustomer['pjamaBottom'] ?>">
+                                                        <input type="text" class="form-control margin-bottom b_input " name="pjamaBottom[<?php echo $thisIndex; ?>]" id="shlBottom<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['pjamaBottom'] ?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -694,7 +694,7 @@
                                                                     <label class="custom-control-label" for="moon_neck<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Moon Neck</label>
                                                                 </div>
                                                                 <div class="input-group collar_text"  <?php echo (!empty($thiscustomer['collar_ins'])) ? '' : 'style="display:none;"' ?>>
-                                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins[<?php echo $thisIndex; ?>]" id="collar_ins"
+                                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins[<?php echo $thisIndex; ?>]" id="collar_ins<?php echo $thisIndex; ?>"
                                                                            alue="4" value=" <?php echo $thiscustomer['collar_ins']; ?>"
                                                                            placeholder="Write instructions..."> 
                                                                 </div>
@@ -723,7 +723,7 @@
                                                                     <label class="custom-control-label" for="is_front_pocket<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Front Pocket</label>
                                                                 </div>
                                                                 <div class="input-group front_pocket_text" >
-                                                                    <input type="text" class="form-control" style="margin-right:20px; margin-top:5px;" name="front_pocket_ins[<?php echo $thisIndex; ?>]" id="front_pocket_ins"
+                                                                    <input type="text" class="form-control" style="margin-right:20px; margin-top:5px;" name="front_pocket_ins[<?php echo $thisIndex; ?>]" id="front_pocket_ins<?php echo $thisIndex; ?>"
                                                                            value="<?php echo $thiscustomer['front_pocket_ins']; ?>"
                                                                            placeholder="Write instructions..."> 
                                                                 </div>
@@ -738,7 +738,7 @@
                                                                     <label class="custom-control-label" for="is_shalwar_pocket<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Shalwar Pocket</label>
                                                                 </div>
                                                                 <div class="input-group shalwar_pocket_text">
-                                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;"  name="shalwar_pocket_ins[<?php echo $thisIndex; ?>]" id="shalwar_pocket_ins"
+                                                                    <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;"  name="shalwar_pocket_ins[<?php echo $thisIndex; ?>]" id="shalwar_pocket_ins<?php echo $thisIndex; ?>"
                                                                            value="<?php echo $thiscustomer['shalwar_pocket_ins']; ?>"
                                                                            placeholder="Write instructions..."> 
                                                                 </div>
@@ -950,7 +950,7 @@
                                                             <label class="custom-control-label" for="tuxedo<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Tuxedo</label>
                                                         </div>                                        
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shirt_collar_ins[<?php echo $thisIndex; ?>]" id="shirt_collar_ins"
+                                                            <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shirt_collar_ins[<?php echo $thisIndex; ?>]" id="shirt_collar_ins<?php echo $thisIndex; ?>"
                                                                    value="<?php echo ($thiscustomer['shirt_collar_ins']); ?>"
                                                                    placeholder="Write instructions..."> 
                                                         </div>
@@ -963,7 +963,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Suiting Instructions:</label>
-                                                <textarea class="form-control" name="inst[<?php echo $thisIndex; ?>]" rows="7" id="comment" value="<?php echo ($thiscustomer['instrucations']); ?>"></textarea>
+                                                <textarea class="form-control" name="inst[<?php echo $thisIndex; ?>]" rows="7" id="comment<?php echo $thisIndex; ?>" value="<?php echo ($thiscustomer['instrucations']); ?>"></textarea>
                                             </div>
                                         </div>
                                     </div> 
@@ -972,7 +972,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Shirts Instructions:</label>
-                                                <textarea class="form-control" name="shirt_inst[<?php echo $thisIndex; ?>]" rows="7" value="<?php echo ($thiscustomer['shirt_inst']); ?>" id="comment"></textarea>
+                                                <textarea class="form-control" name="shirt_inst[<?php echo $thisIndex; ?>]" rows="7" value="<?php echo ($thiscustomer['shirt_inst']); ?>" id="comment<?php echo $thisIndex; ?>"></textarea>
                                             </div>
                                         </div>
                                     </div> 
@@ -981,15 +981,15 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
-                                                <textarea class="form-control" name="shalwar_inst[<?php echo $thisIndex; ?>]" rows="7" value="<?php echo ($thiscustomer['shalwar_inst']); ?>" id="comment"></textarea>
+                                                <textarea class="form-control" name="shalwar_inst[<?php echo $thisIndex; ?>]" rows="7" value="<?php echo ($thiscustomer['shalwar_inst']); ?>" id="comment<?php echo $thisIndex; ?>"></textarea>
                                             </div>
                                         </div>
                                     </div>
+                                         <?php if ($thisIndex) { ?>
                                 </div>
+                                         <?php }?>
                             </div>
 
-                            <input type="hidden" value="" id="product_stack" name="product_stack">
-                            <input type="hidden" value="" id="product_stack_list" name="product_stack_list">
                             <input type="hidden" value="<?php echo $thiscustomer["id"]; ?>" name="customer_id">
                         </div></div>
                     <script>$(document).ready(function () {
@@ -1033,6 +1033,12 @@
 <?php } ?>
                 <div class="append_new_size_article"></div>
                 <input type="hidden" value="customers/updatecolthingCustomer" id="action-url">
+                  <div id="mybutton" class="mt-1">
+        <input type="submit" id="submit-data"
+               class="btn btn-lg btn btn-primary margin-bottom round float-xs-right mr-2"
+               value="Update Customer"
+               data-loading-text="Saving...">
+    </div>
             </form>
         </div>
 
@@ -1042,12 +1048,7 @@
 
 
 
-    <div id="mybutton" class="mt-1">
-        <input type="submit" id="submit-data"
-               class="btn btn-lg btn btn-primary margin-bottom round float-xs-right mr-2"
-               value="Update Customer"
-               data-loading-text="Saving...">
-    </div>
+  
 </div>
 
 <div id="pre_preview_model" class="modal fade ">
@@ -1105,10 +1106,6 @@
                 $(".default_row .shirt_qameez").hide();
                 $(".default_row .shalwar").hide();
                 $(".default_row .only_shirt").hide();
-                $("#product_stack").val(1);
-                $("#product_stack_list").val(function () {
-                    return this.value + '1';
-                });
             } else if ($(this).is(":checked") && $(this).val() == 'shirts') {
 
                 $('.default_row #suiting').prop('checked', false);
@@ -1119,10 +1116,6 @@
                 $(".default_row .shirt_qameez").show();
                 $(".default_row .only_shirt").show();
                 $(".default_row .shalwar").hide();
-                $("#product_stack").val(2);
-                $("#product_stack_list").val(function () {
-                    return this.value + '2';
-                });
             } else if ($(this).is(":checked") && $(this).val() == 'shalwarqameez') {
 
                 $('.default_row #shirts').prop('checked', false);
@@ -1133,10 +1126,6 @@
                 $(".default_row .only_shirt").hide();
                 $(".default_row .shirt_qameez").show();
                 $(".default_row .shalwar").show();
-                $("#product_stack").val(3);
-                $("#product_stack_list").val(function () {
-                    return this.value + '3';
-                });
             }
             if ($(this).is(":checked") && $(this).val() == 'english') {
                 $('#urdu').prop('checked', false);
@@ -1154,6 +1143,7 @@
         $('.add_new_rows').click(function () {
             var count = $(this).attr('data-count');
             count = count == 0 ? 1 : count;
+         
             $(this).attr('data-count', parseInt(count) + 1);
 
             $.ajax({
@@ -1189,7 +1179,7 @@
                 $(".append_row_for_article_" + counter + " .shalwar").hide();
                 $(".append_row_for_article_" + counter + " .only_shirt").hide();
             } else if ($(this).is(":checked") && $(this).val() == 'shirts') {
-
+                   alert(counter);
                 $('.append_row_for_article_' + counter + ' #suiting_' + counter).prop('checked', false);
                 $('.append_row_for_article_' + counter + ' #shalwarqameez_' + counter).prop('checked', false);
 

@@ -670,6 +670,10 @@ class Customers extends CI_Controller
                 $nap['instrucations']=$instrucation;
                 $nap['shirt_inst']=$shirt_inst;
                 $nap['shalwar_inst']=$shalwar_inst;
+                $nap['is_shirt_cuff']=$is_shirt_cuff;
+                $nap['shirt_collar_ins']=$shirt_collar_ins;
+                $nap['is_shirt_collar']=$is_shirt_collar;
+                $nap['is_shirt_collar_type']=$is_shirt_collar_type;
                 $aPreviewData[]=$nap;
              }
         
@@ -2301,7 +2305,7 @@ class Customers extends CI_Controller
     
     public function updatecolthingCustomer() {
         
-       //print_r(json_encode($this->input->post()));exit;
+//       print_r(json_encode($this->input->post()));exit;
         //delete old data
         $this->customers->delete($this->input->post('customer_id'));
         

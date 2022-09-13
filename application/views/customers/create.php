@@ -83,7 +83,7 @@
                                         </div> 
                                     </div>
                                 </div>
-                                <!-- <div class="form-group row  mt-1">
+                               <div class="form-group row  mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Select Language:</label>
                                     <div class="col-md-7 select_product">
                                         <div class="input-group">
@@ -100,7 +100,7 @@
                                         </div> 
                                     </div>
                                 </div>
-                                <div class="form-group row mt-1">
+                                 <!-- <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name"><strong>TOTAL</strong></label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control required margin-bottom b_input cal_blanc" name="total" id="total" onfocusout="cal_blace()">
