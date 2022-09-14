@@ -450,11 +450,11 @@
                                                         <div class="col-md-12">
                                                             <div class="input-group">
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_suit_button[<?php echo $thisIndex; ?>]" id="metalic_button<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_metalic_button']) ? "checked" : ''; ?>>
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_button[<?php echo $thisIndex; ?>]" id="metalic_button<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_button']==1) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="metalic_button<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Metallic buttons </label>
                                                                 </div>&nbsp;&nbsp;
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_suit_button[<?php echo $thisIndex; ?>]" id="button<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_plain_button']) ? "checked" : ''; ?>>
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_button[<?php echo $thisIndex; ?>]" id="button<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_button']==2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="button<?php echo $thisIndex==0?'':'_'.$thisIndex; ?>">Plain buttons</label>
                                                                 </div>
                                                             </div>
@@ -959,7 +959,7 @@
                                             </div>
                                         </div>
                                     </div> 
-                                    <div class="row mt-1 coat_waistCoat" <?php echo ($thiscustomer['instrucations']) ? '' : 'style="display:none;"' ?>>
+                                    <div class="row mt-1 coat_waistCoat">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Suiting Instructions:</label>
@@ -968,7 +968,7 @@
                                         </div>
                                     </div> 
 
-                                    <div class="row mt-1 only_shirt" <?php echo ($thiscustomer['shirt_inst']) ? '' : 'style="display:none;"' ?>>
+                                    <div class="row mt-1 only_shirt" >
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Shirts Instructions:</label>
@@ -977,7 +977,7 @@
                                         </div>
                                     </div> 
 
-                                    <div class="row mt-1 shalwar" <?php echo ($thiscustomer['shalwar_inst']) ? '' : 'style="display:none;"' ?>>
+                                    <div class="row mt-1 shalwar">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
