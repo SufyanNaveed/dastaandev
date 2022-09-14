@@ -545,7 +545,7 @@
                                                     <div class="form-group row mt-1">
                                                         <label class="col-sm-5 col-form-label" for="name">Kurta Length</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" class="form-control margin-bottom b_input " name="kurtaLength[<?php echo $thisIndex; ?>]" id="kmzLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kmz_length'] ?>">
+                                                            <input type="text" class="form-control margin-bottom b_input " name="kurtaLength[<?php echo $thisIndex; ?>]" id="kmzLength<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['kurtaLength'] ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mt-1">
@@ -1179,7 +1179,6 @@
                 $(".append_row_for_article_" + counter + " .shalwar").hide();
                 $(".append_row_for_article_" + counter + " .only_shirt").hide();
             } else if ($(this).is(":checked") && $(this).val() == 'shirts') {
-                   alert(counter);
                 $('.append_row_for_article_' + counter + ' #suiting_' + counter).prop('checked', false);
                 $('.append_row_for_article_' + counter + ' #shalwarqameez_' + counter).prop('checked', false);
 

@@ -558,10 +558,15 @@ class Customers extends CI_Controller
 
                
                
-
+                $nap['is_design']=$is_design;
+                $nap['is_kanta']=$is_kanta;
+                $nap['is_stitch']=$is_stitch;
+                $nap['is_thread']=$is_thread;
+                $nap['is_bookrum']=$is_bookrum;
                 $nap['reference_id']=$this->input->post('or_ref_no');
                 $nap['booking_date']=$this->input->post('booking_date');
                 $nap['trial_date']=$this->input->post('t_date');
+                $nap['customer_name']=$this->input->post('customer_name');
                 $nap['d_date']=$this->input->post('d_date');
                 $nap['is_suiting']=$is_suiting;
                 $nap['is_shirts']=$is_shirts;
@@ -674,12 +679,15 @@ class Customers extends CI_Controller
                 $nap['shirt_collar_ins']=$shirt_collar_ins;
                 $nap['is_shirt_collar']=$is_shirt_collar;
                 $nap['is_shirt_collar_type']=$is_shirt_collar_type;
+                $nap['collar_ins']=$collar_ins;
+                $nap['front_pocket_ins']=$front_pocket_ins;
+                $nap['shalwar_pocket_ins']=$shalwar_pocket_ins;
                 $aPreviewData[]=$nap;
              }
         
         
         
-//        print_r(json_encode($this->input->post()));exit;
+//        print_r(json_encode($nap));exit;
         $vPDF = $this->input->post('ignore_pdf')== NULL?true:false;
 
         $data['nap'] = $aPreviewData;
