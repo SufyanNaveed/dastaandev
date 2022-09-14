@@ -100,7 +100,8 @@ class Customers extends CI_Controller
         
         //$data['invoice'] = $this->invocies->invoice_details($tid, $this->limited);
         
-        $data['nap'] = $this->customers->details_old($cid);
+        $data['nap'] = $this->customers->details($cid);
+//           echo '<pre>'; print_r($data['nap']);exit;
         
         $pref = prefix(7);
 
@@ -111,22 +112,15 @@ class Customers extends CI_Controller
         
         if($vPDF){
             $html = $this->load->view('print_files/tailor', $data, true);
+            //echo $html;
         //PDF Rendering
         $this->load->library('pdf');
-        
-        // $header = $this->load->view('print_files/tailor-header', $data, true);
-
         $pdf = $this->pdf->load_split(array('margin_top' => 2));
-
-        // $pdf->SetHTMLHeader($header);
-
-        // $pdf->SetHTMLFooter('<div style="text-align: right;font-family: serif; font-size: 8pt; color: #5C5C5C; font-style: italic;margin-top:-6pt;">{PAGENO}/{nbpg} #' . $data['nap']['reference_id'] . '</div>');
         $pdf->WriteHTML($html);
-        //echo $html;exit;
         if ($this->input->get('d')) {
-            $pdf->Output('Invoice_pos' .$data['nap']['reference_id']. '.pdf', 'D');
+            $pdf->Output('Invoice_pos' .$data['nap'][0]['reference_id']. '.pdf', 'D');
         } else {
-            $pdf->Output('Invoice_pos' .$data['nap']['reference_id']. '.pdf', 'I');
+            $pdf->Output('Invoice_pos' .$data['nap'][0]['reference_id']. '.pdf', 'I');
         }
         }else{
             echo $this->load->view('print_files/tailor', $data, true);
@@ -725,11 +719,12 @@ class Customers extends CI_Controller
         $cid = $this->input->get('id');
 
         $tid = $this->input->get('id');
+         $vPDF = $this->input->get('ignore_pdf')== NULL?true:false;
         $data['id'] = $tid;
         
 //        $data['invoice'] = $this->invocies->invoice_details($tid, $this->limited);
         
-        $data['nap'] = $this->customers->details_old($cid);
+        $data['nap'] = $this->customers->details($cid);
         
         $pref = prefix(7);
 
@@ -737,26 +732,20 @@ class Customers extends CI_Controller
 
         ini_set('memory_limit', '64M');
 
-        $html =  $this->load->view('print_files/customer_view', $data, true); 
-
-        // echo $html; exit;
-
-
+        
+        if($vPDF){
+         $html =  $this->load->view('print_files/customer_view', $data, true); 
         //PDF Rendering
         $this->load->library('pdf');
-        
-        // $header = $this->load->view('print_files/pCV-header', $data, true);
         $pdf = $this->pdf->load_split(array('margin_top' => 2));
-        // $pdf->SetHTMLHeader($header);
-        // $pdf->SetDisplayMode(100);
-
-        $pdf->SetHTMLFooter('<div style="text-align: right;font-family: serif; font-size: 8pt; color: #5C5C5C; font-style: italic;margin-top:-6pt;">{PAGENO}/{nbpg} #' . $data['invoice']['tid'] . '</div>');
         $pdf->WriteHTML($html);
-        $pdf->SetDisplayMode('fullwidth');
         if ($this->input->get('d')) {
-            $pdf->Output('Invoice_pos' . $data['invoice']['tid'] . '.pdf', 'D');
+            $pdf->Output('Invoice_pos' .$data['nap'][0]['reference_id']. '.pdf', 'D');
         } else {
-            $pdf->Output('Invoice_pos' . $data['invoice']['tid'] . '.pdf', 'I');
+            $pdf->Output('Invoice_pos' .$data['nap'][0]['reference_id']. '.pdf', 'I');
+        }
+        }else{
+            echo $this->load->view('print_files/tailor', $data, true);
         }
     }
 
