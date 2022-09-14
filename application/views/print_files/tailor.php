@@ -513,11 +513,11 @@ foreach ($nap as $napRow) {
                                     <tr>
                                         <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Regular pockets' : 'ریگولر پاکٹ ' ?></td>
                                     </tr>
-                                <?php } if ($napRow['is_button'] == 1) { ?>
+                                <?php } if ($napRow['is_button'] == 2) { ?>
                                     <tr>
                                         <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Plain button' : ' سادہ بٹن  ' ?></td>
                                     </tr>
-                                <?php } if ($napRow['is_button'] == 2) { ?>
+                                <?php } if ($napRow['is_button'] == 1) { ?>
                                     <tr>
                                         <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Metallic buttons' : 'مٹیلک بٹن ' ?></td>
                                     </tr>
