@@ -3,13 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tailor Slip #<?php echo $nap[0]['reference_id'];  ?></title>
-    <style>
+     <style>
 
     .invoice-box {
         /*            width: 500mm;*/
         height: 130mm;
         /*margin: auto;*/
-        /*padding: 1mm;*/
+        padding: 14mm;
         border: 0;
         font-size: 12pt;
         line-height: 14pt;
@@ -22,7 +22,7 @@
         width: 100%;
         line-height: 16pt;
         text-align: left;
-        border-collapse: collapse;
+/*        border-collapse: collapse;*/
     }
 
     .plist tr td {
@@ -114,7 +114,7 @@
     }
 
     .invoice-box table tr.item td {
-        border: 1px solid #ddd;
+                border: 1px solid #ddd;
     }
 
     table tr.b_class td {
@@ -228,9 +228,6 @@
         font-family: 'Helvetica';
         height: 100%;
     }
-    /*    tr {
-            border: px solid black;
-        }*/
 </style>
 </head>
 
