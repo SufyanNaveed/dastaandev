@@ -12,12 +12,15 @@
                     <li><a data-action="close"><i class="ft-x"></i></a></li>
                 </ul>
             </div>
-            <button class="btn btn-primary" id="open_preview" data-toggle="modal" data-target="#pre_preview_model" style="float:right;display:none;" >Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
             <button class="btn btn-primary add_new_rows" style="float:right; display:none;" data-count="1">Add Multiple Products &nbsp;&nbsp;<i class="fa fa-plus"></i></button>
         </div>
         <div class="card-body">
             <form method="post" id="data_form" class="form-horizontal">
                 <div class="default_row">
+                    <?php
+                    $vToken = rand(10, 1000);
+                    ?>
+                    <button type="button" id="preview1" class="btn btn-primary" style="display:none;" onclick="previewModal(<?php echo $vToken; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
                     <div class="row">
                         <div class="col-md-4">
                             <h5 class="title text-center">Customer Info</h5>
@@ -31,19 +34,19 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Booking Date</label>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control required margin-bottom" name="booking_date" id="bDate">
+                                        <input type="text" autocomplete="off" class="form-control required margin-bottom" name="booking_date" id="bDate">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Trial Date</label>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control required margin-bottom b_input" name="t_date" id="tDate">
+                                        <input type="text" autocomplete="off" class="form-control required margin-bottom b_input" name="t_date" id="tDate">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Delivery Date</label>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control required margin-bottom b_input" name="d_date" id="dDate">
+                                        <input type="text" autocomplete="off" class="form-control required margin-bottom b_input" name="d_date" id="dDate">
                                     </div>
                                 </div>
                                 <div class="form-group row mt-1">
@@ -83,7 +86,7 @@
                                         </div> 
                                     </div>
                                 </div>
-                               <div class="form-group row  mt-1">
+                                <div class="form-group row  mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Select Language:</label>
                                     <div class="col-md-7 select_product">
                                         <div class="input-group">
@@ -100,24 +103,24 @@
                                         </div> 
                                     </div>
                                 </div>
-                                 <!-- <div class="form-group row mt-1">
-                                    <label class="col-sm-4 col-form-label" for="name"><strong>TOTAL</strong></label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control required margin-bottom b_input cal_blanc" name="total" id="total" onfocusout="cal_blace()">
-                                    </div>
-                                </div>
-                                <div class="form-group row mt-1">
-                                    <label class="col-sm-4 col-form-label"for="name"><strong>ADVANCE</strong></label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control required margin-bottom b_input cal_blanc" name="advance" id="adv" onfocusout="cal_blace()">
-                                    </div>
-                                </div>
-                                <div class="form-group row mt-1">
-                                    <label class="col-sm-4 col-form-label" for="name"><strong>BALANCE</strong></label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control margin-bottom b_input" name="BLANCE" id="blance" readonly="">
-                                    </div>
-                                </div> -->
+                                <!-- <div class="form-group row mt-1">
+                                   <label class="col-sm-4 col-form-label" for="name"><strong>TOTAL</strong></label>
+                                   <div class="col-sm-7">
+                                       <input type="text" class="form-control required margin-bottom b_input cal_blanc" name="total" id="total" onfocusout="cal_blace()">
+                                   </div>
+                               </div>
+                               <div class="form-group row mt-1">
+                                   <label class="col-sm-4 col-form-label"for="name"><strong>ADVANCE</strong></label>
+                                   <div class="col-sm-7">
+                                       <input type="text" class="form-control required margin-bottom b_input cal_blanc" name="advance" id="adv" onfocusout="cal_blace()">
+                                   </div>
+                               </div>
+                               <div class="form-group row mt-1">
+                                   <label class="col-sm-4 col-form-label" for="name"><strong>BALANCE</strong></label>
+                                   <div class="col-sm-7">
+                                       <input type="text" class="form-control margin-bottom b_input" name="BLANCE" id="blance" readonly="">
+                                   </div>
+                               </div> -->
                             </div> 
                         </div>
                         <div class="col-md-4 pl-0 coat_waistCoat" style="display:none;">
@@ -161,6 +164,7 @@
                                 <div class="form-group row mt-1">
                                     <label class="col-sm-4 col-form-label" for="name">Sleeves Length</label>
                                     <div class="col-sm-4">
+                                        <input type="hidden" name ="cSleeve_form[0]" value="<?php echo $vToken; ?>">
                                         <input type="text" class="form-control margin-bottom b_input" name="cSleeve[0]" id="cSleev">
                                     </div>
                                 </div>
@@ -451,6 +455,7 @@
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Shirt Length</label>
                                         <div class="col-sm-6">
+                                            <input type="hidden" name ="shirtLength_form[0]" value="<?php echo $vToken; ?>">
                                             <input type="text" class="form-control margin-bottom b_input " name="shirtLength[0]" id="kmzLength">
                                         </div>
                                     </div>
@@ -519,6 +524,7 @@
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Kameez Length</label>
                                         <div class="col-sm-6">
+                                             <input type="hidden" name ="kmzLength_form[0]" value="<?php echo $vToken; ?>">
                                             <input type="text" class="form-control margin-bottom b_input " name="kmzLength[0]" id="kmzLength">
                                         </div>
                                     </div>
@@ -998,6 +1004,7 @@
                 <div id="preview_body"></div>
             </div>
             <div class="modal-footer">
+                <input type="hidden" id="lang_index" value="">
                 <button type="button" data-dismiss="modal" class="btn">Cancel</button>
             </div>
         </div>
@@ -1068,8 +1075,8 @@
             }
 
             $('.add_new_rows').show();
-             $('#open_preview').show();
-            
+            $('#preview1').show();
+
         });
 
         $("input[name='is_collar[0]']").change(function () {
@@ -1111,7 +1118,7 @@
         $('.add_new_rows').click(function () {
             var count = $(this).attr('data-count');
             count = count == 0 ? 1 : count;
-            
+
             $(this).attr('data-count', parseInt(count) + 1);
             $.ajax({
                 url: "<?php echo base_url('customers/new_articles_append') ?>",
@@ -1135,7 +1142,7 @@
             var val = $(this).val();
             var counter = $(this).attr('data-counter');
             if ($(this).is(":checked") && $(this).val() == 'suiting') {
-                  alert(counter);
+                alert(counter);
                 $('.append_row_for_article_' + counter + ' #shirts_' + counter).prop('checked', false);
                 $('.append_row_for_article_' + counter + ' #shalwarqameez_' + counter).prop('checked', false);
 
@@ -1179,35 +1186,39 @@
             }
         });
 
-        //preview
-        $('#pre_preview_model').on('show.bs.modal', function (event) {
-            var form = $("#data_form");
-            $.ajax({
-                url: "<?php echo base_url('customers/preview') ?>",
-                type: "POST",
-                data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1',
-                dataType: "html",
-                success: function (data) {
-                    $('#preview_body').html(data)
-                }
-            });
-        });
+ 
 
 
 
 
     });
 
-    function  changeLamguage(){
+    function  changeLamguage() {
         var is_english = $('input[name="is_english"]:checked').val();
+        var index = $('#lang_index').val();
         var form = $("#data_form");
         $.ajax({
             url: "<?php echo base_url('customers/preview') ?>",
             type: "POST",
-            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&is_english=' + is_english,
+            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&is_english=' + is_english + '&index=' + index,
             dataType: "html",
             success: function (data) {
                 $('#preview_body').html(data)
+            }
+        });
+    }
+    function previewModal(index) {
+        $("#lang_index").val(index);
+        var form = $("#data_form");
+        $.ajax({
+            url: "<?php echo base_url('customers/preview') ?>",
+            type: "POST",
+            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&index=' + index,
+            dataType: "html",
+            success: function (data) {
+                $('#preview_body').html(data)
+                $('#pre_preview_model').modal('show');
+
             }
         });
     }

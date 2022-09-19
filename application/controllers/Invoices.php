@@ -432,7 +432,7 @@ class Invoices extends CI_Controller
         $refer = $this->input->post('refer', true);
         $total = rev_amountExchange_s($this->input->post('total'), $currency, $this->aauth->get_user()->loc);
         $disc_val = $this->input->post('disc_val');
-        $total_discount = rev_amountExchange_s($this->input->post('after_disc'), $currency, $this->aauth->get_user()->loc);
+        $total_discount = rev_amountExchange_s((float)$this->input->post('after_disc'), $currency, $this->aauth->get_user()->loc);
         $i = 0;
         if ($this->limited) {
             $employee = $this->invocies->invoice_details($iid, $this->limited);
