@@ -6,230 +6,231 @@
 <div id="printable">
     <style>
 
-    .invoice-box {
-        /*            width: 500mm;*/
-        height: 130mm;
-        /*margin: auto;*/
-        padding: 14mm;
-        border: 0;
-        font-size: 12pt;
-        line-height: 14pt;
-        color: #000;
-    }
+        .invoice-box {
+            /*            width: 500mm;*/
+            height: 130mm;
+            /*margin: auto;*/
+            padding: 14mm;
+            border: 0;
+            font-size: 12pt;
+            line-height: 14pt;
+            color: #000;
+            margin-bottom: 50px;
+        }
 
 
 
-    table {
-        width: 100%;
-        line-height: 16pt;
-        text-align: left;
-/*        border-collapse: collapse;*/
-    }
+        table {
+            width: 100%;
+            line-height: 16pt;
+            text-align: left;
+            /*        border-collapse: collapse;*/
+        }
 
-    .plist tr td {
-        line-height: 12pt;
-    }
+        .plist tr td {
+            line-height: 12pt;
+        }
 
-    .subtotal tr td {
-        line-height: 10pt;
-        padding: 6pt;
-    }
+        .subtotal tr td {
+            line-height: 10pt;
+            padding: 6pt;
+        }
 
-    .subtotal tr td {
-        border: 1px solid #ddd;
-    }
+        .subtotal tr td {
+            border: 1px solid #ddd;
+        }
 
-    .sign {
-        text-align: right;
-        font-size: 10pt;
-        margin-right: 110pt;
-    }
+        .sign {
+            text-align: right;
+            font-size: 10pt;
+            margin-right: 110pt;
+        }
 
-    .sign1 {
-        text-align: right;
-        font-size: 10pt;
-        margin-right: 90pt;
-    }
+        .sign1 {
+            text-align: right;
+            font-size: 10pt;
+            margin-right: 90pt;
+        }
 
-    .sign2 {
-        text-align: right;
-        font-size: 10pt;
-        margin-right: 115pt;
-    }
+        .sign2 {
+            text-align: right;
+            font-size: 10pt;
+            margin-right: 115pt;
+        }
 
-    .sign3 {
-        text-align: right;
-        font-size: 10pt;
-        margin-right: 115pt;
-    }
+        .sign3 {
+            text-align: right;
+            font-size: 10pt;
+            margin-right: 115pt;
+        }
 
-    .terms {
-        font-size: 9pt;
-        line-height: 16pt;
-        margin-right: 20pt;
-    }
+        .terms {
+            font-size: 9pt;
+            line-height: 16pt;
+            margin-right: 20pt;
+        }
 
-    .invoice-box table td {
-        padding: 10pt 4pt 8pt 4pt;
-        vertical-align: top;
+        .invoice-box table td {
+            padding: 10pt 4pt 8pt 4pt;
+            vertical-align: top;
 
-    }
+        }
 
-    .invoice-box table.top_sum td {
-        padding: 0;
-        font-size: 12pt;
-    }
+        .invoice-box table.top_sum td {
+            padding: 0;
+            font-size: 12pt;
+        }
 
-    .party tr td:nth-child(3) {
-        text-align: center;
-    }
+        .party tr td:nth-child(3) {
+            text-align: center;
+        }
 
-    .order-info tr td:nth-child(2){
-        text-align: right;
-    }
+        .order-info tr td:nth-child(2){
+            text-align: right;
+        }
 
-    .invoice-box table tr.top table td {
-        padding-bottom: 20pt;
+        .invoice-box table tr.top table td {
+            padding-bottom: 20pt;
 
-    }
+        }
 
-    table tr.top table td.title {
-        font-size: 45pt;
-        line-height: 45pt;
-        color: #555;
-    }
+        table tr.top table td.title {
+            font-size: 45pt;
+            line-height: 45pt;
+            color: #555;
+        }
 
-    table tr.information table td {
-        padding-bottom: 20pt;
-    }
+        table tr.information table td {
+            padding-bottom: 20pt;
+        }
 
-    table tr.heading td {
-        background: #515151;
-        color: #FFF;
-        padding: 6pt;
+        table tr.heading td {
+            background: #515151;
+            color: #FFF;
+            padding: 6pt;
 
-    }
+        }
 
-    table tr.details td {
-        padding-bottom: 20pt;
-    }
+        table tr.details td {
+            padding-bottom: 20pt;
+        }
 
-    .invoice-box table tr.item td {
-                border: 1px solid #ddd;
-    }
+        .invoice-box table tr.item td {
+            border: 1px solid #ddd;
+        }
 
-    table tr.b_class td {
-        border-bottom: 1px solid #ddd;
-    }
+        table tr.b_class td {
+            border-bottom: 1px solid #ddd;
+        }
 
-    table tr.b_class.last td {
-        border-bottom: none;
-    }
+        table tr.b_class.last td {
+            border-bottom: none;
+        }
 
-    table tr.total td:nth-child(4) {
-        border-top: 2px solid #fff;
-        font-weight: bold;
-    }
+        table tr.total td:nth-child(4) {
+            border-top: 2px solid #fff;
+            font-weight: bold;
+        }
 
-    .myco {
-        width: 400pt;
-    }
+        .myco {
+            width: 400pt;
+        }
 
-    .myco2 {
-        width: 200pt;
-    }
+        .myco2 {
+            width: 200pt;
+        }
 
-    .myw {
-        width: 150pt;
-        font-size: 14pt;
-        line-height: 14pt;
-    }
+        .myw {
+            width: 150pt;
+            font-size: 14pt;
+            line-height: 14pt;
+        }
 
-    .mfill {
-        background-color: #eee;
-    }
+        .mfill {
+            background-color: #eee;
+        }
 
-    .descr {
-        font-size: 10pt;
-        color: #515151;
-    }
+        .descr {
+            font-size: 10pt;
+            color: #515151;
+        }
 
-    .tax {
-        font-size: 10px;
-        color: #515151;
-    }
+        .tax {
+            font-size: 10px;
+            color: #515151;
+        }
 
-    .t_center {
-        text-align: right;
-    }
+        .t_center {
+            text-align: right;
+        }
 
-    .c_center{
-        text-align: center;
-    }
+        .c_center{
+            text-align: center;
+        }
 
-    .party {
-        border: #ccc 1px solid;
-    }
+        .party {
+            border: #ccc 1px solid;
+        }
 
-    .top_logo {
-        max-height: 180px;
-        max-width: 250px;
-
-
-    }
-
-    .fTb{
-        margin-left: 12px;
-        padding-left: 12px;
-    }
-    .first-item{
-
-        display: inline-block;
-        margin-right: 20px;
-    }
-
-    .second-item{
-        margin-left: 15px;
-        padding-left: 15px;
-    }
+        .top_logo {
+            max-height: 180px;
+            max-width: 250px;
 
 
-    .invoice-box table.order_detail td {
-        padding: 0;
-        padding-left: 13px;
-        padding-bottom: 2px;
+        }
 
-    }
+        .fTb{
+            margin-left: 12px;
+            padding-left: 12px;
+        }
+        .first-item{
 
-    .invoice-box table.order_detail tr{
-        border: none;
-    }
+            display: inline-block;
+            margin-right: 20px;
+        }
 
-    .invoice-box table.order_detail td{
-        border: none;
-    }
+        .second-item{
+            margin-left: 15px;
+            padding-left: 15px;
+        }
 
-    table tr .shl td {
-        background: #515151;
-        color: #FFF;
-        padding: 6pt;
 
-    }
+        .invoice-box table.order_detail td {
+            padding: 0;
+            padding-left: 13px;
+            padding-bottom: 2px;
 
-    .amount-details{
-        border:  #ccc 1px solid;
+        }
 
-    }
-    .invoice-box table.amount td {
-        padding: 0;
-        padding-bottom: 2px;
-    }
-    body {
-        color: #2B2000;
-        font-family: 'Helvetica';
-        height: 100%;
-    }
-</style>
+        .invoice-box table.order_detail tr{
+            border: none;
+        }
+
+        .invoice-box table.order_detail td{
+            border: none;
+        }
+
+        table tr .shl td {
+            background: #515151;
+            color: #FFF;
+            padding: 6pt;
+
+        }
+
+        .amount-details{
+            border:  #ccc 1px solid;
+
+        }
+        .invoice-box table.amount td {
+            padding: 0;
+            padding-bottom: 2px;
+        }
+        body {
+            color: #2B2000;
+            font-family: 'Helvetica';
+            height: 100%;
+        }
+    </style>
     <table class="fTb" >
         <tr>
             <td colspan="3" class="c_center"><h2><b>DASTAAN</b></h2></td>
@@ -239,7 +240,7 @@
                 <table class="top_sum">
                     <tr>
                         <td width="130px">Booking Date:</td>
-                        <td><?php echo date("d/m/Y", strtotime($nap[0]['booking_date'])); ?></td>
+                        <td><?php echo isset($nap[0]['booking_date']) ? date("d/m/Y", strtotime($nap[0]['booking_date'])) : ""; ?></td>
                     </tr>
                 </table>
             </td>
@@ -247,7 +248,7 @@
                 <table class="top_sum">
                     <tr>
                         <td width="130px"><strong>REF NO:</strong></td>
-                        <td><h3><?php echo $nap[0]['reference_id']; ?></h3></td>
+                        <td><h3><?php echo isset($nap[0]['reference_id']) ? $nap[0]['reference_id'] : ""; ?></h3></td>
                     </tr>
                 </table>
             </td>
@@ -255,15 +256,15 @@
                 <table class="top_sum">
                     <tr>
                         <td width="130px">Customer Name:</td>
-                        <td><?php echo $nap[0]['customer_name']; ?></td>
+                        <td><?php echo isset($nap[0]['customer_name']) ? $nap[0]['customer_name'] : ""; ?></td>
                     </tr>
                     <tr>
                         <td width="130px">Trail Date:</td>
-                        <td><?php echo date("d/m/Y", strtotime($nap[0]['trial_date'])); ?></td>
+                        <td><?php echo isset($nap[0]['trial_date']) ? date("d/m/Y", strtotime($nap[0]['trial_date'])) : ""; ?></td>
                     </tr>
                     <tr>
                         <td width="130px">Delivery Date:</td>
-                        <td><?php echo date("d/m/Y", strtotime($nap[0]['d_date'])); ?></td>
+                        <td><?php echo isset($nap[0]['d_date']) ? date("d/m/Y", strtotime($nap[0]['d_date'])) : ""; ?></td>
                     </tr>
                     <tr>
                         <td width="130px">Print:</td>
@@ -280,8 +281,6 @@
 
         <div class="invoice-box">
 
-
-            <br>
             <table class="party plist" cellpadding="0" cellspacing="0">
                 <thead>
                     <tr class="heading">
@@ -958,6 +957,8 @@
                     </tr>
                 </tbody>
             </table>
+            <br/>
+            <br/>
             <br/>
         </div>
         <?php
