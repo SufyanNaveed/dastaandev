@@ -3,9 +3,9 @@
 ?>
 <style>
     .modal-body{
-    max-height: 100vh;
-    overflow-y: auto;
-}
+        max-height: 100vh;
+        overflow-y: auto;
+    }
 </style>
 <div class="content-body">
 
@@ -30,7 +30,7 @@
                 <?php
                 foreach ($customer as $thisIndex => $thiscustomer) {
                     $counter = $thisIndex;
-                    $vToken=rand(10,1000);
+                    $vToken = rand(10, 1000);
                     ?>
                     <div class="card">
                         <div class="card-body">
@@ -190,7 +190,7 @@
                                                 <div class="form-group row mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Sleeves Length</label>
                                                     <div class="col-sm-4">
-                                                   
+
                                                         <input type="hidden" name ="cSleeve_form[<?php echo $thisIndex; ?>]" value="<?php echo $vToken; ?>">
                                                         <input type="text" class="form-control margin-bottom b_input" name="cSleeve[<?php echo $thisIndex; ?>]" id="cSleev<?php echo $thisIndex; ?>" value="<?php echo $thiscustomer['coat_length'] ?>">
                                                     </div>
@@ -348,6 +348,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_breasted[<?php echo $thisIndex; ?>]" id="double_breasted<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_breasted'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="double_breasted<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Double breasted</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_breasted[<?php echo $thisIndex; ?>]" id="none_is_breasted<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_breasted'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_breasted<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -361,6 +366,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_button_suit[<?php echo $thisIndex; ?>]" id="two_button_suit<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2"  <?php echo ($thiscustomer['is_button_suit'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="two_button_suit<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Two button</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_button_suit[<?php echo $thisIndex; ?>]" id="none_is_button_suit<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_button_suit'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_button_suit<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -380,6 +390,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_lapel[<?php echo $thisIndex; ?>]" id="shawl_lapel<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="3" <?php echo ($thiscustomer['is_lapel'] == 3) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="shawl_lapel<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Shawl lapel</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_lapel[<?php echo $thisIndex; ?>]" id="none_is_lapel<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_lapel'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_lapel<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>  
@@ -397,6 +412,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_vent[<?php echo $thisIndex; ?>]" id="no_vent<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="3" <?php echo ($thiscustomer['is_vent'] == 3) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="no_vent<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">No vent</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_vent[<?php echo $thisIndex; ?>]" id="none_is_vent<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_vent'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_vent<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -416,6 +436,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_wear[<?php echo $thisIndex; ?>]" id="groom_wear<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="3" <?php echo ($thiscustomer['is_wear'] == 3) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="groom_wear<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Grooms wear </label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_wear[<?php echo $thisIndex; ?>]" id="none_is_wear<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_wear'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_wear<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -430,6 +455,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_lined[<?php echo $thisIndex; ?>]" id="half_lined<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_lined'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="half_lined<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Half lined</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_lined[<?php echo $thisIndex; ?>]" id="none_is_lined<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_lined'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_lined<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -439,6 +469,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_ticket[<?php echo $thisIndex; ?>]" id="ticket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_breasted']) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="ticket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Ticket pocket </label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_ticket[<?php echo $thisIndex; ?>]" id="none_is_ticket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_breasted'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_ticket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -454,6 +489,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="slant<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_slant']) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="slant<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Slant pocket </label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="none_is_suit_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_slant'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_suit_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div> 
@@ -467,6 +507,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_suit_button[<?php echo $thisIndex; ?>]" id="button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_button'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Plain buttons</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="none_is_suit_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_button'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_suit_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -706,6 +751,11 @@
                                                                     <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_collar[<?php echo $thisIndex; ?>]" id="moon_neck<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="4" <?php echo ($thiscustomer['is_collar'] == 4) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="moon_neck<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Moon Neck</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_collar[<?php echo $thisIndex; ?>]" id="none_is_collar<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_collar'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_collar<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                                 <div class="input-group collar_text">
                                                                     <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins[<?php echo $thisIndex; ?>]" id="collar_ins<?php echo $thisIndex; ?>"
                                                                            alue="4" value=" <?php echo $thiscustomer['collar_ins']; ?>"
@@ -725,6 +775,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_front[<?php echo $thisIndex; ?>]" id="straight_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" <?php echo ($thiscustomer['is_straight_front']) ? "checked" : ''; ?>  value="2">
                                                                     <label class="custom-control-label" for="straight_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Straight Front</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="is_front[<?php echo $thisIndex; ?>]" id="none_is_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_straight_front'] == 0 && $thiscustomer['is_round_front'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -735,11 +790,17 @@
                                                                     <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_front_pocket[<?php echo $thisIndex; ?>]" id="is_front_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_front_pocket']) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_front_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Front Pocket</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_front_pocket[<?php echo $thisIndex; ?>]" id="none_is_front_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_front_pocket'] == 0) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_front_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                                 <div class="input-group front_pocket_text" >
                                                                     <input type="text" class="form-control" style="margin-right:20px; margin-top:5px;" name="front_pocket_ins[<?php echo $thisIndex; ?>]" id="front_pocket_ins<?php echo $thisIndex; ?>"
                                                                            value="<?php echo $thiscustomer['front_pocket_ins']; ?>"
                                                                            placeholder="Write instructions..."> 
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -749,6 +810,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input"<?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?>  name="is_shalwar_pocket[<?php echo $thisIndex; ?>]" id="is_shalwar_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_shalwar_pocket']) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_shalwar_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Shalwar Pocket</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_shalwar_pocket[<?php echo $thisIndex; ?>]" id="none_is_shalwar_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_shalwar_pocket']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_shalwar_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                                 <div class="input-group shalwar_pocket_text">
                                                                     <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;"  name="shalwar_pocket_ins[<?php echo $thisIndex; ?>]" id="shalwar_pocket_ins<?php echo $thisIndex; ?>"
@@ -769,6 +835,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_pocket[<?php echo $thisIndex; ?>]" id="2side_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_2side_pocket']) ? "checked" : ''; ?> >
                                                                     <label class="custom-control-label" for="2side_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">2 side pocket</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_pocket[<?php echo $thisIndex; ?>]" id="none_is_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_1side_pocket'] && !$thiscustomer['is_2side_pocket']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -778,6 +849,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_sleeve_placket[<?php echo $thisIndex; ?>]" id="is_sleeve_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_sleeve_placket']) ? "checked" : ''; ?> >
                                                                     <label class="custom-control-label" for="is_sleeve_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Sleeve Placket Button</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_sleeve_placket[<?php echo $thisIndex; ?>]" id="none_is_sleeve_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_sleeve_placket']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_sleeve_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -797,6 +873,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_button[<?php echo $thisIndex; ?>]" id="loop_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="3" <?php echo ($thiscustomer['is_plain_button'] == 3) ? "checked" : ''; ?> >
                                                                     <label class="custom-control-label" for="loop_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Loop Button</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_button[<?php echo $thisIndex; ?>]" id="none_is_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_plain_button']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -815,6 +896,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_cuff[<?php echo $thisIndex; ?>]" id="is_open_sleeves<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="3" <?php echo ($thiscustomer['is_button_cuff'] == 3) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_open_sleeves<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Open Sleeves</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_cuff[<?php echo $thisIndex; ?>]" id="none_is_cuff<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_button_cuff']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_cuff<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -828,6 +914,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_design[<?php echo $thisIndex; ?>]" id="is_full_design<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_design'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_full_design<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Full design</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_design[<?php echo $thisIndex; ?>]" id="none_is_design<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_design']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_design<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -843,6 +934,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_kanta[<?php echo $thisIndex; ?>]" id="is_jali_kanta<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_kanta'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_jali_kanta<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Jali Kanta</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_kanta[<?php echo $thisIndex; ?>]" id="none_is_kanta<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_kanta']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_kanta<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -857,6 +953,11 @@
                                                                     <input type="radio" class="custom-control-input" name="is_stitch[<?php echo $thisIndex; ?>]" id="is_double_stitch<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_stitch'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_double_stitch<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Full double stitch</label>
                                                                 </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_stitch[<?php echo $thisIndex; ?>]" id="none_is_stitch<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_stitch']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_stitch<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -866,6 +967,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_thread[<?php echo $thisIndex; ?>]" id="is_shin_thread<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_thread'] == 1) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_shin_thread<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Shining thread</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_thread[<?php echo $thisIndex; ?>]" id="none_is_thread<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_thread']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_thread<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -880,6 +986,11 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" name="is_bookrum[<?php echo $thisIndex; ?>]" id="is_soft_bookrum<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_bookrum'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="is_soft_bookrum<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Soft bookrum</label>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input"  name="is_bookrum[<?php echo $thisIndex; ?>]" id="none_is_bookrum<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_bookrum']) ? "checked" : ''; ?>>
+                                                                    <label class="custom-control-label" for="none_is_bookrum<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -903,6 +1014,11 @@
                                                                 <input type="checkbox" class="custom-control-input" name="is_placket[<?php echo $thisIndex; ?>]" id="plane_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]" value="2" <?php echo ($thiscustomer['is_plane_placket'] == 1) ? "checked" : ''; ?>>
                                                                 <label class="custom-control-label" for="plane_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]"> Plain Front</label>
                                                             </div>
+                                                            &nbsp;&nbsp;
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input"  name="is_placket[<?php echo $thisIndex; ?>]" id="none_is_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_plane_placket'] && !$thiscustomer['is_front_placket']) ? "checked" : ''; ?>>
+                                                                <label class="custom-control-label" for="none_is_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -916,6 +1032,11 @@
                                                             <div class="custom-control custom-radio">
                                                                 <input type="radio" class="custom-control-input" name="is_shirt_cuff[<?php echo $thisIndex; ?>]" id="is_shirt_double_cuff<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_shirt_cuff'] == 2) ? "checked" : ''; ?>>
                                                                 <label class="custom-control-label" for="is_shirt_double_cuff<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Double Cuff</label>
+                                                            </div>
+                                                            &nbsp;&nbsp;
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input"  name="is_shirt_cuff[<?php echo $thisIndex; ?>]" id="none_is_shirt_cuff<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_shirt_cuff']) ? "checked" : ''; ?>>
+                                                                <label class="custom-control-label" for="none_is_shirt_cuff<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -934,7 +1055,13 @@
                                                             <div class="custom-control custom-radio form-check-inline">
                                                                 <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_shirt_collar[<?php echo $thisIndex; ?>]" id="is_shirt_full_band<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="3" <?php echo ($thiscustomer['is_shirt_collar'] == 3) ? "checked" : ''; ?>>
                                                                 <label class="custom-control-label" for="is_shirt_full_band<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Full Band</label>
-                                                            </div><br><br>
+                                                            </div>
+                                                            &nbsp;&nbsp;
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input" <?php echo $thisIndex == 0 ? '' : 'data-count="' . $thisIndex . '"'; ?> name="is_shirt_collar[<?php echo $thisIndex; ?>]" id="none_is_shirt_collar<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_shirt_collar']) ? "checked" : ''; ?>>
+                                                                <label class="custom-control-label" for="none_is_shirt_collar<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                            </div>
+                                                            <br><br>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 shirt_collar_text"  <?php echo!empty($thiscustomer['is_shirt_collar']) ? '' : 'style="display:none;"' ?>>
@@ -961,7 +1088,12 @@
                                                         <div class="custom-control custom-radio form-check-inline">
                                                             <input type="radio" class="custom-control-input" name="is_shirt_collar_type[<?php echo $thisIndex; ?>]" id="tuxedo<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="6" <?php echo ($thiscustomer['is_shirt_collar_type'] == 6) ? "checked" : ''; ?>>
                                                             <label class="custom-control-label" for="tuxedo<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Tuxedo</label>
-                                                        </div>                                        
+                                                        </div>   
+                                                        <br>
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[<?php echo $thisIndex; ?>]" id="none_is_shirt_collar_type<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo (!$thiscustomer['is_shirt_collar_type']) ? "checked" : ''; ?>>
+                                                            <label class="custom-control-label" for="none_is_shirt_collar_type<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
+                                                        </div>
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shirt_collar_ins[<?php echo $thisIndex; ?>]" id="shirt_collar_ins<?php echo $thisIndex; ?>"
                                                                    value="<?php echo ($thiscustomer['shirt_collar_ins']); ?>"
@@ -1158,11 +1290,11 @@
             count = count == 0 ? 1 : count;
 
             $(this).attr('data-count', parseInt(count) + 1);
-
+            var form = $("#data_form");
             $.ajax({
                 url: "<?php echo base_url('customers/new_articles_append') ?>",
                 type: "POST",
-                data: "count=" + count + '&' + crsf_token + '=' + crsf_hash,
+                data: form.serialize() + '&count=' + count + '&' + crsf_token + '=' + crsf_hash,
                 dataType: "html",
                 success: function (data) {
                     $(".append_new_size_article").append(data);

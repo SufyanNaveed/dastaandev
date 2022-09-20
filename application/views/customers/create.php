@@ -320,6 +320,10 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_breasted[0]" id="double_breasted" value="2">
                                                     <label class="custom-control-label" for="double_breasted">Double breasted</label>
+                                                </div>&nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_breasted[0]" id="none_breasted" value="0">
+                                                    <label class="custom-control-label" for="none_breasted">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -334,6 +338,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_button_suit[0]" id="two_button_suit" value="2">
                                                     <label class="custom-control-label" for="two_button_suit">Two button</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_button_suit[0]" id="none_button_suit" value="0">
+                                                    <label class="custom-control-label" for="none_button_suit">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,6 +362,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_lapel[0]" id="shawl_lapel" value="3">
                                                     <label class="custom-control-label" for="shawl_lapel">Shawl lapel</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_lapel[0]" id="none_lapel" value="0">
+                                                    <label class="custom-control-label" for="none_lapel">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>  
@@ -370,6 +384,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_vent[0]" id="no_vent" value="3">
                                                     <label class="custom-control-label" for="no_vent">No vent</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_vent[0]" id="none_vent" value="0">
+                                                    <label class="custom-control-label" for="none_vent">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -389,6 +408,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_wear[0]" id="groom_wear" value="3">
                                                     <label class="custom-control-label" for="groom_wear">Grooms wear </label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_wear[0]" id="none_groom_wear" value="0">
+                                                    <label class="custom-control-label" for="none_groom_wear">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -403,6 +427,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_lined[0]" id="half_lined" value="2">
                                                     <label class="custom-control-label" for="half_lined">Half lined</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_lined[0]" id="none_lined" value="0">
+                                                    <label class="custom-control-label" for="none_lined">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -412,6 +441,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_ticket[0]" id="ticket" value="1">
                                                     <label class="custom-control-label" for="ticket">Ticket pocket </label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_ticket[0]" id="none_ticket" value="0">
+                                                    <label class="custom-control-label" for="none_ticket">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -427,6 +461,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_suit_pocket[0]" id="slant" value="2">
                                                     <label class="custom-control-label" for="slant">Slant pocket </label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[0]" id="none_slant" value="0">
+                                                    <label class="custom-control-label" for="none_slant">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div> 
@@ -440,6 +479,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_suit_button[0]" id="button" value="2">
                                                     <label class="custom-control-label" for="button">Plain buttons</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[0]" id="none_slant" value="0">
+                                                    <label class="custom-control-label" for="none_slant">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -524,7 +568,7 @@
                                     <div class="form-group row mt-1">
                                         <label class="col-sm-5 col-form-label" for="name">Kameez Length</label>
                                         <div class="col-sm-6">
-                                             <input type="hidden" name ="kmzLength_form[0]" value="<?php echo $vToken; ?>">
+                                            <input type="hidden" name ="kmzLength_form[0]" value="<?php echo $vToken; ?>">
                                             <input type="text" class="form-control margin-bottom b_input " name="kmzLength[0]" id="kmzLength">
                                         </div>
                                     </div>
@@ -679,6 +723,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_collar[0]" id="moon_neck" value="4">
                                                     <label class="custom-control-label" for="moon_neck">Moon Neck</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_collar[0]" id="none_neck" value="0">
+                                                    <label class="custom-control-label" for="none_neck">None</label>
+                                                </div>
                                                 <div class="input-group collar_text" style="display:none;">
                                                     <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="collar_ins[0]" id="collar_ins" placeholder="Write instructions..."> 
                                                 </div>
@@ -696,6 +745,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_front[0]" id="straight_front" value="2">
                                                     <label class="custom-control-label" for="straight_front">Straight Front</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_front[0]" id="none_front" value="0">
+                                                    <label class="custom-control-label" for="none_front">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -705,6 +759,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_front_pocket[0]" id="is_front_pocket" value="1">
                                                     <label class="custom-control-label" for="is_front_pocket">Front Pocket</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_front_pocket[0]" id="none_front_pocket" value="0">
+                                                    <label class="custom-control-label" for="none_front_pocket">None</label>
                                                 </div>
                                                 <div class="input-group front_pocket_text" style="display:none;">
                                                     <input type="text" class="form-control" style="margin-right:20px; margin-top:5px;" name="front_pocket_ins[0]" id="front_pocket_ins" placeholder="Write instructions..."> 
@@ -718,6 +777,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_shalwar_pocket[0]" id="is_shalwar_pocket" value="1">
                                                     <label class="custom-control-label" for="is_shalwar_pocket">Shalwar Pocket</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_shalwar_pocket[0]" id="none_shalwar_pocket" value="0">
+                                                    <label class="custom-control-label" for="none_shalwar_pocket">None</label>
                                                 </div>
                                                 <div class="input-group shalwar_pocket_text" style="display:none;">
                                                     <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shalwar_pocket_ins[0]" id="shalwar_pocket_ins" placeholder="Write instructions..."> 
@@ -736,6 +800,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_pocket[0]" id="2side_pocket" value="2">
                                                     <label class="custom-control-label" for="2side_pocket">2 side pocket</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_pocket[0]" id="none_side_pocket" value="0">
+                                                    <label class="custom-control-label" for="none_side_pocket">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -745,6 +814,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_sleeve_placket[0]" id="is_sleeve_placket" value="1">
                                                     <label class="custom-control-label" for="is_sleeve_placket">Sleeve Placket Button</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_sleeve_placket[0]" id="none_sleeve_placket" value="0">
+                                                    <label class="custom-control-label" for="none_sleeve_placket">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -764,6 +838,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_button[0]" id="loop_button" value="3">
                                                     <label class="custom-control-label" for="loop_button">Loop Button</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_button[0]" id="none_loop_button" value="0">
+                                                    <label class="custom-control-label" for="none_loop_button">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -782,6 +861,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_cuff[0]" id="is_open_sleeves" value="3">
                                                     <label class="custom-control-label" for="is_open_sleeves">Open Sleeves</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_cuff[0]" id="none_open_sleeves" value="0">
+                                                    <label class="custom-control-label" for="none_open_sleeves">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -795,6 +879,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_design[0]" id="is_full_design" value="2">
                                                     <label class="custom-control-label" for="is_full_design">Full design</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_design[0]" id="none_is_design" value="0">
+                                                    <label class="custom-control-label" for="none_is_design">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -810,6 +899,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_kanta[0]" id="is_jali_kanta" value="2">
                                                     <label class="custom-control-label" for="is_jali_kanta">Jali Kanta</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_kanta[0]" id="none_is_kanta" value="0">
+                                                    <label class="custom-control-label" for="none_is_kanta">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -824,6 +918,11 @@
                                                     <input type="radio" class="custom-control-input" name="is_stitch[0]" id="is_double_stitch" value="2">
                                                     <label class="custom-control-label" for="is_double_stitch">Full double stitch</label>
                                                 </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_stitch[0]" id="none_is_stitch" value="0">
+                                                    <label class="custom-control-label" for="none_is_stitch">None</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -833,6 +932,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_thread[0]" id="is_shin_thread" value="1">
                                                     <label class="custom-control-label" for="is_shin_thread">Shining thread</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_thread[0]" id="none_is_thread" value="0">
+                                                    <label class="custom-control-label" for="none_is_thread">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -847,6 +951,11 @@
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" class="custom-control-input" name="is_bookrum[0]" id="is_soft_bookrum" value="2">
                                                     <label class="custom-control-label" for="is_soft_bookrum">Soft bookrum</label>
+                                                </div>
+                                                &nbsp;&nbsp;
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="is_bookrum[0]" id="none_is_bookrum" value="0">
+                                                    <label class="custom-control-label" for="none_is_bookrum">None</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -870,6 +979,11 @@
                                                 <input type="checkbox" class="custom-control-input" name="is_placket[0]" id="plane_placket" value="2">
                                                 <label class="custom-control-label" for="plane_placket"> Plain Front</label>
                                             </div>
+                                            &nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_placket[0]" id="none_is_placket" value="0">
+                                                <label class="custom-control-label" for="none_is_placket">None</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -883,6 +997,11 @@
                                             <div class="custom-control custom-radio">
                                                 <input type="radio" class="custom-control-input" name="is_shirt_cuff[0]" id="is_shirt_double_cuff" value="2">
                                                 <label class="custom-control-label" for="is_shirt_double_cuff">Double Cuff</label>
+                                            </div>
+                                            &nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_shirt_cuff[0]" id="none_is_shirt_cuff" value="0">
+                                                <label class="custom-control-label" for="none_is_shirt_cuff">None</label>
                                             </div>
                                         </div>
                                     </div>
@@ -901,7 +1020,13 @@
                                             <div class="custom-control custom-radio form-check-inline">
                                                 <input type="radio" class="custom-control-input" name="is_shirt_collar[0]" id="is_shirt_full_band" value="3">
                                                 <label class="custom-control-label" for="is_shirt_full_band">Full Band</label>
-                                            </div><br><br>
+                                            </div>
+                                            &nbsp;&nbsp;
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="is_shirt_collar[0]" id="none_is_shirt_collar" value="0">
+                                                <label class="custom-control-label" for="none_is_shirt_collar">None</label>
+                                            </div>
+                                            <br><br>
                                         </div>
                                     </div>
                                     <div class="col-md-12 shirt_collar_text" style="display:none;">
@@ -928,7 +1053,12 @@
                                         <div class="custom-control custom-radio form-check-inline">
                                             <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="tuxedo" value="6">
                                             <label class="custom-control-label" for="tuxedo">Tuxedo</label>
-                                        </div>                                        
+                                        </div>  
+                                        <br>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" name="is_shirt_collar_type[0]" id="none_is_shirt_collar_type" value="0">
+                                            <label class="custom-control-label" for="none_is_shirt_collar_type">None</label>
+                                        </div>
                                         <div class="input-group">
                                             <input type="text" class="form-control" style="margin-right:20px;margin-top:5px;" name="shirt_collar_ins[0]" id="shirt_collar_ins" placeholder="Write instructions..."> 
                                         </div>
@@ -1118,12 +1248,12 @@
         $('.add_new_rows').click(function () {
             var count = $(this).attr('data-count');
             count = count == 0 ? 1 : count;
-
+             var form = $("#data_form");
             $(this).attr('data-count', parseInt(count) + 1);
             $.ajax({
                 url: "<?php echo base_url('customers/new_articles_append') ?>",
                 type: "POST",
-                data: "count=" + count + '&' + crsf_token + '=' + crsf_hash,
+                data: form.serialize() + '&count=' + count + '&' + crsf_token + '=' + crsf_hash,
                 dataType: "html",
                 success: function (data) {
                     $(".append_new_size_article").append(data);
@@ -1142,7 +1272,6 @@
             var val = $(this).val();
             var counter = $(this).attr('data-counter');
             if ($(this).is(":checked") && $(this).val() == 'suiting') {
-                alert(counter);
                 $('.append_row_for_article_' + counter + ' #shirts_' + counter).prop('checked', false);
                 $('.append_row_for_article_' + counter + ' #shalwarqameez_' + counter).prop('checked', false);
 
@@ -1186,7 +1315,7 @@
             }
         });
 
- 
+
 
 
 
