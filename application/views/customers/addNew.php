@@ -33,6 +33,7 @@
                     $vToken = rand(10, 1000);
                     ?>
                     <div class="card">
+                        <input type="hidden" value="<?php echo $vToken; ?>" name="aa_name[<?php echo $counter; ?>]">
                         <div class="card-body">
                             <div class="default_row">
                                 <?php if ($thisIndex) { ?>
