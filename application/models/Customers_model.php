@@ -53,6 +53,7 @@ class Customers_model extends CI_Model
             $this->db->join('customer_coat_size','geopos_customers.id = customer_coat_size.cus_id','left');
             $this->db->join('customer_pant_size','geopos_customers.id = customer_pant_size.cus_id','left');
             $this->db->join('customer_kmz_shl','geopos_customers.id = customer_kmz_shl.cus_id','left');
+            $this->db->where('customer_basic_info.reference_id is NOT NULL', NULL, FALSE);
             if ($this->aauth->get_user()->loc) {
                 $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
             } elseif (!BDATA) {

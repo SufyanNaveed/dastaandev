@@ -20,6 +20,7 @@
                     <?php
                     $vToken = rand(10, 1000);
                     ?>
+                    <input type="hidden" value="<?php echo $vToken; ?>" name="aa_name[0]">
                     <button type="button" id="preview1" class="btn btn-primary" style="display:none;" onclick="previewModal(<?php echo $vToken; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
                     <div class="row">
                         <div class="col-md-4">

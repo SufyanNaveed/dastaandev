@@ -442,6 +442,7 @@ for ($i = 0; $i < $vTotalCOunt; $i++) {
     <button type="button"  class="btn btn-primary" onclick="previewModal(<?php echo $vToken; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
     &nbsp;&nbsp;&nbsp;
     <button type="button" class="btn btn-danger remove_new_rows" style="float:right;" data-count="<?php echo $count; ?>">Remove Multiple &nbsp;&nbsp;<i class="fa fa-times"></i></button><br><br>
+    <input type="hidden" value="<?php echo $vToken; ?>" name="aa_name[<?php echo $count; ?>]">
     <div class="row ">
         <div class="col-md-4">
             <h5 class="title text-center">Customer Info</h5>

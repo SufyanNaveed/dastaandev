@@ -297,15 +297,16 @@ class Customers extends CI_Controller {
 //                print_r("_____suit_________");
 //                print_r($this->input->post("cSleeve[" . array_search($vIndex, $this->input->post("cSleeve_form")) . "]"));
 //                print_r("</br>");
-                if (array_search($vIndex, $this->input->post("cSleeve_form")) >= 0 && $this->input->post("cSleeve[" . array_search($vIndex, $this->input->post("cSleeve_form")) . "]"))
-                    $vAllowed = true;
+//                if (array_search($vIndex, $this->input->post("cSleeve_form")) >= 0 && $this->input->post("cSleeve[" . array_search($vIndex, $this->input->post("cSleeve_form")) . "]"))
+//                    $vAllowed = true;
                 /* Get  coat/waist coat size */
                 foreach ($cSleeve as $thisIndex => $thisItem)
                     if ($thisItem) {
                         $vSuitingCountIndex = $thisIndex;
                         break;
                     }
-
+                    if($this->input->post("aa_name[" . $vSuitingCountIndex . "]")==$vIndex)
+                           $vAllowed = true; 
                 $cSleeves = $this->input->post("cSleeve[" . $vSuitingCountIndex . "]");
                 $cShoulder = $this->input->post("cShoulder[" . $vSuitingCountIndex . "]");
                 $cHalfBack = $this->input->post("cHalfBack[" . $vSuitingCountIndex . "]");
@@ -397,16 +398,19 @@ class Customers extends CI_Controller {
 //                print_r("______shirt_______");
 //                print_r($this->input->post("shirtLength[" . array_search($vIndex, $this->input->post("shirtLength_form")) . "]"));
 //                print_r("</br>");
-                if (array_search($vIndex, $this->input->post("shirtLength_form")) >= 0 && $this->input->post("shirtLength[" . array_search($vIndex, $this->input->post("shirtLength_form")) . "]"))
-                    $vAllowed = true;
+//                if (array_search($vIndex, $this->input->post("shirtLength_form")) >= 0 && $this->input->post("shirtLength[" . array_search($vIndex, $this->input->post("shirtLength_form")) . "]"))
+//                    $vAllowed = true;
                 /* Get Shirt size */
 
+                
                 foreach ($aShirtLength as $thisIndex => $thisItem)
                     if ($thisItem) {
                         $vShirtCountIndex = $thisIndex;
                         break;
                     }
 
+                     if($this->input->post("aa_name[" . $vShirtCountIndex . "]")==$vIndex)
+                           $vAllowed = true; 
                 $shirtLength = $this->input->post("shirtLength[" . $vShirtCountIndex . "]");
                 $shirtShoulder = $this->input->post("shirtShoulder[" . $vShirtCountIndex . "]");
                 $shirtSleeves = $this->input->post("shirtSleeves[" . $vShirtCountIndex . "]");
@@ -468,7 +472,8 @@ class Customers extends CI_Controller {
                         break;
                     }
 
-
+                if($this->input->post("aa_name[" . $vKmzCountIndex . "]")==$vIndex)
+                           $vAllowed = true; 
 
                 $kmzLength = $this->input->post("kmzLength[" . $vKmzCountIndex . "]");
                 $kurtaLength = $this->input->post("kurtaLength[" . $vKmzCountIndex . "]");
