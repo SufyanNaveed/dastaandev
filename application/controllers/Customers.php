@@ -2003,7 +2003,6 @@ class Customers extends CI_Controller {
                 $collar_ins = '';
                 $front_pocket_ins = '';
                 $shalwar_pocket_ins = '';
-
                 if ($is_suiting) {
                     /* Get  coat/waist coat size */
 
