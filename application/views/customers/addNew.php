@@ -511,7 +511,7 @@
                                                                 </div>
                                                                 &nbsp;&nbsp;
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="none_is_suit_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_button'] == 0) ? "checked" : ''; ?>>
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_button[<?php echo $thisIndex; ?>]" id="none_is_suit_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_button'] == 0) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="none_is_suit_button<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>

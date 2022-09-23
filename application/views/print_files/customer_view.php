@@ -786,17 +786,17 @@ foreach ($nap as $napRow) {
                                 <?php } else { ?> 
                                     <?php if ($napRow['is_collar'] == 1) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Collar' : 'کالر ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Collar' : 'کالر ' ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '') ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_collar'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half Band' : ' ہاف بینڈ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half Band' : ' ہاف بینڈ ' ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '') ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_collar'] == 3) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' مکمل بینڈ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' مکمل بینڈ ' ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '') ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_collar'] == 4) { ?>

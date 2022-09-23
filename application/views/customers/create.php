@@ -483,7 +483,7 @@
                                                 </div>
                                                 &nbsp;&nbsp;
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[0]" id="none_slant" value="0">
+                                                    <input type="radio" class="custom-control-input" name="is_suit_button[0]" id="none_slant" value="0">
                                                     <label class="custom-control-label" for="none_slant">None</label>
                                                 </div>
                                             </div>
