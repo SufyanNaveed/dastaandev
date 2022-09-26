@@ -709,7 +709,7 @@ class Customers extends CI_Controller {
             $nap['collar_ins'] = $collar_ins;
             $nap['front_pocket_ins'] = $front_pocket_ins;
             $nap['shalwar_pocket_ins'] = $shalwar_pocket_ins;
-            if($vAllowed)
+            if($vAllowed && empty($aPreviewData))
             $aPreviewData[] = $nap;
         }
 

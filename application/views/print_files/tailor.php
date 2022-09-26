@@ -4,7 +4,233 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tailor Slip #<?php echo $nap[0]['reference_id'];  ?></title>
      <style>
+@media print {
 
+    .invoice-box {
+        /*            width: 500mm;*/
+        height: 130mm;
+        /*margin: auto;*/
+        padding: 14mm;
+        border: 0;
+        font-size: 12pt;
+        line-height: 14pt;
+        color: #000;
+    }
+
+
+
+    table {
+        width: 100%;
+        line-height: 16pt;
+        text-align: left;
+/*        border-collapse: collapse;*/
+    }
+
+    .plist tr td {
+        line-height: 12pt;
+    }
+
+    .subtotal tr td {
+        line-height: 10pt;
+        padding: 6pt;
+    }
+
+    .subtotal tr td {
+        border: 1px solid #ddd;
+    }
+
+    .sign {
+        text-align: right;
+        font-size: 10pt;
+        margin-right: 110pt;
+    }
+
+    .sign1 {
+        text-align: right;
+        font-size: 10pt;
+        margin-right: 90pt;
+    }
+
+    .sign2 {
+        text-align: right;
+        font-size: 10pt;
+        margin-right: 115pt;
+    }
+
+    .sign3 {
+        text-align: right;
+        font-size: 10pt;
+        margin-right: 115pt;
+    }
+
+    .terms {
+        font-size: 9pt;
+        line-height: 16pt;
+        margin-right: 20pt;
+    }
+
+    .invoice-box table td {
+        padding: 10pt 4pt 8pt 4pt;
+        vertical-align: top;
+
+    }
+
+    .invoice-box table.top_sum td {
+        padding: 0;
+        font-size: 12pt;
+    }
+
+    .party tr td:nth-child(3) {
+        text-align: center;
+    }
+
+    .order-info tr td:nth-child(2){
+        text-align: right;
+    }
+
+    .invoice-box table tr.top table td {
+        padding-bottom: 20pt;
+
+    }
+
+    table tr.top table td.title {
+        font-size: 45pt;
+        line-height: 45pt;
+        color: #555;
+    }
+
+    table tr.information table td {
+        padding-bottom: 20pt;
+    }
+
+    table tr.heading td {
+        background: #515151;
+        color: #FFF;
+        padding: 6pt;
+
+    }
+
+    table tr.details td {
+        padding-bottom: 20pt;
+    }
+
+    .invoice-box table tr.item td {
+                border: 1px solid #ddd;
+    }
+
+    table tr.b_class td {
+        border-bottom: 1px solid #ddd;
+    }
+
+    table tr.b_class.last td {
+        border-bottom: none;
+    }
+
+    table tr.total td:nth-child(4) {
+        border-top: 2px solid #fff;
+        font-weight: bold;
+    }
+
+    .myco {
+        width: 400pt;
+    }
+
+    .myco2 {
+        width: 200pt;
+    }
+
+    .myw {
+        width: 150pt;
+        font-size: 14pt;
+        line-height: 14pt;
+    }
+
+    .mfill {
+        background-color: #eee;
+    }
+
+    .descr {
+        font-size: 10pt;
+        color: #515151;
+    }
+
+    .tax {
+        font-size: 10px;
+        color: #515151;
+    }
+
+    .t_center {
+        text-align: right;
+    }
+
+    .c_center{
+        text-align: center;
+    }
+
+    .party {
+        border: #ccc 1px solid;
+    }
+
+    .top_logo {
+        max-height: 180px;
+        max-width: 250px;
+
+
+    }
+
+    .fTb{
+        margin-left: 12px;
+        padding-left: 12px;
+    }
+    .first-item{
+
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .second-item{
+        margin-left: 15px;
+        padding-left: 15px;
+    }
+
+
+    .invoice-box table.order_detail td {
+        padding: 0;
+        padding-left: 13px;
+        padding-bottom: 2px;
+
+    }
+
+    .invoice-box table.order_detail tr{
+        border: none;
+    }
+
+    .invoice-box table.order_detail td{
+        border: none;
+    }
+
+    table tr .shl td {
+        background: #515151;
+        color: #FFF;
+        padding: 6pt;
+
+    }
+
+    .amount-details{
+        border:  #ccc 1px solid;
+
+    }
+    .invoice-box table.amount td {
+        padding: 0;
+        padding-bottom: 2px;
+    }
+    body {
+        color: #2B2000;
+        font-family: 'Helvetica';
+        height: 100%;
+    }
+
+}
     .invoice-box {
         /*            width: 500mm;*/
         height: 130mm;
@@ -713,7 +939,7 @@ foreach ($nap as $napRow) {
                                         </tr>
                                     <?php } if ($napRow['is_button_cuff'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : ' فرانسیسی کف  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : 'ڈبل کف ' ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_shirt_cuff'] == 2) { ?>
@@ -729,12 +955,12 @@ foreach ($nap as $napRow) {
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half Band' : ' آدھا بینڈ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half Band' : ' نصف بینڈ ' ?></td>
                                         </tr>
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar'] == 3) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' مکمل بینڈ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' فل بینڈ ' ?></td>
                                         </tr>
                                     <?php } ?> 
 
@@ -756,12 +982,12 @@ foreach ($nap as $napRow) {
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar_type'] == 4) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half French' : '  آدھا فرانسیسی ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half French' : '  نصف فرانسیسی ' ?></td>
                                         </tr>
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar_type'] == 5) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full French' : '  مکمل فرانسیسی ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full French' : '  فل فرانسیسی ' ?></td>
                                         </tr>
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar_type'] == 6) { ?>
@@ -789,12 +1015,12 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
                                     <?php if ($napRow['is_collar'] == 3) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' مکمل بینڈ ' ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '') ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' فل بینڈ ' ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '') ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_collar'] == 4) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Moon neck' : 'چاند گلہ '  ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '')?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Moon neck' : 'گول گلہ '  ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '')?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_straight_front'] == 2) { ?>
@@ -819,19 +1045,19 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
 
                                     <?php if ($napRow['is_front_pocket']) { ?>
-                                        <tr>
+<!--                                        <tr>
                                             <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Front pocket' : ' فرنٹ جیب  '?><?= (!empty($napRow["front_pocket_ins"]) ? "(" . $napRow["front_pocket_ins"] . ")" : '') ?></td>
-                                        </tr>
+                                        </tr>-->
                                     <?php } ?>
                                     <?php if ($napRow['is_shalwar_pocket']) { ?>
-                                        <tr>
+<!--                                        <tr>
                                             <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Shalwar pocket' : 'شلوارجیب ' ?><?= (!empty($napRow["shalwar_pocket_ins"]) ? "(" . $napRow["shalwar_pocket_ins"] . ")" : '')?></td>
-                                        </tr>
+                                        </tr>-->
                                     <?php } ?>
 
                                     <?php if ($napRow['is_button_cuff'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : ' ڈبل کف  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : 'ڈبل کف ' ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_band'] == 1) { ?>
@@ -876,7 +1102,7 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
                                     <?php if ($napRow['is_plain_button'] == 3) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Loop button' : 'لوپ بٹن ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Loop button' : 'لوپی بٹن' ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_button_cuff'] == 1) { ?>
@@ -886,7 +1112,7 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
                                     <?php if ($napRow['is_button_cuff'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : ' فرانسیسی کف  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : 'ڈبل کف ' ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_button_cuff'] == 3) { ?>
@@ -897,31 +1123,31 @@ foreach ($nap as $napRow) {
 
                                     <?php if ($napRow['is_design'] == 1) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half design' : ' آدھا ڈیزائن  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half design' : ' نصف ڈیزائن  ' ?></td>
                                         </tr>
                                     <?php } ?>  
 
                                     <?php if ($napRow['is_design'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Design' : ' مکمل ڈیزائن  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Design' : ' فل ڈیزائن  ' ?></td>
                                         </tr>
                                     <?php } ?>  
 
                                     <?php if ($napRow['is_kanta'] == 1) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Kanta' : ' Kanta ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Kanta' : 'کانتا' ?></td>
                                         </tr>
                                     <?php } ?>  
 
                                     <?php if ($napRow['is_kanta'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Jali Kanta' : ' Jali Kanta' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Jali Kanta' : 'جالی کانتا' ?></td>
                                         </tr>
                                     <?php } ?>  
                                         
                                          <?php if ($napRow['is_thread']) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Shining thread' : ' چمکتا دھاگہ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Shining thread' : 'چمکدار دھاگہ' ?></td>
                                         </tr>
                                     <?php } ?>  
 
