@@ -720,7 +720,7 @@ foreach ($nap as $napRow) {
                                         </tr>
                                     <?php } if ($napRow['is_button_cuff'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : ' فرانسیسی کف  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : 'ڈبل کف ' ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_shirt_cuff'] == 2) { ?>
@@ -736,12 +736,12 @@ foreach ($nap as $napRow) {
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half Band' : ' آدھا بینڈ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half Band' : ' نصف بینڈ ' ?></td>
                                         </tr>
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar'] == 3) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' مکمل بینڈ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' فل بینڈ ' ?></td>
                                         </tr>
                                     <?php } ?> 
 
@@ -763,12 +763,12 @@ foreach ($nap as $napRow) {
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar_type'] == 4) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half French' : '  آدھا فرانسیسی ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half French' : '  نصف فرانسیسی ' ?></td>
                                         </tr>
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar_type'] == 5) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full French' : '  مکمل فرانسیسی ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full French' : '  فل فرانسیسی ' ?></td>
                                         </tr>
                                     <?php } ?> 
                                     <?php if ($napRow['is_shirt_collar_type'] == 6) { ?>
@@ -796,12 +796,12 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
                                     <?php if ($napRow['is_collar'] == 3) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' مکمل بینڈ ' ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '') ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Band' : ' فل بینڈ ' ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '') ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_collar'] == 4) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Moon neck' : 'چاند گلہ '  ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '')?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Moon neck' : 'گول گلہ '  ?><?= (!empty($napRow["collar_ins"]) ? "(" . $napRow["collar_ins"] . ")" : '')?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_straight_front'] == 2) { ?>
@@ -826,14 +826,14 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
 
                                     <?php if ($napRow['is_front_pocket']) { ?>
-                                        <tr>
+<!--                                        <tr>
                                             <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Front pocket' : ' فرنٹ جیب  '?><?= (!empty($napRow["front_pocket_ins"]) ? "(" . $napRow["front_pocket_ins"] . ")" : '') ?></td>
-                                        </tr>
+                                        </tr>-->
                                     <?php } ?>
                                     <?php if ($napRow['is_shalwar_pocket']) { ?>
-                                        <tr>
+<!--                                        <tr>
                                             <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Shalwar pocket' : 'شلوارجیب ' ?><?= (!empty($napRow["shalwar_pocket_ins"]) ? "(" . $napRow["shalwar_pocket_ins"] . ")" : '')?></td>
-                                        </tr>
+                                        </tr>-->
                                     <?php } ?>
 
                                     <?php if ($napRow['is_button_cuff'] == 2) { ?>
@@ -883,7 +883,7 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
                                     <?php if ($napRow['is_plain_button'] == 3) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Loop button' : 'لوپ بٹن ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Loop button' : 'لوپی بٹن' ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_button_cuff'] == 1) { ?>
@@ -893,7 +893,7 @@ foreach ($nap as $napRow) {
                                     <?php } ?>
                                     <?php if ($napRow['is_button_cuff'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : ' فرانسیسی کف  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'French Cuff' : 'ڈبل کف ' ?></td>
                                         </tr>
                                     <?php } ?>
                                     <?php if ($napRow['is_button_cuff'] == 3) { ?>
@@ -904,31 +904,31 @@ foreach ($nap as $napRow) {
 
                                     <?php if ($napRow['is_design'] == 1) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half design' : ' آدھا ڈیزائن  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half design' : ' نصف ڈیزائن  ' ?></td>
                                         </tr>
                                     <?php } ?>  
 
                                     <?php if ($napRow['is_design'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Design' : ' مکمل ڈیزائن  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full Design' : ' فل ڈیزائن  ' ?></td>
                                         </tr>
                                     <?php } ?>  
 
                                     <?php if ($napRow['is_kanta'] == 1) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Kanta' : ' Kanta ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Kanta' : 'کانتا' ?></td>
                                         </tr>
                                     <?php } ?>  
 
                                     <?php if ($napRow['is_kanta'] == 2) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Jali Kanta' : ' Jali Kanta' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Jali Kanta' : 'جالی کانتا' ?></td>
                                         </tr>
                                     <?php } ?>  
                                         
                                          <?php if ($napRow['is_thread']) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Shining thread' : ' چمکتا دھاگہ ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Shining thread' : 'چمکدار دھاگہ' ?></td>
                                         </tr>
                                     <?php } ?>  
 
