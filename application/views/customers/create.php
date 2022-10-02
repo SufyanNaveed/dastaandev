@@ -1,4 +1,8 @@
-
+<style>
+    .modal-content{
+        height:1330px;
+    }
+</style>
 <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 <div class="content-body">
     <div class="card">

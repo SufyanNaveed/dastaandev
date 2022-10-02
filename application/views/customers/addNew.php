@@ -4,6 +4,7 @@
         max-height: 100vh;
         overflow-y: auto;
     }
+    
 </style>
 <div class="content-body">
 
@@ -1225,16 +1226,15 @@
                             </div>
                     </form></center>
                 <hr>
-                <div id="preview_body"></div>                        </div>
-
-        </div>
-        <div class="modal-footer">
-            <input type="hidden" id="lang_index" value="">
-            <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                <div id="preview_body"></div>                        
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" id="lang_index" value="">
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
         </div>
     </div>
-</div>
-</div>
+</div> 
 
 <script type="text/javascript">
     // function cal_blace(){
