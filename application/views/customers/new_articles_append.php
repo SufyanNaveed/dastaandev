@@ -1430,7 +1430,10 @@ for ($i = 0; $i < $vTotalCOunt; $i++) {
         <div class="col-md-12">
             <div class="form-group">
                 <label for="email" class="col-form-label">Suiting Instructions:</label>
-                <textarea class="form-control" name="inst[<?php echo $count; ?>]" rows="7" id="comment"><?php echo $instrucation?></textarea>
+                <textarea class="form-control" name="inst[<?php echo $count; ?>]" rows="7" id="inst"><?php echo $instrucation?></textarea>
+                <script>
+                    CKEDITOR.replace( 'inst[<?php echo $count; ?>]' );
+                </script>
             </div>
         </div>
     </div> 
@@ -1439,7 +1442,10 @@ for ($i = 0; $i < $vTotalCOunt; $i++) {
         <div class="col-md-12">
             <div class="form-group">
                 <label for="email" class="col-form-label">Shirts Instructions:</label>
-                <textarea class="form-control" name="shirt_inst[<?php echo $count; ?>]" rows="7" id="comment"><?php echo $shirt_inst?></textarea>
+                <textarea class="form-control" name="shirt_inst[<?php echo $count; ?>]" rows="7" id="shirt_inst"><?php echo $shirt_inst?></textarea>
+                <script>
+                    CKEDITOR.replace( 'shirt_inst[<?php echo $count; ?>]' );
+                </script>
             </div>
         </div>
     </div> 
@@ -1448,7 +1454,10 @@ for ($i = 0; $i < $vTotalCOunt; $i++) {
         <div class="col-md-12">
             <div class="form-group">
                 <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
-                <textarea class="form-control" name="shalwar_inst[<?php echo $count; ?>]" rows="7" id="comment"><?php echo $shalwar_inst?></textarea>
+                <textarea class="form-control" name="shalwar_inst[<?php echo $count; ?>]" rows="7" id="shalwar_inst"><?php echo $shalwar_inst?></textarea>
+                <script>
+                    CKEDITOR.replace( 'shalwar_inst[<?php echo $count; ?>]' );
+                </script>
             </div>
         </div>
     </div>

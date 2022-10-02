@@ -1,4 +1,5 @@
 
+<script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 <div class="content-body">
     <div class="card">
         <div class="card-header">
@@ -1072,7 +1073,10 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email" class="col-form-label">Suiting Instructions:</label>
-                                <textarea class="form-control" name="inst[0]" rows="7" id="comment"></textarea>
+                                <textarea class="form-control" name="inst[0]" rows="7" id="inst"></textarea>
+                                <script>
+                                    CKEDITOR.replace( 'inst[0]' );
+                                </script>
                             </div>
                         </div>
                     </div> 
@@ -1081,7 +1085,10 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email" class="col-form-label">Shirts Instructions:</label>
-                                <textarea class="form-control" name="shirt_inst[0]" rows="7" id="comment"></textarea>
+                                <textarea class="form-control" name="shirt_inst[0]" rows="7" id="shirt_inst"></textarea>
+                                <script>
+                                    CKEDITOR.replace( 'shirt_inst[0]' );
+                                </script>
                             </div>
                         </div>
                     </div> 
@@ -1090,7 +1097,10 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
-                                <textarea class="form-control" name="shalwar_inst[0]" rows="7" id="comment"></textarea>
+                                <textarea class="form-control" name="shalwar_inst[0]" rows="7" id="shalwar_inst"></textarea>
+                                <script>
+                                    CKEDITOR.replace( 'shalwar_inst[0]' );
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -1327,26 +1337,31 @@
         var is_english = $('input[name="is_english"]:checked').val();
         var index = $('#lang_index').val();
         var form = $("#data_form");
+        console.log(form.serialize());
         $.ajax({
             url: "<?php echo base_url('customers/preview') ?>",
             type: "POST",
             data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&is_english=' + is_english + '&index=' + index,
             dataType: "html",
             success: function (data) {
-                $('#preview_body').html(data)
+                $('#preview_body').empty().html(data)
             }
         });
     }
     function previewModal(index) {
         $("#lang_index").val(index);
+        CKEDITOR.instances.inst.updateElement();
+        CKEDITOR.instances.shirt_inst.updateElement();
+        CKEDITOR.instances.shalwar_inst.updateElement();
         var form = $("#data_form");
+        console.log(form.serialize());
         $.ajax({
             url: "<?php echo base_url('customers/preview') ?>",
             type: "POST",
             data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&index=' + index,
             dataType: "html",
             success: function (data) {
-                $('#preview_body').html(data)
+                $('#preview_body').empty().html(data)
                 $('#pre_preview_model').modal('show');
 
             }

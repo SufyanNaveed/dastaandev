@@ -1123,7 +1123,7 @@ foreach ($nap as $napRow) {
 
                                     <?php if ($napRow['is_design'] == 1) { ?>
                                         <tr>
-                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half design' : ' نصف ڈیزائن  ' ?></td>
+                                            <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Half design' : ' ھاف ڈیزائن  ' ?></td>
                                         </tr>
                                     <?php } ?>  
 

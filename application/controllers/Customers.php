@@ -292,13 +292,7 @@ class Customers extends CI_Controller {
             $vAllowed = false;
 
 
-            if ($is_suiting) {
-//                print_r(array_search($vIndex, $this->input->post("cSleeve_form")));
-//                print_r("_____suit_________");
-//                print_r($this->input->post("cSleeve[" . array_search($vIndex, $this->input->post("cSleeve_form")) . "]"));
-//                print_r("</br>");
-//                if (array_search($vIndex, $this->input->post("cSleeve_form")) >= 0 && $this->input->post("cSleeve[" . array_search($vIndex, $this->input->post("cSleeve_form")) . "]"))
-//                    $vAllowed = true;
+            if ($is_suiting) { 
                 /* Get  coat/waist coat size */
                 foreach ($cSleeve as $thisIndex => $thisItem)
                     if ($thisItem) {
@@ -393,15 +387,7 @@ class Customers extends CI_Controller {
                 $vSuitingCount--;
             }
 
-            if ($is_shirts) {
-//                print_r(array_search($vIndex, $this->input->post("shirtLength_form")));
-//                print_r("______shirt_______");
-//                print_r($this->input->post("shirtLength[" . array_search($vIndex, $this->input->post("shirtLength_form")) . "]"));
-//                print_r("</br>");
-//                if (array_search($vIndex, $this->input->post("shirtLength_form")) >= 0 && $this->input->post("shirtLength[" . array_search($vIndex, $this->input->post("shirtLength_form")) . "]"))
-//                    $vAllowed = true;
-                /* Get Shirt size */
-
+            if ($is_shirts) { 
                 
                 foreach ($aShirtLength as $thisIndex => $thisItem)
                     if ($thisItem) {
@@ -456,13 +442,7 @@ class Customers extends CI_Controller {
                 $vShirtCount--;
             }
             if ($is_shalwarqameez) {
-
-
-//                print_r(array_search($vIndex, $this->input->post("kmzLength_form")));
-//                print_r("______kmz_______");
-//                print_r($this->input->post("kmzLength[" . array_search($vIndex, $this->input->post("kmzLength_form")) . "]"));
-//                print_r("</br>");
-
+ 
                 if (array_search($vIndex, $this->input->post("kmzLength_form")) >= 0 && $this->input->post("kmzLength[" . array_search($vIndex, $this->input->post("kmzLength_form")) . "]"))
                     $vAllowed = true;;
                 /* Get kamiz size */
@@ -670,6 +650,7 @@ class Customers extends CI_Controller {
             $nap['kmz_bicep'] = $kmzBicep;
             $nap['kmz_forearm'] = $kmzForearm;
             $nap['kmzarmhole'] = $kmzarmhole;
+            $nap['kmzcuff'] = $kmzcuff;
             $nap['shl_length'] = $shlLength;
             $nap['shl_bottom'] = $shlBottom;
             $nap['shl_AsanTyar'] = $shlAsanTyar;
@@ -2320,7 +2301,7 @@ class Customers extends CI_Controller {
 
     public function updatecolthingCustomer() {
 
-//       print_r(json_encode($this->input->post()));exit;
+        // print_r(json_encode($this->input->post()));exit;
         //delete old data
         $this->customers->delete($this->input->post('customer_id'));
 

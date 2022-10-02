@@ -1,6 +1,4 @@
-<?php
-//print_r(json_encode($customer[1]));exit;
-?>
+<script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 <style>
     .modal-body{
         max-height: 100vh;
@@ -1108,8 +1106,11 @@
                                     <div class="row mt-1 coat_waistCoat" <?php echo!empty($thiscustomer['is_suiting']) ? '' : 'style="display:none;"' ?>>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="email" class="col-form-label">Suiting Instructions:</label>
-                                                <textarea class="form-control" name="inst[<?php echo $thisIndex; ?>]" rows="7" id="comment<?php echo $thisIndex; ?>"><?php echo ($thiscustomer['instrucations']); ?></textarea>
+                                                <label for="inst" class="col-form-label">Suiting Instructions:</label>
+                                                <textarea class="form-control" name="inst[<?php echo $thisIndex; ?>]" rows="7" id="inst"><?php echo ($thiscustomer['instrucations']); ?></textarea>
+                                                <script>
+                                                    CKEDITOR.replace( 'inst[<?php echo $thisIndex; ?>]' );
+                                                </script>
                                             </div>
                                         </div>
                                     </div> 
@@ -1118,7 +1119,10 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Shirts Instructions:</label>
-                                                <textarea class="form-control" name="shirt_inst[<?php echo $thisIndex; ?>]" rows="7"  id="comment<?php echo $thisIndex; ?>"><?php echo ($thiscustomer['shirt_inst']); ?></textarea>
+                                                <textarea class="form-control" name="shirt_inst[<?php echo $thisIndex; ?>]" rows="7"  id="shirt_inst"><?php echo ($thiscustomer['shirt_inst']); ?></textarea>
+                                                <script>
+                                                    CKEDITOR.replace( 'shirt_inst[<?php echo $thisIndex; ?>]' );
+                                                </script>
                                             </div>
                                         </div>
                                     </div> 
@@ -1127,7 +1131,10 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Shalwar Kameez Instructions:</label>
-                                                <textarea class="form-control" name="shalwar_inst[<?php echo $thisIndex; ?>]" rows="7" id="comment<?php echo $thisIndex; ?>"><?php echo ($thiscustomer['shalwar_inst']); ?></textarea>
+                                                <textarea class="form-control" name="shalwar_inst[<?php echo $thisIndex; ?>]" rows="7" id="shalwar_inst"><?php echo ($thiscustomer['shalwar_inst']); ?></textarea>
+                                                <script>
+                                                    CKEDITOR.replace( 'shalwar_inst[<?php echo $thisIndex; ?>]' );
+                                                </script>
                                             </div>
                                         </div>
                                     </div>
@@ -1345,38 +1352,37 @@
                 $(".append_row_for_article_" + counter + " .shalwar").show();
             }
         });
-
-
-
-
-
-
     });
 
     function  changeLamguage() {
         var is_english = $('input[name="is_english"]:checked').val();
         var index = $('#lang_index').val();
         var form = $("#data_form");
+        console.log(form.serialize());
         $.ajax({
             url: "<?php echo base_url('customers/preview') ?>",
             type: "POST",
             data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&is_english=' + is_english + '&index=' + index,
             dataType: "html",
             success: function (data) {
-                $('#preview_body').html(data)
+                $('#preview_body').empty().html(data)
             }
         });
     }
     function previewModal(index) {
         $("#lang_index").val(index);
+        CKEDITOR.instances.inst.updateElement();
+        CKEDITOR.instances.shirt_inst.updateElement();
+        CKEDITOR.instances.shalwar_inst.updateElement();
         var form = $("#data_form");
+        console.log(form.serialize());
         $.ajax({
             url: "<?php echo base_url('customers/preview') ?>",
             type: "POST",
             data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&index=' + index,
             dataType: "html",
             success: function (data) {
-                $('#preview_body').html(data)
+                $('#preview_body').empty().html(data)
                 $('#pre_preview_model').modal('show');
 
             }
