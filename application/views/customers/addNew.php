@@ -482,16 +482,16 @@
                                                         <div class="col-md-12">
                                                             <div class="input-group">
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="regular<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_regular']) ? "checked" : ''; ?>>
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="regular<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="1" <?php echo ($thiscustomer['is_regular'] == 1) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="regular<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Regular pockets</label>
                                                                 </div>&nbsp;&nbsp;
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="slant<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_slant']) ? "checked" : ''; ?>>
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="slant<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_regular'] == 2) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="slant<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Slant pocket </label>
                                                                 </div>
                                                                 &nbsp;&nbsp;
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="none_is_suit_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_slant'] == 0) ? "checked" : ''; ?>>
+                                                                    <input type="radio" class="custom-control-input" name="is_suit_pocket[<?php echo $thisIndex; ?>]" id="none_is_suit_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="0" <?php echo ($thiscustomer['is_regular'] == 0) ? "checked" : ''; ?>>
                                                                     <label class="custom-control-label" for="none_is_suit_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">None</label>
                                                                 </div>
                                                             </div>
@@ -832,7 +832,7 @@
                                                                     <label class="custom-control-label" for="1side_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">1 side pocket</label>
                                                                 </div>&nbsp;&nbsp;
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_pocket[<?php echo $thisIndex; ?>]" id="2side_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_2side_pocket']) ? "checked" : ''; ?> >
+                                                                    <input type="radio" class="custom-control-input" name="is_pocket[<?php echo $thisIndex; ?>]" id="2side_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" value="2" <?php echo ($thiscustomer['is_1side_pocket']) ? "checked" : ''; ?> >
                                                                     <label class="custom-control-label" for="2side_pocket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">2 side pocket</label>
                                                                 </div>
                                                                 &nbsp;&nbsp;
@@ -1007,11 +1007,11 @@
                                                     <div class="col-md-12">
                                                         <div class="input-group">
                                                             <div class="custom-control custom-radio form-check-inline">
-                                                                <input type="checkbox" class="custom-control-input" name="is_placket[<?php echo $thisIndex; ?>]" id="front_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]" value="1" <?php echo ($thiscustomer['is_front_placket'] == 1) ? "checked" : ''; ?>>
+                                                                <input type="radio" class="custom-control-input" name="is_placket[<?php echo $thisIndex; ?>]" id="front_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]" value="1" <?php echo ($thiscustomer['is_front_placket'] == 1) ? "checked" : ''; ?>>
                                                                 <label class="custom-control-label" for="front_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]">Front placket</label>
                                                             </div> &nbsp;&nbsp;
                                                             <div class="custom-control custom-radio form-check-inline">
-                                                                <input type="checkbox" class="custom-control-input" name="is_placket[<?php echo $thisIndex; ?>]" id="plane_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]" value="2" <?php echo ($thiscustomer['is_plane_placket'] == 1) ? "checked" : ''; ?>>
+                                                                <input type="radio" class="custom-control-input" name="is_placket[<?php echo $thisIndex; ?>]" id="plane_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]" value="2" <?php echo ($thiscustomer['is_plane_placket'] == 1) ? "checked" : ''; ?>>
                                                                 <label class="custom-control-label" for="plane_placket<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>]"> Plain Front</label>
                                                             </div>
                                                             &nbsp;&nbsp;

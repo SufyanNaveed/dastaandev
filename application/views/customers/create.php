@@ -978,11 +978,11 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <div class="custom-control custom-radio form-check-inline">
-                                                <input type="checkbox" class="custom-control-input" name="is_placket[0]" id="front_placket" value="1">
+                                                <input type="radio" class="custom-control-input" name="is_placket[0]" id="front_placket" value="1">
                                                 <label class="custom-control-label" for="front_placket">Front placket</label>
                                             </div> &nbsp;&nbsp;
                                             <div class="custom-control custom-radio form-check-inline">
-                                                <input type="checkbox" class="custom-control-input" name="is_placket[0]" id="plane_placket" value="2">
+                                                <input type="radio" class="custom-control-input" name="is_placket[0]" id="plane_placket" value="2">
                                                 <label class="custom-control-label" for="plane_placket"> Plain Front</label>
                                             </div>
                                             &nbsp;&nbsp;
