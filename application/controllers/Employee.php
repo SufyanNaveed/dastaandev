@@ -265,7 +265,7 @@ class Employee extends CI_Controller
                 $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
                 // $emp_salary = $invoices_commission[0]->salary;
                 $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
-                $discount_amount_commission_calculate =  $invoices->discount > 0 ? ($invoices->discount / $sum_of_products) * 100 : 0;
+                $discount_amount_commission_calculate =  $invoices->discount > 0 && $sum_of_products > 0 ? ($invoices->discount / $sum_of_products) * 100 : 0;
             
                 foreach ($invoices_commission as $key=>$row) {
                     if($row->title != 'Shoes'){
