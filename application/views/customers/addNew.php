@@ -37,10 +37,10 @@
                             <div class="default_row">
                                 <?php if ($thisIndex) { ?>
                                     <div class="append_row_article append_row_for_article_<?php echo $counter; ?>" data-appendNewSize="<?php echo $counter; ?>"><hr> 
-                                        <button type="button"  class="btn btn-primary" onclick="previewModal(<?php echo $vToken; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
+                                        <button type="button"  class="btn btn-primary" onclick="previewModal(<?php echo $vToken; ?>,<?php echo $counter; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
                                         &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger remove_new_rows" style="float:right;" data-count="<?php echo $counter; ?>">Remove Multiple &nbsp;&nbsp;<i class="fa fa-times"></i></button><br><br>
                                     <?php }if ($thisIndex == 0) { ?> 
-                                        <button type="button" class="btn btn-primary" onclick="previewModal(<?php echo $vToken; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
+                                        <button type="button" class="btn btn-primary" onclick="previewModal(<?php echo $vToken; ?>,<?php echo $counter; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
 
                                     <?php } ?>
                                     <div class="row">
@@ -1369,7 +1369,7 @@
             }
         });
     }
-    function previewModal(index) {
+    function previewModal(index, cur_counter) {
         $("#lang_index").val(index);
         CKEDITOR.instances.inst.updateElement();
         CKEDITOR.instances.shirt_inst.updateElement();
@@ -1379,7 +1379,7 @@
         $.ajax({
             url: "<?php echo base_url('customers/preview') ?>",
             type: "POST",
-            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&index=' + index,
+            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&index=' + index + '&cur_counter=' + cur_counter,
             dataType: "html",
             success: function (data) {
                 $('#preview_body').empty().html(data)

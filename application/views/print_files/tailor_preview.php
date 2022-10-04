@@ -1,6 +1,6 @@
 <?php
-//print_r($nap);
-//exit;
+// print_r($nap);
+// exit;
 ?>
 
 <div id="printable">
@@ -122,7 +122,7 @@
             }
 
             .invoice-box table tr.item td {
-                border: 1px solid #ddd;
+                border: 1px solid #000;
             }
 
             table tr.b_class td {
@@ -356,7 +356,7 @@
             }
 
             .invoice-box table tr.item td {
-                border: 1px solid #ddd;
+                border: 1px solid #000;
             }
 
             table tr.b_class td {
@@ -1068,13 +1068,13 @@
 
                                         <?php if ($napRow['is_stitch'] == 1) { ?>
                                             <tr>
-                                                <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Single stitch' : '  سنگل سٹیٹچ ' ?></td>
+                                                <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Single stitch' : '  سنگل سلائی' ?></td>
                                             </tr>
                                         <?php } ?>
                                         
                                         <?php if ($napRow['is_stitch'] == 2) { ?>
                                             <tr>
-                                                <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full double stitch' : '  فل  ڈبل  سٹیٹچ  ' ?></td>
+                                                <td>&bull;&nbsp;<?= $napRow['is_english'] == 1 ? 'Full double stitch' : '  فل  ڈبل سلائی' ?></td>
                                             </tr>
                                         <?php } ?>
                                         

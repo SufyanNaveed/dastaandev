@@ -439,7 +439,7 @@ for ($i = 0; $i < $vTotalCOunt; $i++) {
 //exit;
 ?>            
 <div class="append_row_article append_row_for_article_<?php echo $count; ?>" data-appendNewSize="<?php echo $count; ?>"><hr>
-    <button type="button"  class="btn btn-primary" onclick="previewModal(<?php echo $vToken; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
+    <button type="button"  class="btn btn-primary" data-count="<?php echo $count; ?>" onclick="previewModal(<?php echo $vToken; ?>,<?php echo $count; ?> )">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
     &nbsp;&nbsp;&nbsp;
     <button type="button" class="btn btn-danger remove_new_rows" style="float:right;" data-count="<?php echo $count; ?>">Remove Multiple &nbsp;&nbsp;<i class="fa fa-times"></i></button><br><br>
     <input type="hidden" value="<?php echo $vToken; ?>" name="aa_name[<?php echo $count; ?>]">
@@ -920,7 +920,7 @@ for ($i = 0; $i < $vTotalCOunt; $i++) {
                         <label class="col-sm-5 col-form-label" for="name">Kameez Length</label>
                         <div class="col-sm-6">
                             <input type="hidden" name ="kmzLength_form[<?php echo $count; ?>]" value="<?php echo $vToken; ?>">
-                            <input type="text" class="form-control margin-bottom b_input " name="kmzLength[<?php echo $count; ?>]" id="kmzLength" value="<?php echo $kmzcuff ? $kmzcuff : "" ?>">
+                            <input type="text" class="form-control margin-bottom b_input " name="kmzLength[<?php echo $count; ?>]" id="kmzLength" value="<?php echo $kmzLength ? $kmzLength : "" ?>">
                         </div>
                     </div>
                     <div class="form-group row mt-1">
@@ -980,7 +980,7 @@ for ($i = 0; $i < $vTotalCOunt; $i++) {
                     <div class="form-group row mt-1">
                         <label class="col-sm-5 col-form-label" for="name">Armhole</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control margin-bottom b_input" name="kmzarmhole[<?php echo $count; ?>]" id="kmzForearm" value="<?php echo $kmzarmhole ? $kmzChest : "" ?>">
+                            <input type="text" class="form-control margin-bottom b_input" name="kmzarmhole[<?php echo $count; ?>]" id="kmzForearm" value="<?php echo $kmzarmhole ? $kmzarmhole : "" ?>">
                         </div>
                     </div>
                     <div class="form-group row mt-1">

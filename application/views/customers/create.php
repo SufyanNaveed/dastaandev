@@ -26,7 +26,7 @@
                     $vToken = rand(10, 1000);
                     ?>
                     <input type="hidden" value="<?php echo $vToken; ?>" name="aa_name[0]">
-                    <button type="button" id="preview1" class="btn btn-primary" style="display:none;" onclick="previewModal(<?php echo $vToken; ?>)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
+                    <button type="button" id="preview1" class="btn btn-primary" style="display:none;" onclick="previewModal(<?php echo $vToken; ?>, 0)">Preview &nbsp;&nbsp;<i class="fa fa-eye"></i></button>
                     <div class="row">
                         <div class="col-md-4">
                             <h5 class="title text-center">Customer Info</h5>
@@ -1263,7 +1263,7 @@
         $('.add_new_rows').click(function () {
             var count = $(this).attr('data-count');
             count = count == 0 ? 1 : count;
-             var form = $("#data_form");
+            var form = $("#data_form");
             $(this).attr('data-count', parseInt(count) + 1);
             $.ajax({
                 url: "<?php echo base_url('customers/new_articles_append') ?>",
@@ -1352,7 +1352,7 @@
             }
         });
     }
-    function previewModal(index) {
+    function previewModal(index, cur_counter) {
         $("#lang_index").val(index);
         CKEDITOR.instances.inst.updateElement();
         CKEDITOR.instances.shirt_inst.updateElement();
@@ -1362,7 +1362,7 @@
         $.ajax({
             url: "<?php echo base_url('customers/preview') ?>",
             type: "POST",
-            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&index=' + index,
+            data: form.serialize() + '&' + crsf_token + '=' + crsf_hash + '&ignore_pdf=1&index=' + index + '&cur_counter=' + cur_counter,
             dataType: "html",
             success: function (data) {
                 $('#preview_body').empty().html(data)

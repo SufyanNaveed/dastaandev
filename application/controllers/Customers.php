@@ -126,6 +126,7 @@ class Customers extends CI_Controller {
     public function preview() {
         $aPreviewData = [];
         $vIndex = $this->input->post('index') != NULL ? $this->input->post('index') : 0;
+        $cur_counter = $this->input->post('cur_counter') != NULL ? $this->input->post('cur_counter') : 0;
         $vShirtCount = $this->input->post('is_shirts') != NULL ? count($this->input->post('is_shirts')) : 0;
         $vSuitingCount = $this->input->post('is_suiting') != NULL ? count($this->input->post('is_suiting')) : 0;
         $vShalwarKamezCount = $this->input->post('is_shalwarqameez') != NULL ? count($this->input->post('is_shalwarqameez')) : 0;
@@ -136,8 +137,6 @@ class Customers extends CI_Controller {
         $cSleeve = [];
         $aShirtLength = [];
         $akmzLength = [];
-//        print_r(json_encode($this->input->post()));
-//        exit;
         for ($i = 0; $i < $vTotalCOunt; $i++) {
 
 
@@ -163,7 +162,7 @@ class Customers extends CI_Controller {
             $instrucation = "";
             $shirt_inst = "";
             $shalwar_inst = "";
-//                echo $i. '<br>'; 
+            //echo $i. '<br>'; 
             $cSleeves = '';
             $cShoulder = '';
             $cHalfBack = '';
@@ -282,16 +281,8 @@ class Customers extends CI_Controller {
             $shirt_collar_ins = '';
             $collar_ins = '';
             $front_pocket_ins = '';
-            $shalwar_pocket_ins = '';
-
-
-
-
-
-
+            $shalwar_pocket_ins = ''; 
             $vAllowed = false;
-
-
             if ($is_suiting) { 
                 /* Get  coat/waist coat size */
                 foreach ($cSleeve as $thisIndex => $thisItem)
@@ -299,269 +290,273 @@ class Customers extends CI_Controller {
                         $vSuitingCountIndex = $thisIndex;
                         break;
                     }
+                    $vSuitingCountIndex = $cur_counter;
                     if($this->input->post("aa_name[" . $vSuitingCountIndex . "]")==$vIndex)
                            $vAllowed = true; 
-                $cSleeves = $this->input->post("cSleeve[" . $vSuitingCountIndex . "]");
-                $cShoulder = $this->input->post("cShoulder[" . $vSuitingCountIndex . "]");
-                $cHalfBack = $this->input->post("cHalfBack[" . $vSuitingCountIndex . "]");
-                $cCrossBack = $this->input->post("cCrossBack[" . $vSuitingCountIndex . "]");
-                $cChest = $this->input->post("cChest[" . $vSuitingCountIndex . "]");
-                $cWaist = $this->input->post("cWaist[" . $vSuitingCountIndex . "]");
-                $cHips = $this->input->post("cHips[" . $vSuitingCountIndex . "]");
-                $cBicep = $this->input->post("cBicep[" . $vSuitingCountIndex . "]");
-                $cForearm = $this->input->post("cForearm[" . $vSuitingCountIndex . "]");
-                $cNeck = $this->input->post("cNeck[" . $vSuitingCountIndex . "]");
-                $cLength = $this->input->post("cLength[" . $vSuitingCountIndex . "]");
-                $p3_waistcoat_length = $this->input->post("3p_waistcoat_length[" . $vSuitingCountIndex . "]");
-                $waistcoat_length = $this->input->post("waistcoat_length[" . $vSuitingCountIndex . "]");
-                $princecoat_length = $this->input->post("princecoat_length[" . $vSuitingCountIndex . "]");
-                $sherwani_length = $this->input->post("sherwani_length[" . $vSuitingCountIndex . "]");
-                $longcoat_length = $this->input->post("longcoat_length[" . $vSuitingCountIndex . "]");
-                $chester_length = $this->input->post("chester_length[" . $vSuitingCountIndex . "]");
-                $armhole = $this->input->post("armhole[" . $vSuitingCountIndex . "]");
+                    $cSleeves = $this->input->post("cSleeve[" . $vSuitingCountIndex . "]");
+                    $cShoulder = $this->input->post("cShoulder[" . $vSuitingCountIndex . "]");
+                    $cHalfBack = $this->input->post("cHalfBack[" . $vSuitingCountIndex . "]");
+                    $cCrossBack = $this->input->post("cCrossBack[" . $vSuitingCountIndex . "]");
+                    $cChest = $this->input->post("cChest[" . $vSuitingCountIndex . "]");
+                    $cWaist = $this->input->post("cWaist[" . $vSuitingCountIndex . "]");
+                    $cHips = $this->input->post("cHips[" . $vSuitingCountIndex . "]");
+                    $cBicep = $this->input->post("cBicep[" . $vSuitingCountIndex . "]");
+                    $cForearm = $this->input->post("cForearm[" . $vSuitingCountIndex . "]");
+                    $cNeck = $this->input->post("cNeck[" . $vSuitingCountIndex . "]");
+                    $cLength = $this->input->post("cLength[" . $vSuitingCountIndex . "]");
+                    $p3_waistcoat_length = $this->input->post("3p_waistcoat_length[" . $vSuitingCountIndex . "]");
+                    $waistcoat_length = $this->input->post("waistcoat_length[" . $vSuitingCountIndex . "]");
+                    $princecoat_length = $this->input->post("princecoat_length[" . $vSuitingCountIndex . "]");
+                    $sherwani_length = $this->input->post("sherwani_length[" . $vSuitingCountIndex . "]");
+                    $longcoat_length = $this->input->post("longcoat_length[" . $vSuitingCountIndex . "]");
+                    $chester_length = $this->input->post("chester_length[" . $vSuitingCountIndex . "]");
+                    $armhole = $this->input->post("armhole[" . $vSuitingCountIndex . "]");
 
-                /* Get pant length */
-                $pLength = $this->input->post("pLength[" . $vSuitingCountIndex . "]");
-                $pInLength = $this->input->post("pInLength[" . $vSuitingCountIndex . "]");
-                $pWaist = $this->input->post("pWaist[" . $vSuitingCountIndex . "]");
-                $pHip = $this->input->post("pHip[" . $vSuitingCountIndex . "]");
-                $pThigh = $this->input->post("pThigh[" . $vSuitingCountIndex . "]");
-                $pBottom = $this->input->post("pBottom[" . $vSuitingCountIndex . "]");
-                $pKnee = $this->input->post("pKnee[" . $vSuitingCountIndex . "]");
+                    /* Get pant length */
+                    $pLength = $this->input->post("pLength[" . $vSuitingCountIndex . "]");
+                    $pInLength = $this->input->post("pInLength[" . $vSuitingCountIndex . "]");
+                    $pWaist = $this->input->post("pWaist[" . $vSuitingCountIndex . "]");
+                    $pHip = $this->input->post("pHip[" . $vSuitingCountIndex . "]");
+                    $pThigh = $this->input->post("pThigh[" . $vSuitingCountIndex . "]");
+                    $pBottom = $this->input->post("pBottom[" . $vSuitingCountIndex . "]");
+                    $pKnee = $this->input->post("pKnee[" . $vSuitingCountIndex . "]");
 
-                if (isset($_POST["is_breasted"][$vSuitingCountIndex]) && !empty($_POST["is_breasted"][$vSuitingCountIndex])) {
-                    $is_breasted = $_POST["is_breasted"][$vSuitingCountIndex];
-                } else {
-                    $is_breasted = isset($_POST["is_breasted"][0]) ? $_POST["is_breasted"][0] : 0;
-                }
-
-                if (isset($_POST["is_button_suit"][$vSuitingCountIndex]) && !empty($_POST['is_button_suit'][$vSuitingCountIndex])) {
-                    $is_button_suit = $_POST["is_button_suit"][$vSuitingCountIndex];
-                } else {
-                    $is_button_suit = isset($_POST["is_button_suit"][0]) ? $_POST["is_button_suit"][0] : 0;
-                }
-
-                if (isset($_POST["is_lapel"][$vSuitingCountIndex]) && !empty($_POST['is_lapel'][$vSuitingCountIndex])) {
-                    $is_lapel = $_POST["is_lapel"][$vSuitingCountIndex];
-                } else {
-                    $is_lapel = isset($_POST["is_lapel"][0]) ? $_POST["is_lapel"][0] : 0;
-                }
-
-                if (isset($_POST["is_vent"][$vSuitingCountIndex]) && !empty($_POST['is_vent'][$vSuitingCountIndex])) {
-                    $is_vent = $_POST['is_vent'][$vSuitingCountIndex];
-                } else {
-                    $is_vent = isset($_POST["is_vent"][0]) ? $_POST["is_vent"][0] : 0;
-                }
-
-                if (isset($_POST["is_wear"][$vSuitingCountIndex]) && !empty($_POST['is_wear'][$vSuitingCountIndex])) {
-                    $is_wear = $_POST['is_wear'][$vSuitingCountIndex];
-                } else {
-                    $is_wear = isset($_POST["is_wear"][0]) ? $_POST["is_wear"][0] : 0;
-                }
-
-                if (isset($_POST["is_lined"][$vSuitingCountIndex]) && !empty($_POST['is_lined'][$vSuitingCountIndex])) {
-                    $is_lined = $_POST['is_lined'][$vSuitingCountIndex];
-                } else {
-                    $is_lined = isset($_POST["is_lined"][0]) ? $_POST["is_lined"][0] : 0;
-                }
-
-                if (isset($_POST["is_ticket"][$vSuitingCountIndex]) && !empty($_POST['is_ticket'][$vSuitingCountIndex])) {
-                    $is_ticket = $_POST['is_ticket'][$vSuitingCountIndex];
-                } else {
-                    $is_ticket = isset($_POST["is_ticket"][0]) ? $_POST["is_ticket"][0] : 0;
-                }
-
-                if (isset($_POST["is_suit_pocket"][$vSuitingCountIndex]) && !empty($_POST['is_suit_pocket'][$vSuitingCountIndex])) {
-                    $is_regular = $_POST['is_suit_pocket'][$vSuitingCountIndex];
-                } else {
-                    $is_regular = isset($_POST["is_suit_pocket"][0]) ? $_POST["is_suit_pocket"][0] : 0;
-                }
-
-                if (isset($_POST["is_suit_button"][$vSuitingCountIndex]) && !empty($_POST['is_suit_button'][$vSuitingCountIndex])) {
-                    $is_button = $_POST['is_suit_button'][$vSuitingCountIndex];
-                } else {
-                    $is_button = isset($_POST["is_suit_button"][0]) ? $_POST["is_suit_button"][0] : 0;
-                }
-                $instrucation = $this->input->post("inst[" . $vSuitingCountIndex . "]");
-                $cSleeve[$vSuitingCountIndex] = 0;
-                $vSuitingCount--;
-            }
-
-            if ($is_shirts) { 
-                
-                foreach ($aShirtLength as $thisIndex => $thisItem)
-                    if ($thisItem) {
-                        $vShirtCountIndex = $thisIndex;
-                        break;
+                    if (isset($_POST["is_breasted"][$vSuitingCountIndex]) && !empty($_POST["is_breasted"][$vSuitingCountIndex])) {
+                        $is_breasted = $_POST["is_breasted"][$vSuitingCountIndex];
+                    } else {
+                        $is_breasted = isset($_POST["is_breasted"][0]) ? $_POST["is_breasted"][0] : 0;
                     }
 
-                     if($this->input->post("aa_name[" . $vShirtCountIndex . "]")==$vIndex)
-                           $vAllowed = true; 
-                $shirtLength = $this->input->post("shirtLength[" . $vShirtCountIndex . "]");
-                $shirtShoulder = $this->input->post("shirtShoulder[" . $vShirtCountIndex . "]");
-                $shirtSleeves = $this->input->post("shirtSleeves[" . $vShirtCountIndex . "]");
-                $shirtNeck = $this->input->post("shirtNeck[" . $vShirtCountIndex . "]");
-                $shirtChest = $this->input->post("shirtChest[" . $vShirtCountIndex . "]");
-                $shirtWaist = $this->input->post("shirtWaist[" . $vShirtCountIndex . "]");
-                $shirtHips = $this->input->post("shirtHips[" . $vShirtCountIndex . "]");
-                $shirtBicep = $this->input->post("shirtBicep[" . $vShirtCountIndex . "]");
-                $shirtForearm = $this->input->post("shirtForearm[" . $vShirtCountIndex . "]");
-                $shirtarmhole = $this->input->post("shirtarmhole[" . $vShirtCountIndex . "]");
-                $shirtcuff = $this->input->post("shirtcuff[" . $vShirtCountIndex . "]");
-
-                if (isset($_POST["is_placket"][$vShirtCountIndex]) && !empty($_POST['is_placket'][$vShirtCountIndex])) {
-                    $is_placket = $_POST['is_placket'][$vShirtCountIndex];
-                    if ($is_placket == 1)
-                        $is_front_placket = 1;
-                    else if ($is_placket == 2)
-                        $is_plane_placket = 1;
-                } else {
-                    $is_front_placket = isset($_POST["is_placket"][0]) ? $_POST["is_placket"][0] : 0;
-                }
-
-                if (isset($_POST["is_shirt_cuff"][$vShirtCountIndex]) && !empty($_POST['is_shirt_cuff'][$vShirtCountIndex])) {
-                    $is_shirt_cuff = $_POST['is_shirt_cuff'][$vShirtCountIndex];
-                } else {
-                    $is_shirt_cuff = isset($_POST["is_shirt_cuff"][0]) ? $_POST["is_shirt_cuff"][0] : 0;
-                }
-
-                if (isset($_POST["is_shirt_collar"][$vShirtCountIndex]) && !empty($_POST['is_shirt_collar'][$vShirtCountIndex])) {
-                    $is_shirt_collar = $_POST['is_shirt_collar'][$vShirtCountIndex];
-                } else {
-                    $is_shirt_collar = isset($_POST["is_shirt_collar"][0]) ? $_POST["is_shirt_collar"][0] : 0;
-                }
-
-                if (isset($_POST["is_shirt_collar_type"][$vShirtCountIndex]) && !empty($_POST['is_shirt_collar_type'][$vShirtCountIndex])) {
-                    $is_shirt_collar_type = $_POST['is_shirt_collar_type'][$vShirtCountIndex];
-                } else {
-                    $is_shirt_collar_type = isset($_POST["is_shirt_collar_type"][0]) ? $_POST["is_shirt_collar_type"][0] : 0;
-                }
-                $shirt_collar_ins = $this->input->post("shirt_collar_ins[" . $vShirtCountIndex . "]");
-                $shirt_inst = $this->input->post("shirt_inst[" . $vShirtCountIndex . "]");
-                $aShirtLength[$vShirtCountIndex] = 0;
-                $vShirtCount--;
-            }
-            if ($is_shalwarqameez) {
- 
-                if (array_search($vIndex, $this->input->post("kmzLength_form")) >= 0 && $this->input->post("kmzLength[" . array_search($vIndex, $this->input->post("kmzLength_form")) . "]"))
-                    $vAllowed = true;;
-                /* Get kamiz size */
-                foreach ($akmzLength as $thisIndex => $thisItem)
-                    if ($thisItem) {
-                        $vKmzCountIndex = $thisIndex;
-                        break;
+                    if (isset($_POST["is_button_suit"][$vSuitingCountIndex]) && !empty($_POST['is_button_suit'][$vSuitingCountIndex])) {
+                        $is_button_suit = $_POST["is_button_suit"][$vSuitingCountIndex];
+                    } else {
+                        $is_button_suit = isset($_POST["is_button_suit"][0]) ? $_POST["is_button_suit"][0] : 0;
                     }
 
-                if($this->input->post("aa_name[" . $vKmzCountIndex . "]")==$vIndex)
-                           $vAllowed = true; 
+                    if (isset($_POST["is_lapel"][$vSuitingCountIndex]) && !empty($_POST['is_lapel'][$vSuitingCountIndex])) {
+                        $is_lapel = $_POST["is_lapel"][$vSuitingCountIndex];
+                    } else {
+                        $is_lapel = isset($_POST["is_lapel"][0]) ? $_POST["is_lapel"][0] : 0;
+                    }
 
-                $kmzLength = $this->input->post("kmzLength[" . $vKmzCountIndex . "]");
-                $kurtaLength = $this->input->post("kurtaLength[" . $vKmzCountIndex . "]");
-                $kmzSleeves = $this->input->post("kmzSleeves[" . $vKmzCountIndex . "]");
-                $kmzShoulder = $this->input->post("kmzShoulder[" . $vKmzCountIndex . "]");
-                $kmzNeck = $this->input->post("kmzNeck[" . $vKmzCountIndex . "]");
-                $kmzChest = $this->input->post("kmzChest[" . $vKmzCountIndex . "]");
-                $kmzWaist = $this->input->post("kmzWaist[" . $vKmzCountIndex . "]");
-                $kmzGuaira = $this->input->post("kmzGuaira[" . $vKmzCountIndex . "]");
-                $kmzHips = $this->input->post("kmzHips[" . $vKmzCountIndex . "]");
-                $kmzBicep = $this->input->post("kmzBicep[" . $vKmzCountIndex . "]");
-                $kmzForearm = $this->input->post("kmzForearm[" . $vKmzCountIndex . "]");
-                $kmzarmhole = $this->input->post("kmzarmhole[" . $vKmzCountIndex . "]");
-                $kmzcuff = $this->input->post("kmzcuff[" . $vKmzCountIndex . "]");
+                    if (isset($_POST["is_vent"][$vSuitingCountIndex]) && !empty($_POST['is_vent'][$vSuitingCountIndex])) {
+                        $is_vent = $_POST['is_vent'][$vSuitingCountIndex];
+                    } else {
+                        $is_vent = isset($_POST["is_vent"][0]) ? $_POST["is_vent"][0] : 0;
+                    }
 
-                /* Shwalr size */
-                $shlLength = $this->input->post("shlLength[" . $vKmzCountIndex . "]");
-                $shlBottom = $this->input->post("shlBottom[" . $vKmzCountIndex . "]");
-                $shlAsanTyar = $this->input->post("shlAsanTyar[" . $vKmzCountIndex . "]");
-                $shlGairaTyar = $this->input->post("shlGairaTyar[" . $vKmzCountIndex . "]");
-                $pjamaLength = $this->input->post("pjamaLength[" . $vKmzCountIndex . "]");
-                $pjamaBottom = $this->input->post("pjamaBottom[" . $vKmzCountIndex . "]");
+                    if (isset($_POST["is_wear"][$vSuitingCountIndex]) && !empty($_POST['is_wear'][$vSuitingCountIndex])) {
+                        $is_wear = $_POST['is_wear'][$vSuitingCountIndex];
+                    } else {
+                        $is_wear = isset($_POST["is_wear"][0]) ? $_POST["is_wear"][0] : 0;
+                    }
 
-                if (isset($_POST["is_collar"][$vKmzCountIndex]) && !empty($_POST['is_collar'][$vKmzCountIndex])) {
-                    $is_collar = $_POST['is_collar'][$vKmzCountIndex];
-                } else {
-                    $is_collar = isset($_POST["is_collar"][0]) ? $_POST["is_collar"][0] : 0;
-                }
-                $collar_ins = $this->input->post("collar_ins[" . $vKmzCountIndex . "]");
+                    if (isset($_POST["is_lined"][$vSuitingCountIndex]) && !empty($_POST['is_lined'][$vSuitingCountIndex])) {
+                        $is_lined = $_POST['is_lined'][$vSuitingCountIndex];
+                    } else {
+                        $is_lined = isset($_POST["is_lined"][0]) ? $_POST["is_lined"][0] : 0;
+                    }
 
-                if (isset($_POST["is_front"][$vKmzCountIndex]) && !empty($_POST['is_front'][$vKmzCountIndex])) {
-                    $is_straight_front = $_POST['is_front'][$vKmzCountIndex];
-                } else {
-                    $is_straight_front = isset($_POST["is_front"][0]) ? $_POST["is_front"][0] : 0;
-                }
+                    if (isset($_POST["is_ticket"][$vSuitingCountIndex]) && !empty($_POST['is_ticket'][$vSuitingCountIndex])) {
+                        $is_ticket = $_POST['is_ticket'][$vSuitingCountIndex];
+                    } else {
+                        $is_ticket = isset($_POST["is_ticket"][0]) ? $_POST["is_ticket"][0] : 0;
+                    }
 
-                if (isset($_POST["is_front_pocket"][$vKmzCountIndex]) && !empty($_POST['is_front_pocket'][$vKmzCountIndex])) {
-                    $is_front_pocket = $_POST['is_front_pocket'][$vKmzCountIndex];
-                } else {
-                    $is_front_pocket = isset($_POST["is_front_pocket"][0]) ? $_POST["is_front_pocket"][0] : 0;
-                }
-                $front_pocket_ins = $this->input->post("front_pocket_ins[" . $vKmzCountIndex . "]");
+                    if (isset($_POST["is_suit_pocket"][$vSuitingCountIndex]) && !empty($_POST['is_suit_pocket'][$vSuitingCountIndex])) {
+                        $is_regular = $_POST['is_suit_pocket'][$vSuitingCountIndex];
+                    } else {
+                        $is_regular = isset($_POST["is_suit_pocket"][0]) ? $_POST["is_suit_pocket"][0] : 0;
+                    }
 
-                if (isset($_POST["is_shalwar_pocket"][$vKmzCountIndex]) && !empty($_POST['is_shalwar_pocket'][$vKmzCountIndex])) {
-                    $is_shalwar_pocket = $_POST['is_shalwar_pocket'][$vKmzCountIndex];
-                } else {
-                    $is_shalwar_pocket = isset($_POST["is_shalwar_pocket"][0]) ? $_POST["is_shalwar_pocket"][0] : 0;
-                }
-                $shalwar_pocket_ins = $this->input->post("shalwar_pocket_ins[" . $vKmzCountIndex . "]");
-
-                if (isset($_POST["is_pocket"][$vKmzCountIndex]) && !empty($_POST['is_pocket'][$vKmzCountIndex])) {
-                    $is_1side_pocket = $_POST['is_pocket'][$vKmzCountIndex];
-                } else {
-                    $is_1side_pocket = isset($_POST["is_pocket"][0]) ? $_POST["is_pocket"][0] : 0;
+                    if (isset($_POST["is_suit_button"][$vSuitingCountIndex]) && !empty($_POST['is_suit_button'][$vSuitingCountIndex])) {
+                        $is_button = $_POST['is_suit_button'][$vSuitingCountIndex];
+                    } else {
+                        $is_button = isset($_POST["is_suit_button"][0]) ? $_POST["is_suit_button"][0] : 0;
+                    }
+                    $instrucation = $this->input->post("inst[" . $vSuitingCountIndex . "]");
+                    $cSleeve[$vSuitingCountIndex] = 0;
+                    $vSuitingCount--;
                 }
 
-                if (isset($_POST["is_sleeve_placket"][$vKmzCountIndex]) && !empty($_POST['is_sleeve_placket'][$vKmzCountIndex])) {
-                    $is_sleeve_placket = $_POST['is_sleeve_placket'][$vKmzCountIndex];
-                } else {
-                    $is_sleeve_placket = isset($_POST["is_sleeve_placket"][0]) ? $_POST["is_sleeve_placket"][0] : 0;
-                }
+                if ($is_shirts) { 
+                    
+                    foreach ($aShirtLength as $thisIndex => $thisItem)
+                        if ($thisItem) {
+                            $vShirtCountIndex = $thisIndex;
+                            break;
+                        }
+                        $vShirtCountIndex = $cur_counter; 
+                        if($this->input->post("aa_name[" . $vShirtCountIndex . "]")==$vIndex)
+                            $vAllowed = true; 
+                    $shirtLength = $this->input->post("shirtLength[" . $vShirtCountIndex . "]");
+                    $shirtShoulder = $this->input->post("shirtShoulder[" . $vShirtCountIndex . "]");
+                    $shirtSleeves = $this->input->post("shirtSleeves[" . $vShirtCountIndex . "]");
+                    $shirtNeck = $this->input->post("shirtNeck[" . $vShirtCountIndex . "]");
+                    $shirtChest = $this->input->post("shirtChest[" . $vShirtCountIndex . "]");
+                    $shirtWaist = $this->input->post("shirtWaist[" . $vShirtCountIndex . "]");
+                    $shirtHips = $this->input->post("shirtHips[" . $vShirtCountIndex . "]");
+                    $shirtBicep = $this->input->post("shirtBicep[" . $vShirtCountIndex . "]");
+                    $shirtForearm = $this->input->post("shirtForearm[" . $vShirtCountIndex . "]");
+                    $shirtarmhole = $this->input->post("shirtarmhole[" . $vShirtCountIndex . "]");
+                    $shirtcuff = $this->input->post("shirtcuff[" . $vShirtCountIndex . "]");
 
-                if (isset($_POST["is_button"][$vKmzCountIndex]) && !empty($_POST['is_button'][$vKmzCountIndex])) {
-                    $is_plain_button = $_POST['is_button'][$vKmzCountIndex];
-                } else {
-                    $is_plain_button = isset($_POST["is_button"][0]) ? $_POST["is_button"][0] : 0;
-                }
+                    if (isset($_POST["is_placket"][$vShirtCountIndex]) && !empty($_POST['is_placket'][$vShirtCountIndex])) {
+                        $is_placket = $_POST['is_placket'][$vShirtCountIndex];
+                        if ($is_placket == 1)
+                            $is_front_placket = 1;
+                        else if ($is_placket == 2)
+                            $is_plane_placket = 1;
+                    } else {
+                        $is_front_placket = isset($_POST["is_placket"][0]) ? $_POST["is_placket"][0] : 0;
+                    }
 
-                if (isset($_POST["is_cuff"][$vKmzCountIndex]) && !empty($_POST['is_cuff'][$vKmzCountIndex])) {
-                    $is_button_cuff = $_POST['is_cuff'][$vKmzCountIndex];
-                } else {
-                    $is_button_cuff = isset($_POST["is_cuff"][0]) ? $_POST["is_cuff"][0] : 0;
-                }
+                    if (isset($_POST["is_shirt_cuff"][$vShirtCountIndex]) && !empty($_POST['is_shirt_cuff'][$vShirtCountIndex])) {
+                        $is_shirt_cuff = $_POST['is_shirt_cuff'][$vShirtCountIndex];
+                    } else {
+                        $is_shirt_cuff = isset($_POST["is_shirt_cuff"][0]) ? $_POST["is_shirt_cuff"][0] : 0;
+                    }
 
-                if (isset($_POST["is_design"][$vKmzCountIndex]) && !empty($_POST['is_design'][$vKmzCountIndex])) {
-                    $is_design = $_POST['is_design'][$vKmzCountIndex];
-                } else {
-                    $is_design = isset($_POST["is_design"][0]) ? $_POST["is_design"][0] : 0;
-                }
+                    if (isset($_POST["is_shirt_collar"][$vShirtCountIndex]) && !empty($_POST['is_shirt_collar'][$vShirtCountIndex])) {
+                        $is_shirt_collar = $_POST['is_shirt_collar'][$vShirtCountIndex];
+                    } else {
+                        $is_shirt_collar = isset($_POST["is_shirt_collar"][0]) ? $_POST["is_shirt_collar"][0] : 0;
+                    }
 
-                if (isset($_POST["is_kanta"][$vKmzCountIndex]) && !empty($_POST['is_kanta'][$vKmzCountIndex])) {
-                    $is_kanta = $_POST['is_kanta'][$vKmzCountIndex];
-                } else {
-                    $is_kanta = isset($_POST["is_kanta"][0]) ? $_POST["is_kanta"][0] : 0;
+                    if (isset($_POST["is_shirt_collar_type"][$vShirtCountIndex]) && !empty($_POST['is_shirt_collar_type'][$vShirtCountIndex])) {
+                        $is_shirt_collar_type = $_POST['is_shirt_collar_type'][$vShirtCountIndex];
+                    } else {
+                        $is_shirt_collar_type = isset($_POST["is_shirt_collar_type"][0]) ? $_POST["is_shirt_collar_type"][0] : 0;
+                    }
+                    $shirt_collar_ins = $this->input->post("shirt_collar_ins[" . $vShirtCountIndex . "]");
+                    $shirt_inst = $this->input->post("shirt_inst[" . $vShirtCountIndex . "]");
+                    $aShirtLength[$vShirtCountIndex] = 0;
+                    $vShirtCount--;
                 }
+                if ($is_shalwarqameez) {
+    
+                    if (array_search($vIndex, $this->input->post("kmzLength_form")) >= 0 && $this->input->post("kmzLength[" . array_search($vIndex, $this->input->post("kmzLength_form")) . "]"))
+                        $vAllowed = true;;
+                    /* Get kamiz size */
+                    foreach ($akmzLength as $thisIndex => $thisItem)
+                        if ($thisItem) {
+                            $vKmzCountIndex = $thisIndex;
+                            break;
+                        }
 
-                if (isset($_POST["is_stitch"][$vKmzCountIndex]) && !empty($_POST['is_stitch'][$vKmzCountIndex])) {
-                    $is_stitch = $_POST['is_stitch'][$vKmzCountIndex];
-                } else {
-                    $is_stitch = isset($_POST["is_stitch"][0]) ? $_POST["is_stitch"][0] : 0;
+                        $vKmzCountIndex = $cur_counter; 
+                    
+                        if($this->input->post("aa_name[" . $vKmzCountIndex . "]")==$vIndex)
+                                $vAllowed = true; 
+
+                        $kmzLength = $this->input->post("kmzLength[" . $vKmzCountIndex . "]");
+                        $kurtaLength = $this->input->post("kurtaLength[" . $vKmzCountIndex . "]");
+                        $kmzSleeves = $this->input->post("kmzSleeves[" . $vKmzCountIndex . "]");
+                        $kmzShoulder = $this->input->post("kmzShoulder[" . $vKmzCountIndex . "]");
+                        $kmzNeck = $this->input->post("kmzNeck[" . $vKmzCountIndex . "]");
+                        $kmzChest = $this->input->post("kmzChest[" . $vKmzCountIndex . "]");
+                        $kmzWaist = $this->input->post("kmzWaist[" . $vKmzCountIndex . "]");
+                        $kmzGuaira = $this->input->post("kmzGuaira[" . $vKmzCountIndex . "]");
+                        $kmzHips = $this->input->post("kmzHips[" . $vKmzCountIndex . "]");
+                        $kmzBicep = $this->input->post("kmzBicep[" . $vKmzCountIndex . "]");
+                        $kmzForearm = $this->input->post("kmzForearm[" . $vKmzCountIndex . "]");
+                        $kmzarmhole = $this->input->post("kmzarmhole[" . $vKmzCountIndex . "]");
+                        $kmzcuff = $this->input->post("kmzcuff[" . $vKmzCountIndex . "]");
+
+                        /* Shwalr size */
+                        $shlLength = $this->input->post("shlLength[" . $vKmzCountIndex . "]");
+                        $shlBottom = $this->input->post("shlBottom[" . $vKmzCountIndex . "]");
+                        $shlAsanTyar = $this->input->post("shlAsanTyar[" . $vKmzCountIndex . "]");
+                        $shlGairaTyar = $this->input->post("shlGairaTyar[" . $vKmzCountIndex . "]");
+                        $pjamaLength = $this->input->post("pjamaLength[" . $vKmzCountIndex . "]");
+                        $pjamaBottom = $this->input->post("pjamaBottom[" . $vKmzCountIndex . "]");
+
+                        if (isset($_POST["is_collar"][$vKmzCountIndex]) && !empty($_POST['is_collar'][$vKmzCountIndex])) {
+                            $is_collar = $_POST['is_collar'][$vKmzCountIndex];
+                        } else {
+                            $is_collar = isset($_POST["is_collar"][0]) ? $_POST["is_collar"][0] : 0;
+                        }
+                        $collar_ins = $this->input->post("collar_ins[" . $vKmzCountIndex . "]");
+
+                        if (isset($_POST["is_front"][$vKmzCountIndex]) && !empty($_POST['is_front'][$vKmzCountIndex])) {
+                            $is_straight_front = $_POST['is_front'][$vKmzCountIndex];
+                        } else {
+                            $is_straight_front = isset($_POST["is_front"][0]) ? $_POST["is_front"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_front_pocket"][$vKmzCountIndex]) && !empty($_POST['is_front_pocket'][$vKmzCountIndex])) {
+                            $is_front_pocket = $_POST['is_front_pocket'][$vKmzCountIndex];
+                        } else {
+                            $is_front_pocket = isset($_POST["is_front_pocket"][0]) ? $_POST["is_front_pocket"][0] : 0;
+                        }
+                        $front_pocket_ins = $this->input->post("front_pocket_ins[" . $vKmzCountIndex . "]");
+
+                        if (isset($_POST["is_shalwar_pocket"][$vKmzCountIndex]) && !empty($_POST['is_shalwar_pocket'][$vKmzCountIndex])) {
+                            $is_shalwar_pocket = $_POST['is_shalwar_pocket'][$vKmzCountIndex];
+                        } else {
+                            $is_shalwar_pocket = isset($_POST["is_shalwar_pocket"][0]) ? $_POST["is_shalwar_pocket"][0] : 0;
+                        }
+                        $shalwar_pocket_ins = $this->input->post("shalwar_pocket_ins[" . $vKmzCountIndex . "]");
+
+                        if (isset($_POST["is_pocket"][$vKmzCountIndex]) && !empty($_POST['is_pocket'][$vKmzCountIndex])) {
+                            $is_1side_pocket = $_POST['is_pocket'][$vKmzCountIndex];
+                        } else {
+                            $is_1side_pocket = isset($_POST["is_pocket"][0]) ? $_POST["is_pocket"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_sleeve_placket"][$vKmzCountIndex]) && !empty($_POST['is_sleeve_placket'][$vKmzCountIndex])) {
+                            $is_sleeve_placket = $_POST['is_sleeve_placket'][$vKmzCountIndex];
+                        } else {
+                            $is_sleeve_placket = isset($_POST["is_sleeve_placket"][0]) ? $_POST["is_sleeve_placket"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_button"][$vKmzCountIndex]) && !empty($_POST['is_button'][$vKmzCountIndex])) {
+                            $is_plain_button = $_POST['is_button'][$vKmzCountIndex];
+                        } else {
+                            $is_plain_button = isset($_POST["is_button"][0]) ? $_POST["is_button"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_cuff"][$vKmzCountIndex]) && !empty($_POST['is_cuff'][$vKmzCountIndex])) {
+                            $is_button_cuff = $_POST['is_cuff'][$vKmzCountIndex];
+                        } else {
+                            $is_button_cuff = isset($_POST["is_cuff"][0]) ? $_POST["is_cuff"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_design"][$vKmzCountIndex]) && !empty($_POST['is_design'][$vKmzCountIndex])) {
+                            $is_design = $_POST['is_design'][$vKmzCountIndex];
+                        } else {
+                            $is_design = isset($_POST["is_design"][0]) ? $_POST["is_design"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_kanta"][$vKmzCountIndex]) && !empty($_POST['is_kanta'][$vKmzCountIndex])) {
+                            $is_kanta = $_POST['is_kanta'][$vKmzCountIndex];
+                        } else {
+                            $is_kanta = isset($_POST["is_kanta"][0]) ? $_POST["is_kanta"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_stitch"][$vKmzCountIndex]) && !empty($_POST['is_stitch'][$vKmzCountIndex])) {
+                            $is_stitch = $_POST['is_stitch'][$vKmzCountIndex];
+                        } else {
+                            $is_stitch = isset($_POST["is_stitch"][0]) ? $_POST["is_stitch"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_thread"][$vKmzCountIndex]) && !empty($_POST['is_thread'][$vKmzCountIndex])) {
+                            $is_thread = $_POST['is_thread'][$vKmzCountIndex];
+                        } else {
+                            $is_thread = isset($_POST["is_thread"][0]) ? $_POST["is_thread"][0] : 0;
+                        }
+
+                        if (isset($_POST["is_bookrum"][$vKmzCountIndex]) && !empty($_POST['is_bookrum'][$vKmzCountIndex])) {
+                            $is_bookrum = $_POST['is_bookrum'][$vKmzCountIndex];
+                        } else {
+                            $is_bookrum = isset($_POST["is_bookrum"][0]) ? $_POST["is_bookrum"][0] : 0;
+                        }
+
+                        $shalwar_inst = $this->input->post("shalwar_inst[" . $vKmzCountIndex . "]");
+                        $akmzLength[$vKmzCountIndex] = 0;
+                        $vShalwarKamezCount--;
+                    
                 }
-
-                if (isset($_POST["is_thread"][$vKmzCountIndex]) && !empty($_POST['is_thread'][$vKmzCountIndex])) {
-                    $is_thread = $_POST['is_thread'][$vKmzCountIndex];
-                } else {
-                    $is_thread = isset($_POST["is_thread"][0]) ? $_POST["is_thread"][0] : 0;
-                }
-
-                if (isset($_POST["is_bookrum"][$vKmzCountIndex]) && !empty($_POST['is_bookrum'][$vKmzCountIndex])) {
-                    $is_bookrum = $_POST['is_bookrum'][$vKmzCountIndex];
-                } else {
-                    $is_bookrum = isset($_POST["is_bookrum"][0]) ? $_POST["is_bookrum"][0] : 0;
-                }
-
-                $shalwar_inst = $this->input->post("shalwar_inst[" . $vKmzCountIndex . "]");
-                $akmzLength[$vKmzCountIndex] = 0;
-                $vShalwarKamezCount--;
-            }
 
 
 
@@ -696,7 +691,7 @@ class Customers extends CI_Controller {
 
 
 
-//        print_r(json_encode($nap));exit;
+        // print_r(json_encode($nap));exit;
         $vPDF = $this->input->post('ignore_pdf') == NULL ? true : false;
 
         $data['nap'] = $aPreviewData;
