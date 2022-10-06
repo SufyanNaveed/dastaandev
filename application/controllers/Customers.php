@@ -776,9 +776,13 @@ class Customers extends CI_Controller {
                 $row[] = $customers->d_date;
                 $row[] = $customers->phone;
                 // $row[] = '<a href="customers/tailor?id='.$customers->id .'" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' .'Tailor View</a> <a href="customers/CustomerView?id='.$customers->id.'" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' .'Customer View</a> <a href="customers/addNewCustomer?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span>Add New</a> <a href="#" data-object-id="' . $customers->id . '" class="btn btn-danger btn-sm delete-object"><span class="fa fa-trash"></span></a>';
-                $btns = '<a href="customers/tailor?id=' . $customers->id . '" class="btn btn-secondary btn-sm"><span class="fa fa-eye"></span>  ' . 'Tailor View</a> <a href="customers/CustomerView?id=' . $customers->id . '" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' . 'Customer View</a>';
+                // $btns = '<a href="customers/tailor?id=' . $customers->id . '" class="btn btn-secondary btn-sm"><span class="fa fa-eye"></span>  ' . 'Tailor View</a> <a href="customers/CustomerView?id=' . $customers->id . '" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' . 'Customer View</a>';
+                $btns = '';
                 if ($this->aauth->premission(10)) {
                     $btns .= '&nbsp;&nbsp; <a href="customers/addNewCustomer?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span>&nbsp;Edit</a>';
+                }else{
+                    $btns .= '&nbsp;&nbsp; <a href="customers/addNewCustomer?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span>&nbsp;Open</a>';
+
                 }
                 if ($this->aauth->premission(11)) {
                     $btns .= '&nbsp;&nbsp; <a href="#" data-object-id="' . $customers->id . '" class="btn btn-danger btn-sm delete-object"><span class="fa fa-trash"></span></a>';
@@ -798,9 +802,13 @@ class Customers extends CI_Controller {
                 $row[] = $customers->phone;
                 //$row[] = '<a href="customers/view_customer?id=' . $customers->id . '" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' .'Customer View</a> <a href="customers/edit?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span>  ' . $this->lang->line('Edit') . '</a> <a href="#" data-object-id="' . $customers->id . '" class="btn btn-danger btn-sm delete-object"><span class="fa fa-trash"></span></a>';
                 // $row[] = '<a href="customers/tailor?id='.$customers->id .'" class="btn btn-secondary btn-sm"><span class="fa fa-cut"></span>  ' .'Tailor View</a> <a href="customers/CustomerView?id='.$customers->id.'" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' .'Customer View</a> <a href="customers/addNewCustomer?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span>Add New</a> <a href="#" data-object-id="' . $customers->id . '" class="btn btn-danger btn-sm delete-object"><span class="fa fa-trash"></span></a>';
-                $btns = '<a href="customers/tailor?id=' . $customers->id . '" class="btn btn-secondary btn-sm"><span class="fa fa-eye"></span>  ' . 'Tailor View</a> <a href="customers/CustomerView?id=' . $customers->id . '" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' . 'Customer View</a>';
+                //$btns = '<a href="customers/tailor?id=' . $customers->id . '" class="btn btn-secondary btn-sm"><span class="fa fa-eye"></span>  ' . 'Tailor View</a> <a href="customers/CustomerView?id=' . $customers->id . '" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' . 'Customer View</a>';
+                $btns = '';
                 if ($this->aauth->premission(10)) {
                     $btns .= '&nbsp;&nbsp; <a href="customers/addNewCustomer?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span>&nbsp;Edit</a>';
+                }else{
+                    $btns .= '&nbsp;&nbsp; <a href="customers/addNewCustomer?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span>&nbsp;Open</a>';
+
                 }
                 if ($this->aauth->premission(11)) {
                     $btns .= '&nbsp;&nbsp; <a href="#" data-object-id="' . $customers->id . '" class="btn btn-danger btn-sm delete-object"><span class="fa fa-trash"></span></a>';

@@ -1127,14 +1127,14 @@ if ($round_off['other'] == 'PHP_ROUND_HALF_UP') {
             }
 
         });
-        $('#v2_search_bar').keypress(function (event) {
-            if (event.keyCode == 13 && $(this).val() != '') {
-                setTimeout(function () {
-                    $('#posp0').click();
-                    $('#v2_search_bar').val("");
-                    $('#v2_search_bar').focus();
-                }, 1000);
-            }
-        });
+        // $('#v2_search_bar').keypress(function (event) {
+        //     if (event.keyCode == 13 && $(this).val() != '') {
+        //         setTimeout(function () {
+        //             $('#posp0').click();
+        //             $('#v2_search_bar').val("");
+        //             $('#v2_search_bar').focus();
+        //         }, 1000);
+        //     }
+        // });
     });
 </script>

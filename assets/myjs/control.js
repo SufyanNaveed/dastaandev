@@ -139,7 +139,7 @@ $(document).ready(function () {
         var cat = $('#v2_categories option:selected').val();
         var type = $('#v2_type option:selected').val();
         var pro_name = $(this).val();
-        pro_name = pro_name.replace(/-|\s/g,"");
+        //pro_name = pro_name.replace(/-|\s/g,"");
         if($(this).val().length >= 13 && type == 0){
             $.ajax({
                 type: "POST",

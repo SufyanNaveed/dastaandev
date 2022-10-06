@@ -63,6 +63,7 @@ class Employee extends CI_Controller
         $head['usernm'] = $this->aauth->get_user()->username;
         $head['title'] = 'Salary & Commission List';
         $this->calculate_commission_of_employee($id);
+        $this->employee->search_commision($id);
         $data['employee_commission'] = $this->employee->get_commision_detail($id); 
         $this->load->view('fixed/header', $head);
         $this->load->view('employee/salary_commssion', $data);
@@ -354,6 +355,7 @@ class Employee extends CI_Controller
         $emp_salary = $emp_salary['salary']; 
 
         $data = array();
+
         foreach ($list as $invoices) {   
             $commission_amount = 0;
             if($invoices->status != 'canceled'){
@@ -381,12 +383,11 @@ class Employee extends CI_Controller
                 }
             }
 
-            $row = array();
+            $row = array(); 
             $row[] = number_format($commission_amount,2);
             $data[] = $row;
         }
-         
-
+        
         $sum_of_commission_amount = array_sum(array_column($data,'0')); 
         // echo '<pre>'; print_r($sum_of_commission_amount); exit;
 

@@ -1187,12 +1187,14 @@
                 <?php } ?>
                 <div class="append_new_size_article"></div>
                 <input type="hidden" value="customers/updatecolthingCustomer" id="action-url">
-                <div id="mybutton" class="mt-1">
-                    <input type="submit" id="submit-data"
-                           class="btn btn-lg btn btn-primary margin-bottom round float-xs-right mr-2"
-                           value="Update Customer"
-                           data-loading-text="Saving...">
-                </div>
+                <?php if ($this->aauth->premission(10)) { ?>
+                    <div id="mybutton" class="mt-1">
+                        <input type="submit" id="submit-data"
+                            class="btn btn-lg btn btn-primary margin-bottom round float-xs-right mr-2"
+                            value="Update Customer"
+                            data-loading-text="Saving...">
+                    </div>
+                <?php } ?>
             </form>
         </div>
 

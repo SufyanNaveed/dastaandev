@@ -24,9 +24,10 @@
                         if ($invoice['status'] != 'canceled') { ?>
                             <div class="title-action">
 
-                            <a href="<?php echo 'edit?id=' . $invoice['iid']; ?>" class="btn btn-warning mb-1"><i
+                            <?php if ($this->aauth->premission(10)) { ?>
+                                <a href="<?php echo 'edit?id=' . $invoice['iid']; ?>" class="btn btn-warning mb-1"><i
                                         class="fa fa-pencil"></i> <?php echo $this->lang->line('Edit Invoice') ?></a>
-
+                            <?php } ?>
                             <a href="#part_payment" data-toggle="modal" data-remote="false" data-type="reminder"
                                class="btn btn-large btn-info mb-1" title="Partial Payment"
                             ><span class="fa fa-money"></span> <?php echo $this->lang->line('Make Payment') ?> </a>

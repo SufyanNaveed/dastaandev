@@ -584,7 +584,11 @@ class Transactions extends CI_Controller
             $row[] = amountFormat($prd->credit);
             $row[] = $prd->note != 'Paid to Employee' ? $prd->payer : 'Paid to Employee ('.$empl['name'].')';
             $row[] = $this->lang->line($prd->method);
-            $row[] = '<a href="' . base_url() . 'transactions/view?id=' . $pid . '" class="btn btn-primary btn-xs"><span class="fa fa-eye"></span>  ' . $this->lang->line('View') . '</a> <a href="' . base_url() . 'transactions/print_t?id=' . $pid . '" class="btn btn-info btn-xs"  title="Print"><span class="fa fa-print"></span></a>&nbsp; &nbsp;<a  href="#" data-object-id="' . $pid . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
+            $btn = '<a href="' . base_url() . 'transactions/view?id=' . $pid . '" class="btn btn-primary btn-xs"><span class="fa fa-eye"></span>  ' . $this->lang->line('View') . '</a> <a href="' . base_url() . 'transactions/print_t?id=' . $pid . '" class="btn btn-info btn-xs"  title="Print"><span class="fa fa-print"></span></a>';
+            if ($this->aauth->premission(11)) { 
+                $btn .= '&nbsp;<a  href="#" data-object-id="' . $pid . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
+            }
+            $row[] = $btn;
             $data[] = $row;
         }
         $output = array(
