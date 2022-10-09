@@ -927,8 +927,8 @@ class Pos_invoices extends CI_Controller
         $head['usernm'] = $this->aauth->get_user()->username;
         $this->load->view('fixed/header', $head);
 
-        $data['nap'] = $this->customers_model->details($data['invoice']['id']);
-        // echo '<pre>'; print_r($data);exit;
+        $data['nap'] = $this->customers_model->details_old($data['invoice']['id']);
+        // echo '<pre>'; print_r($data['nap']);exit;
         if ($data['invoice']['id']) $this->load->view('pos/view', $data);
         $this->load->view('fixed/footer');
 
@@ -1078,10 +1078,13 @@ class Pos_invoices extends CI_Controller
                     $product_subtotal = $this->input->post('product_subtotal');
                     $ptotal_tax = $this->input->post('taxa');
                     $ptotal_disc = $this->input->post('disca');
+                    $after_disc = $this->input->post('after_disc');
+                    $disc_rate = $this->input->post('disc_val');
                     $product_des = $this->input->post('product_description', true);
                     $product_unit = $this->input->post('unit');
                     $product_hsn = $this->input->post('hsn');
-                    $total_discount += $ptotal_disc[$key];
+                    // $total_discount += $ptotal_disc[$key];
+                    $total_discount += $after_disc;
                     $total_tax += $ptotal_tax[$key];
                     $data = array(
                         'tid' => $invocieno,
@@ -1100,10 +1103,12 @@ class Pos_invoices extends CI_Controller
                         'unit' => $product_unit[$key]
                     );
 
+                    //echo '<pre>'; print_r($data); exit;
+                    
                     $productlist[$prodindex] = $data;
                     $i++;
                     $prodindex++;
-                    $amt = $product_qty[$key] - @$old_product_qty[$key];
+                    $amt = $product_qty[$key]; //- @$old_product_qty[$key];
 
                     if ($product_id[$key] > 0) {
                         $this->db->set('qty', "qty-$amt", FALSE);
@@ -1114,7 +1119,12 @@ class Pos_invoices extends CI_Controller
                 }
                 if ($prodindex > 0) {
                     $this->db->insert_batch('geopos_invoice_items', $productlist);
-                    $this->db->set(array('discount' => rev_amountExchange_s($total_discount, $currency, $this->aauth->get_user()->loc), 'tax' => rev_amountExchange_s($total_tax, $currency, $this->aauth->get_user()->loc), 'items' => $itc));
+                    $invoicedata = array(
+                        'discount' => rev_amountExchange_s($total_discount, $currency, $this->aauth->get_user()->loc),
+                        'discount_rate' => $disc_rate,
+                        'tax' => rev_amountExchange_s($total_tax, $currency, $this->aauth->get_user()->loc), 
+                        'items' => $itc); 
+                    $this->db->set($invoicedata);
                     $this->db->where('id', $invocieno);
                     $this->db->update('geopos_invoices');
 
@@ -1125,6 +1135,7 @@ class Pos_invoices extends CI_Controller
                 }
                 echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('Invoice has  been updated') . " <a href='view?id=$invocieno' class='btn btn-info btn-lg'><span class='icon-file-text2' aria-hidden='true'></span> " . $this->lang->line('View') . " </a> "));
 
+                
                 $this->load->model('billing_model', 'billing');
                 $tnote = '#' . $invocieno_n . '-' . $pmethod;
                 switch ($pmethod) {
@@ -1146,6 +1157,7 @@ class Pos_invoices extends CI_Controller
                 }
                 $this->billing->paynow($invocieno, $diff, $tnote, $pmethod, $this->aauth->get_user()->loc);
                 $this->registerlog->update($this->aauth->get_user()->id, $r_amt1, $r_amt2, $r_amt3, 0, $c_amt);
+                
                 if ($promo_flag) {
                     $cqty = $result_c['available'] - 1;
                     if ($cqty > 0) {
@@ -1204,6 +1216,8 @@ class Pos_invoices extends CI_Controller
             }
 
 
+            //echo '<pre>'; print_r($transok); exit;
+            
             if ($transok) {
                 $this->db->trans_complete();
             } else {

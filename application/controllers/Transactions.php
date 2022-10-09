@@ -222,6 +222,117 @@ class Transactions extends CI_Controller
             $this->lang->line('Transaction has been added'), 'pstatus' => $this->lang->line($status), 'activity' => $activitym, 'amt' => $totalrm, 'ttlpaid' => amountExchange_s($amount, 0, $this->aauth->get_user()->loc)));
     }
 
+    public function updatepurchase(){
+        $tid = $this->input->post('tid', true);
+        $amount = $this->input->post('amount_edit', true);
+        $paydate = $this->input->post('paydate_edit', true);
+        $note = $this->input->post('shortnote_edit', true);
+        $pmethod = $this->input->post('pmethod_edit', true);
+        $acid = $this->input->post('account_edit', true);
+        $cid = $this->input->post('cid', true);
+        $cname = $this->input->post('cname', true);
+        $paydate = datefordatabase($paydate);
+        $this->db->select('holder');
+        $this->db->from('geopos_accounts');
+        $this->db->where('id', $acid);
+        $query = $this->db->get();
+        $account = $query->row_array();
+        $data = array(
+            'acid' => $acid,
+            'account' => $account['holder'],
+            'type' => 'Expense',
+            'cat' => 'Purchase',
+            'debit' => $amount,
+            'payer' => $cname,
+            'payerid' => $cid,
+            'method' => $pmethod,
+            'date' => $paydate,
+            'eid' => $this->aauth->get_user()->id,
+            'tid' => $tid,
+            'note' => $note,
+            'ext' => 1,
+            'loc' => $this->aauth->get_user()->loc
+        );
+            $this->db->set('acid', $acid);
+            $this->db->set('account', $account['holder']);
+            $this->db->set('type', 'Expense');
+             $this->db->set('cat', 'Purchase');
+            $this->db->set('debit', $amount, FALSE);
+            $this->db->set('payer', $cname);
+             $this->db->set('payerid', $cid);
+            $this->db->set('method', $pmethod);
+            $this->db->set('date', $paydate);
+             $this->db->set('eid', $this->aauth->get_user()->id);
+            $this->db->set('tid', $tid);
+            $this->db->set('note', $note);
+             $this->db->set('ext', 1);
+            $this->db->set('loc', $this->aauth->get_user()->loc);
+            $this->db->where('id', $this->input->post('history_id', true));
+            $this->db->update('geopos_transactions');
+            
+            
+        $this->db->select('total,csd,pamnt');
+        $this->db->from('geopos_purchase');
+        $this->db->where('id', $tid);
+        $query = $this->db->get();
+        $invresult = $query->row();
+        
+        $totalrm = $invresult->pamnt-$this->input->post('history_id_amount', true);
+            $this->db->set('pmethod', $pmethod);
+            $this->db->set('pamnt', "$totalrm", FALSE);
+            $this->db->set('status', 'partial');
+            $this->db->where('id', $tid);
+            $this->db->update('geopos_purchase');
+            //account update
+            $this->db->set('lastbal', "lastbal+$totalrm", FALSE);
+            $this->db->where('id', $acid);
+            $this->db->update('geopos_accounts');
+            
+            
+        
+            
+            //now insert
+        $this->db->select('total,csd,pamnt');
+        $this->db->from('geopos_purchase');
+        $this->db->where('id', $tid);
+        $query = $this->db->get();
+        $invresult = $query->row();
+        $totalrm = $invresult->total - $invresult->pamnt;
+        if ($totalrm > $amount) {
+            $this->db->set('pmethod', $pmethod);
+            $this->db->set('pamnt', "pamnt+$amount", FALSE);
+            $this->db->set('status', 'partial');
+            $this->db->where('id', $tid);
+            $this->db->update('geopos_purchase');
+            //account update
+            $this->db->set('lastbal', "lastbal-$amount", FALSE);
+            $this->db->where('id', $acid);
+            $this->db->update('geopos_accounts');
+            $paid_amount = $invresult->pamnt + $amount;
+            $status = 'Partial';
+            $totalrm = $totalrm - $amount;
+        } else {
+            $this->db->set('pmethod', $pmethod);
+            $this->db->set('pamnt', "pamnt+$amount", FALSE);
+            $this->db->set('status', 'paid');
+            $this->db->where('id', $tid);
+            $this->db->update('geopos_purchase');
+            //acount update
+            $this->db->set('lastbal', "lastbal-$amount", FALSE);
+            $this->db->where('id', $acid);
+            $this->db->update('geopos_accounts');
+            $totalrm = 0;
+            $status = 'Paid';
+            $paid_amount = $amount;
+        }
+        $activitym = "<tr><td>" . substr($paydate, 0, 10) . "</td><td>$pmethod</td><td>$amount</td><td>$note</td></tr>";
+
+
+        echo json_encode(array('status' => 'Success', 'message' =>
+            $this->lang->line('Transaction has been updated'), 'pstatus' => $this->lang->line($status), 'activity' => $activitym, 'amt' => $totalrm, 'ttlpaid' => $paid_amount));
+    
+        
+    }
     public function paypurchase()
     {
 
@@ -473,7 +584,11 @@ class Transactions extends CI_Controller
             $row[] = amountFormat($prd->credit);
             $row[] = $prd->note != 'Paid to Employee' ? $prd->payer : 'Paid to Employee ('.$empl['name'].')';
             $row[] = $this->lang->line($prd->method);
-            $row[] = '<a href="' . base_url() . 'transactions/view?id=' . $pid . '" class="btn btn-primary btn-xs"><span class="fa fa-eye"></span>  ' . $this->lang->line('View') . '</a> <a href="' . base_url() . 'transactions/print_t?id=' . $pid . '" class="btn btn-info btn-xs"  title="Print"><span class="fa fa-print"></span></a>&nbsp; &nbsp;<a  href="#" data-object-id="' . $pid . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
+            $btn = '<a href="' . base_url() . 'transactions/view?id=' . $pid . '" class="btn btn-primary btn-xs"><span class="fa fa-eye"></span>  ' . $this->lang->line('View') . '</a> <a href="' . base_url() . 'transactions/print_t?id=' . $pid . '" class="btn btn-info btn-xs"  title="Print"><span class="fa fa-print"></span></a>';
+            if ($this->aauth->premission(11)) { 
+                $btn .= '&nbsp;<a  href="#" data-object-id="' . $pid . '" class="btn btn-danger btn-xs delete-object"><span class="fa fa-trash"></span></a>';
+            }
+            $row[] = $btn;
             $data[] = $row;
         }
         $output = array(

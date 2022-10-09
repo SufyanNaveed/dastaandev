@@ -63,6 +63,7 @@ class Employee extends CI_Controller
         $head['usernm'] = $this->aauth->get_user()->username;
         $head['title'] = 'Salary & Commission List';
         $this->calculate_commission_of_employee($id);
+        $this->employee->search_commision($id);
         $data['employee_commission'] = $this->employee->get_commision_detail($id); 
         $this->load->view('fixed/header', $head);
         $this->load->view('employee/salary_commssion', $data);
@@ -265,7 +266,7 @@ class Employee extends CI_Controller
                 $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
                 // $emp_salary = $invoices_commission[0]->salary;
                 $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
-                $discount_amount_commission_calculate =  $invoices->discount > 0 ? ($invoices->discount / $sum_of_products) * 100 : 0;
+                $discount_amount_commission_calculate =  $invoices->discount > 0 && $sum_of_products > 0 ? ($invoices->discount / $sum_of_products) * 100 : 0;
             
                 foreach ($invoices_commission as $key=>$row) {
                     if($row->title != 'Shoes'){
@@ -354,13 +355,17 @@ class Employee extends CI_Controller
         $emp_salary = $emp_salary['salary']; 
 
         $data = array();
+
         foreach ($list as $invoices) {   
             $commission_amount = 0;
             if($invoices->status != 'canceled'){
                 $sum_of_products = 0;
                 $invoices_commission = $this->employee->invoices_commission($eid,$invoices->id); 
                 $sum_of_products = array_sum(array_column($invoices_commission,'subtotal'));
+                if($sum_of_products > 0)
                 $discount_amount_commission_calculate =  $invoices->discount > 0 ? ($invoices->discount / $sum_of_products) * 100 : 0; 
+                else $discount_amount_commission_calculate=0;
+                    
             
                 foreach ($invoices_commission as $key=>$row) {
                     if($row->title != 'Shoes'){
@@ -378,12 +383,11 @@ class Employee extends CI_Controller
                 }
             }
 
-            $row = array();
+            $row = array(); 
             $row[] = number_format($commission_amount,2);
             $data[] = $row;
         }
-         
-
+        
         $sum_of_commission_amount = array_sum(array_column($data,'0')); 
         // echo '<pre>'; print_r($sum_of_commission_amount); exit;
 

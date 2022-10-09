@@ -71,7 +71,7 @@ class Employee_model extends CI_Model
                 $this->db->where('comission_year',$value->year);
                 $querys = $this->db->get();
                 // echo '<pre>'; print_r($querys); exit;
-                $month = date('m');
+                $month = date('mm');
                 $year = date('y');
                 $final_commission = $nquery ? $value->commission + $nquery[$key]['commission'] : $value->commission;
                 if ($querys->num_rows() > 0 && $value->month >= $month && $value->year >= $year){
@@ -95,6 +95,7 @@ class Employee_model extends CI_Model
         $this->db->select('monthly_comission.*, comission_month as month, comission_year as year, monthly_salary as salary,comission_amount as commission');
         $this->db->from('monthly_comission');
         $this->db->where('emp_id',$id);
+        $this->db->order_by('comission_month','desc');
         $results = $this->db->get()->result_array();
         return $results;
     }

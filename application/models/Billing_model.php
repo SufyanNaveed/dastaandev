@@ -81,7 +81,10 @@ class Billing_model extends CI_Model
 
         if ($totalrm > $amount) {
             $this->db->set('pmethod', $pmethod);
-            $this->db->set('pamnt', "pamnt+$amount", FALSE);
+            if($amount > 0){
+                $this->db->set('pamnt', "pamnt+$amount", FALSE);
+            }
+            //$this->db->set('pamnt', "pamnt", FALSE);
 
             $this->db->set('status', 'partial');
             $this->db->where('id', $tid);

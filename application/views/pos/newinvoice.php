@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-2">
                                 <i
-                                        class="fa fa-shopping-bag"></i> <?php echo $this->lang->line('Total') ?>
+                                    class="fa fa-shopping-bag"></i> <?php echo $this->lang->line('Total') ?>
                             </div>
                         </div>
                         <div id="saman-pos2">
@@ -113,7 +113,7 @@
                             </div>
                         </div>                 <div class="row m-2">
                             <div class="col-3">
-                                <strong> <?php echo  $this->lang->line('Extra').' '.$this->lang->line('Discount') ?></strong>
+                                <strong> <?php echo $this->lang->line('Extra') . ' ' . $this->lang->line('Discount') ?></strong>
                             </div>
                             <div class="col-3">
                                 <input type="text" class="form-control form-control-sm discVal"
@@ -121,7 +121,7 @@
                                        placeholder="Value"  value="0"
                                        name="disc_val" autocomplete="off"
                                        onkeyup="billUpyog()">
-                                 <input type="hidden"
+                                <input type="hidden"
                                        name="after_disc"  id="after_disc"  value="0">
                             </div>
                             <div class="col-3">
@@ -133,19 +133,19 @@
 
                         <hr>
                         <div class="col">
-                                <div class="form-group form-group-sm text-g">
-                                    <label for="employee"><?php echo $this->lang->line('Employee') ?></label>
+                            <div class="form-group form-group-sm text-g">
+                                <label for="employee"><?php echo $this->lang->line('Employee') ?></label>
 
-                                    <select id="employee" name="employee" class="form-control form-control-sm">
-                                        <?php
-                                        foreach ($employee as $row) {
-                                            $cid = $row['id'];
-                                            $title = $row['name'];
-                                            echo "<option value='$cid'>$title</option>";
-                                        }
-                                        ?>
-                                    </select></div>
-                            </div>
+                                <select id="employee" name="employee" class="form-control form-control-sm">
+                                    <?php
+                                    foreach ($employee as $row) {
+                                        $cid = $row['id'];
+                                        $title = $row['name'];
+                                        echo "<option value='$cid'>$title</option>";
+                                    }
+                                    ?>
+                                </select></div>
+                        </div>
                         <div class="m-1">
 
                             <ul class="nav nav-tabs" role="tablist">
@@ -153,7 +153,7 @@
                                 <li class="nav-item">
                                     <a class="btn btn-outline-secondary mr-1 mb-1" id="base-tab2" data-toggle="tab"
                                        aria-controls="tab2" href="#tab2" role="tab" aria-selected="false"><i
-                                                class="icon-handbag"></i>
+                                            class="icon-handbag"></i>
                                         <?php echo $this->lang->line('POS') . ' ' . $this->lang->line('Settings') ?></a>
                                 </li>
                             </ul>
@@ -163,11 +163,11 @@
 
                                         <input type="text" class="form-control"
                                                id="coupon" name="coupon"><input type="hidden"
-                                                                                name="coupon_amount"
-                                                                                id="coupon_amount"
-                                                                                value="0"><span
-                                                class="input-group-addon round"> <button
-                                                    class="apply_coupon btn btn-small btn-primary sub-btn"><?php echo $this->lang->line('Apply') ?></button></span>
+                                               name="coupon_amount"
+                                               id="coupon_amount"
+                                               value="0"><span
+                                               class="input-group-addon round"> <button
+                                                class="apply_coupon btn btn-small btn-primary sub-btn"><?php echo $this->lang->line('Apply') ?></button></span>
 
 
                                     </div>
@@ -179,33 +179,39 @@
                                     <div class="row">
                                         <div class="col-4 blue text-xs-center"><?php echo $this->lang->line('Warehouse') ?>
                                             <select
-                                                    id="v2_warehouses"
-                                                    class="selectpicker form-control round teal">
-                                                <?php echo $this->common->default_warehouse();
-                                                echo '<option value="0" selected>' . $this->lang->line('All') ?></option><?php foreach ($warehouse as $row) {
+                                                id="v2_warehouses"
+                                                class="selectpicker form-control round teal">
+                                                    <?php
+                                                    echo $this->common->default_warehouse();
+                                                    echo '<option value="0" selected>' . $this->lang->line('All')
+                                                    ?></option><?php
+                                                foreach ($warehouse as $row) {
                                                     echo '<option value="' . $row['id'] . '">' . $row['title'] . '</option>';
-                                                } ?>
+                                                }
+                                                ?>
 
                                             </select></div>
                                         <div class="col-4 blue text-xs-center"><?php echo $this->lang->line('Tax') ?>
                                             <select class="form-control round"
                                                     onchange="changeTaxFormat(this.value)"
                                                     id="taxformat">
-                                                <?php echo $taxlist; ?>
+<?php echo $taxlist; ?>
                                             </select></div>
                                         <div class="col-4 blue text-xs-center">  <?php echo $this->lang->line('Discount') ?>
                                             <select class="form-control round teal"
                                                     onchange="changeDiscountFormat(this.value)"
                                                     id="discountFormat">
 
-                                                <?php echo $this->common->disclist() ?>
+<?php echo $this->common->disclist() ?>
                                             </select></div>
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="base-tab3">
-                                    <?php foreach ($draft_list as $rowd) {
+                                    <?php
+                                    foreach ($draft_list as $rowd) {
                                         echo '<li class="indigo p-1"><a href="' . base_url() . 'pos_invoices/draft?id=' . $rowd['id'] . '"> #' . $rowd['tid'] . ' (' . $rowd['invoicedate'] . ')</a></li>';
-                                    } ?>
+                                    }
+                                    ?>
                                 </div>
                                 <div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="base-tab4">
                                     <div class="form-group row">
@@ -266,24 +272,30 @@
 
                                     <div class="form-group row">
                                         <div class="col-sm-6">
-                                            <?php echo $this->lang->line('Payment Terms') ?> <select
-                                                    name="pterms"
-                                                    class="selectpicker form-control"><?php foreach ($terms as $row) {
-                                                    echo '<option value="' . $row['id'] . '">' . $row['title'] . '</option>';
-                                                } ?>
+<?php echo $this->lang->line('Payment Terms') ?> <select
+                                                name="pterms"
+                                                class="selectpicker form-control"><?php
+                                                    foreach ($terms as $row) {
+                                                        echo '<option value="' . $row['id'] . '">' . $row['title'] . '</option>';
+                                                    }
+                                                    ?>
 
                                             </select>
-                                            <?php if ($exchange['active'] == 1) {
-                                                echo $this->lang->line('Payment Currency client') ?>
-                                            <?php } ?>
-                                            <?php if ($exchange['active'] == 1) {
+                                            <?php
+                                            if ($exchange['active'] == 1) {
+                                                echo $this->lang->line('Payment Currency client')
                                                 ?>
+                                            <?php } ?>
+<?php if ($exchange['active'] == 1) {
+    ?>
                                                 <select name="mcurrency"
                                                         class="selectpicker form-control">
-                                                <option value="0">Default</option>
-                                                <?php foreach ($currency as $row) {
-                                                    echo '<option value="' . $row['id'] . '">' . $row['symbol'] . ' (' . $row['code'] . ')</option>';
-                                                } ?>
+                                                    <option value="0">Default</option>
+                                                    <?php
+                                                    foreach ($currency as $row) {
+                                                        echo '<option value="' . $row['id'] . '">' . $row['symbol'] . ' (' . $row['code'] . ')</option>';
+                                                    }
+                                                    ?>
 
                                                 </select><?php } ?>
                                         </div>
@@ -336,8 +348,8 @@
                         </div>
                         <div class="col-md-2  grey text-xs-center">
                             <select
-                                    id="v2_categories"
-                                    class="selectpicker form-control round teal">
+                                id="v2_categories"
+                                class="selectpicker form-control round teal">
                                 <option value="0"><?php echo $this->lang->line('All') ?></option><?php
                                 foreach ($cat as $row) {
                                     $cid = $row['id'];
@@ -364,16 +376,14 @@
                         <!-- Button Group with Icons in different sizes -->
                         <div class="btn-group btn-group-lg" role="group">
                             <button type="button" class="possubmit btn btn-warning"><i
-                                        class="fa fa-save"></i> <?php echo $this->lang->line('Draft') ?> </button>
-                            <button type="button" class="btn btn-success possubmit3" data-type="6" data-toggle="modal"
-                                    data-target="#basicPay"><i
-                                        class="fa fa-money"></i> <?php echo $this->lang->line('Payment') ?>
-                            </button> <?php
-
-                            if ($enable_card['url']) { ?>
+                                    class="fa fa-save"></i> <?php echo $this->lang->line('Draft') ?> </button>
+                            <button type="button" onclick="basicPayModal()" class="btn btn-success possubmit3" data-type="6" 
+                                    ><i
+                                    class="fa fa-money"></i> <?php echo $this->lang->line('Payment') ?>
+                            </button> <?php if ($enable_card['url']) { ?>
                                 <button type="button" class="btn btn-primary possubmit2" data-type="4"
-                                        data-toggle="modal" data-target="#cardPay"><i
-                                            class="fa fa-credit-card"></i> <?php echo $this->lang->line('Card') ?>
+                                        onclick="cardPayModal()"><i
+                                        class="fa fa-credit-card"></i> <?php echo $this->lang->line('Card') ?>
                                 </button>     <?php } ?>
 
                         </div>
@@ -386,7 +396,7 @@
     </div>
     <input type="hidden" value="pos_invoices/action" id="action-url">
     <input type="hidden" value="0" id="subttlform"
-                                                  name="subtotal">
+           name="subtotal">
     <input type="hidden" value="search" id="billtype">
     <input type="hidden" value="0" name="counter" id="ganak">
     <input type="hidden" value="0" id="custom_discount">
@@ -534,13 +544,13 @@
                                     type="submit"
                                     id="pos_card_pay"
                                     data-type="2"><i
-                                        class="fa fa-credit-card"></i> <?php echo $this->lang->line('Paynow') ?>
+                                    class="fa fa-credit-card"></i> <?php echo $this->lang->line('Paynow') ?>
                             </button>
                         </div>
                     </div>
                     <div class="form-group">
 
-                        <?php if ($surcharge_t) echo '<br>' . $this->lang->line('Note: Payment Processing'); ?>
+<?php if ($surcharge_t) echo '<br>' . $this->lang->line('Note: Payment Processing'); ?>
 
                     </div>
                     <div class="row" style="display:none;">
@@ -589,14 +599,14 @@
                                 <label for="cardNumber"><?php echo $this->lang->line('Amount') ?></label>
                                 <div class="input-group">
                                     <input
-                                            type="number"
-                                            class="form-control  text-bold-600 blue-grey"
-                                            name="p_amount"
-                                            placeholder="Amount"
-                                            id="p_amount" onkeyup="update_pay_pos()"
-                                    />
+                                        type="number"
+                                        class="form-control  text-bold-600 blue-grey"
+                                        name="p_amount"
+                                        placeholder="Amount"
+                                        id="p_amount" onkeyup="update_pay_pos()"
+                                        />
                                     <span class="input-group-addon"><i
-                                                class="icon icon-cash"></i></span>
+                                            class="icon icon-cash"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -628,9 +638,9 @@
                             <div class="form-group text-bold-600 text-g">
                                 <label for="b_change"><?php echo $this->lang->line('Change') ?></label>
                                 <input
-                                        type="number"
-                                        class="form-control green"
-                                        name="b_change" id="change_p" value="0">
+                                    type="number"
+                                    class="form-control green"
+                                    name="b_change" id="change_p" value="0">
                             </div>
                         </div>
                     </div>
@@ -639,12 +649,12 @@
                             <button class="btn btn-success btn-lg btn-block mb-1"
                                     type="submit"
                                     id="pos_basic_pay" data-type="4"><i
-                                        class="fa fa-arrow-circle-o-right"></i> <?php echo $this->lang->line('Paynow') ?>
+                                    class="fa fa-arrow-circle-o-right"></i> <?php echo $this->lang->line('Paynow') ?>
                             </button>
                             <button class="btn btn-info btn-lg btn-block"
                                     type="submit"
                                     id="pos_basic_print" data-type="4"><i
-                                        class="fa fa-print"></i> <?php echo $this->lang->line('Paynow') ?>
+                                    class="fa fa-print"></i> <?php echo $this->lang->line('Paynow') ?>
                                 + <?php echo $this->lang->line('Print') ?></button>
                         </div>
                     </div>
@@ -701,9 +711,9 @@
                         <div class="form-group text-bold-600 blue">
                             <label for="b_change blue"><?php echo $this->lang->line('Card') ?></label>
                             <input
-                                    type="number"
-                                    class="form-control blue"
-                                    id="r_card" value="0" readonly>
+                                type="number"
+                                class="form-control blue"
+                                id="r_card" value="0" readonly>
                         </div>
                     </div>
                 </div>
@@ -722,9 +732,9 @@
                         <div class="form-group text-bold-600 red">
                             <label for="b_change"><?php echo $this->lang->line('Change') ?>(-)</label>
                             <input
-                                    type="number"
-                                    class="form-control red"
-                                    id="r_change" value="0" readonly>
+                                type="number"
+                                class="form-control red"
+                                id="r_change" value="0" readonly>
                         </div>
                     </div>
                 </div>
@@ -769,7 +779,7 @@
                     <div class="col-4">
                         <a href="<?= base_url() ?>/register/close" class="btn btn-danger btn-lg btn-block"
                            type="submit"
-                        ><i class="icon icon-arrow-circle-o-right"></i> <?php echo $this->lang->line('Yes') ?></a>
+                           ><i class="icon icon-arrow-circle-o-right"></i> <?php echo $this->lang->line('Yes') ?></a>
                     </div>
                     <div class="col-4"></div>
                 </div>
@@ -860,6 +870,27 @@
     </div>
 </div>
 <script type="text/javascript">
+    function basicPayModal() {
+        var cus_id = $("#customer_id").val();
+        if (cus_id > 1)
+            $('#basicPay').modal('toggle');
+        else
+            alert("Please select/add customer!");
+    }
+    function cardPayModal() {
+        var cus_id = $("#customer_id").val();
+        if (cus_id > 1)
+            $('#cardPay').modal('toggle');
+        else
+            alert("Please select/add customer!");
+    }
+    function basicPayModal() {
+        var cus_id = $("#customer_id").val();
+        if (cus_id > 1)
+            $('#basicPay').modal('toggle');
+        else
+            alert("Please select/add customer!");
+    }
     $.ajax({
         url: baseurl + 'search_products/v2_pos_search',
         dataType: 'html',
@@ -887,10 +918,15 @@
 
     update_register();
     $(".possubmit").on("click", function (e) {
-        e.preventDefault();
-        var o_data = $("#data_form").serialize() + '&type=' + $(this).attr('data-type');
-        var action_url = $('#action-url').val();
-        addObject(o_data, action_url);
+        var cus_id = $("#customer_id").val();
+        if (cus_id > 1) {
+            e.preventDefault();
+            var o_data = $("#data_form").serialize() + '&type=' + $(this).attr('data-type');
+            var action_url = $('#action-url').val();
+            addObject(o_data, action_url);
+        } else
+            alert("Please select/add customer!");
+
     });
 
     $(".possubmit2").on("click", function (e) {
@@ -900,15 +936,16 @@
 
     $(".possubmit3").on("click", function (e) {
         e.preventDefault();
-        var roundoff = parseFloat($('#invoiceyoghtml').val()).toFixed(2);;
-        <?php
-        $round_off = $this->custom->api_config(4);
-        if ($round_off['other'] == 'PHP_ROUND_HALF_UP') {
-            echo ' roundoff=Math.ceil(roundoff);';
-        } elseif ($round_off['other'] == 'PHP_ROUND_HALF_DOWN') {
-            echo ' roundoff=Math.floor(roundoff);';
-        }
-        ?>
+        var roundoff = parseFloat($('#invoiceyoghtml').val()).toFixed(2);
+        ;
+<?php
+$round_off = $this->custom->api_config(4);
+if ($round_off['other'] == 'PHP_ROUND_HALF_UP') {
+    echo ' roundoff=Math.ceil(roundoff);';
+} elseif ($round_off['other'] == 'PHP_ROUND_HALF_DOWN') {
+    echo ' roundoff=Math.floor(roundoff);';
+}
+?>
         $('#b_total').html(' <?= $this->config->item('currency'); ?> ' + roundoff);
         $('#p_amount').val(roundoff);
 
@@ -918,14 +955,14 @@
         var am_pos = $('#p_amount').val();
         var ttl_pos = $('#invoiceyoghtml').val();
 
-        <?php
-        $round_off = $this->custom->api_config(4);
-        if ($round_off['other'] == 'PHP_ROUND_HALF_UP') {
-            echo ' ttl_pos=Math.ceil(ttl_pos);';
-        } elseif ($round_off['other'] == 'PHP_ROUND_HALF_DOWN') {
-            echo ' ttl_pos=Math.floor(ttl_pos);';
-        }
-        ?>
+<?php
+$round_off = $this->custom->api_config(4);
+if ($round_off['other'] == 'PHP_ROUND_HALF_UP') {
+    echo ' ttl_pos=Math.ceil(ttl_pos);';
+} elseif ($round_off['other'] == 'PHP_ROUND_HALF_DOWN') {
+    echo ' ttl_pos=Math.floor(ttl_pos);';
+}
+?>
 
         var due = parseFloat(ttl_pos - am_pos).toFixed(2);
 
@@ -961,9 +998,9 @@
         var action_url = $('#action-url').val();
         addObject(o_data, action_url);
         setTimeout(
-            function () {
-                update_register();
-            }, 3000);
+                function () {
+                    update_register();
+                }, 3000);
     });
 
     $('#pos_basic_print').on("click", function (e) {
@@ -977,9 +1014,9 @@
         addObject(o_data, action_url);
 
         setTimeout(
-            function () {
-                update_register();
-            }, 3000);
+                function () {
+                    update_register();
+                }, 3000);
 
 
     });
@@ -996,7 +1033,7 @@
 
         /* Visual feedback */
         $form.find('[type=submit]').html('Processing <i class="fa fa-spinner fa-pulse"></i>')
-            .prop('disabled', true);
+                .prop('disabled', true);
 
         jQuery.ajax({
 
@@ -1018,7 +1055,7 @@
                 $form.find('.payment-errors').text('Try refreshing the page and trying again.');
                 $form.find('.payment-errors').closest('.row').show();
                 $form.find('[type=submit]').html('Error! <i class="fa fa-exclamation-circle"></i>')
-                    .prop('disabled', true);
+                        .prop('disabled', true);
                 $("#notify .message").html("<strong>Error</strong>: Please try again!");
 
 
@@ -1049,7 +1086,7 @@
     });
     $('#v2_warehouses').change(function () {
         var whr = $('#v2_warehouses option:selected').val();
-        var cat = $('#v2_categories option:selected').val(); 
+        var cat = $('#v2_categories option:selected').val();
         $.ajax({
             type: "POST",
             url: baseurl + 'search_products/v2_pos_search',
@@ -1076,7 +1113,7 @@
             $('.possubmit2').click();
         });
         Mousetrap.bind('alt+n', function () {
-            window.location.href = "<?=base_url('pos_invoices/create') ?>";
+            window.location.href = "<?= base_url('pos_invoices/create') ?>";
         });
         Mousetrap.bind('alt+q', function () {
             $('#posp0').click();
@@ -1090,14 +1127,14 @@
             }
 
         });
-        $('#v2_search_bar').keypress(function (event) { 
-            if (event.keyCode == 13 && $(this).val() != '') {
-                setTimeout(function() {
-                    $('#posp0').click();
-                    $('#v2_search_bar').val("");
-                    $('#v2_search_bar').focus();
-                }, 1000);
-            } 
-        });
+        // $('#v2_search_bar').keypress(function (event) {
+        //     if (event.keyCode == 13 && $(this).val() != '') {
+        //         setTimeout(function () {
+        //             $('#posp0').click();
+        //             $('#v2_search_bar').val("");
+        //             $('#v2_search_bar').focus();
+        //         }, 1000);
+        //     }
+        // });
     });
 </script>
