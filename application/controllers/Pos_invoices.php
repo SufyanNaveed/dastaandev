@@ -945,7 +945,7 @@ class Pos_invoices extends CI_Controller
         if ($data['invoice']['id']) $data['products'] = $this->invocies->invoice_products($tid);
         if ($data['invoice']['id']) $data['employee'] = $this->invocies->employee($data['invoice']['eid']);
         if(CUSTOM) $data['c_custom_fields'] = $this->custom->view_fields_data($data['invoice']['cid'], 1, 1);
-        $data['nap'] = $this->customers_model->details($data['invoice']['id']);
+        $data['nap'] = $this->customers_model->details_old($data['invoice']['id']);
         if ($data['invoice']['i_class'] == 1) {
             $pref = prefix(7);
         } else {
