@@ -224,9 +224,9 @@ class Pos_invoices_model extends CI_Model
             $this->db->where('DATE(geopos_invoices.invoicedate) >=', datefordatabase($this->input->post('start_date')));
             $this->db->where('DATE(geopos_invoices.invoicedate) <=', datefordatabase($this->input->post('end_date')));
         }
-        if ($this->aauth->get_user()->loc) {
-            $this->db->where('geopos_invoices.loc', $this->aauth->get_user()->loc);
-        }
+        // if ($this->aauth->get_user()->loc) {
+        //     $this->db->where('geopos_invoices.loc', $this->aauth->get_user()->loc);
+        // }
           elseif(!BDATA) { $this->db->where('geopos_invoices.loc', 0); }
         $this->db->join('geopos_customers', 'geopos_invoices.csd=geopos_customers.id', 'left');
 
@@ -267,6 +267,7 @@ class Pos_invoices_model extends CI_Model
             $this->db->limit($_POST['length'], $_POST['start']);
 
         $query = $this->db->get();
+        //echo '<pre>'; print_r($this->db->last_query()); exit;
         $this->db->where('geopos_invoices.i_class', 1);
         if ($this->aauth->get_user()->loc) {
             $this->db->where('geopos_invoices.loc', $this->aauth->get_user()->loc);

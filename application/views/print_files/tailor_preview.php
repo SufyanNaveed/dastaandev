@@ -202,7 +202,7 @@
 
 
             .invoice-box table.order_detail td {
-                padding: 0;
+                padding: 10px;
                 padding-left: 13px;
                 padding-bottom: 2px;
 
