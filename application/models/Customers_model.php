@@ -54,11 +54,13 @@ class Customers_model extends CI_Model
             $this->db->join('customer_pant_size','geopos_customers.id = customer_pant_size.cus_id','left');
             $this->db->join('customer_kmz_shl','geopos_customers.id = customer_kmz_shl.cus_id','left');
             $this->db->where('customer_basic_info.reference_id is NOT NULL', NULL, FALSE);
-            if ($this->aauth->get_user()->loc) {
-                $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
-            } elseif (!BDATA) {
-                $this->db->where('geopos_customers.loc', 0);
-            }
+            
+            // if ($this->aauth->get_user()->loc) {
+            //     $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
+            // } elseif (!BDATA) {
+            //     $this->db->where('geopos_customers.loc', 0);
+            // } 
+
             if ($id != '') {
                 $this->db->where('geopos_customers.gid', $id);
             }
@@ -68,12 +70,14 @@ class Customers_model extends CI_Model
         } else {
             $this->db->from($this->table);
             $this->db->join('customer_basic_info','geopos_customers.id = customer_basic_info.cus_id');
-		$this->db->group_by('customer_basic_info.reference_id', 'desc');
-            if ($this->aauth->get_user()->loc) {
-                $this->db->where('loc', $this->aauth->get_user()->loc);
-            } elseif (!BDATA) {
-                $this->db->where('loc', 0);
-            }
+		    $this->db->group_by('customer_basic_info.reference_id', 'desc');
+            
+            // if ($this->aauth->get_user()->loc) {
+            //     $this->db->where('loc', $this->aauth->get_user()->loc);
+            // } elseif (!BDATA) {
+            //     $this->db->where('loc', 0);
+            // }
+
             if ($id != '') {
                 $this->db->where('gid', $id);
             }
@@ -124,12 +128,13 @@ class Customers_model extends CI_Model
     function get_datatables($id = '')
     {
         $this->_get_datatables_query($id);
-        if ($this->aauth->get_user()->loc) {
-            $this->db->where('loc', $this->aauth->get_user()->loc);
-        }
+        // if ($this->aauth->get_user()->loc) {
+        //     $this->db->where('loc', $this->aauth->get_user()->loc);
+        // }
         if ($this->input->post('length') != -1)
             $this->db->limit($this->input->post('length'), $this->input->post('start'));
         $query = $this->db->get();
+        //echo '<pre>'; print_r($this->db->last_query()); exit;
         return $query->result();
     }
 
@@ -140,18 +145,18 @@ class Customers_model extends CI_Model
         if ($id != '') {
             $this->db->where('gid', $id);
         }
-        if ($this->aauth->get_user()->loc) {
-            $this->db->where('loc', $this->aauth->get_user()->loc);
-        }
+        // if ($this->aauth->get_user()->loc) {
+        //     $this->db->where('loc', $this->aauth->get_user()->loc);
+        // }
         return $query->num_rows($id = '');
     }
 
     public function count_all($id = '')
     {
         $this->_get_datatables_query();
-        if ($this->aauth->get_user()->loc) {
-            $this->db->where('loc', $this->aauth->get_user()->loc);
-        }
+        // if ($this->aauth->get_user()->loc) {
+        //     $this->db->where('loc', $this->aauth->get_user()->loc);
+        // }
         if ($id != '') {
             $this->db->where('gid', $id);
         }
@@ -172,11 +177,11 @@ class Customers_model extends CI_Model
         $this->db->order_by('geopos_invoices.id', 'desc');
         $this->db->where('geopos_customers.id', $custid);
 
-        if ($this->aauth->get_user()->loc) {
-            $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
-        } elseif (!BDATA) {
-            $this->db->where('geopos_customers.loc', 0);
-        }
+        // if ($this->aauth->get_user()->loc) {
+        //     $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
+        // } elseif (!BDATA) {
+        //     $this->db->where('geopos_customers.loc', 0);
+        // }
         
         
         $query = $this->db->get();
