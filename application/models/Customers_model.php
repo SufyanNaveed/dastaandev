@@ -105,14 +105,15 @@ class Customers_model extends CI_Model
             }
             $i++;
         }
-        $search = $this->input->post('order');
-        if ($search) // here order processing
-        {
-            $this->db->order_by($this->column_order[$search['0']['column']], $search['0']['dir']);
-        } else if (isset($this->order)) {
-            $order = $this->order;
-            $this->db->order_by(key($order), $order[key($order)]);
-        }
+        // $search = $this->input->post('order');
+        // if ($search) // here order processing
+        // {
+        //     $this->db->order_by($this->column_order[$search['0']['column']], $search['0']['dir']);
+        // } else if (isset($this->order)) {
+        //     $order = $this->order;
+        //     $this->db->order_by(key($order), $order[key($order)]);
+        // }
+        $this->db->order_by('customer_id','desc');
     }
 
     function get_sum_due()

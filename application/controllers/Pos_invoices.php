@@ -996,7 +996,7 @@ class Pos_invoices extends CI_Controller
         $coupon_amount = 0;
         $coupon_n = '';
         $customer_id = $this->input->post('customer_id');
-        $invocieno_n = $this->input->post('invoiceno');
+        $invocieno_n = $this->input->post('invocieno');
         $invocieno = $this->input->post('iid');
         $invoicedate = $this->input->post('invoicedate');
         $invocieduedate = $this->input->post('invocieduedate');
