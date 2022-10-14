@@ -1247,9 +1247,9 @@
     // }
 
 
-    $("#bDate").datepicker();
-    $("#tDate").datepicker();
-    $("#dDate").datepicker();
+    $("#bDate").datepicker({format:'yyyy-mm-dd'});
+    $("#tDate").datepicker({format:'yyyy-mm-dd'});
+    $("#dDate").datepicker({format:'yyyy-mm-dd'});
 
     $(document).ready(function () {
         $('input[type="checkbox"]').click(function () {
