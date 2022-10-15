@@ -113,7 +113,7 @@ class Customers_model extends CI_Model
         //     $order = $this->order;
         //     $this->db->order_by(key($order), $order[key($order)]);
         // }
-        $this->db->order_by('customer_id','desc');
+        $this->db->order_by('geopos_customers.id','desc');
     }
 
     function get_sum_due()
