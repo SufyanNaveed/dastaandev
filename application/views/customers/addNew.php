@@ -1145,6 +1145,7 @@
                             </div>
 
                             <input type="hidden" value="<?php echo $thiscustomer["id"]; ?>" name="customer_id">
+                            <input type="hidden" value="<?php echo $thiscustomer["basic_info_id"]; ?>" name="basic_info_id">
                         </div></div>
                     <script>$(document).ready(function () {
                             $("input[name='is_collar[<?php echo $thisIndex; ?>]']").change(function () {

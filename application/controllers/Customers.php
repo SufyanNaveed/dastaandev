@@ -856,7 +856,7 @@ class Customers extends CI_Controller {
 //        if(is_null($data['customer']['reference_id'])){
 //           $data['customer']['reference_id'] = $this->customers->last_record()  + 1;
 //        }
-//         echo '<pre>'; print_r($data);exit;
+        //echo '<pre>'; print_r($data);exit;
         $data['id'] = $cid;
         $this->load->view('fixed/header', $head);
         $this->load->view('customers/addNew', $data);
@@ -1784,7 +1784,7 @@ class Customers extends CI_Controller {
                 }
 
 
-                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, $book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
+                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, 0,$book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
                         $cSleeves, $cShoulder, $cHalfBack, $cCrossBack, $cChest, $cWaist, $cHips, $cBicep, $cForearm, $cNeck, $cLength, $p3_waistcoat_length, $waistcoat_length,
                         $princecoat_length, $sherwani_length, $longcoat_length, $chester_length, $armhole,
                         $pLength, $pInLength, $pWaist, $pHip, $pThigh, $pBottom, $pKnee,
@@ -1799,7 +1799,7 @@ class Customers extends CI_Controller {
                         $is_band, $is_round_front, $is_front_pocket, $is_shalwar_pocket, $is_covered_fly,
                         $is_plain_button, $is_open_sleeves, $is_button_cuff, $is_design, $is_kanta, $is_stitch, $is_thread, $is_bookrum,
                         $collar_ins, $front_pocket_ins, $shalwar_pocket_ins, $instrucation, $shirt_inst, $shalwar_inst, $ptype, $coupon, $notes,
-                        $coupon_amount, $coupon_n, $invocieno, $invoicedate, $invocieduedate, $tax, $total_tax, $status, $pamnt, $total, $p_amount);
+                        $coupon_amount, $coupon_n, $invocieno, $invoicedate, $invocieduedate, $tax, $total_tax, $status, $pamnt, $total, $p_amount, 0);
             }
             echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('ADDED') . '&nbsp;<a href="' . base_url('/customers') . '" class="btn btn-info btn-sm"><span class="icon-eye"></span>' . $this->lang->line('View') . '</a>', 'cid' => $vCustomerID));
         } else {
@@ -2278,7 +2278,7 @@ class Customers extends CI_Controller {
                 }
 
 
-                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, $book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
+                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, 0,$book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
                         $cSleeves, $cShoulder, $cHalfBack, $cCrossBack, $cChest, $cWaist, $cHips, $cBicep, $cForearm, $cNeck, $cLength, $p3_waistcoat_length, $waistcoat_length,
                         $princecoat_length, $sherwani_length, $longcoat_length, $chester_length, $armhole,
                         $pLength, $pInLength, $pWaist, $pHip, $pThigh, $pBottom, $pKnee,
@@ -2293,7 +2293,7 @@ class Customers extends CI_Controller {
                         $is_band, $is_round_front, $is_front_pocket, $is_shalwar_pocket, $is_covered_fly,
                         $is_plain_button, $is_open_sleeves, $is_button_cuff, $is_design, $is_kanta, $is_stitch, $is_thread, $is_bookrum,
                         $collar_ins, $front_pocket_ins, $shalwar_pocket_ins, $instrucation, $shirt_inst, $shalwar_inst, $ptype, $coupon, $notes,
-                        $coupon_amount, $coupon_n, $invocieno, $invoicedate, $invocieduedate, $tax, $total_tax, $status, $pamnt, $total, $p_amount);
+                        $coupon_amount, $coupon_n, $invocieno, $invoicedate, $invocieduedate, $tax, $total_tax, $status, $pamnt, $total, $p_amount,0);
             }
 
             echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('ADDED') . '&nbsp;<a href="' . base_url('/customers') . '" class="btn btn-info btn-sm"><span class="icon-eye"></span>' . $this->lang->line('View') . '</a>', 'cid' => $vCustomerID));
@@ -2304,7 +2304,7 @@ class Customers extends CI_Controller {
 
     public function updatecolthingCustomer() {
 
-        // print_r(json_encode($this->input->post()));exit;
+        //print_r(json_encode($this->input->post()));exit;
         //delete old data
         $this->customers->delete($this->input->post('customer_id'));
 
@@ -2319,6 +2319,8 @@ class Customers extends CI_Controller {
         $aShirtLength = [];
         $akmzLength = [];
 
+        $basic_info_id = $this->input->post('basic_info_id', true);
+        $old_customer_id = $this->input->post('customer_id', true);
         $ref_no = $this->input->post('or_ref_no', true);
 
         $book_date = $this->input->post('booking_date');
@@ -2785,7 +2787,7 @@ class Customers extends CI_Controller {
                 }
 
 
-                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, $book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
+                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, $basic_info_id, $book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
                         $cSleeves, $cShoulder, $cHalfBack, $cCrossBack, $cChest, $cWaist, $cHips, $cBicep, $cForearm, $cNeck, $cLength, $p3_waistcoat_length, $waistcoat_length,
                         $princecoat_length, $sherwani_length, $longcoat_length, $chester_length, $armhole,
                         $pLength, $pInLength, $pWaist, $pHip, $pThigh, $pBottom, $pKnee,
@@ -2800,7 +2802,7 @@ class Customers extends CI_Controller {
                         $is_band, $is_round_front, $is_front_pocket, $is_shalwar_pocket, $is_covered_fly,
                         $is_plain_button, $is_open_sleeves, $is_button_cuff, $is_design, $is_kanta, $is_stitch, $is_thread, $is_bookrum,
                         $collar_ins, $front_pocket_ins, $shalwar_pocket_ins, $instrucation, $shirt_inst, $shalwar_inst, $ptype, $coupon, $notes,
-                        $coupon_amount, $coupon_n, $invocieno, $invoicedate, $invocieduedate, $tax, $total_tax, $status, $pamnt, $total, $p_amount);
+                        $coupon_amount, $coupon_n, $invocieno, $invoicedate, $invocieduedate, $tax, $total_tax, $status, $pamnt, $total, $p_amount, $old_customer_id);
             }
 
             echo json_encode(array('status' => 'Success', 'message' => $this->lang->line('ADDED') . '&nbsp;<a href="' . base_url('/customers') . '" class="btn btn-info btn-sm"><span class="icon-eye"></span>' . $this->lang->line('View') . '</a>', 'cid' => $vCustomerID));
