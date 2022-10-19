@@ -473,7 +473,7 @@ class Customers_model extends CI_Model
          else
                return 0;
     }
-    public function tailoringCustomerAdd($vCustomerID,$ref_no,$book_date,$t_date,$d_date,$is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
+    public function tailoringCustomerAdd($vCustomerID,$ref_no, $basic_info_id, $book_date,$t_date,$d_date,$is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
     $cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,$p3_waistcoat_length,$waistcoat_length,
     $princecoat_length,$sherwani_length,$longcoat_length,$chester_length, $armhole,            
     $pLength,$pInLength,$pWaist,$pHip,$pThigh,$pBottom,$pKnee,                
@@ -493,7 +493,7 @@ class Customers_model extends CI_Model
     $is_plain_button,$is_open_sleeves,$is_button_cuff,$is_design,$is_kanta,$is_stitch,$is_thread,$is_bookrum,
     $collar_ins, $front_pocket_ins,$shalwar_pocket_ins,$instrucation,$shirt_inst,$shalwar_inst,$ptype,$coupon,$notes,
 
-$coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax,$status,$pamnt,$total,$p_amount ){
+    $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax,$status,$pamnt,$total,$p_amount,$old_customer_id ){
 
                 /*add customer basic info*/
                 $data = array(
@@ -513,7 +513,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                 );
                 $this->db->insert('customer_basic_info',$data);
                 $BasicID=$this->db->insert_id();
-
+                
                 /*Add pant size*/
                 $data = array(
                     'cus_id' => $vCustomerID,
@@ -651,19 +651,32 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
                  if($is_shalwarqameez || $is_shirts)
                 $this->db->insert('customer_kmz_shl',$data);
 
-                $data = array('tid' => $invocieno, 'invoicedate' => $invoicedate,
-                    'invoiceduedate' => $invocieduedate, 'subtotal' => $total, 
-                    'shipping' => "", 'ship_tax' => "", 'ship_tax_type' => "", 
-                    'discount_rate' => "",'total' => $total, 'pmethod' => "Cash", 
-                    'notes' => $notes, 'status' => $status, 'csd' => $vCustomerID,
-                    'cus_basic_id' => $BasicID, 
-                    'eid' => $this->aauth->get_user()->id, 'pamnt' => $pamnt, 
-                    'taxstatus' =>"", 'discstatus' => "", 'format_discount' => "", 
-                    'refer' => "", 'term' => "", 'multi' => "", 'i_class' => 1, 'loc' => $this->aauth->get_user()->loc);
+                
+                if($basic_info_id == 0 && $old_customer_id == 0){
+                    $data = array('tid' => $invocieno, 'invoicedate' => $invoicedate,
+                        'invoiceduedate' => $invocieduedate, 'subtotal' => $total, 
+                        'shipping' => "", 'ship_tax' => "", 'ship_tax_type' => "", 
+                        'discount_rate' => "",'total' => $total, 'pmethod' => "Cash", 
+                        'notes' => $notes, 'status' => $status, 'csd' => $vCustomerID,
+                        'cus_basic_id' => $BasicID, 
+                        'eid' => $this->aauth->get_user()->id, 'pamnt' => $pamnt, 
+                        'taxstatus' =>"", 'discstatus' => "", 'format_discount' => "", 
+                        'refer' => "", 'term' => "", 'multi' => "", 'i_class' => 1, 'loc' => $this->aauth->get_user()->loc);
 
-                $this->db->insert('geopos_invoices', $data);
+                    $this->db->insert('geopos_invoices', $data);
 
-                $invoiceno = $this->db->insert_id();
+                    $invoiceno = $this->db->insert_id();
+                }else{
+                    $this->db->select('id');
+                    $this->db->where('csd', $old_customer_id);
+                    $invoice_result = $this->db->get('geopos_invoices')->row_array(); 
+                    
+                    $data = array('csd' => $vCustomerID);
+                    $invoiceno = $invoice_result['id'];
+                    $this->db->set($data);
+                    $this->db->where('id', $invoiceno);
+                    $this->db->update('geopos_invoices');
+                }
 
                 if($is_suiting){
                     $data = array(
@@ -710,6 +723,7 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
 
                     $this->db->insert('geopos_stiching_items',$data);
                 }
+
                 return true;
    }
    
@@ -1254,12 +1268,12 @@ $coupon_amount,$coupon_n,$invocieno,$invoicedate,$invocieduedate,$tax,$total_tax
         $query = $this->db->query("SELECT basic_info_id  from customer_basic_info where cus_id=".$id);
         $aResult=$query->result_array();
         foreach($aResult as $thisBasicID){
-        $this->db->delete('customer_basic_info',array('cus_id' => $thisBasicID['basic_info_id']));
-        $this->db->delete('customer_coat_size',array('cus_id' => $thisBasicID['basic_info_id']));
-        $this->db->delete('customer_kmz_shl',array('cus_id' => $thisBasicID['basic_info_id']));
-        $this->db->delete('customer_pant_size',array('cus_id' => $thisBasicID['basic_info_id']));
-        $this->db->delete('geopos_invoices', array('csd' => $thisBasicID['basic_info_id']));
-        $this->db->delete('geopos_stiching_items', array('cus_id' => $thisBasicID['basic_info_id']));
+        $this->db->delete('customer_basic_info',array('basic_info_id' => $thisBasicID['basic_info_id']));
+        $this->db->delete('customer_coat_size',array('cus_basic_id' => $thisBasicID['basic_info_id']));
+        $this->db->delete('customer_kmz_shl',array('cus_basic_id' => $thisBasicID['basic_info_id']));
+        $this->db->delete('customer_pant_size',array('cus_basic_id' => $thisBasicID['basic_info_id']));
+        // $this->db->delete('geopos_invoices', array('cus_basic_id' => $thisBasicID['basic_info_id']));
+        $this->db->delete('geopos_stiching_items', array('cus_basic_id' => $thisBasicID['basic_info_id']));
         }
 
         return $this->db->delete('geopos_customers', array('id' => $id, 'loc' => $this->aauth->get_user()->loc));
