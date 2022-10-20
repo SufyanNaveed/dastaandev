@@ -669,12 +669,13 @@ class Customers_model extends CI_Model
                 }else{
                     $this->db->select('id');
                     $this->db->where('csd', $old_customer_id);
+                    $this->db->order_by('id', 'desc');
                     $invoice_result = $this->db->get('geopos_invoices')->row_array(); 
                     
                     $data = array('csd' => $vCustomerID);
                     $invoiceno = $invoice_result['id'];
                     $this->db->set($data);
-                    $this->db->where('id', $invoiceno);
+                    $this->db->where('csd', $old_customer_id);
                     $this->db->update('geopos_invoices');
                 }
 
