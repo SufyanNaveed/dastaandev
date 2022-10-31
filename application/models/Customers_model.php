@@ -203,11 +203,11 @@ class Customers_model extends CI_Model
 //        $this->db->order_by('geopos_invoices.id', 'desc');
         $this->db->where('geopos_customers.id', $custid);
 
-        if ($this->aauth->get_user()->loc) {
-            $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
-        } elseif (!BDATA) {
-            $this->db->where('geopos_customers.loc', 0);
-        }
+        // if ($this->aauth->get_user()->loc) {
+        //     $this->db->where('geopos_customers.loc', $this->aauth->get_user()->loc);
+        // } elseif (!BDATA) {
+        //     $this->db->where('geopos_customers.loc', 0);
+        // }
         
         
         $query = $this->db->get();

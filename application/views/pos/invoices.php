@@ -1,3 +1,8 @@
+<style>
+.odd > td {
+    width: 0% !important;
+}
+</style>
 <div class="content-body">
     <div class="card">
         <div class="card-header">
