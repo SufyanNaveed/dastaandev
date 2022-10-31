@@ -217,7 +217,7 @@ class Invoices_model extends CI_Model
         $this->db->select('geopos_invoices.id,geopos_invoices.tid,geopos_invoices.invoicedate,geopos_invoices.invoiceduedate,geopos_invoices.total,geopos_invoices.status,geopos_customers.name');
         $this->db->from($this->table);
         
-        $this->db->where('geopos_invoices.i_class', 0);
+        //$this->db->where('geopos_invoices.i_class', 0);
         if ($opt) {
             $this->db->where('geopos_invoices.eid', $opt);
         }
@@ -269,7 +269,7 @@ class Invoices_model extends CI_Model
         if ($_POST['length'] != -1)
             $this->db->limit($_POST['length'], $_POST['start']);
         $query = $this->db->get();
-        $this->db->where('geopos_invoices.i_class', 0);
+        //$this->db->where('geopos_invoices.i_class', 0);
         // if ($this->aauth->get_user()->loc) {
         //     $this->db->where('geopos_invoices.loc', $this->aauth->get_user()->loc);
         // }  elseif(!BDATA) { $this->db->where('geopos_invoices.loc', 0); }
