@@ -55,11 +55,11 @@ class Invoices_model extends CI_Model
         if ($eid) {
             $this->db->where('geopos_invoices.eid', $eid);
         }
-              if ($this->aauth->get_user()->loc) {
-            $this->db->where('geopos_invoices.loc', $this->aauth->get_user()->loc);
-        } elseif (!BDATA) {
-            $this->db->where('geopos_invoices.loc', 0);
-        }
+        // if ($this->aauth->get_user()->loc) {
+        //     $this->db->where('geopos_invoices.loc', $this->aauth->get_user()->loc);
+        // } elseif (!BDATA) {
+        //     $this->db->where('geopos_invoices.loc', 0);
+        // }
         $this->db->join('geopos_customers', 'geopos_invoices.csd = geopos_customers.id', 'left');
         $this->db->join('geopos_terms', 'geopos_terms.id = geopos_invoices.term', 'left');
         $query = $this->db->get();
