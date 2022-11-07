@@ -853,10 +853,13 @@ class Customers extends CI_Controller {
         $cid = $this->input->get('id');
         $head['title'] = 'Edit Customer';
         $data['customer'] = $this->customers->details($cid);
-//        if(is_null($data['customer']['reference_id'])){
-//           $data['customer']['reference_id'] = $this->customers->last_record()  + 1;
-//        }
         //echo '<pre>'; print_r($data);exit;
+
+        if(empty($data['customer'][0]['coat_basic_id']) && empty($data['customer'][0]['kmz_basic_id'])){
+            $data['customer'] = $this->customers->details_old_cus($cid);
+            // echo '<pre>'; print_r($data);exit;
+
+        }
         $data['id'] = $cid;
         $this->load->view('fixed/header', $head);
         $this->load->view('customers/addNew', $data);
