@@ -768,11 +768,11 @@
                                                         <div class="col-md-12">
                                                             <div class="input-group">
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_front[<?php echo $thisIndex; ?>]" id="is_round_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" <?php echo ($thiscustomer['is_round_front']) ? "checked" : ''; ?> value="1">
+                                                                    <input type="radio" class="custom-control-input" name="is_front[<?php echo $thisIndex; ?>]" id="is_round_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" <?php echo ($thiscustomer['is_straight_front'] == 1) ? "checked" : ''; ?> value="1">
                                                                     <label class="custom-control-label" for="is_round_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Round Front</label>
                                                                 </div>&nbsp;&nbsp;
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" name="is_front[<?php echo $thisIndex; ?>]" id="straight_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" <?php echo ($thiscustomer['is_straight_front']) ? "checked" : ''; ?>  value="2">
+                                                                    <input type="radio" class="custom-control-input" name="is_front[<?php echo $thisIndex; ?>]" id="straight_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>" <?php echo ($thiscustomer['is_straight_front'] == 2) ? "checked" : ''; ?>  value="2">
                                                                     <label class="custom-control-label" for="straight_front<?php echo $thisIndex == 0 ? '' : '_' . $thisIndex; ?>">Straight Front</label>
                                                                 </div>
                                                                 &nbsp;&nbsp;

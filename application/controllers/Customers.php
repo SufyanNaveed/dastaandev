@@ -623,7 +623,7 @@ class Customers extends CI_Controller {
             $nap['is_button'] = $is_button;
             $nap['is_metalic_button'] = $is_metalic_button;
             $nap['shirtLength'] = $shirtLength;
-            $nap['shirtShoulder'] = $shirtSleeves;
+            $nap['shirtShoulder'] = $shirtShoulder;
             $nap['shirtSleeves'] = $shirtSleeves;
             $nap['shirtNeck'] = $shirtNeck;
             $nap['shirtChest'] = $shirtChest;
