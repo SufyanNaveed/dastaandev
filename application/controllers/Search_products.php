@@ -176,7 +176,10 @@ class Search_products extends CI_Controller
         }
 
         if ($name) {
-            $query = $this->db->query("SELECT id,name,phone,discount_c FROM geopos_customers WHERE $whr (UPPER(name)  LIKE '%" . strtoupper($name) . "%' OR UPPER(phone)  LIKE '" . strtoupper($name) . "%') LIMIT 6");
+            $query = $this->db->query("SELECT id,name,phone,discount_c 
+            FROM geopos_customers 
+            LEFT JOIN customer_basic_info ON geopos_customers.id = customer_basic_info.cus_id
+            WHERE customer_basic_info.reference_id IS NOT NULL AND $whr (UPPER(name)  LIKE '%" . strtoupper($name) . "%' OR UPPER(phone)  LIKE '" . strtoupper($name) . "%') LIMIT 6");
             $result = $query->result_array();
             echo '<ol>';
             $i = 1;
