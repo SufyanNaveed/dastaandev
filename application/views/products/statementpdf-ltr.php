@@ -210,6 +210,8 @@
 
             <tr>
                 <td><strong><?php echo $this->lang->line('Date') ?></strong></td>
+                <td><strong><?php echo 'Customer Name' ?></strong></td>
+                <td><strong><?php echo 'Order No' ?></strong></td>
                 <td><strong><?php echo $this->lang->line('Qty') ?></strong></td>
 
                 <td><strong><?php echo $this->lang->line('Price') ?></strong></td>
@@ -233,7 +235,7 @@
 
                 $price += $row['qty'] * $row['price'];
 
-                echo '<tr class="item' . $flag . '"><td>' . $row['invoicedate'] . '</td><td>' . $row['qty'] . '</td><td>' . amountFormat($row['price']) . '</td><td>' . $row['tid'] . '</td><td>' . $balance . '</td></tr>';
+                echo '<tr class="item' . $flag . '"><td>' . $row['invoicedate'] . '</td><td>' . $row['name'] . '</td><td>' . $row['reference_id'] . '</td><td>' . $row['qty'] . '</td><td>' . amountFormat($row['price']) . '</td><td>' . $row['tid'] . '</td><td>' . $balance . '</td></tr>';
                 $fill = !$fill;
             }
         } else {
@@ -242,6 +244,8 @@
 
             <tr>
                 <td><strong><?php echo $this->lang->line('Date') ?></strong></td>
+                <td><strong><?php echo 'Customer Name' ?></strong></td>
+                <td><strong><?php echo 'Order No' ?></strong></td>
                 <td><strong><?php echo $this->lang->line('Qty') ?></strong></td>
                 <td><strong><?php echo $this->lang->line('Note') ?>#</strong></td>
                 <td><strong><?php echo $this->lang->line('Total') ?></strong></td>
@@ -259,7 +263,7 @@
                 }
                 $price += $row['qty'] * $row['price'];
 
-                echo '<tr class="item' . $flag . '"><td>' . $row['invoicedate'] . '</td><td>' . $row['qty'] . '</td><td>' . $row['note'] . '</td><td>' . $balance . '</td></tr>';
+                echo '<tr class="item' . $flag . '"><td>' . $row['invoicedate']  . '</td><td>' . $row['name'] . '</td><td>' . $row['reference_id'] . '</td><td>' . $row['qty'] . '</td><td>' . $row['note'] . '</td><td>' . $balance . '</td></tr>';
 
 
                 $fill = !$fill;

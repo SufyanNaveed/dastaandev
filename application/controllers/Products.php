@@ -577,12 +577,22 @@ class Products extends CI_Controller
 
             switch ($r_type) {
                 case 1 :
-                    $query = $this->db->query("SELECT geopos_invoices.tid,geopos_invoice_items.qty,geopos_invoice_items.price,geopos_invoices.invoicedate FROM geopos_invoice_items LEFT JOIN geopos_invoices ON geopos_invoices.id=geopos_invoice_items.tid WHERE geopos_invoice_items.pid='$pid' AND geopos_invoices.status!='canceled' AND (DATE(geopos_invoices.invoicedate) BETWEEN DATE('$s_date') AND DATE('$e_date'))");
+                    $query = $this->db->query("SELECT geopos_invoices.tid,geopos_invoice_items.qty,geopos_invoice_items.price,geopos_invoices.invoicedate,geopos_customers.name,customer_basic_info.reference_id
+                    FROM geopos_invoice_items 
+                    LEFT JOIN geopos_invoices ON geopos_invoices.id=geopos_invoice_items.tid 
+                    LEFT JOIN geopos_customers ON geopos_customers.id = geopos_invoices.csd
+                    LEFT JOIN customer_basic_info ON geopos_customers.id = customer_basic_info.cus_id
+                    WHERE geopos_invoice_items.pid='$pid' AND geopos_invoices.status!='canceled' 
+                    AND (DATE(geopos_invoices.invoicedate) BETWEEN DATE('$s_date') AND DATE('$e_date'))");
                     $result = $query->result_array();
                     break;
 
                 case 2 :
-                    $query = $this->db->query("SELECT geopos_purchase.tid,geopos_purchase_items.qty,geopos_purchase_items.price,geopos_purchase.invoicedate FROM geopos_purchase_items LEFT JOIN geopos_purchase ON geopos_purchase.id=geopos_purchase_items.tid WHERE geopos_purchase_items.pid='$pid' AND geopos_purchase.status!='canceled' AND (DATE(geopos_purchase.invoicedate) BETWEEN DATE('$s_date') AND DATE('$e_date'))");
+                    $query = $this->db->query("SELECT geopos_purchase.tid,geopos_purchase_items.qty,geopos_purchase_items.price,geopos_purchase.invoicedate 
+                    FROM geopos_purchase_items 
+                    LEFT JOIN geopos_purchase ON geopos_purchase.id=geopos_purchase_items.tid 
+                    WHERE geopos_purchase_items.pid='$pid' AND geopos_purchase.status!='canceled' 
+                    AND (DATE(geopos_purchase.invoicedate) BETWEEN DATE('$s_date') AND DATE('$e_date'))");
                     $result = $query->result_array();
                     break;
 
