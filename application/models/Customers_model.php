@@ -121,7 +121,9 @@ class Customers_model extends CI_Model
         $this->db->select('SUM(geopos_invoices.total) AS total,SUM(geopos_invoices.pamnt) AS pamnt');
         $this->db->from('geopos_invoices');
         $this->db->where('geopos_invoices.status !=', 'paid');
-        $this->db->join('geopos_customers', 'geopos_customers.id = geopos_invoices.csd', 'left'); ;
+        $this->db->join('geopos_customers', 'geopos_customers.id = geopos_invoices.csd', 'left');
+        $this->db->join('customer_basic_info','geopos_customers.id = customer_basic_info.cus_id','left');
+        $this->db->where('customer_basic_info.reference_id is NOT NULL', NULL, FALSE);
         $query = $this->db->get()->row_array(); 
         return $query;
     }
